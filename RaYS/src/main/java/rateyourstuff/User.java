@@ -1,3 +1,9 @@
+package rateyourstuff;
+
+import rateyourstuff.Comment;
+import rateyourstuff.Progress;
+import rateyourstuff.Rate;
+
 public class User
 {
     private String      firstName;
@@ -10,7 +16,7 @@ public class User
     private List<Rate>          rate;
     private List<Progress>      progress;
 
-    //create User
+    //create rateyourstuff.User
     User(String firstName, String lastName, String email, String nickname, String password, List<Comment>comment, List<Rate>rate, List<Progress>progress)
     {
         this.setFirstName(firstName);

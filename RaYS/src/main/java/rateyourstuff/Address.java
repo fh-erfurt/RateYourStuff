@@ -1,3 +1,5 @@
+package rateyourstuff;
+
 public class Address
 {
     private String street;
@@ -5,7 +7,7 @@ public class Address
     private String zipCode;
     private String city;
 
-    //create Address
+    //create rateyourstuff.Address
     Address(String street, String houseNumber, String zipCode, String City)
     {
         this.setStreet(street);

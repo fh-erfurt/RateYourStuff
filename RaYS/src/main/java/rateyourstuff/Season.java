@@ -1,3 +1,7 @@
+package rateyourstuff;
+
+import rateyourstuff.Episode;
+
 import java.util.List;
 
 public class Season {

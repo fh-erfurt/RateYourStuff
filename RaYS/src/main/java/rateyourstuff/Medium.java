@@ -1,3 +1,5 @@
+package rateyourstuff;
+
 import java.util.Date;
 
 abstract class Medium

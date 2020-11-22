@@ -1,4 +1,8 @@
-public class ProgressGame extends Progress{
+package rateyourstuff;
+
+import rateyourstuff.Progress;
+
+public class ProgressGame extends Progress {
 
     private float hoursPlayed;
 

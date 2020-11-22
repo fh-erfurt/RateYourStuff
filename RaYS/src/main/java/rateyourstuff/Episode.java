@@ -1,7 +1,11 @@
+package rateyourstuff;
+
+import rateyourstuff.Medium;
+
 import java.util.Date;
 import java.util.List;
 
-public class Episode extends Medium{
+public class Episode extends Medium {
     private int episodeNumber;
     private List<Person> guestStars;
     private int length;

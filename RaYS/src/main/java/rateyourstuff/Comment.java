@@ -1,3 +1,5 @@
+package rateyourstuff;
+
 public class Comment
 {
     private String text;
@@ -5,7 +7,7 @@ public class Comment
     private Date date;
     private List<Comment> responses;
 
-    //create Comment
+    //create rateyourstuff.Comment
     Comment(String text, User author, Date date, List<Comment> responses)
     {
         this.setText(text);

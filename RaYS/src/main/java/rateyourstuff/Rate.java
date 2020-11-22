@@ -1,3 +1,7 @@
+package rateyourstuff;
+
+import rateyourstuff.Medium;
+
 public class Rate
 {
     private int minPoints;
@@ -6,7 +10,7 @@ public class Rate
     private String description;
     private Medium medium;
 
-    //create Rate
+    //create rateyourstuff.Rate
     Rate(int minPoints, int maxPoints, int rating, String description, Medium medium)
     {
         this.setMinPoints(minPoints);

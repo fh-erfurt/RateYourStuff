@@ -1,3 +1,7 @@
+package rateyourstuff;
+
+import rateyourstuff.Medium;
+
 public abstract class Progress {
     private Medium medium;
 

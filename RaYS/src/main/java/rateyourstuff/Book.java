@@ -1,3 +1,7 @@
+package rateyourstuff;
+
+import rateyourstuff.Medium;
+
 import java.util.Date;
 import java.util.List;
 
@@ -10,7 +14,7 @@ public class Book extends Medium //extends = erbt
     private boolean isPrint;
     private List<String> languages;
     private List<Collection> bookSeries;
-    private int numberOfPages;
+    private Integer numberOfPages;
 
     Book(String name, Date publicationDate, String shortDescription, List<String> publisher, List<Person> author){
         this.setName(name);
@@ -95,14 +99,14 @@ public class Book extends Medium //extends = erbt
     }
 
     public void addBookSeries(list<Collection> bookSeries){
-        //Add Book Series to list
+        //Add rateyourstuff.Book Series to list
     }
 
-    public void setNumberOfPages(int numberOfPages) {
+    public void setNumberOfPages(Integer numberOfPages) {
         this.numberOfPages = numberOfPages;
     }
 
-    public int getNumberOfPages() {
+    public Integer getNumberOfPages() {
         return numberOfPages;
     }
 
