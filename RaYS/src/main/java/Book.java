@@ -1,30 +1,49 @@
+import java.util.Date;
+
 public class Book extends Medium //extends = erbt
 {
-    private String publisher[];
-    private Person author[];
+    private list<String> publisher;
+    private list<Person> author;
     private String ISBN;
     private boolean isEBook;
     private boolean isPrint;
-    private String languages[];
-    private Collection bookSeries[];
+    private list<String> languages;
+    private list<Collection> bookSeries;
     private int numberOfPages;
 
-    //Set-/ Get-Section
+    Book(String name, Date publicationDate, String shortDescription, list<String> publisher, list<Person> author){
+        this.setName(name);
+        this.setPublicationDate(publicationDate);
+        this.setShortDescription(shortDescription);
+        this.setPublisher(publisher);
+        this.setAuthor(author);
+        this.setRatingCounter(0);
+    }
 
-    public void setPublisher(String[] publisher) {
+    //Set-/ Get-Section
+    public void setPublisher(list<String> publisher) {
         this.publisher = publisher;
     }
 
-    public String[] getPublisher() {
+    public list<String> getPublisher() {
         return publisher;
     }
 
-    public void setAuthor(Person[] author) {
+    public void addPublisher(list<String> publisher)
+    {
+        //Add Publisher to list
+    }
+
+    public void setAuthor(list<Person> author) {
         this.author = author;
     }
 
-    public Person[] getAuthor() {
+    public list<Person> getAuthor() {
         return author;
+    }
+
+    public void addAuthor(list<Person> author) {
+        //Add Author to list
     }
 
     public void setISBN(String ISBN) {
@@ -54,20 +73,28 @@ public class Book extends Medium //extends = erbt
         return isPrint;
     }
 
-    public void setLanguages(String[] languages) {
+    public void setLanguages(list<String> languages) {
         this.languages = languages;
     }
 
-    public String[] getLanguages() {
+    public list<String> getLanguages() {
         return languages;
     }
 
-    public void setBookSeries(Collection[] bookSeries) {
+    public void addLanguages(list<String> languages){
+        //Add languages to list
+    }
+
+    public void setBookSeries(list<Collection> bookSeries) {
         this.bookSeries = bookSeries;
     }
 
-    public Collection[] getBookSeries() {
+    public list<Collection> getBookSeries() {
         return bookSeries;
+    }
+
+    public void addBookSeries(list<Collection> bookSeries){
+        //Add Book Series to list
     }
 
     public void setNumberOfPages(int numberOfPages) {
