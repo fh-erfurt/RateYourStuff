@@ -7,7 +7,9 @@ import java.util.List;
 
 public class Book extends Medium //extends = erbt
 {
+    private String name;
     private List<String> publisher;
+    //ToDo: Wirklich eine Liste von Autoren? Lieber den Hauptautor verwenden?
     private List<Person> author;
     private String ISBN;
     private boolean isEBook;
@@ -16,12 +18,14 @@ public class Book extends Medium //extends = erbt
     private List<Collection> bookSeries;
     private Integer numberOfPages;
 
-    Book(String name, Date publicationDate, String shortDescription, List<String> publisher, List<Person> author){
+    public Book(){}
+
+    public Book(String name, Date publicationDate, String shortDescription, List<String> publisher, List<Person> author){
         this.setName(name);
         this.setPublicationDate(publicationDate);
         this.setShortDescription(shortDescription);
         this.setPublisher(publisher);
-        this.setAuthor(author);
+        this.setAuthor(getAuthor().get(2));
         this.setRatingCounter(0);
     }
 
@@ -39,11 +43,11 @@ public class Book extends Medium //extends = erbt
         //Add Publisher to list
     }
 
-    public void setAuthor(list<Person> author) {
+    public void setAuthor(List<Person> author) {
         this.author = author;
     }
 
-    public list<Person> getAuthor() {
+    public List<Person> getAuthor() {
         return author;
     }
 
@@ -110,4 +114,11 @@ public class Book extends Medium //extends = erbt
         return numberOfPages;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

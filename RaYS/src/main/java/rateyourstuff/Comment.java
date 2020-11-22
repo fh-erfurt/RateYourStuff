@@ -1,5 +1,8 @@
 package rateyourstuff;
 
+import java.util.Date;
+import java.util.List;
+
 public class Comment
 {
     private String text;
