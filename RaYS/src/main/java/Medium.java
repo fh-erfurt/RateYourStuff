@@ -13,13 +13,7 @@ abstract class Medium
 
 
     //Set-/Get-Section
-    public void setName(String name) {
-        this.name = name;
-    }
 
-    public String getName() {
-        return name;
-    }
 
     public void setPublicationDate(Date publicationDate) {
         this.publicationDate = publicationDate;
@@ -76,5 +70,6 @@ abstract class Medium
     public Collection[] getCollections() {
         return collections;
     }
+
 
 }

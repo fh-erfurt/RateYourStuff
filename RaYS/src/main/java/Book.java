@@ -1,17 +1,18 @@
 import java.util.Date;
+import java.util.List;
 
 public class Book extends Medium //extends = erbt
 {
-    private list<String> publisher;
-    private list<Person> author;
+    private List<String> publisher;
+    private List<Person> author;
     private String ISBN;
     private boolean isEBook;
     private boolean isPrint;
-    private list<String> languages;
-    private list<Collection> bookSeries;
+    private List<String> languages;
+    private List<Collection> bookSeries;
     private int numberOfPages;
 
-    Book(String name, Date publicationDate, String shortDescription, list<String> publisher, list<Person> author){
+    Book(String name, Date publicationDate, String shortDescription, List<String> publisher, List<Person> author){
         this.setName(name);
         this.setPublicationDate(publicationDate);
         this.setShortDescription(shortDescription);
@@ -21,15 +22,15 @@ public class Book extends Medium //extends = erbt
     }
 
     //Set-/ Get-Section
-    public void setPublisher(list<String> publisher) {
+    public void setPublisher(List<String> publisher) {
         this.publisher = publisher;
     }
 
-    public list<String> getPublisher() {
+    public List<String> getPublisher() {
         return publisher;
     }
 
-    public void addPublisher(list<String> publisher)
+    public void addPublisher(List<String> publisher)
     {
         //Add Publisher to list
     }

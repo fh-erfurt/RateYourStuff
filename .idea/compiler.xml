@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="RaYS" target="1.5" />
+      <module name="RaYS" target="15" />
     </bytecodeTargetLevel>
   </component>
 </project>
