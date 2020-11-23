@@ -1,5 +1,11 @@
 package rateyourstuff;
 
+/*
+*
+* Author: John Klippstein
+*
+* */
+
 import java.util.List;
 
 public class Person {

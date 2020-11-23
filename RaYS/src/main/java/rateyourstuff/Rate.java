@@ -4,7 +4,7 @@ import rateyourstuff.Medium;
 
 public class Rate
 {
-    private int minPoints;
+    private int minPoints; //ToDo: Entscheidung übner Konstante oder keine Konstante
     private int maxPoints;
     private int rating;
     private String description;

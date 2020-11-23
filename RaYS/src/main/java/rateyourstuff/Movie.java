@@ -1,5 +1,10 @@
-import rateyourstuff.Medium;
-import rateyourstuff.Person;
+package rateyourstuff;
+
+/*
+*
+* Author: Christopher Frischmuth
+*
+* */
 
 abstract class Movie extends Medium
 {
@@ -12,6 +17,12 @@ abstract class Movie extends Medium
     private int totalDuration;
     private int ageRestriction;
     private String highestResolution; //To type as XXXXxXXXX e.G. 1750x1050
+
+
+
+
+
+    // Getter / Setter
 
     public void setProducer(Person[] producer) {
         this.producer = producer;

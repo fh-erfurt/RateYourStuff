@@ -1,5 +1,10 @@
 package rateyourstuff;
 
+/*
+*
+* Auhor: Christopher Frischmuth
+* */
+
 import java.util.Date;
 import java.util.List;
 

@@ -1,3 +1,8 @@
+package rateyourstuff;
+
+
+import java.util.List;
+
 public class User
 {
     private String      firstName;
@@ -6,12 +11,12 @@ public class User
     private String      nickname;
     private String      password;
 
-    private List<Comment>       comments;
+    private List<Comment> comments;
     private List<Rate>          rates;
     private List<Progress>      progresses;
 
     //create User
-    User(String firstName, String lastName, String email, String nickname, String password, List<Comment>comments, List<Rate>rates, List<Progress>progresses)
+    public User(String firstName, String lastName, String email, String nickname, String password, List<Comment>comments, List<Rate>rates, List<Progress>progresses)
     {
         this.setFirstName(firstName);
         this.setLastName(lastName);
