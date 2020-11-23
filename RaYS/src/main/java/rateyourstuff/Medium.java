@@ -1,17 +1,18 @@
 package rateyourstuff;
 
 import java.util.Date;
+import java.util.List;
 
 public abstract class Medium
 {
     private String name;
     private Date publicationDate;
-    private Comment[] comment; //Class will be implemented
+    private List<Comment> comment; //Class will be implemented
     private String shortDescription;
     private float averageRating;
     private String personalOpinion;
     private int ratingCounter;
-    private Collection[] collections; //Class will be implemented
+    private List<Collection> collections; //Class will be implemented
 
 
     //Set-/Get-Section
@@ -24,11 +25,11 @@ public abstract class Medium
         return publicationDate;
     }
 
-    public void setComment(Comment[] comment) {
+    public void setComment(List<Comment> comment) {
         this.comment = comment;
     }
 
-    public Comment[] getComment() {
+    public List<Comment> getComment() {
         return comment;
     }
 
@@ -64,11 +65,11 @@ public abstract class Medium
         return ratingCounter;
     }
 
-    public void setCollections(Collection[] collections) {
+    public void setCollections(List<Collection> collections) {
         this.collections = collections;
     }
 
-    public Collection[] getCollections() {
+    public List<Collection> getCollections() {
         return collections;
     }
 
