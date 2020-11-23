@@ -8,21 +8,26 @@ import java.util.List;
 public class Episode extends Medium {
     private int episodeNumber;
     private List<Person> guestStars;
+    //value specifies episode length measured in full minutes
     private int length;
 
+    //<editor-fold desc="Constructors">
     public Episode(int episodeNumber,
-                   String title,
-                   String plot,
-                   Date firstAired,
+                   String name,
+                   String shortDescription,
+                   Date publicationDate,
                    List<Person> guestStars,
                    int length) {
-        //super(title, plot, firstAired);
+        super(name);
+        setShortDescription(shortDescription);
+        setPublicationDate(publicationDate);
         this.episodeNumber = episodeNumber;
         this.guestStars = guestStars;
         this.length = length;
-
     }
+    //</editor-fold>
 
+    //<editor-fold desc="Getter//Setter//Adder">
     public int getEpisodeNumber() {
         return episodeNumber;
     }
@@ -50,4 +55,5 @@ public class Episode extends Medium {
     public void setLength(int length) {
         this.length = length;
     }
+    //</editor-fold>
 }
