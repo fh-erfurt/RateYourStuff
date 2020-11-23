@@ -2,7 +2,7 @@ package rateyourstuff;
 
 import java.util.Date;
 
-abstract class Medium
+public abstract class Medium
 {
     private String name;
     private Date publicationDate;
