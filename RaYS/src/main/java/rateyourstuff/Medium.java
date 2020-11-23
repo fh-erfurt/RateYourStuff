@@ -7,15 +7,30 @@ public abstract class Medium
 {
     private String name;
     private Date publicationDate;
-    private List<Comment> comment; //Class will be implemented
+    private List<Comment> comment;
     private String shortDescription;
     private float averageRating;
     private String personalOpinion;
     private int ratingCounter;
-    private List<Collection> collections; //Class will be implemented
+    private List<Collection> collections;
+    private List<Rate> ratings;
+
+    public Medium(){};
+
+    public Medium(String name){
+        this.name = name;
+    }
 
 
     //Set-/Get-Section
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
 
     public void setPublicationDate(Date publicationDate) {
         this.publicationDate = publicationDate;
@@ -33,6 +48,10 @@ public abstract class Medium
         return comment;
     }
 
+    public void addComment(List<Comment> comment){
+        //Add new comment
+    }
+
     public void setShortDescription(String shortDescription) {
         this.shortDescription = shortDescription;
     }
@@ -41,8 +60,12 @@ public abstract class Medium
         return shortDescription;
     }
 
-    public void setAverageRating(float averageRating) {
-        this.averageRating = averageRating;
+    public float setAverageRate(List<Rate> ratings){
+        float computedAverage =0f;
+        //Bewertungen in der Liste auslesen
+        //Bewertungen durch die Gesamtanzahl der Bewertungen teilen
+        //Durchschnittsbewertung return -> averageRating
+        return this.averageRating = computedAverage;
     }
 
     public float getAverageRating() {
@@ -73,5 +96,19 @@ public abstract class Medium
         return collections;
     }
 
+    public void addCollections(List<Collection> collections){
+        //Add collections to list
+    }
 
+    public void setRatings(List<Rate> ratings) {
+        this.ratings = ratings;
+    }
+
+    public List<Rate> getRatings() {
+        return ratings;
+    }
+
+    public void addRatings(List<Rate> ratings){
+        //Add new ratings
+    }
 }

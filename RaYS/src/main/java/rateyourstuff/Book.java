@@ -2,7 +2,7 @@ package rateyourstuff;
 
 /*
 *
-* Auhor: Christopher Frischmuth
+* Auhor: Christoph Frischmuth
 * */
 
 import java.util.Date;
@@ -28,7 +28,7 @@ public class Book extends Medium //extends = erbt
                 String shortDescription,
                 List<String> publisher,
                 List<Person> authors){
-        this.setName(name);
+        super(name);
         this.setPublicationDate(publicationDate);
         this.setShortDescription(shortDescription);
         this.setPublisher(publisher);

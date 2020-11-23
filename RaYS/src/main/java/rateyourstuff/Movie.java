@@ -2,11 +2,11 @@ package rateyourstuff;
 
 /*
 *
-* Author: Christopher Frischmuth
+* Author: Christoph Frischmuth
 *
 * */
 
-abstract class Movie extends Medium
+public class Movie extends Medium
 {
     private Person producer[];
     private Person director[];
