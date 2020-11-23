@@ -51,7 +51,7 @@ public class Book extends Medium //extends = erbt
         return author;
     }
 
-    public void addAuthor(list<Person> author) {
+    public void addAuthor(List<Person> author) {
         //Add Author to list
     }
 
@@ -82,11 +82,11 @@ public class Book extends Medium //extends = erbt
         return isPrint;
     }
 
-    public void setLanguages(list<String> languages) {
+    public void setLanguages(List<String> languages) {
         this.languages = languages;
     }
 
-    public list<String> getLanguages() {
+    public List<String> getLanguages() {
         return languages;
     }
 

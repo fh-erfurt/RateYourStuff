@@ -2,12 +2,10 @@ package rateyourstuff;
 
 public class ProgressBook extends Progress {
 
-    public ProgressBook(){
+    //public ProgressBook(){}
 
-    }
-
-    public ProgressBook(Integer numberOfPages){
-        this.currentPage = numberOfPages;
+    public ProgressBook(Book book){
+        super(book);
     }
 
     private Integer currentPage;
@@ -24,8 +22,6 @@ public class ProgressBook extends Progress {
     }
 
 
-
-
     //Functions
 
     /* the method bellow calculated the progress of the book in percent
@@ -37,10 +33,9 @@ public class ProgressBook extends Progress {
         if(getMedium() instanceof Book)
         {
             Book book = (Book) getMedium();
-
             percentage = currentPage * 100 / book.getNumberOfPages();
-
         }
+
         return percentage;
     }
 
