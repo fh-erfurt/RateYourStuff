@@ -2,6 +2,12 @@ package rateyourstuff;
 
 import java.util.List;
 
+/*
+ *
+ * Author: Christoph Frischmuth
+ *
+ * */
+
 public class Game extends Medium {
     private float averagePlaytime;
     private String publisher;
@@ -15,6 +21,9 @@ public class Game extends Medium {
     private List<String> genres;
     private int ageRestriction;
 
+    // Constructors
+    /////////////////////////////////////////////////////////////////////////////////////
+
     public Game(){};
 
     public Game(String name,
@@ -25,8 +34,8 @@ public class Game extends Medium {
         this.genres = genres;
     }
 
-    // Get-/Set-Methods
-
+    // Getter / Setter / Adder
+    /////////////////////////////////////////////////////////////////////////////////////
 
     public float setAveragePlaytime(float averagePlaytime) {
         float computedAverage = 0f;

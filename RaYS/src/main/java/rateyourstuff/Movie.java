@@ -1,5 +1,7 @@
 package rateyourstuff;
 
+import java.util.List;
+
 /*
 *
 * Author: Christoph Frischmuth
@@ -8,67 +10,90 @@ package rateyourstuff;
 
 public class Movie extends Medium
 {
-    private Person producer[];
-    private Person director[];
-    private Person mainActor[];
-    private String genre[];
-    private String languages[];
-    private String subtitle[];
+    private List<Person> producer;
+    private List<Person> director;
+    private List<Person> mainActor;
+    private List<String> genre;
+    private List<String> languages;
+    private List<String> subtitle;
     private int totalDuration;
     private int ageRestriction;
     private String highestResolution; //To type as XXXXxXXXX e.G. 1750x1050
 
+    // Constructors
+    /////////////////////////////////////////////////////////////////////////////////////
+
+    public Movie(){};
+
+    public Movie(String name,
+                 List<Person> director,
+                 List<Person> mainActor,
+                 List<String> genre,
+                 List<String> languages,
+                 int totalDuration,
+                 int ageRestriction,
+                 String highestResolution)
+    {
+        super(name);
+        this.director = director;
+        this.mainActor = mainActor;
+        this.genre = genre;
+        this.languages = languages;
+        this.totalDuration = totalDuration;
+        this.ageRestriction = ageRestriction;
+        this.highestResolution = highestResolution;
+    }
 
 
 
+    // Getter / Setter / Adder
+    /////////////////////////////////////////////////////////////////////////////////////
 
-    // Getter / Setter
-
-    public void setProducer(Person[] producer) {
+    public void setProducer(List<Person> producer) {
         this.producer = producer;
     }
 
-    public Person[] getProducer() {
+    public List<Person> getProducer() {
         return producer;
     }
 
-    public void setDirector(Person[] director) {
+    public void setDirector(List<Person> director) {
         this.director = director;
     }
 
-    public Person[] getDirector() {
+    public List<Person> getDirector() {
         return director;
     }
 
-    public void setMainActor(Person[] mainActor) {
+    public void setMainActor(List<Person> mainActor) {
         this.mainActor = mainActor;
     }
 
-    public Person[] getMainActor() {
+    public List<Person> getMainActor() {
         return mainActor;
     }
 
-    public void setGenre(String[] genre) {
+    public void setGenre(List<String> genre) {
         this.genre = genre;
     }
 
-    public String[] getGenre() {
+    public List<String> getGenre() {
         return genre;
     }
 
-    public void setLanguages(String[] languages) {
+    public void setLanguages(List<String> languages) {
         this.languages = languages;
     }
 
-    public String[] getLanguages() {
+    public List<String> getLanguages() {
         return languages;
     }
 
-    public void setSubtitle(String[] subtitle) {
+    public void setSubtitle(List<String> subtitle) {
         this.subtitle = subtitle;
     }
 
-    public String[] getSubtitle() {
+    public List<String> getSubtitle() {
         return subtitle;
     }
 

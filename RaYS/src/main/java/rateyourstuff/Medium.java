@@ -15,6 +15,9 @@ public abstract class Medium
     private List<Collection> collections;
     private List<Rate> ratings;
 
+    // Constructors
+    /////////////////////////////////////////////////////////////////////////////////////
+
     public Medium(){};
 
     public Medium(String name){
@@ -22,7 +25,8 @@ public abstract class Medium
     }
 
 
-    //Set-/Get-Section
+    // Getter / Setter / Adder
+    /////////////////////////////////////////////////////////////////////////////////////
 
     public void setName(String name) {
         this.name = name;

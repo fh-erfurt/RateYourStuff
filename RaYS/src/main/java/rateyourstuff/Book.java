@@ -20,8 +20,10 @@ public class Book extends Medium //extends = erbt
     private List<Collection> bookSeries;
     private Integer numberOfPages;
 
-    public Book(){}
+    // Constructors
+    /////////////////////////////////////////////////////////////////////////////////////
 
+    public Book(){}
 
     public Book(String name,
                 Date publicationDate,
@@ -36,7 +38,9 @@ public class Book extends Medium //extends = erbt
         this.setRatingCounter(0);
     }
 
-    //Set-/ Get-Section
+    // Getter / Setter / Adder
+    /////////////////////////////////////////////////////////////////////////////////////
+
     public void setPublisher(List<String> publisher) {
         this.publisher = publisher;
     }
