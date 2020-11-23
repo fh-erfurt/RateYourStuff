@@ -1,7 +1,5 @@
 package rateyourstuff;
 
-import rateyourstuff.Medium;
-
 import java.util.Date;
 import java.util.List;
 
@@ -9,8 +7,7 @@ public class Book extends Medium //extends = erbt
 {
     private String name;
     private List<String> publisher;
-    //ToDo: Wirklich eine Liste von Autoren? Lieber den Hauptautor verwenden?
-    private List<Person> author;
+    private List<Person> authors;
     private String ISBN;
     private boolean isEBook;
     private boolean isPrint;
@@ -20,12 +17,17 @@ public class Book extends Medium //extends = erbt
 
     public Book(){}
 
-    public Book(String name, Date publicationDate, String shortDescription, List<String> publisher, List<Person> author){
+
+    public Book(String name,
+                Date publicationDate,
+                String shortDescription,
+                List<String> publisher,
+                List<Person> authors){
         this.setName(name);
         this.setPublicationDate(publicationDate);
         this.setShortDescription(shortDescription);
         this.setPublisher(publisher);
-        this.setAuthor(getAuthor().get(2));
+        this.authors.addAll(authors);
         this.setRatingCounter(0);
     }
 
@@ -43,12 +45,12 @@ public class Book extends Medium //extends = erbt
         //Add Publisher to list
     }
 
-    public void setAuthor(List<Person> author) {
-        this.author = author;
+    public void setAuthors(List<Person> authors) {
+        this.authors = authors;
     }
 
-    public List<Person> getAuthor() {
-        return author;
+    public List<Person> getAuthors() {
+        return authors;
     }
 
     public void addAuthor(List<Person> author) {
@@ -90,19 +92,19 @@ public class Book extends Medium //extends = erbt
         return languages;
     }
 
-    public void addLanguages(list<String> languages){
+    public void addLanguages(List<String> languages){
         //Add languages to list
     }
 
-    public void setBookSeries(list<Collection> bookSeries) {
+    public void setBookSeries(List<Collection> bookSeries) {
         this.bookSeries = bookSeries;
     }
 
-    public list<Collection> getBookSeries() {
+    public List<Collection> getBookSeries() {
         return bookSeries;
     }
 
-    public void addBookSeries(list<Collection> bookSeries){
+    public void addBookSeries(List<Collection> bookSeries){
         //Add rateyourstuff.Book Series to list
     }
 
@@ -121,4 +123,5 @@ public class Book extends Medium //extends = erbt
     public void setName(String name) {
         this.name = name;
     }
+
 }

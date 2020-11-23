@@ -16,7 +16,6 @@ abstract class Medium
 
     //Set-/Get-Section
 
-
     public void setPublicationDate(Date publicationDate) {
         this.publicationDate = publicationDate;
     }
