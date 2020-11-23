@@ -1,11 +1,3 @@
-package rateyourstuff;
-
-import rateyourstuff.Comment;
-import rateyourstuff.Progress;
-import rateyourstuff.Rate;
-
-import java.util.List;
-
 public class User
 {
     private String      firstName;
@@ -14,21 +6,21 @@ public class User
     private String      nickname;
     private String      password;
 
-    private List<Comment>       comment;
-    private List<Rate> rate;
-    private List<Progress>      progress;
+    private List<Comment>       comments;
+    private List<Rate>          rates;
+    private List<Progress>      progresses;
 
-    //create rateyourstuff.User
-    User(String firstName, String lastName, String email, String nickname, String password, List<Comment>comment, List<Rate>rate, List<Progress>progress)
+    //create User
+    User(String firstName, String lastName, String email, String nickname, String password, List<Comment>comments, List<Rate>rates, List<Progress>progresses)
     {
         this.setFirstName(firstName);
         this.setLastName(lastName);
         this.setEmail(email);
         this.setNickname(nickname);
         this.setPassword(password);
-        this.setComment(comment);
-        this.setRate(rate);
-        this.setProgress(progress);
+        this.setComment(comments);
+        this.setRate(rates);
+        this.setProgress(progresses);
     }
 
     //Set-/ Get-/ Add-Methode
@@ -67,23 +59,23 @@ public class User
         return password;
     }
 
-    public void setComment(List<Comment> comment) { this.comment = comment; }
-    public List<Comment> getComment() { return comment; }
-    public void addComment(List<Comment> comment) { this.comment.addAll(comment); }
+    public void setComment(List<Comment> comments) { this.comments = comments; }
+    public List<Comment> getComment() { return comments; }
+    public void addComment(List<Comment> comments) { this.comments.addAll(comments); }
 
-    public void setRate(List<Rate> rate) {
-        this.rate = rate;
+    public void setRate(List<Rate> rates) {
+        this.rates = rates;
     }
     public List<Rate> getRate() {
-        return rate;
+        return rates;
     }
-    public void addRate(List<Rate> rate) { this.rate.addAll(rate); }
+    public void addRate(List<Rate> rates) { this.rates.addAll(rates); }
 
-    public void setProgress(List<Progress> progress) {
-        this.progress = progress;
+    public void setProgress(List<Progress> progresses) {
+        this.progresses = progresses;
     }
     public List<Progress> getProgress() {
-        return progress;
+        return progresses;
     }
-    public void addProgress(List<Progress> progress) { this.progress.addAll(progress); }
+    public void addProgress(List<Progress> progresses) { this.progresses.addAll(progresses); }
 }
