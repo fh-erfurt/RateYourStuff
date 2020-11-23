@@ -4,6 +4,8 @@ import rateyourstuff.Comment;
 import rateyourstuff.Progress;
 import rateyourstuff.Rate;
 
+import java.util.List;
+
 public class User
 {
     private String      firstName;
@@ -13,7 +15,7 @@ public class User
     private String      password;
 
     private List<Comment>       comment;
-    private List<Rate>          rate;
+    private List<Rate> rate;
     private List<Progress>      progress;
 
     //create rateyourstuff.User

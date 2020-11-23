@@ -16,10 +16,11 @@ public class Episode extends Medium {
                    Date firstAired,
                    List<Person> guestStars,
                    int length) {
+        //super(title, plot, firstAired);
         this.episodeNumber = episodeNumber;
         this.guestStars = guestStars;
         this.length = length;
-        super(title, plot, firstAired);
+
     }
 
     public int getEpisodeNumber() {
