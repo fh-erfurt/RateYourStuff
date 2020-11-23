@@ -1,10 +1,18 @@
 package rateyourstuff;
 
+/*
+ *
+ * Author: Mickey Knop
+ *
+ * */
 
 import java.util.List;
 
 public class User
 {
+    //Attributes
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     private String      firstName;
     private String      lastName;
     private String      email;
@@ -15,7 +23,9 @@ public class User
     private List<Rate>          rates;
     private List<Progress>      progresses;
 
-    //create User
+    //construct rateyourstuff.User
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     public User(String firstName, String lastName, String email, String nickname, String password, List<Comment>comments, List<Rate>rates, List<Progress>progresses)
     {
         this.setFirstName(firstName);
@@ -28,7 +38,9 @@ public class User
         this.setProgress(progresses);
     }
 
-    //Set-/ Get-/ Add-Methode
+    // Getter / Setter / Adder
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }

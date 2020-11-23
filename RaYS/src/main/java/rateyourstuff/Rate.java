@@ -1,16 +1,26 @@
 package rateyourstuff;
 
+/*
+ *
+ * Author: Mickey Knop
+ *
+ * */
+
 import rateyourstuff.Medium;
 
 public class Rate
 {
+    //Attributes
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     private int minPoints; //ToDo: Entscheidung übner Konstante oder keine Konstante
     private int maxPoints;
     private int rating;
     private String description;
     private Medium medium;
 
-    //create rateyourstuff.Rate
+    //construct rateyourstuff.Rate
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////
     Rate(int minPoints, int maxPoints, int rating, String description, Medium medium)
     {
         this.setMinPoints(minPoints);
@@ -20,7 +30,9 @@ public class Rate
         this.setMedium(medium);
     }
 
-    //Set-/ Get-/ Add-Methode
+    // Getter / Setter / Adder
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     public void setMinPoints(int minPoints) { this.minPoints = minPoints; }
     public int getMinPoints() { return minPoints; }
 

@@ -1,16 +1,27 @@
 package rateyourstuff;
 
+/*
+ *
+ * Author: Mickey Knop
+ *
+ * */
+
 import java.util.Date;
 import java.util.List;
 
 public class Comment
 {
+    //Attributes
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     private String text;
     private User author;
     private Date date;
     private List<Comment> responses;
 
-    //create rateyourstuff.Comment
+    //construct rateyourstuff.Comment
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     Comment(String text, User author, Date date, List<Comment> responses)
     {
         this.setText(text);
@@ -19,7 +30,9 @@ public class Comment
         this.setResponses(responses);
     }
 
-    //Set-/ Get-/ Add-Methode
+    // Getter / Setter / Adder
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     public void setText(String text) { this.text = text; }
     public String getText() { return text; }
 
@@ -34,8 +47,10 @@ public class Comment
     public void AddResponses(List<Comment> responses) { this.responses.addAll(responses); }
 
     //Class functions
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     public void delete() {}
-    public boolean closed() {return false;}
-    public boolean spoiler() {return false;}
+    public boolean isClosed() {return false;}
+    public boolean isSpoiler() {return false;}
 
 }
