@@ -10,12 +10,12 @@ import java.util.List;
 
 public class Movie extends Medium
 {
-    private List<Person> producer;
-    private List<Person> director;
-    private List<Person> mainActor;
-    private List<String> genre;
+    private List<Person> producers;
+    private List<Person> directors;
+    private List<Person> mainActors;
+    private List<String> genres;
     private List<String> languages;
-    private List<String> subtitle;
+    private List<String> subtitles;
     private int totalDuration;
     private int ageRestriction;
     private String highestResolution; //To type as XXXXxXXXX e.G. 1750x1050
@@ -26,19 +26,19 @@ public class Movie extends Medium
     public Movie(){};
 
     public Movie(String name,
-                 List<Person> director,
-                 List<Person> mainActor,
-                 List<String> genre,
+                 List<Person> directors,
+                 List<Person> mainActors,
+                 List<String> genres,
                  List<String> languages,
                  int totalDuration,
                  int ageRestriction,
                  String highestResolution)
     {
         super(name);
-        this.director = director;
-        this.mainActor = mainActor;
-        this.genre = genre;
-        this.languages = languages;
+        this.directors.addAll(directors);
+        this.mainActors.addAll(mainActors);
+        this.genres.addAll(genres);
+        this.languages.addAll(languages);
         this.totalDuration = totalDuration;
         this.ageRestriction = ageRestriction;
         this.highestResolution = highestResolution;
@@ -49,36 +49,60 @@ public class Movie extends Medium
     // Getter / Setter / Adder
     /////////////////////////////////////////////////////////////////////////////////////
 
-    public void setProducer(List<Person> producer) {
-        this.producer = producer;
+    public void setProducers(List<Person> producers) {
+        this.producers = producers;
     }
 
-    public List<Person> getProducer() {
-        return producer;
+    public List<Person> getProducers() {
+        return producers;
+    }
+    
+    public void addProducers(List<Person> producers){
+        for(Person producer : producers){
+            this.producers.add(producer);
+        }
     }
 
-    public void setDirector(List<Person> director) {
-        this.director = director;
+    public void setDirectors(List<Person> directors) {
+        this.directors = directors;
     }
 
-    public List<Person> getDirector() {
-        return director;
+    public List<Person> getDirectors() {
+        return directors;
     }
 
-    public void setMainActor(List<Person> mainActor) {
-        this.mainActor = mainActor;
+    public void addDirectors(List<Person> directors){
+        for(Person director : directors){
+            this.directors.add(director);
+        }
     }
 
-    public List<Person> getMainActor() {
-        return mainActor;
+    public void setMainActors(List<Person> mainActors) {
+        this.mainActors = mainActors;
     }
 
-    public void setGenre(List<String> genre) {
-        this.genre = genre;
+    public List<Person> getMainActors() {
+        return mainActors;
     }
 
-    public List<String> getGenre() {
-        return genre;
+    public void addMainActors(List<Person> mainActors){
+        for(Person mainActor : mainActors){
+            this.mainActors.add(mainActor);
+        }
+    }
+
+    public void setGenres(List<String> genres) {
+        this.genres = genres;
+    }
+
+    public List<String> getGenres() {
+        return genres;
+    }
+
+    public void addGenres(List<String> genres){
+        for(String genre : genres){
+            this.genres.add(genre);
+        }
     }
 
     public void setLanguages(List<String> languages) {
@@ -89,12 +113,24 @@ public class Movie extends Medium
         return languages;
     }
 
-    public void setSubtitle(List<String> subtitle) {
-        this.subtitle = subtitle;
+    public void addLanguages(List<String> languages){
+        for(String language : languages){
+            this.languages.add(language);
+        }
     }
 
-    public List<String> getSubtitle() {
-        return subtitle;
+    public void setSubtitles(List<String> subtitles) {
+        this.subtitles = subtitles;
+    }
+
+    public List<String> getSubtitles() {
+        return subtitles;
+    }
+
+    public void addSubtitles(List<String> subtitles){
+        for(String subtitle : subtitles){
+            this.subtitles.add(subtitle);
+        }
     }
 
     public void setTotalDuration(int totalDuration) {

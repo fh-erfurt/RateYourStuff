@@ -3,17 +3,22 @@ package rateyourstuff;
 import java.util.Date;
 import java.util.List;
 
+
 public abstract class Medium
 {
     private String name;
     private Date publicationDate;
-    private List<Comment> comment;
+    private List<Comment> comments;
     private String shortDescription;
     private float averageRating;
     private String personalOpinion;
     private int ratingCounter;
     private List<Collection> collections;
     private List<Rate> ratings;
+
+    private Comment comment;
+    private Rate rate;
+
 
     // Constructors
     /////////////////////////////////////////////////////////////////////////////////////
@@ -44,16 +49,20 @@ public abstract class Medium
         return publicationDate;
     }
 
-    public void setComment(List<Comment> comment) {
-        this.comment = comment;
+    public void setComment(List<Comment> comments) {
+        this.comments = comments;
     }
 
     public List<Comment> getComment() {
-        return comment;
+        return comments;
     }
 
-    public void addComment(List<Comment> comment){
-        //Add new comment
+    public void addComments(Comment comment){
+        this.comments.add(comment);
+    }
+
+    public void addComment(List<Comment> comments){
+        //Add new comments
     }
 
     public void setShortDescription(String shortDescription) {
@@ -65,11 +74,13 @@ public abstract class Medium
     }
 
     public float setAverageRate(List<Rate> ratings){
-        float computedAverage =0f;
-        //Bewertungen in der Liste auslesen
-        //Bewertungen durch die Gesamtanzahl der Bewertungen teilen
-        //Durchschnittsbewertung return -> averageRating
-        return this.averageRating = computedAverage;
+        float tempAverage = 0f;
+        for(Rate currentRating : ratings) {
+            tempAverage = tempAverage + currentRating.getRating();
+        }
+        tempAverage = tempAverage/ratings.size();   //Devide the computed sum of ratings by the length of the list
+
+        return this.averageRating = tempAverage;
     }
 
     public float getAverageRating() {
@@ -101,7 +112,9 @@ public abstract class Medium
     }
 
     public void addCollections(List<Collection> collections){
-        //Add collections to list
+        for(Collection collection : collections){
+            this.collections.add(collection);
+        }
     }
 
     public void setRatings(List<Rate> ratings) {
@@ -113,6 +126,8 @@ public abstract class Medium
     }
 
     public void addRatings(List<Rate> ratings){
-        //Add new ratings
+        for(Rate rating : ratings){
+            this.ratings.add(rating);
+        }
     }
 }

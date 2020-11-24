@@ -30,19 +30,15 @@ public class Game extends Medium {
                 List<String> platforms,
                 List<String> genres){
         super(name);
-        this.platforms = platforms;
-        this.genres = genres;
+        this.platforms.addAll(platforms);
+        this.genres.addAll(genres);
     }
 
     // Getter / Setter / Adder
     /////////////////////////////////////////////////////////////////////////////////////
 
-    public float setAveragePlaytime(float averagePlaytime) {
-        float computedAverage = 0f;
-        //Spielzeiten aus Liste auslesen
-        //Spielzeiten durch die Gesamtzahl der Spielzeiten teilen
-        //Druchschnittszeit return -> averagePlaytime
-        return this.averagePlaytime = computedAverage;
+    public void setAveragePlaytime(float averagePlaytime) {
+        this.averagePlaytime = averagePlaytime;
     }
 
     public float getAveragePlaytime() {
@@ -74,7 +70,7 @@ public class Game extends Medium {
     }
 
     public void addLanguages(List<String> languages) {
-        this.languages = languages;
+        this.languages.addAll(languages);
     }
 
     public void setSubtitles(List<String> subtitles) {
@@ -86,7 +82,7 @@ public class Game extends Medium {
     }
 
     public void addSubtitles(List<String> subtitles) {
-        this.subtitles = subtitles;
+        this.subtitles.addAll(subtitles);
     }
 
     public void setHasMultiplayer(boolean hasMultiplayer) {
@@ -122,7 +118,7 @@ public class Game extends Medium {
     }
 
     public void addPlatforms(List<String> platforms) {
-        this.platforms = platforms;
+        this.platforms.addAll(platforms);
     }
 
     public void setGenres(List<String> genres) {
@@ -134,7 +130,7 @@ public class Game extends Medium {
     }
 
     public void addGenres(List<String> genres) {
-        this.genres = genres;
+        this.genres.addAll(genres);
     }
 
     public void setAgeRestriction(int ageRestriction) {

@@ -11,7 +11,7 @@ import java.util.List;
 public class Book extends Medium //extends = erbt
 {
     private String name;
-    private List<String> publisher;
+    private List<String> publishers;
     private List<Person> authors;
     private String ISBN;
     private boolean isEBook;
@@ -28,12 +28,12 @@ public class Book extends Medium //extends = erbt
     public Book(String name,
                 Date publicationDate,
                 String shortDescription,
-                List<String> publisher,
+                List<String> publishers,
                 List<Person> authors){
         super(name);
         this.setPublicationDate(publicationDate);
         this.setShortDescription(shortDescription);
-        this.setPublisher(publisher);
+        this.setPublishers(publishers);
         this.authors.addAll(authors);
         this.setRatingCounter(0);
     }
@@ -41,17 +41,18 @@ public class Book extends Medium //extends = erbt
     // Getter / Setter / Adder
     /////////////////////////////////////////////////////////////////////////////////////
 
-    public void setPublisher(List<String> publisher) {
-        this.publisher = publisher;
+    public void setPublishers(List<String> publishers) {
+        this.publishers = publishers;
     }
 
-    public List<String> getPublisher() {
-        return publisher;
+    public List<String> getPublishers() {
+        return publishers;
     }
 
-    public void addPublisher(List<String> publisher)
-    {
-        //Add Publisher to list
+    public void addPublishers(List<String> publishers) {
+        for(String publisher : publishers){
+            this.publishers.add(publisher);
+        }
     }
 
     public void setAuthors(List<Person> authors) {
@@ -62,8 +63,10 @@ public class Book extends Medium //extends = erbt
         return authors;
     }
 
-    public void addAuthor(List<Person> author) {
-        //Add Author to list
+    public void addAuthor(List<Person> authors) {
+        for(Person author : authors){
+            this.authors.add(author);
+        }
     }
 
     public void setISBN(String ISBN) {
@@ -102,7 +105,9 @@ public class Book extends Medium //extends = erbt
     }
 
     public void addLanguages(List<String> languages){
-        //Add languages to list
+        for(String language : languages){
+            this.languages.add(language);
+        }
     }
 
     public void setBookSeries(List<Collection> bookSeries) {
@@ -114,7 +119,9 @@ public class Book extends Medium //extends = erbt
     }
 
     public void addBookSeries(List<Collection> bookSeries){
-        //Add rateyourstuff.Book Series to list
+        for(Collection partOfBookSeries : bookSeries){
+            this.bookSeries.add(partOfBookSeries);
+        }
     }
 
     public void setNumberOfPages(Integer numberOfPages) {
