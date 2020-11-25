@@ -2,7 +2,12 @@ package rateyourstuff;
 
 public class ProgressBook extends Progress {
 
-    //public ProgressBook(){}
+    /*
+     *
+     * Author: John Klippstein
+     *
+     * */
+
 
     public ProgressBook(Book book){
         super(book);
@@ -11,7 +16,7 @@ public class ProgressBook extends Progress {
     private Integer currentPage;
 
 
-    //Set-/ Get-/ Add-Methode
+    //Set-/ Get- Methode
 
     public Integer getNumberOfPages() {
         return currentPage;
