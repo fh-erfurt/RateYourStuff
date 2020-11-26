@@ -6,6 +6,7 @@ package rateyourstuff;
  *
  * */
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -16,18 +17,18 @@ public class Comment
 
     private String text;
     private User author;
-    private Date date;
+    private LocalDate date;
     private List<Comment> responses;
 
     //construct rateyourstuff.Comment
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    Comment(String text, User author, Date date, List<Comment> responses)
+    Comment(String text, User author, LocalDate date, List<Comment> responses)
     {
-        this.setText(text);
-        this.setAuthor(author);
-        this.setDate(date);
-        this.setResponses(responses);
+        this.text = text;
+        this.author = author;
+        this.date = date;
+        this.responses = responses;
     }
 
     // Getter / Setter / Adder
@@ -39,8 +40,8 @@ public class Comment
     public void setAuthor(User author) { this.author = author; }
     public User getAuthor() { return author; }
 
-    public void setDate(Date date) { this.date = date; }
-    public Date getDate() { return date; }
+    public void setDate(LocalDate date) { this.date = date; }
+    public LocalDate getDate() { return date; }
 
     public void setResponses(List<Comment> responses) { this.responses = responses; }
     public List<Comment> getResponses() { return responses; }

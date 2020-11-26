@@ -6,6 +6,7 @@ package rateyourstuff;
  *
  * */
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -13,7 +14,7 @@ public abstract class Medium
 {
     private int mediumID;
     private String name;
-    private Date publicationDate;
+    private LocalDate publicationDate;
     private List<Comment> comments;
     private String shortDescription;
     private float averageRating;
@@ -52,11 +53,11 @@ public abstract class Medium
         return name;
     }
 
-    public void setPublicationDate(Date publicationDate) {
+    public void setPublicationDate(LocalDate publicationDate) {
         this.publicationDate = publicationDate;
     }
 
-    public Date getPublicationDate() {
+    public LocalDate getPublicationDate() {
         return publicationDate;
     }
 

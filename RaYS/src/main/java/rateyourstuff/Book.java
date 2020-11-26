@@ -6,6 +6,8 @@ package rateyourstuff;
 *
 * */
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -13,7 +15,7 @@ public class Book extends Medium //extends = erbt
 {
     private String name;
     private List<String> publishers;
-    private List<Person> authors;
+    private ArrayList<Person> authors;
     private String ISBN;
     private boolean isEBook;
     private boolean isPrint;
@@ -26,11 +28,13 @@ public class Book extends Medium //extends = erbt
 
     public Book(int mediumID,
                 String name,
-                Date publicationDate,
+                LocalDate publicationDate,
                 String shortDescription,
                 List<String> publishers,
-                List<Person> authors){
+                ArrayList<Person> authors){
         super(mediumID, name);
+        this.authors = new ArrayList<Person>();
+
         this.setPublicationDate(publicationDate);
         this.setShortDescription(shortDescription);
         this.setPublishers(publishers);
@@ -55,7 +59,7 @@ public class Book extends Medium //extends = erbt
         }
     }
 
-    public void setAuthors(List<Person> authors) {
+    public void setAuthors(ArrayList<Person> authors) {
         this.authors = authors;
     }
 

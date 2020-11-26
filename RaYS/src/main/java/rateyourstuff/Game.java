@@ -6,6 +6,7 @@ package rateyourstuff;
  *
  * */
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Game extends Medium {
@@ -29,6 +30,8 @@ public class Game extends Medium {
                 List<String> platforms,
                 List<String> genres){
         super(mediumID, name);
+        this.platforms = new ArrayList<String>();
+        this.genres = new ArrayList<String>();
         this.platforms.addAll(platforms);
         this.genres.addAll(genres);
     }

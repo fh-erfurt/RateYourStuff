@@ -18,7 +18,9 @@ public class Collection {
     /////////////////////////////////////////////////////////////////////////////////////
 
     public Collection(Integer collectionID, String name, List<Medium> listMediumCollection){
-
+        this.collectionID = collectionID;
+        this.name = name;
+        this.listMediumCollection = listMediumCollection;
     }
 
 

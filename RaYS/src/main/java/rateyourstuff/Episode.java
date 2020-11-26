@@ -2,6 +2,7 @@ package rateyourstuff;
 
 import rateyourstuff.Medium;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -13,12 +14,13 @@ public class Episode extends Medium {
 
     //<editor-fold desc="Constructors">
     public Episode(int episodeNumber,
+                   int mediaID,
                    String name,
                    String shortDescription,
-                   Date publicationDate,
+                   LocalDate publicationDate,
                    List<Person> guestStars,
                    int length) {
-        super(name);
+        super(mediaID, name);
         setShortDescription(shortDescription);
         setPublicationDate(publicationDate);
         this.episodeNumber = episodeNumber;
