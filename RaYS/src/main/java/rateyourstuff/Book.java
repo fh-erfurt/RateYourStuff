@@ -3,6 +3,7 @@ package rateyourstuff;
 /*
 *
 * Auhor: Christoph Frischmuth
+*
 * */
 
 import java.util.Date;

@@ -1,8 +1,13 @@
 package rateyourstuff;
 
+/*
+ *
+ * Author: Christoph Frischmuth
+ *
+ * */
+
 import java.util.Date;
 import java.util.List;
-
 
 public abstract class Medium
 {

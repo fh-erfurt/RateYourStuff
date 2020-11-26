@@ -1,13 +1,13 @@
 package rateyourstuff;
 
-import java.util.Date;
-import java.util.List;
-
 /*
  *
  * Author: Christoph Frischmuth
  *
  * */
+
+import java.util.Date;
+import java.util.List;
 
 public class Series extends Medium {
     private List<Person> producers;

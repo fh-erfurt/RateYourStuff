@@ -1,12 +1,12 @@
 package rateyourstuff;
 
-import java.util.List;
-
 /*
  *
  * Author: Christoph Frischmuth
  *
  * */
+
+import java.util.List;
 
 public class Game extends Medium {
     private float averagePlaytime;
