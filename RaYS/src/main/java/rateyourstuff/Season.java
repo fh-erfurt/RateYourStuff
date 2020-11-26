@@ -11,7 +11,7 @@ public class Season {
     private String title;
     private List<Episode> episodes;
 
-    //<editor-fold desc="Constructors">
+    //region Constructor
     public Season(Series series) {
         this(series, "");
     }
@@ -20,9 +20,9 @@ public class Season {
         this.series = series;
         this.title = title;
     }
-    //</editor-fold>
+    //endregion
 
-    //<editor-fold desc="Getter//Setter//Adder">
+    //region "Getter//Setter//Adder"
     public Series getSeries() {
         return series;
     }
@@ -46,5 +46,5 @@ public class Season {
     public void setTitle(String title) {
         this.title = title;
     }
-    //</editor-fold>
+    //endregion
 }
