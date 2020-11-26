@@ -23,9 +23,8 @@ public class Movie extends Medium
     // Constructors
     /////////////////////////////////////////////////////////////////////////////////////
 
-    public Movie(){};
-
-    public Movie(String name,
+    public Movie(int mediumID,
+                 String name,
                  List<Person> directors,
                  List<Person> mainActors,
                  List<String> genres,
@@ -34,7 +33,7 @@ public class Movie extends Medium
                  int ageRestriction,
                  String highestResolution)
     {
-        super(name);
+        super(mediumID,name);
         this.directors.addAll(directors);
         this.mainActors.addAll(mainActors);
         this.genres.addAll(genres);

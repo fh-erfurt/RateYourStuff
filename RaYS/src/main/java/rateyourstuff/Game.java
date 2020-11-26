@@ -24,12 +24,11 @@ public class Game extends Medium {
     // Constructors
     /////////////////////////////////////////////////////////////////////////////////////
 
-    public Game(){};
-
-    public Game(String name,
+    public Game(int mediumID,
+                String name,
                 List<String> platforms,
                 List<String> genres){
-        super(name);
+        super(mediumID, name);
         this.platforms.addAll(platforms);
         this.genres.addAll(genres);
     }

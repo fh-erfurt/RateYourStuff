@@ -6,6 +6,7 @@ import java.util.List;
 
 public abstract class Medium
 {
+    private int mediumID;
     private String name;
     private Date publicationDate;
     private List<Comment> comments;
@@ -23,15 +24,20 @@ public abstract class Medium
     // Constructors
     /////////////////////////////////////////////////////////////////////////////////////
 
-    public Medium(){};
-
-    public Medium(String name){
+    public Medium(int mediumID,
+                  String name){
         this.name = name;
+        this.mediumID = mediumID;
     }
 
 
     // Getter / Setter / Adder
     /////////////////////////////////////////////////////////////////////////////////////
+
+
+    public int getMediumID() {
+        return mediumID;
+    }
 
     public void setName(String name) {
         this.name = name;

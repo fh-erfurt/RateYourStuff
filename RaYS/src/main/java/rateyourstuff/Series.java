@@ -28,16 +28,15 @@ public class Series extends Medium {
     // Constructors
     /////////////////////////////////////////////////////////////////////////////////////
 
-    public Series(){}
-
-    public Series(String name,
+    public Series(int mediumID,
+                  String name,
                   Date publicationDate,
                   List<Person> directors,
                   List<Person> cast,
                   List<String> genres,
                   int ageRestriction,
                   boolean isCompleted) {
-        super(name);
+        super(mediumID, name);
         this.setPublicationDate(publicationDate);
         this.directors.addAll(directors);
         this.cast.addAll(cast);

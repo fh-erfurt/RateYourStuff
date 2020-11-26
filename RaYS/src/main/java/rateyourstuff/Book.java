@@ -23,14 +23,13 @@ public class Book extends Medium //extends = erbt
     // Constructors
     /////////////////////////////////////////////////////////////////////////////////////
 
-    public Book(){}
-
-    public Book(String name,
+    public Book(int mediumID,
+                String name,
                 Date publicationDate,
                 String shortDescription,
                 List<String> publishers,
                 List<Person> authors){
-        super(name);
+        super(mediumID, name);
         this.setPublicationDate(publicationDate);
         this.setShortDescription(shortDescription);
         this.setPublishers(publishers);
