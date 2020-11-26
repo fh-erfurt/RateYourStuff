@@ -1,5 +1,11 @@
 package rateyourstuff;
 
+/*
+ *
+ * Author: Christoph Frischmuth
+ *
+ * */
+
 public class Resolution {
     private int width;
     private int height;
