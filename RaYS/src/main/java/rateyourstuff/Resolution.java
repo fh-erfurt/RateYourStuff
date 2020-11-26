@@ -1,5 +1,6 @@
 package rateyourstuff;
 
+//
 /*
  *
  * Author: Christoph Frischmuth
