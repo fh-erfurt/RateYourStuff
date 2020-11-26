@@ -21,6 +21,7 @@ public class Rate
 
     //construct rateyourstuff.Rate
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     Rate(int minPoints, int maxPoints, int rating, String description, Medium medium)
     {
         this.setMinPoints(minPoints);
