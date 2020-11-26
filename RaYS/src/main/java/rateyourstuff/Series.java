@@ -6,7 +6,6 @@ package rateyourstuff;
  *
  * */
 
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -31,7 +30,7 @@ public class Series extends Medium {
 
     public Series(int mediumID,
                   String name,
-                  LocalDate publicationDate,
+                  Date publicationDate,
                   List<Person> directors,
                   List<Person> cast,
                   List<String> genres,

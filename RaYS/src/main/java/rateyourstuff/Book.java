@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Book extends Medium //extends = erbt
+public class Book extends Medium
 {
     private String name;
     private List<String> publishers;
