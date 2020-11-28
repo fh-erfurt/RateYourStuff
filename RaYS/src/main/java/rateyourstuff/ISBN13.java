@@ -9,17 +9,17 @@ public class ISBN13 {
 
     private String isbn;
 
-    ISBN13(String isbn) throws InvalidISBNException {
-        if (isValid(isbn)) {
-            this.isbn = isbn;
+    ISBN13(String isbn13) throws InvalidISBNException {
+        if (isValid(isbn13)) {
+            this.isbn = isbn13;
         } else {
-            throw new InvalidISBNException(isbn + "is invalid");
+            throw new InvalidISBNException(isbn13 + "is invalid");
         }
     }
 
     //returns true if given isbn13 is valid
     public static boolean isValid (String isbn13) {
-        return (isValidFormat(isbn13) && validateChecksum(isbn13));
+        return (isValidFormat(isbn13) && hasValidChecksum(isbn13));
     }
 
     //returns true if format of the isbn is valid (ignores checksum-correctness)
@@ -34,23 +34,23 @@ public class ISBN13 {
     }
 
     //returns true if the given isbn has a valid checksum
-    static boolean validateChecksum(String isbn) {
+    static boolean hasValidChecksum(String isbn13) {
         //Extract the checksum of the given ISBN
-        char placedCheckSum = extractChecksum(isbn);
+        char placedCheckSum = extractChecksum(isbn13);
         //Calculate the checksum of the given ISBN
-        char actualCheckSum = calculateChecksum(isbn);
+        char actualCheckSum = calculateChecksum(isbn13);
 
         return placedCheckSum == actualCheckSum;
     }
 
     //returns the checksum of a given isbn
-    public static char extractChecksum(String isbn) {
-        return isbn.charAt(isbn.length()-1);
+    public static char extractChecksum(String isbn13) {
+        return isbn13.charAt(isbn13.length()-1);
     }
 
     //returns the correct checksum, receives complete isbn
-    public static char calculateChecksum(String isbn) {
-        String mainISBN = isbn;
+    public static char calculateChecksum(String isbn13) {
+        String mainISBN = isbn13;
         mainISBN = mainISBN.substring(0, mainISBN.length()-1).replace("-", "");
 
         int isbnSum = 0;

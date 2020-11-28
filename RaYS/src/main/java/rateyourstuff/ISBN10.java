@@ -8,17 +8,17 @@ public class ISBN10 {
 
     private String isbn;
 
-    public ISBN10(String isbn) throws InvalidISBNException {
-        if (isValid(isbn)) {
-            this.isbn = isbn;
+    public ISBN10(String isbn10) throws InvalidISBNException {
+        if (isValid(isbn10)) {
+            this.isbn = isbn10;
         } else {
-            throw new InvalidISBNException(isbn + "is invalid");
+            throw new InvalidISBNException(isbn10 + "is invalid");
         }
     }
 
     //returns true if given isbn13 is valid
-    public static boolean isValid (String isbn13) {
-        return (isValidFormat(isbn13) && validateChecksum(isbn13));
+    public static boolean isValid (String isbn10) {
+        return (isValidFormat(isbn10) && hasValidChecksum(isbn10));
     }
 
     //returns true if format of the isbn is valid (ignores checksum-correctness)
@@ -33,23 +33,23 @@ public class ISBN10 {
     }
 
     //returns true if the given isbn has a valid checksum
-    static boolean validateChecksum(String isbn) {
+    static boolean hasValidChecksum(String isbn10) {
         //Extract the checksum of the given ISBN
-        char placedCheckSum = extractChecksum(isbn);
+        char placedCheckSum = extractChecksum(isbn10);
         //Calculate the checksum of the given ISBN
-        char actualCheckSum = calculateChecksum(isbn);
+        char actualCheckSum = calculateChecksum(isbn10);
 
         return placedCheckSum == actualCheckSum;
     }
 
     //returns the checksum of a given isbn
-    public static char extractChecksum(String isbn) {
-        return isbn.charAt(isbn.length()-1);
+    public static char extractChecksum(String isbn10) {
+        return isbn10.charAt(isbn10.length()-1);
     }
 
     //returns the correct checksum, receives complete isbn
-    public static char calculateChecksum(String isbn) {
-        String mainISBN = isbn;
+    public static char calculateChecksum(String isbn10) {
+        String mainISBN = isbn10;
         mainISBN = mainISBN.substring(0, mainISBN.length()-1).replace("-", "");
 
         int isbnSum = 0;
