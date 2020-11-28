@@ -4,13 +4,13 @@ import rateyourstuff.Progress;
 
 public class ProgressGame extends Progress {
 
-    private float hoursPlayed;
+    private float hoursPlayed = 0;
 
     public ProgressGame(Game game) {
         super(game);
     }
 
-    //<editor-fold desc="Getter//Setter//Adder>
+    //region Getter//Setter//Adder
     public float getHoursPlayed() {
         return hoursPlayed;
     }
@@ -20,7 +20,7 @@ public class ProgressGame extends Progress {
     }
 
     @Override
-    float getProgressPercentage() {
+    public float getProgressPercentage() {
         float percentage = 0f;
         if(getMedium() instanceof Game)
         {
@@ -31,5 +31,5 @@ public class ProgressGame extends Progress {
         }
         return percentage;
     }
-    //</editor-fold>
+    //endregion
 }

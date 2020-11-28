@@ -36,7 +36,7 @@ public class ProgressSeries extends Progress{
         the method is using the current page and the number of pages from the book itself
      */
     @Override
-    float getProgressPercentage() {
+    public float getProgressPercentage() {
         float percentage = 0f;
         if(getMedium() instanceof Series)
         {

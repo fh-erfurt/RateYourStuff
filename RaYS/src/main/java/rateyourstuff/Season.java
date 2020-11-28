@@ -2,6 +2,7 @@ package rateyourstuff;
 
 import rateyourstuff.Episode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Season {
@@ -19,10 +20,11 @@ public class Season {
     public Season(Series series, String title) {
         this.series = series;
         this.title = title;
+        this.episodes = new ArrayList<>();
     }
     //endregion
 
-    //region "Getter//Setter//Adder"
+    //region Getter//Setter//Adder
     public Series getSeries() {
         return series;
     }

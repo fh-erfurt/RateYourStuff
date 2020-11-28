@@ -10,8 +10,7 @@ public abstract class Progress {
         this.medium = medium;
     }
 
-    abstract float getProgressPercentage();
-
+    public abstract float getProgressPercentage();
     public Medium getMedium() {
         return medium;
     }

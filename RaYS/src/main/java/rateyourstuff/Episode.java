@@ -12,7 +12,7 @@ public class Episode extends Medium {
     //value specifies episode length measured in full minutes
     private int length;
 
-    //<editor-fold desc="Constructors">
+    //region Constructors
     public Episode(int episodeNumber,
                    int mediaID,
                    String name,
@@ -27,9 +27,9 @@ public class Episode extends Medium {
         this.guestStars = guestStars;
         this.length = length;
     }
-    //</editor-fold>
+    //endregion
 
-    //<editor-fold desc="Getter//Setter//Adder">
+    //region Getter//Setter//Adder
     public int getEpisodeNumber() {
         return episodeNumber;
     }
@@ -57,5 +57,5 @@ public class Episode extends Medium {
     public void setLength(int length) {
         this.length = length;
     }
-    //</editor-fold>
+    //endregion
 }
