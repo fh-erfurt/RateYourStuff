@@ -8,10 +8,14 @@ package rateyourstuff;
  * */
 
 public class Resolution {
+    //region Attributes
+    ////////////////////////////////////////////////////////////////////////////////////
     private int width;
     private int height;
+    //endregion
 
-
+    //region Getter // Setter
+    ////////////////////////////////////////////////////////////////////////////////////
     public void setWidth(int width) {
         this.width = width;
     }
@@ -31,4 +35,5 @@ public class Resolution {
     public String toString() {
         return width + "x" + height;
     }
+    //endregion
 }

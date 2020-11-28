@@ -11,6 +11,8 @@ import java.util.Date;
 import java.util.List;
 
 public class Series extends Medium {
+    //region Attributes
+    ////////////////////////////////////////////////////////////////////////////////////
     private List<Person> producers;
     private List<Person> directors;
     private List<Person> cast;
@@ -24,11 +26,12 @@ public class Series extends Medium {
     private int numberOfSeasons;
     private int numberOfEpisodes;
 
+
     private Resolution resolution;
+    //endregion
 
-    // Constructors
-    /////////////////////////////////////////////////////////////////////////////////////
-
+    //region Constructors
+    ////////////////////////////////////////////////////////////////////////////////////
     public Series(int mediumID,
                   String name,
                   LocalDate publicationDate,
@@ -45,11 +48,10 @@ public class Series extends Medium {
         this.ageRestriction = ageRestriction;
         this.isCompleted = isCompleted;
     }
+    //endregion
 
-        // Getter / Setter / Adder
-        /////////////////////////////////////////////////////////////////////////////////////
-
-
+    //region Getter // Setter // Adder
+    ////////////////////////////////////////////////////////////////////////////////////
     public void setProducers(List<Person> producers) {
         this.producers = producers;
     }
@@ -153,4 +155,5 @@ public class Series extends Medium {
     public int getNumberOfEpisodes() {
         return numberOfEpisodes;
     }
+    //endregion
 }

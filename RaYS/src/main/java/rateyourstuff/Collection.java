@@ -10,23 +10,24 @@ import java.util.List;
 
 public class Collection {
 
+    //region Attributes
+    ////////////////////////////////////////////////////////////////////////////////////
     private Integer collectionID;
     private String name;
     private List<Medium> listMediumCollection;
+    //endregion
 
-    // Constructors
-    /////////////////////////////////////////////////////////////////////////////////////
-
+    //region Constructors
+    ////////////////////////////////////////////////////////////////////////////////////
     public Collection(Integer collectionID, String name, List<Medium> listMediumCollection){
         this.collectionID = collectionID;
         this.name = name;
         this.listMediumCollection = listMediumCollection;
     }
+    //endregion
 
-
-    // Getter / Setter / Adder
-    /////////////////////////////////////////////////////////////////////////////////////
-
+    //region Getter // Setter // Adder
+    ////////////////////////////////////////////////////////////////////////////////////
     public Integer getCollectionID() {
         return collectionID;
     }
@@ -57,4 +58,5 @@ public class Collection {
             this.listMediumCollection.add(listMediumCollections);
         }
     }
+    //endregion
 }

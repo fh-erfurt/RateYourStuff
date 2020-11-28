@@ -10,9 +10,8 @@ import java.util.List;
 
 public class Person {
 
-    //Attributes
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    //region Attributes
+    ////////////////////////////////////////////////////////////////////////////////////
     private String firstName;
 
     private String lastName;
@@ -24,11 +23,10 @@ public class Person {
     private Boolean isProducer;
 
     private List<Medium> mediums;
+    //endregion
 
-
-    // Getter / Setter
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    //region Getter // Setter
+    ////////////////////////////////////////////////////////////////////////////////////
     public String getFirstName() {
         return firstName;
     }
@@ -76,6 +74,7 @@ public class Person {
     public void setMediumList(List<Medium> mediumList) {
         this.mediums = mediumList;
     }
+    //endregion
 
 
 }

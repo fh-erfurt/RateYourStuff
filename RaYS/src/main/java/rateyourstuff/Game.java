@@ -10,6 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Game extends Medium {
+
+    //region Attributes
+    ////////////////////////////////////////////////////////////////////////////////////
     private float averagePlaytime;
     private String publisher;
     private String developer;
@@ -21,10 +24,10 @@ public class Game extends Medium {
     private List<String> platforms;
     private List<String> genres;
     private int ageRestriction;
+    //endregion
 
-    // Constructors
-    /////////////////////////////////////////////////////////////////////////////////////
-
+    //region Constructors
+    ////////////////////////////////////////////////////////////////////////////////////
     public Game(int mediumID,
                 String name,
                 List<String> platforms,
@@ -35,10 +38,10 @@ public class Game extends Medium {
         this.platforms.addAll(platforms);
         this.genres.addAll(genres);
     }
+    //endregion
 
-    // Getter / Setter / Adder
-    /////////////////////////////////////////////////////////////////////////////////////
-
+    //region Getter // Setter // Adder
+    ////////////////////////////////////////////////////////////////////////////////////
     public void setAveragePlaytime(float averagePlaytime) {
         this.averagePlaytime = averagePlaytime;
     }
@@ -142,4 +145,5 @@ public class Game extends Medium {
     public int getAgeRestriction() {
         return ageRestriction;
     }
+    //endregion
 }

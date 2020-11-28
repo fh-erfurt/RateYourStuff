@@ -10,6 +10,8 @@ import java.util.List;
 
 public class Movie extends Medium
 {
+    //region Attributes
+    ////////////////////////////////////////////////////////////////////////////////////
     private List<Person> producers;
     private List<Person> directors;
     private List<Person> mainActors;
@@ -19,10 +21,10 @@ public class Movie extends Medium
     private int totalDuration;
     private int ageRestriction;
     private String highestResolution; //To type as XXXXxXXXX e.G. 1750x1050
+    //endregion
 
-    // Constructors
-    /////////////////////////////////////////////////////////////////////////////////////
-
+    //region Constructors
+    ////////////////////////////////////////////////////////////////////////////////////
     public Movie(int mediumID,
                  String name,
                  List<Person> directors,
@@ -42,12 +44,11 @@ public class Movie extends Medium
         this.ageRestriction = ageRestriction;
         this.highestResolution = highestResolution;
     }
+    //endregion
 
 
-
-    // Getter / Setter / Adder
-    /////////////////////////////////////////////////////////////////////////////////////
-
+    //region Getter // Setter // Adder
+    ////////////////////////////////////////////////////////////////////////////////////
     public void setProducers(List<Person> producers) {
         this.producers = producers;
     }
@@ -155,4 +156,5 @@ public class Movie extends Medium
     public String getHighestResolution() {
         return highestResolution;
     }
+    //endregion
 }

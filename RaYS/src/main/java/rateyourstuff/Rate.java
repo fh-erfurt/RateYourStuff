@@ -10,18 +10,17 @@ import rateyourstuff.Medium;
 
 public class Rate
 {
-    //Attributes
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    //region Attributes
+    ////////////////////////////////////////////////////////////////////////////////////
     private int minPoints; //ToDo: Entscheidung übner Konstante oder keine Konstante
     private int maxPoints;
     private int rating;
     private String description;
     private Medium medium;
+    //endregion
 
-    //construct rateyourstuff.Rate
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    //region Constructors
+    ////////////////////////////////////////////////////////////////////////////////////
     Rate(int minPoints, int maxPoints, int rating, String description, Medium medium)
     {
         this.setMinPoints(minPoints);
@@ -30,10 +29,10 @@ public class Rate
         this.setDescription(description);
         this.setMedium(medium);
     }
+    //endregion
 
-    // Getter / Setter / Adder
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    //region Getter // Setter
+    ////////////////////////////////////////////////////////////////////////////////////
     public void setMinPoints(int minPoints) { this.minPoints = minPoints; }
     public int getMinPoints() { return minPoints; }
 
@@ -48,4 +47,5 @@ public class Rate
 
     public void setMedium(Medium medium) { this.medium = medium; }
     public Medium getMedium() { return medium; }
+    //endregion
 }

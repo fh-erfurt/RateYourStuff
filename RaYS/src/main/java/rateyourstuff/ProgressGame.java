@@ -1,16 +1,26 @@
 package rateyourstuff;
-
-import rateyourstuff.Progress;
+/*
+ *
+ * Author: Robin Beck
+ *
+ * */
 
 public class ProgressGame extends Progress {
 
+    //region Attributes
+    ////////////////////////////////////////////////////////////////////////////////////
     private float hoursPlayed = 0;
+    //endregion
 
+    //region Constructors
+    ////////////////////////////////////////////////////////////////////////////////////
     public ProgressGame(Game game) {
         super(game);
     }
+    //endregion
 
-    //region Getter//Setter//Adder
+    //region Getter // Setter
+    ////////////////////////////////////////////////////////////////////////////////////
     public float getHoursPlayed() {
         return hoursPlayed;
     }

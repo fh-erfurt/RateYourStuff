@@ -10,9 +10,8 @@ import java.util.List;
 
 public class User
 {
-    //Attributes
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    //region Attributes
+    ////////////////////////////////////////////////////////////////////////////////////
     private String      firstName;
     private String      lastName;
     private String      email;
@@ -22,10 +21,10 @@ public class User
     private List<Comment> comments;
     private List<Rate>          rates;
     private List<Progress>      progresses;
+    //endregion
 
-    //construct rateyourstuff.User
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    //region Constructors
+    ////////////////////////////////////////////////////////////////////////////////////
     public User(String firstName, String lastName, String email, String nickname, String password, List<Comment>comments, List<Rate>rates, List<Progress>progresses)
     {
         this.setFirstName(firstName);
@@ -37,10 +36,10 @@ public class User
         this.setRate(rates);
         this.setProgress(progresses);
     }
+    //endregion
 
-    // Getter / Setter / Adder
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    //region Getter // Setter
+    ////////////////////////////////////////////////////////////////////////////////////
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -95,4 +94,5 @@ public class User
         return progresses;
     }
     public void addProgress(List<Progress> progresses) { this.progresses.addAll(progresses); }
+    //endregion
 }

@@ -13,6 +13,8 @@ import java.util.List;
 
 public class Book extends Medium
 {
+    //region Attributes
+    ////////////////////////////////////////////////////////////////////////////////////
     private String name;
     private List<String> publishers;
     private ArrayList<Person> authors;
@@ -22,9 +24,10 @@ public class Book extends Medium
     private List<String> languages;
     private List<Collection> bookSeries;
     private Integer numberOfPages;
+    //endregion
 
-    // Constructors
-    /////////////////////////////////////////////////////////////////////////////////////
+    //region Constructors
+    ////////////////////////////////////////////////////////////////////////////////////
 
     public Book(int mediumID,
                 String name,
@@ -41,10 +44,10 @@ public class Book extends Medium
         this.authors.addAll(authors);
         this.setRatingCounter(0);
     }
+    //endregion
 
-    // Getter / Setter / Adder
-    /////////////////////////////////////////////////////////////////////////////////////
-
+    //region Getter // Setter // Adder
+    ////////////////////////////////////////////////////////////////////////////////////
     public void setPublishers(List<String> publishers) {
         this.publishers = publishers;
     }
@@ -143,5 +146,6 @@ public class Book extends Medium
     public void setName(String name) {
         this.name = name;
     }
+    //endregion
 
 }

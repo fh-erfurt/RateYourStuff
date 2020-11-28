@@ -1,18 +1,24 @@
 package rateyourstuff;
-
-import rateyourstuff.Medium;
+/*
+ *
+ * Author: Robin Beck
+ *
+ * */
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 public class Episode extends Medium {
+    //region Attributes
+    ////////////////////////////////////////////////////////////////////////////////////
     private int episodeNumber;
     private List<Person> guestStars;
     //value specifies episode length measured in full minutes
     private int length;
+    //endregion
 
     //region Constructors
+    ////////////////////////////////////////////////////////////////////////////////////
     public Episode(int episodeNumber,
                    int mediaID,
                    String name,
@@ -29,7 +35,8 @@ public class Episode extends Medium {
     }
     //endregion
 
-    //region Getter//Setter//Adder
+    //region Getter // Setter // Adder
+    ////////////////////////////////////////////////////////////////////////////////////
     public int getEpisodeNumber() {
         return episodeNumber;
     }

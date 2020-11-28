@@ -9,18 +9,18 @@ package rateyourstuff;
 
 public class ProgressSeries extends Progress{
 
-
+    //region Attributes
+    ////////////////////////////////////////////////////////////////////////////////////
     private Integer currentSeason;
+    //endregion
 
-    // Constructors
-    /////////////////////////////////////////////////////////////////////////////////////
-
+    //region Constructors
+    ////////////////////////////////////////////////////////////////////////////////////
     public ProgressSeries(Series series){super(series);}
+    //endregion
 
-
-    // Getter / Setter / Adder
-    /////////////////////////////////////////////////////////////////////////////////////
-
+    //region Getter // Setter
+    ////////////////////////////////////////////////////////////////////////////////////
     public Integer getCurrentSeason() {
         return currentSeason;
     }
@@ -28,10 +28,10 @@ public class ProgressSeries extends Progress{
     public void setCurrentSeason(Integer currentSeason) {
         this.currentSeason = currentSeason;
     }
+    //endregion
 
-
-    //Functions
-
+    //region Methods
+    ////////////////////////////////////////////////////////////////////////////////////
     /* the method bellow calculated the progress of the book in percent
         the method is using the current page and the number of pages from the book itself
      */
@@ -46,7 +46,5 @@ public class ProgressSeries extends Progress{
 
         return percentage;
     }
-
-
-
+    //endregion
 }

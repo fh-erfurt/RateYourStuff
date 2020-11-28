@@ -8,16 +8,17 @@ package rateyourstuff;
 
 public class Address
 {
-    //Attributes
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    //region Attributes
+    ////////////////////////////////////////////////////////////////////////////////////
     private String street;
     private String houseNumber;
     private String zipCode;
     private String city;
 
-    //construct rateyourstuff.Address
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //endregion
+
+    //region Constructor
+    ////////////////////////////////////////////////////////////////////////////////////
 
     Address(String street, String houseNumber, String zipCode, String City)
     {
@@ -26,9 +27,10 @@ public class Address
         this.setZipCode(zipCode);
         this.setCity(city);
     }
+    //endregion
 
-    // Getter / Setter / Adder
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //region Getter // Setter
+    ////////////////////////////////////////////////////////////////////////////////////
 
     public void setStreet(String street) { this.street = street; }
     public String getStreet() { return street; }
@@ -41,4 +43,6 @@ public class Address
 
     public void setCity(String city) { this.city = city; }
     public String getCity() { return city; }
+
+    //endregion
 }

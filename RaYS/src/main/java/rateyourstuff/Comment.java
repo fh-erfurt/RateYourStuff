@@ -12,17 +12,16 @@ import java.util.List;
 
 public class Comment
 {
-    //Attributes
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    //region Attributes
+    ////////////////////////////////////////////////////////////////////////////////////
     private String text;
     private User author;
     private LocalDate date;
     private List<Comment> responses;
+    //endregion
 
-    //construct rateyourstuff.Comment
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    //region Constructors
+    ////////////////////////////////////////////////////////////////////////////////////
     Comment(String text, User author, LocalDate date, List<Comment> responses)
     {
         this.text = text;
@@ -30,10 +29,10 @@ public class Comment
         this.date = date;
         this.responses = responses;
     }
+    //endregion
 
-    // Getter / Setter / Adder
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    //region Getter // Setter // Adder
+    ////////////////////////////////////////////////////////////////////////////////////
     public void setText(String text) { this.text = text; }
     public String getText() { return text; }
 
@@ -46,12 +45,13 @@ public class Comment
     public void setResponses(List<Comment> responses) { this.responses = responses; }
     public List<Comment> getResponses() { return responses; }
     public void AddResponses(List<Comment> responses) { this.responses.addAll(responses); }
+    //endregion
 
-    //Class functions
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    //region Methods
+    ////////////////////////////////////////////////////////////////////////////////////
     public void delete() {}
     public boolean isClosed() {return false;}
     public boolean isSpoiler() {return false;}
+    //endregion
 
 }

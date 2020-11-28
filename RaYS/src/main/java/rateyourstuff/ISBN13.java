@@ -1,14 +1,24 @@
 package rateyourstuff;
+/*
+ *
+ * Author: Robin Beck
+ *
+ * */
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ISBN13 {
+    //region Attributes
+    ////////////////////////////////////////////////////////////////////////////////////
     public static final String ISBN_13_PREFIX = "978-";
     public static final int    ISBN_13_LENGTH = 13;
 
     private String isbn;
+    //endregion
 
+    //region Constructors
+    ////////////////////////////////////////////////////////////////////////////////////
     ISBN13(String isbn13) throws InvalidISBNException {
         if (isValid(isbn13)) {
             this.isbn = isbn13;
@@ -16,6 +26,10 @@ public class ISBN13 {
             throw new InvalidISBNException(isbn13 + "is invalid");
         }
     }
+    //endregion
+
+    //region Methods
+    ////////////////////////////////////////////////////////////////////////////////////
 
     //returns true if given isbn13 is valid
     public static boolean isValid (String isbn13) {
@@ -80,4 +94,5 @@ public class ISBN13 {
     public String toString() {
         return isbn;
     }
+    //endregion
 }

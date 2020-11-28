@@ -12,6 +12,8 @@ import java.util.List;
 
 public abstract class Medium
 {
+    //region Attributes
+    ////////////////////////////////////////////////////////////////////////////////////
     private int mediumID;
     private String name;
     private LocalDate publicationDate;
@@ -25,22 +27,21 @@ public abstract class Medium
 
     private Comment comment;
     private Rate rate;
+    //endregion
 
 
-    // Constructors
-    /////////////////////////////////////////////////////////////////////////////////////
-
+    //region Constructors
+    ////////////////////////////////////////////////////////////////////////////////////
     public Medium(int mediumID,
                   String name){
         this.name = name;
         this.mediumID = mediumID;
     }
+    //endregion
 
 
-    // Getter / Setter / Adder
-    /////////////////////////////////////////////////////////////////////////////////////
-
-
+    //region Getter // Setter // Adder
+    ////////////////////////////////////////////////////////////////////////////////////
     public int getMediumID() {
         return mediumID;
     }
@@ -142,4 +143,5 @@ public abstract class Medium
             this.ratings.add(rating);
         }
     }
+    //endregion
 }

@@ -1,18 +1,20 @@
 package rateyourstuff;
 
-import rateyourstuff.Episode;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Season {
+    //region Attributes
+    ////////////////////////////////////////////////////////////////////////////////////
     private int seasonNumber;
     private Series series;
     private int numberOfEpisodes;
     private String title;
     private List<Episode> episodes;
+    //endregion
 
-    //region Constructor
+    //region Constructors
+    ////////////////////////////////////////////////////////////////////////////////////
     public Season(Series series) {
         this(series, "");
     }
@@ -24,7 +26,8 @@ public class Season {
     }
     //endregion
 
-    //region Getter//Setter//Adder
+    //region Getter // Setter
+    ////////////////////////////////////////////////////////////////////////////////////
     public Series getSeries() {
         return series;
     }

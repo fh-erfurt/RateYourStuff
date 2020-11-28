@@ -1,23 +1,25 @@
 package rateyourstuff;
-
+/*
+ *
+ * Author: John Klippstein
+ *
+ * */
 public class ProgressBook extends Progress {
 
-    /*
-     *
-     * Author: John Klippstein
-     *
-     * */
+    //region Attributes
+    ////////////////////////////////////////////////////////////////////////////////////
+    private Integer currentPage;
+    //endregion
 
-
+    //region Constructors
+    ////////////////////////////////////////////////////////////////////////////////////
     public ProgressBook(Book book){
         super(book);
     }
+    //endregion
 
-    private Integer currentPage;
-
-
-    //Set-/ Get- Methode
-
+    //region Getter // Setter
+    ////////////////////////////////////////////////////////////////////////////////////
     public Integer getNumberOfPages() {
         return currentPage;
     }
@@ -25,9 +27,10 @@ public class ProgressBook extends Progress {
     public void setNumberOfPages(Integer currentPage) {
         this.currentPage = currentPage;
     }
+    //endregion
 
-
-    //Functions
+    //region Methods
+    ////////////////////////////////////////////////////////////////////////////////////
 
     /* the method bellow calculated the progress of the book in percent
         the method is using the current page and the number of pages from the book itself
@@ -43,5 +46,6 @@ public class ProgressBook extends Progress {
 
         return percentage;
     }
+    //endregion
 
 }
