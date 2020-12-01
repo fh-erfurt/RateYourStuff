@@ -20,12 +20,12 @@ public class Address
     //region Constructor
     ////////////////////////////////////////////////////////////////////////////////////
 
-    Address(String street, String houseNumber, String zipCode, String City)
+    Address(String street, String houseNumber, String zipCode, String city)
     {
-        this.setStreet(street);
-        this.setHouseNumber(houseNumber);
-        this.setZipCode(zipCode);
-        this.setCity(city);
+        this.street         = street;
+        this.houseNumber    = houseNumber;
+        this.zipCode        = zipCode;
+        this.city           = city;
     }
     //endregion
 

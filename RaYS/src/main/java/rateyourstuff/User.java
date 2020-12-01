@@ -12,29 +12,29 @@ public class User
 {
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
-    private String      firstName;
-    private String      lastName;
-    private String      email;
-    private String      nickname;
-    private String      password;
+    private String          firstName;
+    private String          lastName;
+    private String          email;
+    private String          nickname;
+    private String          password;
 
-    private List<Comment> comments;
-    private List<Rate>          rates;
-    private List<Progress>      progresses;
+    private List<Comment>   comments;
+    private List<Rate>      rates;
+    private List<Progress>  progresses;
     //endregion
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
     public User(String firstName, String lastName, String email, String nickname, String password, List<Comment>comments, List<Rate>rates, List<Progress>progresses)
     {
-        this.setFirstName(firstName);
-        this.setLastName(lastName);
-        this.setEmail(email);
-        this.setNickname(nickname);
-        this.setPassword(password);
-        this.setComment(comments);
-        this.setRate(rates);
-        this.setProgress(progresses);
+        this.firstName  = firstName;
+        this.lastName   = lastName;
+        this.email      = email;
+        this.nickname   = nickname;
+        this.password   = password;
+        this.comments   = comments;
+        this.rates      = rates;
+        this.progresses = progresses;
     }
     //endregion
 

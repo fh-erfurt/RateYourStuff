@@ -18,7 +18,8 @@ public class Library {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     Library(List<Medium> media) {
-        this.setMedia(media);
+
+        this.media = media;
     }
 
 

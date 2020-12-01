@@ -24,9 +24,9 @@ public class Comment
     ////////////////////////////////////////////////////////////////////////////////////
     Comment(String text, User author, LocalDate date, List<Comment> responses)
     {
-        this.text = text;
-        this.author = author;
-        this.date = date;
+        this.text      = text;
+        this.author    = author;
+        this.date      = date;
         this.responses = responses;
     }
     //endregion

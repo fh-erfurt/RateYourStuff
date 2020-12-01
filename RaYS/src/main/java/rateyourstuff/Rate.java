@@ -23,11 +23,11 @@ public class Rate
     ////////////////////////////////////////////////////////////////////////////////////
     Rate(int minPoints, int maxPoints, int rating, String description, Medium medium)
     {
-        this.setMinPoints(minPoints);
-        this.setMaxPoints(maxPoints);
-        this.setRating(rating);
-        this.setDescription(description);
-        this.setMedium(medium);
+        this.minPoints = minPoints;
+        this.maxPoints = maxPoints;
+        this.rating = rating;
+        this.description = description;
+        this.medium = medium;
     }
     //endregion
 
