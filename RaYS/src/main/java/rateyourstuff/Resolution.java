@@ -12,6 +12,7 @@ public class Resolution {
     ////////////////////////////////////////////////////////////////////////////////////
     private int width;
     private int height;
+    private String highestResolution;
     //endregion
 
     //region Getter // Setter
@@ -34,6 +35,14 @@ public class Resolution {
 
     public String toString() {
         return width + "x" + height;
+    }
+
+    public void setHighestResolution(String highestResolution) {
+        this.highestResolution = highestResolution;
+    }
+
+    public String getHighestResolution() {
+        return highestResolution;
     }
     //endregion
 }
