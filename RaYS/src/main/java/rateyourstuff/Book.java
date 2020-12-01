@@ -37,7 +37,6 @@ public class Book extends Medium
                 ArrayList<Person> authors){
         super(mediumID, name);
         this.authors = new ArrayList<Person>();
-
         this.setPublicationDate(publicationDate);
         this.setShortDescription(shortDescription);
         this.setPublishers(publishers);

@@ -1,10 +1,10 @@
 package rateyourstuff;
 
-/*
+/**
  *
- * Author: Christoph Frischmuth
+ * @author Christoph Frischmuth
  *
- * */
+ */
 
 import java.time.LocalDate;
 import java.util.Date;
