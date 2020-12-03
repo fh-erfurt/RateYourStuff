@@ -17,6 +17,7 @@ public class Comment
     private String text;
     private User author;
     private LocalDate date;
+    private Boolean isClosed;
     private List<Comment> responses;
     //endregion
 
@@ -45,13 +46,22 @@ public class Comment
     public void setResponses(List<Comment> responses) { this.responses = responses; }
     public List<Comment> getResponses() { return responses; }
     public void AddResponses(List<Comment> responses) { this.responses.addAll(responses); }
+
+    public Boolean getClosed() {
+        return isClosed;
+    }
+
+    public void setClosed(Boolean closed) {
+        isClosed = closed;
+    }
     //endregion
 
     //region Methods
     ////////////////////////////////////////////////////////////////////////////////////
     public void delete() {}
-    public boolean isClosed() {return false;}
     public boolean isSpoiler() {return false;}
+
+
     //endregion
 
 }
