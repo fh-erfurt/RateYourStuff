@@ -25,12 +25,8 @@ public class test_addUser {
     @Test
     void should_validateUser()
     {
-        fillList();
-//        for(User listedUser : userList)
-//        {
-//            System.out.println(listedUser.getNickname());
-//            System.out.println(listedUser.getEmail());
-//        }
+        fillList(); //execute function to fill 2 Users to userList
+
         // The first two tests includes already existent values for nickname and/or email and should return true
         assertEquals(true, userService.isValidUser("Chris", "chris_f@knop.de", userList));
         assertEquals(true, userService.isValidUser("Chris", "ben@knop.de", userList));
