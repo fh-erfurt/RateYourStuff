@@ -32,9 +32,10 @@ public class User
         this.email      = email;
         this.nickname   = nickname;
         this.password   = password;
-        this.comments   = comments;
-        this.rates      = rates;
-        this.progresses = progresses;
+        // Should we give following attribute for a new user? Where is the logic?
+//        this.comments   = comments;
+//        this.rates      = rates;
+//        this.progresses = progresses;
     }
     //endregion
 
