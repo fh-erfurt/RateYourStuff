@@ -34,6 +34,14 @@ public class test_addUser {
         assertEquals(false, userService.isValidUser("Ben", "ben@knop.de", userList));
     }
 
+    @Test
+    void should_addUser()
+    {
+        fillList();
+    assertEquals(true, userService.addUser("Ben", "Papagei", "papagei@vogel.com", "BenPap", "2255", userList));
+    assertEquals(true, userService.addUser("Karsten", "Papagei", "Karsten@knop.de", "Karsti", "2255", userList));
+    }
+
 
 
 }

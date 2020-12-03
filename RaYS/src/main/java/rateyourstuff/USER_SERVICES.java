@@ -21,24 +21,21 @@ public class USER_SERVICES
         return false;
     }
 
-//    private boolean isUserStored(User user, List<User> userList)
-//    {
-//        if(user.getNickname() == userList.stream().findAny())
-//    }
-
-    //Add user if user not already exists
-    public void addUser(String firstName,
+    //Add user if user not already exists and returns true if user is (already) in userList.
+    public boolean addUser(String firstName,
                         String lastName,
                         String email,
                         String nickname,
                         String password,
                         ArrayList<User> userList)
     {
-        if(isValidUser(nickname, email, userList) == true)
+        if(isValidUser(nickname, email, userList) == false)
         {
-            User nick = new User(firstName, lastName, email, nickname,password, null, null, null);
-            userList.add(nick);
+            User user  = new User(firstName, lastName, email, nickname,password, null, null, null);
+            userList.add(user);
+            System.out.println("Saving user!");
         }
+        return isValidUser(nickname, email, userList);
 
     }
 }
