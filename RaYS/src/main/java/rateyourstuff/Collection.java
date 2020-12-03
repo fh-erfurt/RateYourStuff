@@ -14,7 +14,7 @@ public class Collection {
     ////////////////////////////////////////////////////////////////////////////////////
     private Integer collectionID;
     private String name;
-    private List<Medium> listMediumCollection;
+    private List<Medium> mediumCollection;
     //endregion
 
     //region Constructors
@@ -22,7 +22,7 @@ public class Collection {
     public Collection(Integer collectionID, String name, List<Medium> listMediumCollection){
         this.collectionID = collectionID;
         this.name = name;
-        this.listMediumCollection = listMediumCollection;
+        this.mediumCollection = listMediumCollection;
     }
     //endregion
 
@@ -44,18 +44,18 @@ public class Collection {
         this.name = name;
     }
 
-    public List<Medium> getListMediumCollection() {
-        return listMediumCollection;
+    public List<Medium> getMediumCollection() {
+        return mediumCollection;
     }
 
-    public void setListMediumCollection(List<Medium> listMediumCollection) {
-        this.listMediumCollection = listMediumCollection;
+    public void setMediumCollection(List<Medium> mediumCollection) {
+        this.mediumCollection = mediumCollection;
     }
 
     public void addMediumCollection(List<Medium> listMediumCollection){
         for(Medium listMediumCollections : listMediumCollection)
         {
-            this.listMediumCollection.add(listMediumCollections);
+            this.mediumCollection.add(listMediumCollections);
         }
     }
     //endregion

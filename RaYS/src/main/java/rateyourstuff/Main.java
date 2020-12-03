@@ -2,7 +2,6 @@ package rateyourstuff;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Main {
@@ -29,7 +28,7 @@ public class Main {
 
         //Collection Test
         Collection myCollection = new Collection(0,"Harry Potter", media);
-        System.out.println("Media List:\t" + myCollection.getListMediumCollection());
+        System.out.println("Media List:\t" + myCollection.getMediumCollection());
 
         //User Test
         User testUser = new User("John", "Doe", "n@e.com", "nickname", "Passw0rd", null, null, null);
