@@ -63,12 +63,12 @@ public class ISBN13 {
     }
 
     //returns the correct checksum, receives complete isbn
-    public static char calculateChecksum(String isbn13) {
-        String mainISBN = isbn13;
+    public static char calculateChecksum(String isbn) {
+        String mainISBN = isbn;
         mainISBN = mainISBN.substring(0, mainISBN.length()-1).replace("-", "");
 
         int isbnSum = 0;
-        int checkSum;
+        int checkSum = 0;
         for(int i = 0; i < mainISBN.length(); i++) {
             int currentValue = Integer.parseInt(String.valueOf(mainISBN.charAt(i)));
             isbnSum += ((i+1) % 2 == 0) ? 3 * currentValue : currentValue;
@@ -78,16 +78,16 @@ public class ISBN13 {
         if(checkSum == 10) {
             checkSum = 0;
         }
-        return (char) checkSum;
+        return (char) (checkSum + '0');
     }
 
     public static String toISBN13(ISBN10 isbn10) {
         String isbn13;
         String isbn10String = isbn10.toString();
-        isbn13 = ISBN_13_PREFIX + isbn10String;
-        int isbn13CheckSum = calculateChecksum(isbn13);
-        isbn13 = isbn13.substring(0, isbn13.length()-1) + isbn13CheckSum;
 
+        isbn13 = ISBN_13_PREFIX + isbn10String;
+        char isbn13CheckSum = calculateChecksum(isbn13);
+        isbn13 = isbn13.substring(0, isbn13.length()-1) + isbn13CheckSum;
         return isbn13;
     }
 
