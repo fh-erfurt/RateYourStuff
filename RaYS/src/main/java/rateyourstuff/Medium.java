@@ -138,9 +138,9 @@ public abstract class Medium
         return ratings;
     }
 
-    public void addRatings(List<Rate> ratings){
+    public void addRatings(List<Rate> ratings, Rate rate){
         for(Rate rating : ratings){
-            this.ratings.add(rating);
+            this.ratings.add(rate);
         }
     }
     //endregion

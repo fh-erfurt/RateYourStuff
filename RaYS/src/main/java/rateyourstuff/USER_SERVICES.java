@@ -3,6 +3,13 @@ package rateyourstuff;
 import java.util.List;
 import java.util.ArrayList;
 
+/*
+ *
+ * Author: Christoph Frischmuth
+ *
+ * */
+
+
 public class USER_SERVICES
 {
     //Check if user already exists in current user list and return true if the user exists
@@ -31,15 +38,18 @@ public class USER_SERVICES
     {
         if(isValidUser(nickname, email, userList) == false)
         {
-            User user  = new User(firstName, lastName, email, nickname,password, null, null, null);
+            ArrayList<Comment> userComments = new ArrayList<>();
+            ArrayList<Rate> userRates = new ArrayList<>();
+            ArrayList<Progress> userProgress = new ArrayList<>();
+            User user  = new User(firstName, lastName, email, nickname, password, userComments, userRates, userProgress);
             userList.add(user);
-            System.out.println("Saving user!");
+            System.out.println("Saved user with Nickname " + nickname + "!");
         }
         else
         {
             return false;
         }
-        return isValidUser(nickname, email, userList);
+        return true;
 
     }
 }
