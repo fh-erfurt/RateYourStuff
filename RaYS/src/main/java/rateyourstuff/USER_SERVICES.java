@@ -35,6 +35,10 @@ public class USER_SERVICES
             userList.add(user);
             System.out.println("Saving user!");
         }
+        else
+        {
+            return false;
+        }
         return isValidUser(nickname, email, userList);
 
     }

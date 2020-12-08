@@ -40,6 +40,8 @@ public class test_addUser {
         fillList();
     assertEquals(true, userService.addUser("Ben", "Papagei", "papagei@vogel.com", "BenPap", "2255", userList));
     assertEquals(true, userService.addUser("Karsten", "Papagei", "Karsten@knop.de", "Karsti", "2255", userList));
+    //Should be false because of the user is already existing
+    assertEquals(true, userService.addUser("Karsten", "Papagei", "Karsten@knop.de", "Karsti", "2255", userList));
     }
 
 
