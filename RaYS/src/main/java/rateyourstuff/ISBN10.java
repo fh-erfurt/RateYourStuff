@@ -31,13 +31,13 @@ public class ISBN10 {
     //region Methods
     ////////////////////////////////////////////////////////////////////////////////////
 
-    //returns true if given isbn13 is valid
+    //returns true if given isbn10 is valid
     public static boolean isValid (String isbn10) {
-        return (isValidFormat(isbn10) && hasValidChecksum(isbn10));
+        return (hasValidFormat(isbn10) && hasValidChecksum(isbn10));
     }
 
     //returns true if format of the isbn is valid (ignores checksum-correctness)
-    public static boolean isValidFormat (String isbn10) {
+    private static boolean hasValidFormat (String isbn10) {
         //RegEx pattern to determine structure of ISBN
         Pattern isbnPattern = Pattern.compile("\\b\\d{1,5}-\\d{2,7}-\\d{2,7}-(\\d|X)\\b");
         Matcher isbnMatcher = isbnPattern.matcher(isbn10);
@@ -48,7 +48,7 @@ public class ISBN10 {
     }
 
     //returns true if the given isbn has a valid checksum
-    static boolean hasValidChecksum(String isbn10) {
+    private static boolean hasValidChecksum(String isbn10) {
         //Extract the checksum of the given ISBN
         char placedCheckSum = extractChecksum(isbn10);
         //Calculate the checksum of the given ISBN
@@ -58,12 +58,12 @@ public class ISBN10 {
     }
 
     //returns the checksum of a given isbn
-    public static char extractChecksum(String isbn10) {
+    private static char extractChecksum(String isbn10) {
         return isbn10.charAt(isbn10.length()-1);
     }
 
     //returns the correct checksum, receives complete isbn
-    public static char calculateChecksum(String isbn10) {
+    private static char calculateChecksum(String isbn10) {
         String mainISBN = isbn10;
         mainISBN = mainISBN.substring(0, mainISBN.length()-1).replace("-", "");
 
@@ -85,6 +85,7 @@ public class ISBN10 {
         return  checkSumChar;
     }
 
+    @Override
     public String toString() {
         return isbn;
     }
