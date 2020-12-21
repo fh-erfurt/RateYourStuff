@@ -19,16 +19,13 @@ public class Episode extends Medium {
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
-    public Episode(int episodeNumber,
-                   int mediaID,
-                   String name,
-                   String shortDescription,
+    public Episode(String name,
                    LocalDate publicationDate,
+                   String shortDescription,
+                   int episodeNumber,
                    List<Person> guestStars,
                    int length) {
         super(name, publicationDate, shortDescription);
-        setShortDescription(shortDescription);
-        setPublicationDate(publicationDate);
         this.episodeNumber = episodeNumber;
         this.guestStars = guestStars;
         this.length = length;

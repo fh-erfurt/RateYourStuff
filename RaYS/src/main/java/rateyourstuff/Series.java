@@ -187,4 +187,35 @@ public class Series extends Medium {
         seasons.add(currentSeason);
         return true;
     }
+
+    public boolean addNewEpisode(String name,
+                                 LocalDate publicationDate,
+                                 String shortDescription,
+                                 int episodeNumber,
+                                 List<Person> guestStars,
+                                 int length,
+                                 int seasonNumber) {
+        Season targetSeason = null;
+
+        for(Season season : seasons) {
+            if(season.getSeasonNumber() == seasonNumber) {
+                targetSeason = season;
+            }
+        }
+
+        if(targetSeason == null || name.equals("") || episodeNumber < 1 || (guestStars.size() == 0) || length < 0) {
+            return false;
+        }
+
+        Episode currentEpisode = new Episode(name, publicationDate, shortDescription, episodeNumber, guestStars, length);
+
+        if(targetSeason.findEpisode(currentEpisode) != null) {
+            return false;
+        }
+
+        targetSeason.addEpisode(currentEpisode);
+        return true;
+
+    }
+
 }

@@ -41,6 +41,10 @@ public class Season {
         this.episodes.addAll(episodes);
     }
 
+    public void addEpisode(Episode episode) {
+        episodes.add(episode);
+    }
+
     public String getTitle() {
         return title;
     }
@@ -55,6 +59,16 @@ public class Season {
 
     public void setSeasonNumber(int seasonNumber) {
         this.seasonNumber = seasonNumber;
+    }
+
+    public Episode findEpisode(Episode searchedEpisode) {
+        for(Episode episode : episodes) {
+            if(episode.getEpisodeNumber() == searchedEpisode.getEpisodeNumber() ||
+                    episode.getName() == searchedEpisode.getName()) {
+                return episode;
+            }
+        }
+        return null;
     }
     //endregion
 
