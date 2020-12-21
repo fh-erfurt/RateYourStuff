@@ -6,6 +6,7 @@ package rateyourstuff;
  *
  * */
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,26 +19,39 @@ public class Game extends Medium {
     private String developer;
     private List<String> languages;
     private List<String> subtitles;
-    private boolean hasMultiplayer;
-    private int minValueOfGamers;
-    private int maxValueOfGamers;
+    private int minNumberOfPlayers;
+    private int maxNumberOfPlayers;
     private List<String> platforms;
-    private List<String> genres;
     private int ageRestriction;
     //endregion
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
-    /*public Game(int mediumID,
-                String name,
-                List<String> platforms,
-                List<String> genres){
-        super(mediumID, name);
-        this.platforms = new ArrayList<String>();
-        this.genres = new ArrayList<String>();
-        this.platforms.addAll(platforms);
-        this.genres.addAll(genres);
-    }*/
+    public Game (String name,
+                 LocalDate publicationDate,
+                 String shortDescription,
+                 float averagePlayTime,
+                 String publisher,
+                 String developer,
+                 List<String> languages,
+                 List<String> subtitles,
+                 int minNumberOfPlayers,
+                 int maxNumberOfPlayers,
+                 List<String> platforms,
+                 int ageRestriction) {
+        super(name, publicationDate, shortDescription);
+        this.averagePlaytime = averagePlayTime;
+        this.publisher = publisher;
+        this.developer = developer;
+        this.languages = languages;
+        this.subtitles = subtitles;
+        this.minNumberOfPlayers = minNumberOfPlayers;
+        this.maxNumberOfPlayers = maxNumberOfPlayers;
+        this.platforms = platforms;
+        this.ageRestriction = ageRestriction;
+    }
+
+
     //endregion
 
     //region Getter // Setter // Adder
@@ -90,28 +104,20 @@ public class Game extends Medium {
         this.subtitles.addAll(subtitles);
     }
 
-    public void setHasMultiplayer(boolean hasMultiplayer) {
-        this.hasMultiplayer = hasMultiplayer;
+    public void setMinNumberOfPlayers(int minNumberOfPlayers) {
+        this.minNumberOfPlayers = minNumberOfPlayers;
     }
 
-    public boolean getHasMultiplayer(){
-        return hasMultiplayer;
+    public int getMinNumberOfPlayers() {
+        return minNumberOfPlayers;
     }
 
-    public void setMinValueOfGamers(int minValueOfGamers) {
-        this.minValueOfGamers = minValueOfGamers;
+    public void setMaxNumberOfPlayers(int maxNumberOfPlayers) {
+        this.maxNumberOfPlayers = maxNumberOfPlayers;
     }
 
-    public int getMinValueOfGamers() {
-        return minValueOfGamers;
-    }
-
-    public void setMaxValueOfGamers(int maxValueOfGamers) {
-        this.maxValueOfGamers = maxValueOfGamers;
-    }
-
-    public int getMaxValueOfGamers() {
-        return maxValueOfGamers;
+    public int getMaxNumberOfPlayers() {
+        return maxNumberOfPlayers;
     }
 
     public void setPlatforms(List<String> platforms) {
@@ -124,18 +130,6 @@ public class Game extends Medium {
 
     public void addPlatforms(List<String> platforms) {
         this.platforms.addAll(platforms);
-    }
-
-    public void setGenres(List<String> genres) {
-        this.genres = genres;
-    }
-
-    public List<String> getGenres() {
-        return genres;
-    }
-
-    public void addGenres(List<String> genres) {
-        this.genres.addAll(genres);
     }
 
     public void setAgeRestriction(int ageRestriction) {

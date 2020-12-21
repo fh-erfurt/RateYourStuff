@@ -155,5 +155,41 @@ public class Library {
         return true;
     }
 
+    public boolean addNewGame(String name,
+                              LocalDate publicationDate,
+                              String shortDescription,
+                              float averagePlayTime,
+                              String publisher,
+                              String developer,
+                              List<String> languages,
+                              List<String> subtitles,
+                              int minNumberOfPlayers,
+                              int maxNumberOfPlayers,
+                              List<String> platforms,
+                              int ageRestriction){
+        if(name.equals("") || (averagePlayTime <= 0) || publisher.equals("") || developer.equals("") ||
+                (languages.size() == 0) || (subtitles.size() == 0) || (minNumberOfPlayers < 1) ||
+                maxNumberOfPlayers < minNumberOfPlayers || (platforms.size() == 0) || (ageRestriction < 0)) {
+            return false;
+        }
+
+        Game currentGame = new Game(name,
+                publicationDate,
+                shortDescription,
+                averagePlayTime,
+                publisher,
+                developer,
+                languages,
+                subtitles,
+                minNumberOfPlayers,
+                maxNumberOfPlayers,
+                platforms,
+                ageRestriction);
+
+        media.add(currentGame);
+
+        return true;
+    }
+
     //endregion
 }

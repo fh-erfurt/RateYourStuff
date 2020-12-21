@@ -220,4 +220,44 @@ public class LibraryTest {
         assertTrue(seriesHasBeenInserted, "Series has not been inserted successfully!");
     }
 
+    @Test
+    public void should_add_game_to_library() {
+        //Given
+        String name = "Dreams";
+        LocalDate publicationDate = LocalDate.of(2020, 2,29);
+        String shortDescription = "Spiel zum Erstellen von Spielen";
+        float averagePlayTime = 6f;
+        String publisher = "Sony";
+        String developer = "MediaMolecule";
+        List<String> languages = new ArrayList<String>();
+        languages.add("Englisch");
+
+        List<String> subtitles = new ArrayList<String>();
+        subtitles.add("Englisch");
+
+        int minNumberOfPlayers = 1;
+        int maxNumberOfPlayers = 4;
+        List<String> platforms = new ArrayList<String>();
+        platforms.add("PlayStation4");
+
+        int ageRestriction = 6;
+
+        //When
+        boolean gameHasBeenInserted = library.addNewGame(name,
+                publicationDate,
+                shortDescription,
+                averagePlayTime,
+                publisher,
+                developer,
+                languages,
+                subtitles,
+                minNumberOfPlayers,
+                maxNumberOfPlayers,
+                platforms,
+                ageRestriction);
+
+        //Then
+        assertTrue(gameHasBeenInserted, "The game has not been inserted successfully!");
+    }
+
 }
