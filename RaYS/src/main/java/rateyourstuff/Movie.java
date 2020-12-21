@@ -6,6 +6,7 @@ package rateyourstuff;
  *
  * */
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class Movie extends Medium
@@ -15,35 +16,35 @@ public class Movie extends Medium
     private List<Person> producers;
     private List<Person> directors;
     private List<Person> mainActors;
-    private List<String> genres;
     private List<String> languages;
-    private List<String> subtitles;
     private int totalDuration;
     private int ageRestriction;
-    private String highestResolution; //To type as XXXXxXXXX e.G. 1750x1050
+    private Resolution highestResolution; //To type as XXXXxXXXX e.G. 1750x1050
     //endregion
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
-    /*public Movie(int mediumID,
-                 String name,
-                 List<Person> directors,
-                 List<Person> mainActors,
-                 List<String> genres,
-                 List<String> languages,
-                 int totalDuration,
-                 int ageRestriction,
-                 String highestResolution)
-    {
+    public Movie (String name,
+                  LocalDate publicationDate,
+                  String shortDescription,
+                  List<Person> producers,
+                  List<Person> directors,
+                  List<String> languages,
+                  List<Person> mainActors,
+                  int totalDuration,
+                  int ageRestriction,
+                  Resolution highestResolution) {
         super(name, publicationDate, shortDescription);
-        this.directors.addAll(directors);
-        this.mainActors.addAll(mainActors);
-        this.genres.addAll(genres);
-        this.languages.addAll(languages);
+        this.producers = producers;
+        this.directors = directors;
+        this.languages = languages;
+        this.mainActors = mainActors;
         this.totalDuration = totalDuration;
         this.ageRestriction = ageRestriction;
         this.highestResolution = highestResolution;
-    }*/
+    }
+
+
     //endregion
 
 
@@ -91,20 +92,6 @@ public class Movie extends Medium
         }
     }
 
-    public void setGenres(List<String> genres) {
-        this.genres = genres;
-    }
-
-    public List<String> getGenres() {
-        return genres;
-    }
-
-    public void addGenres(List<String> genres){
-        for(String genre : genres){
-            this.genres.add(genre);
-        }
-    }
-
     public void setLanguages(List<String> languages) {
         this.languages = languages;
     }
@@ -116,20 +103,6 @@ public class Movie extends Medium
     public void addLanguages(List<String> languages){
         for(String language : languages){
             this.languages.add(language);
-        }
-    }
-
-    public void setSubtitles(List<String> subtitles) {
-        this.subtitles = subtitles;
-    }
-
-    public List<String> getSubtitles() {
-        return subtitles;
-    }
-
-    public void addSubtitles(List<String> subtitles){
-        for(String subtitle : subtitles){
-            this.subtitles.add(subtitle);
         }
     }
 
@@ -149,11 +122,11 @@ public class Movie extends Medium
         return ageRestriction;
     }
 
-    public void setHighestResolution(String highestResolution) {
+    public void setHighestResolution(Resolution highestResolution) {
         this.highestResolution = highestResolution;
     }
 
-    public String getHighestResolution() {
+    public Resolution getHighestResolution() {
         return highestResolution;
     }
     //endregion

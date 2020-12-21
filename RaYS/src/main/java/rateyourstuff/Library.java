@@ -93,5 +93,36 @@ public class Library {
         return true;
     }
 
+    // Adds new Movie to library, returns true, if successful, fals if unsuccessful
+    public boolean addNewMovie (String name,
+                                LocalDate publicationDate,
+                                String shortDescription,
+                                List<Person> producers,
+                                List<Person> directors,
+                                List<String> languages,
+                                List<Person> mainActors,
+                                int totalDuration,
+                                int ageRestriction,
+                                Resolution highestResolution) {
+        //check if given Values are valid
+        if(name.equals("") || producers.size() == 0 || directors.size() == 0 || languages.size() == 0 ||
+                mainActors.size() == 0 || totalDuration <= 0 || ageRestriction < 0) {
+            return false;
+        }
+
+        Movie currentMovie = new Movie(name,
+                publicationDate,
+                shortDescription,
+                producers,
+                directors,
+                languages,
+                mainActors,
+                totalDuration,
+                ageRestriction,
+                highestResolution);
+        return true;
+    }
+
+
     //endregion
 }

@@ -3,7 +3,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import rateyourstuff.Library;
+import rateyourstuff.Movie;
 import rateyourstuff.Person;
+import rateyourstuff.Resolution;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -89,6 +91,50 @@ public class LibraryTest {
 
         //Then
         assertFalse(bookHasBeenInserted, "The Creation of a new book was successful!");
+    }
+
+    @Test
+    public void should_add_movie_to_library() {
+        //Given
+        String name = "Zwei Asse trumpfen auf";
+        LocalDate publicationDate = LocalDate.of(1981,12,9);
+        String shortDescription = "Alan hat Wettschulden und muss vor seinen Gläubigern fliehen. " +
+                "Mit einer Schatzkarte, die er von seinem Onkel Brady bekommen hat, versteckt er sich auf dem Schiff " +
+                "des Skippers Charlie, der zu einer Werbefahrt aufbricht.";
+
+        List<Person> producers = new ArrayList<Person>();
+        producers.add(new Person("Victor", "Gillespie"));
+        producers.add(new Person("Josi W.", "Konski"));
+
+        List<Person> directors = new ArrayList<Person>();
+        directors.add(new Person("Sergio", "Corbucci"));
+
+        List<String> languages = new ArrayList<String>();
+        languages.add("Itanlienisch");
+        languages.add("Deutsch");
+
+        List<Person> mainActors = new ArrayList<Person>();
+        mainActors.add(new Person("Bud", "Spencer"));
+        mainActors.add(new Person("Terence", "Hill"));
+        int totalDuration = 110;
+        int ageRestriction = 12;
+        Resolution highestResolution = new Resolution();
+
+        //When
+        boolean movieHasBeenInserted = false;
+        movieHasBeenInserted = library.addNewMovie(name,
+                publicationDate,
+                shortDescription,
+                producers,
+                directors,
+                languages,
+                mainActors,
+                totalDuration,
+                ageRestriction,
+                highestResolution);
+
+        //Then
+        assertTrue(movieHasBeenInserted);
     }
 
 
