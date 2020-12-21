@@ -15,13 +15,10 @@ public class Season {
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
-    public Season(Series series) {
-        this(series, "");
-    }
-
-    public Season(Series series, String title) {
-        this.series = series;
+    public Season(int seasonNumber, String title, Series series) {
+        this.seasonNumber = seasonNumber;
         this.title = title;
+        this.series = series;
         this.episodes = new ArrayList<>();
     }
     //endregion
@@ -51,5 +48,14 @@ public class Season {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    public int getSeasonNumber() {
+        return seasonNumber;
+    }
+
+    public void setSeasonNumber(int seasonNumber) {
+        this.seasonNumber = seasonNumber;
+    }
     //endregion
+
 }

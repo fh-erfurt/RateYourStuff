@@ -174,4 +174,17 @@ public class Series extends Medium {
         return numberOfEpisodes;
     }
     //endregion
+
+
+    public boolean addNewSeason(int seasonNumber, String title) {
+       for(Season season : seasons) {
+            if(season.getSeasonNumber() == seasonNumber || season.getTitle().equals(title)) {
+                return false;
+            }
+        }
+
+        Season currentSeason = new Season(seasonNumber, title, this);
+        seasons.add(currentSeason);
+        return true;
+    }
 }
