@@ -123,6 +123,37 @@ public class Library {
         return true;
     }
 
+    public boolean addNewSeries(String name,
+                                LocalDate publicationDate,
+                                String shortDescription,
+                                List<Person> producers,
+                                List<Person> directors,
+                                List<Person> actors,
+                                List<String> languages,
+                                int averageLength,
+                                int ageRestriction,
+                                Resolution highestResolution,
+                                boolean isCompleted)
+    {
+        if(name.equals("") || producers.size() == 0 || directors.size() == 0|| actors.size() == 0 ||
+                languages.size() == 0 || averageLength <= 0 ||ageRestriction < 0) {
+            return false;
+        }
+
+        Series currentSeries = new Series(name,
+                publicationDate,
+                shortDescription,
+                producers,
+                directors,
+                actors,
+                languages,
+                averageLength,
+                ageRestriction,
+                highestResolution,
+                isCompleted);
+        media.add(currentSeries);
+        return true;
+    }
 
     //endregion
 }

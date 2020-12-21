@@ -2,10 +2,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import rateyourstuff.Library;
-import rateyourstuff.Movie;
-import rateyourstuff.Person;
-import rateyourstuff.Resolution;
+import rateyourstuff.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -57,6 +54,7 @@ public class LibraryTest {
     }
 
     @Test
+    //Trying to add book without title
     public void should_not_add_book_to_library() {
         //Given
         String name = "";
@@ -137,5 +135,89 @@ public class LibraryTest {
         assertTrue(movieHasBeenInserted);
     }
 
+    @Test
+    // Trying to add movie without actors to library
+    public void should_not_add_movie_to_library() {
+        //Given
+        String name = "Zwei Asse trumpfen auf";
+        LocalDate publicationDate = LocalDate.of(1981,12,9);
+        String shortDescription = "Alan hat Wettschulden und muss vor seinen Gläubigern fliehen. " +
+                "Mit einer Schatzkarte, die er von seinem Onkel Brady bekommen hat, versteckt er sich auf dem Schiff " +
+                "des Skippers Charlie, der zu einer Werbefahrt aufbricht.";
+
+        List<Person> producers = new ArrayList<Person>();
+        producers.add(new Person("Victor", "Gillespie"));
+        producers.add(new Person("Josi W.", "Konski"));
+
+        List<Person> directors = new ArrayList<Person>();
+        directors.add(new Person("Sergio", "Corbucci"));
+
+        List<String> languages = new ArrayList<String>();
+        languages.add("Itanlienisch");
+        languages.add("Deutsch");
+
+        List<Person> mainActors = new ArrayList<Person>();
+        int totalDuration = 110;
+        int ageRestriction = 12;
+        Resolution highestResolution = new Resolution();
+
+        //When
+        boolean movieHasBeenInserted = false;
+        movieHasBeenInserted = library.addNewMovie(name,
+                publicationDate,
+                shortDescription,
+                producers,
+                directors,
+                languages,
+                mainActors,
+                totalDuration,
+                ageRestriction,
+                highestResolution);
+
+        //Then
+        assertFalse(movieHasBeenInserted, "Move has been added successfully");
+    }
+
+    @Test
+    public void should_add_series_to_library() {
+        //Given
+        String name = "Ein Käfig voller Helden";
+        LocalDate publicationDate = LocalDate.of(1965,11,17);
+        String shortDescription = "Zusammen mit einem kunterbunten Haufen Mitgefangener und unter vollem Einsatz von " +
+                "versteckten Tunneln, konfiszierten Vorräten und geheimen Radios ist Hogans Mission in erster Linie " +
+                "nicht die Flucht.";
+        ArrayList<Person> producers = new ArrayList<Person>();
+        producers.add(new Person("Edward H.",  "Feldman"));
+
+        ArrayList<Person> directors = new ArrayList<Person>();
+        directors.add(new Person("Bernard", "Fein"));
+
+        ArrayList<Person> actors = new ArrayList<Person>();
+        actors.add(new Person("John", "Banner"));
+
+        ArrayList<String> languages = new ArrayList<String>();
+        languages.add("Englisch");
+
+        int averageLength = 25;
+        int ageRestriction = 0;
+        Resolution highestResolution = new Resolution();
+        boolean isCompleted = true;
+
+        //When
+        boolean seriesHasBeenInserted = library.addNewSeries(name,
+                publicationDate,
+                shortDescription,
+                producers,
+                directors,
+                actors,
+                languages,
+                averageLength,
+                ageRestriction,
+                highestResolution,
+                isCompleted);
+
+        //Then
+        assertTrue(seriesHasBeenInserted, "Series has not been inserted successfully!");
+    }
 
 }

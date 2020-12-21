@@ -7,6 +7,7 @@ package rateyourstuff;
  */
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -15,9 +16,9 @@ public class Series extends Medium {
     ////////////////////////////////////////////////////////////////////////////////////
     private List<Person> producers;
     private List<Person> directors;
-    private List<Person> cast;
-    private List<String> genres;
+    private List<Person> actors;
     private List<String> subtitles;
+    private List<String> languages;
     private int averageLength;
     private int ageRestriction;
     private Resolution highestResolution;
@@ -32,6 +33,33 @@ public class Series extends Medium {
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
+    public Series (String name,
+                   LocalDate publicationDate,
+                   String shortDescription,
+                   List<Person> producers,
+                   List<Person> directors,
+                   List<Person> actors,
+                   List<String> languages,
+                   int averageLength,
+                   int ageRestriction,
+                   Resolution highestResolution,
+                   boolean isCompleted) {
+        super(name, publicationDate, shortDescription);
+        this.producers = producers;
+        this.directors = directors;
+        this.actors = actors;
+        this.languages = languages;
+        this.averageLength = averageLength;
+        this.ageRestriction = ageRestriction;
+        this.highestResolution = highestResolution;
+        this.isCompleted = isCompleted;
+
+        this.seasons = new ArrayList<Season>();
+        this.numberOfEpisodes = 0;
+        this.numberOfSeasons = 0;
+    }
+
+
     /*public Series(int mediumID,
                   String name,
                   LocalDate publicationDate,
@@ -73,23 +101,13 @@ public class Series extends Medium {
     }
 
     public void setCast(List<Person> cast) {
-        this.cast = cast;
+        this.actors = cast;
     }
     public List<Person> getCast() {
-        return cast;
+        return actors;
     }
     public void addCast(List<Person> cast) {
-        this.cast.addAll(cast);
-    }
-
-    public void setGenres(List<String> genres) {
-        this.genres = genres;
-    }
-    public List<String> getGenres() {
-        return genres;
-    }
-    public void addGenres(List<String> genres) {
-        this.genres.addAll(genres);
+        this.actors.addAll(cast);
     }
 
     public void setSubtitles(List<String> subtitles) {
