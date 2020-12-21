@@ -25,7 +25,7 @@ public class Movie extends Medium
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
-    public Movie(int mediumID,
+    /*public Movie(int mediumID,
                  String name,
                  List<Person> directors,
                  List<Person> mainActors,
@@ -35,7 +35,7 @@ public class Movie extends Medium
                  int ageRestriction,
                  String highestResolution)
     {
-        super(mediumID,name);
+        super(name, publicationDate, shortDescription);
         this.directors.addAll(directors);
         this.mainActors.addAll(mainActors);
         this.genres.addAll(genres);
@@ -43,7 +43,7 @@ public class Movie extends Medium
         this.totalDuration = totalDuration;
         this.ageRestriction = ageRestriction;
         this.highestResolution = highestResolution;
-    }
+    }*/
     //endregion
 
 

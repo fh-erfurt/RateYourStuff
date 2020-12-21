@@ -32,7 +32,7 @@ public class Series extends Medium {
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
-    public Series(int mediumID,
+    /*public Series(int mediumID,
                   String name,
                   LocalDate publicationDate,
                   List<Person> directors,
@@ -47,7 +47,7 @@ public class Series extends Medium {
         this.genres.addAll(genres);
         this.ageRestriction = ageRestriction;
         this.isCompleted = isCompleted;
-    }
+    }*/
     //endregion
 
     //region Getter // Setter // Adder

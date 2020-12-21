@@ -81,14 +81,14 @@ public class ISBN13 {
         return (char) (checkSum + '0');
     }
 
-    public static String toISBN13(ISBN10 isbn10) {
+    public static ISBN13 toISBN13(ISBN10 isbn10) throws InvalidISBNException {
         String isbn13;
         String isbn10String = isbn10.toString();
 
         isbn13 = ISBN_13_PREFIX + isbn10String;
         char isbn13CheckSum = calculateChecksum(isbn13);
         isbn13 = isbn13.substring(0, isbn13.length()-1) + isbn13CheckSum;
-        return isbn13;
+        return new ISBN13(isbn13);
     }
 
     public String toString() {

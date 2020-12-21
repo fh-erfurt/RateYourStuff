@@ -17,31 +17,35 @@ public class Book extends Medium
     ////////////////////////////////////////////////////////////////////////////////////
     private String name;
     private List<String> publishers;
-    private ArrayList<Person> authors;
-    private String ISBN;
+    private List<Person> authors;
+    private ISBN13 isbn;
     private boolean isEBook;
     private boolean isPrint;
     private List<String> languages;
-    private List<Collection> bookSeries;
     private Integer numberOfPages;
     //endregion
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
 
-    public Book(int mediumID,
-                String name,
-                LocalDate publicationDate,
+    public Book(String name,
+                LocalDate releaseDate,
                 String shortDescription,
                 List<String> publishers,
-                ArrayList<Person> authors){
-        super(mediumID, name);
-        this.authors = new ArrayList<Person>();
-        this.setPublicationDate(publicationDate);
-        this.setShortDescription(shortDescription);
-        this.setPublishers(publishers);
-        this.authors.addAll(authors);
-        this.setRatingCounter(0);
+                List<Person> authors,
+                ISBN13 isbn13,
+                List<String> languages,
+                boolean isEBook,
+                boolean isPrint,
+                int numberOfPages){
+        super(name, releaseDate, shortDescription);
+        this.publishers = publishers;
+        this.authors = authors;
+        this.isbn = isbn13;
+        this.languages = languages;
+        this.isEBook = isEBook;
+        this.isPrint = isPrint;
+        this.numberOfPages = numberOfPages;
     }
     //endregion
 
@@ -75,12 +79,12 @@ public class Book extends Medium
         }
     }
 
-    public void setISBN(String ISBN) {
-        this.ISBN = ISBN;
+    public void setISBN(ISBN13 isbn) {
+        this.isbn = isbn;
     }
 
-    public String getISBN() {
-        return ISBN;
+    public ISBN13 getISBN() {
+        return isbn;
     }
 
     public void setIsEBook(boolean isEBook) {
@@ -113,20 +117,6 @@ public class Book extends Medium
     public void addLanguages(List<String> languages){
         for(String language : languages){
             this.languages.add(language);
-        }
-    }
-
-    public void setBookSeries(List<Collection> bookSeries) {
-        this.bookSeries = bookSeries;
-    }
-
-    public List<Collection> getBookSeries() {
-        return bookSeries;
-    }
-
-    public void addBookSeries(List<Collection> bookSeries){
-        for(Collection partOfBookSeries : bookSeries){
-            this.bookSeries.add(partOfBookSeries);
         }
     }
 

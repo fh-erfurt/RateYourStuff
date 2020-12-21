@@ -26,7 +26,7 @@ public class Episode extends Medium {
                    LocalDate publicationDate,
                    List<Person> guestStars,
                    int length) {
-        super(mediaID, name);
+        super(name, publicationDate, shortDescription);
         setShortDescription(shortDescription);
         setPublicationDate(publicationDate);
         this.episodeNumber = episodeNumber;

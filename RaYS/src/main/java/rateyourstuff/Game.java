@@ -28,7 +28,7 @@ public class Game extends Medium {
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
-    public Game(int mediumID,
+    /*public Game(int mediumID,
                 String name,
                 List<String> platforms,
                 List<String> genres){
@@ -37,7 +37,7 @@ public class Game extends Medium {
         this.genres = new ArrayList<String>();
         this.platforms.addAll(platforms);
         this.genres.addAll(genres);
-    }
+    }*/
     //endregion
 
     //region Getter // Setter // Adder

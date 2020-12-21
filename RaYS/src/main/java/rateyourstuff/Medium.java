@@ -7,6 +7,7 @@ package rateyourstuff;
  * */
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -14,7 +15,6 @@ public abstract class Medium
 {
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
-    private int mediumID;
     private String name;
     private LocalDate publicationDate;
     private List<Comment> comments;
@@ -25,27 +25,32 @@ public abstract class Medium
     private List<Collection> collections;
     private List<Rate> ratings;
 
-    private Comment comment;
-    private Rate rate;
     //endregion
 
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
-    public Medium(int mediumID,
-                  String name){
+    public Medium() {
+
+    }
+
+    public Medium(String name, LocalDate publicationDate, String shortDescription){
         this.name = name;
-        this.mediumID = mediumID;
+        this.publicationDate = publicationDate;
+        this.shortDescription = shortDescription;
+
+        this.comments = new ArrayList<Comment>();
+        this.averageRating = 0f;
+        this.personalOpinion = "";
+        this.ratingCounter = 0;
+        this.collections = new ArrayList<Collection>();
+        this.ratings = new ArrayList<Rate>();
     }
     //endregion
 
 
     //region Getter // Setter // Adder
     ////////////////////////////////////////////////////////////////////////////////////
-    public int getMediumID() {
-        return mediumID;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
