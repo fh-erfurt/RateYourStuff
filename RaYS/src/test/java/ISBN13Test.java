@@ -43,7 +43,12 @@ public class ISBN13Test {
         String actualISBN13String = "978-3-492-23674-4";
 
         //When
-        String isbn13String = ISBN13.toISBN13(isbn10);
+        String isbn13String = null;
+        try {
+            isbn13String = (ISBN13.toISBN13(isbn10)).toString();
+        } catch (InvalidISBNException e) {
+            e.printStackTrace();
+        }
 
         //Then
         assertEquals(actualISBN13String, isbn13String, "The isbn was not converted correctly");

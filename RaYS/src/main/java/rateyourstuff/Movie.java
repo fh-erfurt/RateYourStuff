@@ -6,61 +6,56 @@ package rateyourstuff;
  *
  * */
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class Movie extends Medium
 {
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
-    private List<Person> producers;
+    private String studio;
     private List<Person> directors;
     private List<Person> mainActors;
-    private List<String> genres;
     private List<String> languages;
-    private List<String> subtitles;
     private int totalDuration;
     private int ageRestriction;
-    private String highestResolution; //To type as XXXXxXXXX e.G. 1750x1050
+    private Resolution highestResolution; //To type as XXXXxXXXX e.G. 1750x1050
     //endregion
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
-    public Movie(int mediumID,
-                 String name,
-                 List<Person> directors,
-                 List<Person> mainActors,
-                 List<String> genres,
-                 List<String> languages,
-                 int totalDuration,
-                 int ageRestriction,
-                 String highestResolution)
-    {
-        super(mediumID,name);
-        this.directors.addAll(directors);
-        this.mainActors.addAll(mainActors);
-        this.genres.addAll(genres);
-        this.languages.addAll(languages);
+    public Movie (String name,
+                  LocalDate publicationDate,
+                  String shortDescription,
+                  String studio,
+                  List<Person> directors,
+                  List<String> languages,
+                  List<Person> mainActors,
+                  int totalDuration,
+                  int ageRestriction,
+                  Resolution highestResolution) {
+        super(name, publicationDate, shortDescription);
+        this.studio = studio;
+        this.directors = directors;
+        this.languages = languages;
+        this.mainActors = mainActors;
         this.totalDuration = totalDuration;
         this.ageRestriction = ageRestriction;
         this.highestResolution = highestResolution;
     }
+
+
     //endregion
 
 
     //region Getter // Setter // Adder
     ////////////////////////////////////////////////////////////////////////////////////
-    public void setProducers(List<Person> producers) {
-        this.producers = producers;
+    public void setStudio(String studio) {
+        this.studio = studio;
     }
 
-    public List<Person> getProducers() {
-        return producers;
-    }
-    
-    public void addProducers(List<Person> producers){
-        for(Person producer : producers){
-            this.producers.add(producer);
-        }
+    public String getStudio() {
+        return studio;
     }
 
     public void setDirectors(List<Person> directors) {
@@ -72,9 +67,7 @@ public class Movie extends Medium
     }
 
     public void addDirectors(List<Person> directors){
-        for(Person director : directors){
-            this.directors.add(director);
-        }
+        this.directors.addAll(directors);
     }
 
     public void setMainActors(List<Person> mainActors) {
@@ -86,23 +79,7 @@ public class Movie extends Medium
     }
 
     public void addMainActors(List<Person> mainActors){
-        for(Person mainActor : mainActors){
-            this.mainActors.add(mainActor);
-        }
-    }
-
-    public void setGenres(List<String> genres) {
-        this.genres = genres;
-    }
-
-    public List<String> getGenres() {
-        return genres;
-    }
-
-    public void addGenres(List<String> genres){
-        for(String genre : genres){
-            this.genres.add(genre);
-        }
+        this.mainActors.addAll(mainActors);
     }
 
     public void setLanguages(List<String> languages) {
@@ -114,23 +91,7 @@ public class Movie extends Medium
     }
 
     public void addLanguages(List<String> languages){
-        for(String language : languages){
-            this.languages.add(language);
-        }
-    }
-
-    public void setSubtitles(List<String> subtitles) {
-        this.subtitles = subtitles;
-    }
-
-    public List<String> getSubtitles() {
-        return subtitles;
-    }
-
-    public void addSubtitles(List<String> subtitles){
-        for(String subtitle : subtitles){
-            this.subtitles.add(subtitle);
-        }
+        this.languages.addAll(languages);
     }
 
     public void setTotalDuration(int totalDuration) {
@@ -149,12 +110,19 @@ public class Movie extends Medium
         return ageRestriction;
     }
 
-    public void setHighestResolution(String highestResolution) {
+    public void setHighestResolution(Resolution highestResolution) {
         this.highestResolution = highestResolution;
     }
 
-    public String getHighestResolution() {
+    public Resolution getHighestResolution() {
         return highestResolution;
     }
     //endregion
+
+    public boolean equals(Movie movie) {
+        return this.getName().equals(movie.getName()) &&
+                this.getPublicationDate().isEqual(movie.getPublicationDate()) &&
+                this.studio.equals(movie.getStudio());
+
+    }
 }

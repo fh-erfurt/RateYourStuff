@@ -19,16 +19,13 @@ public class Episode extends Medium {
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
-    public Episode(int episodeNumber,
-                   int mediaID,
-                   String name,
-                   String shortDescription,
+    public Episode(String name,
                    LocalDate publicationDate,
+                   String shortDescription,
+                   int episodeNumber,
                    List<Person> guestStars,
                    int length) {
-        super(mediaID, name);
-        setShortDescription(shortDescription);
-        setPublicationDate(publicationDate);
+        super(name, publicationDate, shortDescription);
         this.episodeNumber = episodeNumber;
         this.guestStars = guestStars;
         this.length = length;
@@ -65,4 +62,11 @@ public class Episode extends Medium {
         this.length = length;
     }
     //endregion
+
+    //compares two episodes
+    //returns true if episodes have the same number or the same name AND publication date
+    public boolean equals(Episode episode) {
+        return (this.episodeNumber == episode.getEpisodeNumber()) ||
+                (this.getName().equals(episode.getName()) && this.getPublicationDate().isEqual(episode.getPublicationDate()));
+    }
 }

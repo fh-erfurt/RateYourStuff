@@ -19,7 +19,7 @@ public class ISBN13 {
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
-    ISBN13(String isbn13) throws InvalidISBNException {
+    public ISBN13(String isbn13) throws InvalidISBNException {
         if (isValid(isbn13)) {
             this.isbn = isbn13;
         } else {
@@ -68,7 +68,7 @@ public class ISBN13 {
         mainISBN = mainISBN.substring(0, mainISBN.length()-1).replace("-", "");
 
         int isbnSum = 0;
-        int checkSum = 0;
+        int checkSum;
         for(int i = 0; i < mainISBN.length(); i++) {
             int currentValue = Integer.parseInt(String.valueOf(mainISBN.charAt(i)));
             isbnSum += ((i+1) % 2 == 0) ? 3 * currentValue : currentValue;
@@ -81,14 +81,14 @@ public class ISBN13 {
         return (char) (checkSum + '0');
     }
 
-    public static String toISBN13(ISBN10 isbn10) {
+    public static ISBN13 toISBN13(ISBN10 isbn10) throws InvalidISBNException {
         String isbn13;
         String isbn10String = isbn10.toString();
 
         isbn13 = ISBN_13_PREFIX + isbn10String;
         char isbn13CheckSum = calculateChecksum(isbn13);
         isbn13 = isbn13.substring(0, isbn13.length()-1) + isbn13CheckSum;
-        return isbn13;
+        return new ISBN13(isbn13);
     }
 
     public String toString() {
