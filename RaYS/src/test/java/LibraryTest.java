@@ -23,15 +23,15 @@ public class LibraryTest {
         LocalDate publicationDate = LocalDate.of(2016, 8, 23);
         String shortDescription = "Schritt für Schritt zum ersten Java Programm";
 
-        ArrayList<String> publishers = new ArrayList<String>();
+        ArrayList<String> publishers = new ArrayList<>();
         publishers.add("Rheinwerk Computing");
 
-        ArrayList<Person> authors = new ArrayList<Person>();
+        ArrayList<Person> authors = new ArrayList<>();
         authors.add(new Person("Hans-Peter", "Habelitz"));
 
         String isbn = "978-3-8362-4130-4";
 
-        ArrayList<String> languages = new ArrayList<String>();
+        ArrayList<String> languages = new ArrayList<>();
         languages.add("German");
         boolean isEBook = false;
         boolean isPrint = true;
@@ -61,15 +61,15 @@ public class LibraryTest {
         LocalDate publicationDate = LocalDate.of(2016, 8, 23);
         String shortDescription = "Schritt für Schritt zum ersten Java Programm";
 
-        ArrayList<String> publishers = new ArrayList<String>();
+        ArrayList<String> publishers = new ArrayList<>();
         publishers.add("Rheinwerk Computing");
 
-        ArrayList<Person> authors = new ArrayList<Person>();
+        ArrayList<Person> authors = new ArrayList<>();
         authors.add(new Person("Hans-Peter", "Habelitz"));
 
         String isbn = "978-3-8362-4130-4";
 
-        ArrayList<String> languages = new ArrayList<String>();
+        ArrayList<String> languages = new ArrayList<>();
         languages.add("German");
         boolean isEBook = false;
         boolean isPrint = true;
@@ -100,18 +100,16 @@ public class LibraryTest {
                 "Mit einer Schatzkarte, die er von seinem Onkel Brady bekommen hat, versteckt er sich auf dem Schiff " +
                 "des Skippers Charlie, der zu einer Werbefahrt aufbricht.";
 
-        List<Person> producers = new ArrayList<Person>();
-        producers.add(new Person("Victor", "Gillespie"));
-        producers.add(new Person("Josi W.", "Konski"));
+        String studio = "3L";
 
-        List<Person> directors = new ArrayList<Person>();
+        List<Person> directors = new ArrayList<>();
         directors.add(new Person("Sergio", "Corbucci"));
 
-        List<String> languages = new ArrayList<String>();
+        List<String> languages = new ArrayList<>();
         languages.add("Itanlienisch");
         languages.add("Deutsch");
 
-        List<Person> mainActors = new ArrayList<Person>();
+        List<Person> mainActors = new ArrayList<>();
         mainActors.add(new Person("Bud", "Spencer"));
         mainActors.add(new Person("Terence", "Hill"));
         int totalDuration = 110;
@@ -119,11 +117,11 @@ public class LibraryTest {
         Resolution highestResolution = new Resolution();
 
         //When
-        boolean movieHasBeenInserted = false;
+        boolean movieHasBeenInserted;
         movieHasBeenInserted = library.addNewMovie(name,
                 publicationDate,
                 shortDescription,
-                producers,
+                studio,
                 directors,
                 languages,
                 mainActors,
@@ -145,28 +143,26 @@ public class LibraryTest {
                 "Mit einer Schatzkarte, die er von seinem Onkel Brady bekommen hat, versteckt er sich auf dem Schiff " +
                 "des Skippers Charlie, der zu einer Werbefahrt aufbricht.";
 
-        List<Person> producers = new ArrayList<Person>();
-        producers.add(new Person("Victor", "Gillespie"));
-        producers.add(new Person("Josi W.", "Konski"));
+        String studio = "3L";
 
-        List<Person> directors = new ArrayList<Person>();
+        List<Person> directors = new ArrayList<>();
         directors.add(new Person("Sergio", "Corbucci"));
 
-        List<String> languages = new ArrayList<String>();
+        List<String> languages = new ArrayList<>();
         languages.add("Itanlienisch");
         languages.add("Deutsch");
 
-        List<Person> mainActors = new ArrayList<Person>();
+        List<Person> mainActors = new ArrayList<>();
         int totalDuration = 110;
         int ageRestriction = 12;
         Resolution highestResolution = new Resolution();
 
         //When
-        boolean movieHasBeenInserted = false;
+        boolean movieHasBeenInserted;
         movieHasBeenInserted = library.addNewMovie(name,
                 publicationDate,
                 shortDescription,
-                producers,
+                studio,
                 directors,
                 languages,
                 mainActors,
@@ -186,16 +182,16 @@ public class LibraryTest {
         String shortDescription = "Zusammen mit einem kunterbunten Haufen Mitgefangener und unter vollem Einsatz von " +
                 "versteckten Tunneln, konfiszierten Vorräten und geheimen Radios ist Hogans Mission in erster Linie " +
                 "nicht die Flucht.";
-        ArrayList<Person> producers = new ArrayList<Person>();
-        producers.add(new Person("Edward H.",  "Feldman"));
 
-        ArrayList<Person> directors = new ArrayList<Person>();
+        String network = "CBS";
+
+        ArrayList<Person> directors = new ArrayList<>();
         directors.add(new Person("Bernard", "Fein"));
 
-        ArrayList<Person> actors = new ArrayList<Person>();
+        ArrayList<Person> actors = new ArrayList<>();
         actors.add(new Person("John", "Banner"));
 
-        ArrayList<String> languages = new ArrayList<String>();
+        ArrayList<String> languages = new ArrayList<>();
         languages.add("Englisch");
 
         int averageLength = 25;
@@ -207,7 +203,7 @@ public class LibraryTest {
         boolean seriesHasBeenInserted = library.addNewSeries(name,
                 publicationDate,
                 shortDescription,
-                producers,
+                network,
                 directors,
                 actors,
                 languages,
@@ -229,15 +225,15 @@ public class LibraryTest {
         float averagePlayTime = 6f;
         String publisher = "Sony";
         String developer = "MediaMolecule";
-        List<String> languages = new ArrayList<String>();
+        List<String> languages = new ArrayList<>();
         languages.add("Englisch");
 
-        List<String> subtitles = new ArrayList<String>();
+        List<String> subtitles = new ArrayList<>();
         subtitles.add("Englisch");
 
         int minNumberOfPlayers = 1;
         int maxNumberOfPlayers = 4;
-        List<String> platforms = new ArrayList<String>();
+        List<String> platforms = new ArrayList<>();
         platforms.add("PlayStation4");
 
         int ageRestriction = 6;

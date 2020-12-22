@@ -13,7 +13,7 @@ public class Movie extends Medium
 {
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
-    private List<Person> producers;
+    private String studio;
     private List<Person> directors;
     private List<Person> mainActors;
     private List<String> languages;
@@ -27,7 +27,7 @@ public class Movie extends Medium
     public Movie (String name,
                   LocalDate publicationDate,
                   String shortDescription,
-                  List<Person> producers,
+                  String studio,
                   List<Person> directors,
                   List<String> languages,
                   List<Person> mainActors,
@@ -35,7 +35,7 @@ public class Movie extends Medium
                   int ageRestriction,
                   Resolution highestResolution) {
         super(name, publicationDate, shortDescription);
-        this.producers = producers;
+        this.studio = studio;
         this.directors = directors;
         this.languages = languages;
         this.mainActors = mainActors;
@@ -50,18 +50,12 @@ public class Movie extends Medium
 
     //region Getter // Setter // Adder
     ////////////////////////////////////////////////////////////////////////////////////
-    public void setProducers(List<Person> producers) {
-        this.producers = producers;
+    public void setStudio(String studio) {
+        this.studio = studio;
     }
 
-    public List<Person> getProducers() {
-        return producers;
-    }
-    
-    public void addProducers(List<Person> producers){
-        for(Person producer : producers){
-            this.producers.add(producer);
-        }
+    public String getStudio() {
+        return studio;
     }
 
     public void setDirectors(List<Person> directors) {
@@ -73,9 +67,7 @@ public class Movie extends Medium
     }
 
     public void addDirectors(List<Person> directors){
-        for(Person director : directors){
-            this.directors.add(director);
-        }
+        this.directors.addAll(directors);
     }
 
     public void setMainActors(List<Person> mainActors) {
@@ -87,9 +79,7 @@ public class Movie extends Medium
     }
 
     public void addMainActors(List<Person> mainActors){
-        for(Person mainActor : mainActors){
-            this.mainActors.add(mainActor);
-        }
+        this.mainActors.addAll(mainActors);
     }
 
     public void setLanguages(List<String> languages) {
@@ -101,9 +91,7 @@ public class Movie extends Medium
     }
 
     public void addLanguages(List<String> languages){
-        for(String language : languages){
-            this.languages.add(language);
-        }
+        this.languages.addAll(languages);
     }
 
     public void setTotalDuration(int totalDuration) {
@@ -130,4 +118,11 @@ public class Movie extends Medium
         return highestResolution;
     }
     //endregion
+
+    public boolean equals(Movie movie) {
+        return this.getName().equals(movie.getName()) &&
+                this.getPublicationDate().isEqual(movie.getPublicationDate()) &&
+                this.studio.equals(movie.getStudio());
+
+    }
 }

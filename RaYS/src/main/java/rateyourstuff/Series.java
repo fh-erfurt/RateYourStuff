@@ -1,6 +1,6 @@
 package rateyourstuff;
 
-/**
+/*
  *
  * @author Christoph Frischmuth
  *
@@ -14,7 +14,7 @@ import java.util.List;
 public class Series extends Medium {
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
-    private List<Person> producers;
+    private String network;
     private List<Person> directors;
     private List<Person> actors;
     private List<String> subtitles;
@@ -36,7 +36,7 @@ public class Series extends Medium {
     public Series (String name,
                    LocalDate publicationDate,
                    String shortDescription,
-                   List<Person> producers,
+                   String network,
                    List<Person> directors,
                    List<Person> actors,
                    List<String> languages,
@@ -45,7 +45,7 @@ public class Series extends Medium {
                    Resolution highestResolution,
                    boolean isCompleted) {
         super(name, publicationDate, shortDescription);
-        this.producers = producers;
+        this.network = network;
         this.directors = directors;
         this.actors = actors;
         this.languages = languages;
@@ -54,40 +54,20 @@ public class Series extends Medium {
         this.highestResolution = highestResolution;
         this.isCompleted = isCompleted;
 
-        this.seasons = new ArrayList<Season>();
+        this.seasons = new ArrayList<>();
         this.numberOfEpisodes = 0;
         this.numberOfSeasons = 0;
     }
-
-
-    /*public Series(int mediumID,
-                  String name,
-                  LocalDate publicationDate,
-                  List<Person> directors,
-                  List<Person> cast,
-                  List<String> genres,
-                  int ageRestriction,
-                  boolean isCompleted) {
-        super(mediumID, name);
-        this.setPublicationDate(publicationDate);
-        this.directors.addAll(directors);
-        this.cast.addAll(cast);
-        this.genres.addAll(genres);
-        this.ageRestriction = ageRestriction;
-        this.isCompleted = isCompleted;
-    }*/
     //endregion
 
     //region Getter // Setter // Adder
     ////////////////////////////////////////////////////////////////////////////////////
-    public void setProducers(List<Person> producers) {
-        this.producers = producers;
+    public void setNetwork(String network) {
+        this.network = network;
     }
-    public List<Person> getProducers() {
-        return producers;
-    }
-    public void addProducers(List<Person> producers) {
-        this.producers.addAll(producers);
+
+    public String getNetwork() {
+        return network;
     }
 
     public void setDirectors(List<Person> directors) {
@@ -188,34 +168,9 @@ public class Series extends Medium {
         return true;
     }
 
-    public boolean addNewEpisode(String name,
-                                 LocalDate publicationDate,
-                                 String shortDescription,
-                                 int episodeNumber,
-                                 List<Person> guestStars,
-                                 int length,
-                                 int seasonNumber) {
-        Season targetSeason = null;
-
-        for(Season season : seasons) {
-            if(season.getSeasonNumber() == seasonNumber) {
-                targetSeason = season;
-            }
-        }
-
-        if(targetSeason == null || name.equals("") || episodeNumber < 1 || (guestStars.size() == 0) || length < 0) {
-            return false;
-        }
-
-        Episode currentEpisode = new Episode(name, publicationDate, shortDescription, episodeNumber, guestStars, length);
-
-        if(targetSeason.findEpisode(currentEpisode) != null) {
-            return false;
-        }
-
-        targetSeason.addEpisode(currentEpisode);
-        return true;
-
+    public boolean equals(Series series) {
+        return this.getName().equals(series.getName()) &&
+                this.getPublicationDate().isEqual(series.getPublicationDate()) &&
+                this.network.equals(series.getNetwork());
     }
-
 }

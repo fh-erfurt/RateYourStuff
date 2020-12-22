@@ -60,9 +60,7 @@ public class Book extends Medium
     }
 
     public void addPublishers(List<String> publishers) {
-        for(String publisher : publishers){
-            this.publishers.add(publisher);
-        }
+        this.publishers.addAll(publishers);
     }
 
     public void setAuthors(ArrayList<Person> authors) {
@@ -74,9 +72,7 @@ public class Book extends Medium
     }
 
     public void addAuthor(List<Person> authors) {
-        for(Person author : authors){
-            this.authors.add(author);
-        }
+        this.authors.addAll(authors);
     }
 
     public void setISBN(ISBN13 isbn) {
@@ -115,9 +111,7 @@ public class Book extends Medium
     }
 
     public void addLanguages(List<String> languages){
-        for(String language : languages){
-            this.languages.add(language);
-        }
+        this.languages.addAll(languages);
     }
 
     public void setNumberOfPages(Integer numberOfPages) {
@@ -136,5 +130,9 @@ public class Book extends Medium
         this.name = name;
     }
     //endregion
+
+    public boolean equals(Book book) {
+        return (this.isbn.toString().equals(book.getISBN().toString()));
+    }
 
 }

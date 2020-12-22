@@ -62,4 +62,11 @@ public class Episode extends Medium {
         this.length = length;
     }
     //endregion
+
+    //compares two episodes
+    //returns true if episodes have the same number or the same name AND publication date
+    public boolean equals(Episode episode) {
+        return (this.episodeNumber == episode.getEpisodeNumber()) ||
+                (this.getName().equals(episode.getName()) && this.getPublicationDate().isEqual(episode.getPublicationDate()));
+    }
 }

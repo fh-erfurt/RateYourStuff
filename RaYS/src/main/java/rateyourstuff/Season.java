@@ -1,5 +1,6 @@
 package rateyourstuff;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,15 +62,42 @@ public class Season {
         this.seasonNumber = seasonNumber;
     }
 
-    public Episode findEpisode(Episode searchedEpisode) {
-        for(Episode episode : episodes) {
-            if(episode.getEpisodeNumber() == searchedEpisode.getEpisodeNumber() ||
-                    episode.getName() == searchedEpisode.getName()) {
-                return episode;
+   public boolean addNewEpisode(String name,
+                                LocalDate publicationDate,
+                                String shortDescription,
+                                int episodeNumber,
+                                List<Person> guestStars,
+                                int length) {
+        if(name.equals("") || publicationDate == null || episodeNumber <= 0 || length <= 0) {
+            return false;
+        }
+
+        Episode currentEpisode = new Episode(name,
+                publicationDate,
+                shortDescription,
+                episodeNumber,
+                guestStars,
+                length);
+
+            if(checkIfEpisodeExists(currentEpisode)) {
+                return false;
+            } else {
+                episodes.add(currentEpisode);
+                return true;
+            }
+    }
+
+    // checks if other episode with same episode Number or with same name and date exists
+    // returns true, if episode was found
+    public boolean checkIfEpisodeExists(Episode episode) {
+        for( Episode currentEpisode: episodes) {
+            if(currentEpisode.equals(episode)) {
+                return true;
             }
         }
-        return null;
+        return false;
     }
+
     //endregion
 
 }

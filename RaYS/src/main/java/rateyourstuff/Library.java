@@ -21,7 +21,7 @@ public class Library {
 
     public Library() {
 
-        media = new ArrayList<Medium>();
+        media = new ArrayList<>();
     }
 
 
@@ -89,15 +89,34 @@ public class Library {
                 isEBook,
                 isPrint,
                 numberOfPages);
-        media.add(currentBook);
-        return true;
+
+        if(checkIfBookExists(currentBook)) {
+            return false;
+        } else {
+            media.add(currentBook);
+            return true;
+        }
     }
+
+    public boolean checkIfBookExists(Book book) {
+        Book currentBook;
+        for( Medium medium : media) {
+            if( medium instanceof Book) {
+                currentBook = (Book) medium;
+                if(currentBook.equals(book)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 
     // Adds new Movie to library, returns true, if successful, fals if unsuccessful
     public boolean addNewMovie (String name,
                                 LocalDate publicationDate,
                                 String shortDescription,
-                                List<Person> producers,
+                                String studio,
                                 List<Person> directors,
                                 List<String> languages,
                                 List<Person> mainActors,
@@ -105,7 +124,7 @@ public class Library {
                                 int ageRestriction,
                                 Resolution highestResolution) {
         //check if given Values are valid
-        if(name.equals("") || producers.size() == 0 || directors.size() == 0 || languages.size() == 0 ||
+        if(name.equals("") || studio.equals("") || languages.size() == 0 ||
                 mainActors.size() == 0 || totalDuration <= 0 || ageRestriction < 0) {
             return false;
         }
@@ -113,20 +132,39 @@ public class Library {
         Movie currentMovie = new Movie(name,
                 publicationDate,
                 shortDescription,
-                producers,
+                studio,
                 directors,
                 languages,
                 mainActors,
                 totalDuration,
                 ageRestriction,
                 highestResolution);
-        return true;
+
+        if(checkIfMovieExists(currentMovie)) {
+            return false;
+        } else {
+            media.add(currentMovie);
+            return true;
+        }
+    }
+
+    public boolean checkIfMovieExists(Movie movie) {
+        Movie currentMovie;
+        for( Medium medium : media) {
+            if( medium instanceof Movie) {
+                currentMovie = (Movie) medium;
+                if(currentMovie.equals(movie)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public boolean addNewSeries(String name,
                                 LocalDate publicationDate,
                                 String shortDescription,
-                                List<Person> producers,
+                                String network,
                                 List<Person> directors,
                                 List<Person> actors,
                                 List<String> languages,
@@ -135,15 +173,14 @@ public class Library {
                                 Resolution highestResolution,
                                 boolean isCompleted)
     {
-        if(name.equals("") || producers.size() == 0 || directors.size() == 0|| actors.size() == 0 ||
-                languages.size() == 0 || averageLength <= 0 ||ageRestriction < 0) {
+        if(name.equals("") ||network.equals("") || languages.size() == 0 || averageLength <= 0 ||ageRestriction < 0) {
             return false;
         }
 
         Series currentSeries = new Series(name,
                 publicationDate,
                 shortDescription,
-                producers,
+                network,
                 directors,
                 actors,
                 languages,
@@ -151,8 +188,26 @@ public class Library {
                 ageRestriction,
                 highestResolution,
                 isCompleted);
-        media.add(currentSeries);
-        return true;
+
+        if(checkIfSeriesExists(currentSeries)) {
+            return false;
+        } else {
+            media.add(currentSeries);
+            return true;
+        }
+    }
+
+    public boolean checkIfSeriesExists(Series series) {
+        Series currentSeries;
+        for( Medium medium : media) {
+            if( medium instanceof Series) {
+                currentSeries = (Series) medium;
+                if(currentSeries.equals(series)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public boolean addNewGame(String name,
@@ -167,6 +222,7 @@ public class Library {
                               int maxNumberOfPlayers,
                               List<String> platforms,
                               int ageRestriction){
+
         if(name.equals("") || (averagePlayTime <= 0) || publisher.equals("") || developer.equals("") ||
                 (languages.size() == 0) || (subtitles.size() == 0) || (minNumberOfPlayers < 1) ||
                 maxNumberOfPlayers < minNumberOfPlayers || (platforms.size() == 0) || (ageRestriction < 0)) {
@@ -186,9 +242,25 @@ public class Library {
                 platforms,
                 ageRestriction);
 
-        media.add(currentGame);
+        if(checkIfGameExists(currentGame)) {
+            return false;
+        } else {
+            media.add(currentGame);
+            return true;
+        }
+    }
 
-        return true;
+    public boolean checkIfGameExists(Game game) {
+        Game currentGame;
+        for( Medium medium : media) {
+            if( medium instanceof Game) {
+               currentGame = (Game) medium;
+                if(currentGame.equals(game)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     //endregion

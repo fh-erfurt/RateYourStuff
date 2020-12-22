@@ -140,4 +140,10 @@ public class Game extends Medium {
         return ageRestriction;
     }
     //endregion
+
+    public boolean equals(Game game) {
+        return this.getName().equals(game.getName()) &&
+                this.getPublicationDate().isEqual(game.getPublicationDate()) &&
+                this.publisher.equals(game.getPublisher());
+    }
 }
