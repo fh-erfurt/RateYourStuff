@@ -23,7 +23,6 @@ public class LibraryTest {
         library = new Library();
     }
 
-
     @Test
     public void should_add_book_to_library() {
         //Given
@@ -263,6 +262,82 @@ public class LibraryTest {
 
         //Then
         assertTrue(gameHasBeenInserted, "The game has not been inserted successfully!");
+    }
+
+    @Test
+    public void should_add_collection_to_library() {
+        //Given
+        String collectionName = "Batman Filmreihe (1989)";
+
+        //When
+        boolean collectionHasBeenInserted = library.addNewCollection(collectionName);
+
+        //Then
+        assertTrue(collectionHasBeenInserted, "The collection has not been inserted successfully");
+    }
+
+    @Test
+    public void should_not_add_collection_twice_to_library() {
+        //Given
+        String collectionName = "Batman Filmreihe (1989)";
+
+        //When
+        library.addNewCollection(collectionName);
+        boolean collectionHasBeenInserted = library.addNewCollection(collectionName);
+
+        //Then
+        assertFalse(collectionHasBeenInserted, "The collection has been inserted successfully");
+    }
+
+    @Test
+    public void should_remove_media_collection() {
+        //Given
+        String collectionName = "My Collection";
+        library.addNewCollection(collectionName);
+
+        //When
+        boolean removingWasSuccessful = library.removeMediaCollection(collectionName);
+
+        //Then
+        assertTrue(removingWasSuccessful, "Collection has not been removed successfully");
+
+    }
+
+    @Test
+    public void should_not_remove_media_collection() {
+        //Given
+        String collectionName = "My Collection";
+
+        //When
+        boolean removingWasSuccessful = library.removeMediaCollection(collectionName);
+
+        //Then
+        assertFalse(removingWasSuccessful, "Collection has been removed successfully");
+    }
+
+    @Test
+    public void should_return_media_collection() {
+        //Given
+        String collectionName = "My Collection";
+        library.addNewCollection(collectionName);
+
+        //When
+        Collection myCollection = library.findMediaCollection(collectionName);
+
+        //Then
+        assertNotNull(myCollection, "The found collection was null");
+    }
+
+    @Test
+    public void should_return_null_instead_of_media_collection() {
+        //Given
+        Collection myMediaCollection = new Collection("My Awesome Collection");
+
+        //When
+        Collection foundCollection = library.findMediaCollection("My Awesome Collection");
+
+        //Then
+        assertNull(foundCollection, "The found Collection is not null");
     }
 
 }

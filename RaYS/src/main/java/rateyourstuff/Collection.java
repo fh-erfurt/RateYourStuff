@@ -126,4 +126,14 @@ public class Collection {
         collectionOutput.append("}");
         return collectionOutput.toString();
     }
+
+    /**
+     * Used to remove the collection reference from all media, when deleting the collection from the library
+     */
+    public void removeAllMedia() {
+        for(Medium medium: mediaCollection) {
+            medium.removeMediaCollection(this);
+        }
+        mediaCollection.clear();
+    }
 }

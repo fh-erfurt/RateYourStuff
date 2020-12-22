@@ -1,8 +1,10 @@
 package rateyourstuff;
 
-/*
+/**
  *
- * Author: Mickey Knop
+ * <h1>Library</h1>
+ * <p>This class is used to manage all media and all media collections</p>
+ * @author: Mickey Knop, Robin Beck
  *
  * */
 
@@ -14,6 +16,7 @@ public class Library {
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
     private List<Medium> media;
+    private List<Collection> mediaCollections;
     //endregion
 
     //construct rateyourstuff.Comment
@@ -22,6 +25,7 @@ public class Library {
     public Library() {
 
         media = new ArrayList<>();
+        mediaCollections = new ArrayList<>();
     }
 
 
@@ -56,7 +60,6 @@ public class Library {
         //check if Values are valid
         if(name.equals("") || (publishers.size() == 0) || (languages.size() == 0) ||
                 (!isEBook && !isPrint) || (numberOfPages <= 0) || isbn.equals("")) {
-
             return false;
         }
 
@@ -263,5 +266,50 @@ public class Library {
         return false;
     }
 
+    /**
+     * <p>Used to check whether a media collection exists or not</p>
+     * @param name the title of the collection
+     * @return Collection, if collection was found, null, if no collection was found
+     */
+    public Collection findMediaCollection(String name) {
+        Collection foundCollection = null;
+        for(Collection collection : mediaCollections) {
+            if(collection.getName().equals(name)) {
+                foundCollection = collection;
+                break;
+            }
+        }
+        return foundCollection;
+    }
+
+    /**
+     * @param name Name of the collection
+     * @return false, if adding was not successful, true, if successful
+     */
+    public boolean addNewCollection(String name) {
+        Collection foundCollection = findMediaCollection(name);
+        if(foundCollection == null) {
+            Collection currentCollection = new Collection(name);
+            mediaCollections.add(currentCollection);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Used to delete a media collection by name,
+     * also clears all references to the desired collection
+     * @param name Name of the collection
+     * @return true, if deleting was successful, false, if deleting was not successful
+     */
+    public boolean removeMediaCollection(String name) {
+        Collection foundCollection = findMediaCollection(name);
+        if(foundCollection != null) {
+            foundCollection.removeAllMedia();
+            mediaCollections.remove(foundCollection);
+            return true;
+        }
+        return false;
+    }
     //endregion
 }

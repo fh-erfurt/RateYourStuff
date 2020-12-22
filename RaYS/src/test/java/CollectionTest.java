@@ -523,4 +523,37 @@ public class CollectionTest {
         //Then
         assertNotEquals("", collectionOutput, "The collection Output is empty");
     }
+
+    @Test
+    public void should_remove_all_references_to_collection() {
+        //Given
+        int bookCollections = exampleBook.getCollections().size();
+        int gameCollections = exampleGame.getCollections().size();
+        int seriesCollections = exampleSeries.getCollections().size();
+        int episodeCollections = exampleEpisode.getCollections().size();
+        int movieCollections = exampleMovie.getCollections().size();
+
+        //When
+        mediaCollection.removeAllMedia();
+
+        //Then
+        assertEquals(0,
+                mediaCollection.getMediaCollection().size(),
+                "The collection still has media");
+        assertEquals(bookCollections-1,
+                exampleBook.getCollections().size(),
+                "The Book still has a collection");
+        assertEquals(gameCollections-1, exampleGame.getCollections().size
+                (), "The Game still has a collection");
+        assertEquals(seriesCollections-1,
+                exampleSeries.getCollections().size(),
+                "The Series still has a collection");
+        assertEquals(episodeCollections-1,
+                exampleEpisode.getCollections().size(),
+                "The Episode still has a collection");
+        assertEquals(movieCollections-1,
+                exampleMovie.getCollections().size(),
+                "The Movie still has a collection");
+
+    }
 }
