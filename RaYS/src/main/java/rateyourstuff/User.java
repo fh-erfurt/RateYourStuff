@@ -15,8 +15,11 @@ public class User
     private String          firstName;
     private String          lastName;
     private String          email;
+    private String          address;
     private String          nickname;
     private String          password;
+    private boolean         isEnabled;
+    public UserStatus       userStatus;
 
     private List<Comment>   comments;
     private List<Rate>      rates;
@@ -62,6 +65,9 @@ public class User
         return email;
     }
 
+    public void setAddress(String address){this.address = address;}
+    public String getAddress(){return address;}
+
     public void setNickname(String nickname) {
         this.nickname = nickname;
     }
@@ -75,6 +81,9 @@ public class User
     public String getPassword() {
         return password;
     }
+
+    public void setIsEnabled(boolean isEnabled) {this.isEnabled = isEnabled;}
+    public boolean getIsEnabled() {return isEnabled;}
 
     public void setComment(List<Comment> comments) { this.comments = comments; }
     public List<Comment> getComment() { return comments; }
