@@ -183,7 +183,7 @@ public class UserManagement
         }
     }
 
-    public void enableMod(String nickname, ArrayList<User> userList)
+    public void setModeratorRights(String nickname, ArrayList<User> userList)
     {
         if(isExistingNickname(nickname, userList))
         {
