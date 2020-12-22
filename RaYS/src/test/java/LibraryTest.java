@@ -36,18 +36,19 @@ public class LibraryTest {
         boolean isEBook = false;
         boolean isPrint = true;
         int numberOfPages = 537;
+
         //When
         boolean bookHasBeenInserted;
         bookHasBeenInserted = library.addNewBook(name,
-        publicationDate,
-        shortDescription,
-        publishers,
-        authors,
-        isbn,
-        languages,
-        isEBook,
-        isPrint,
-        numberOfPages);
+                publicationDate,
+                shortDescription,
+                publishers,
+                authors,
+                isbn,
+                languages,
+                isEBook,
+                isPrint,
+                numberOfPages);
 
         //Then
         assertTrue(bookHasBeenInserted, "The Creation of a new book was not successful!");
