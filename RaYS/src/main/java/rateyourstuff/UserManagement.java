@@ -44,7 +44,7 @@ public class UserManagement
             ArrayList<Progress> userProgress = new ArrayList<>();
             password = BCrypt.hashpw(password, BCrypt.gensalt());
             User user  = new User(firstName, lastName, email, nickname, password, userComments, userRates, userProgress);
-            user.setPassword(password);
+//            user.setPassword(password);
             userList.add(user);
 //            System.out.println("Saved user with Nickname " + nickname + "!");
         }
