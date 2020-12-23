@@ -35,10 +35,6 @@ public class Season {
         return series;
     }
 
-    public List<Episode> getEpisodes() {
-        return episodes;
-    }
-
     public void setEpisodes(List<Episode> episodes) {
         this.episodes = episodes;
     }
@@ -65,6 +61,10 @@ public class Season {
 
     public void setSeasonNumber(int seasonNumber) {
         this.seasonNumber = seasonNumber;
+    }
+
+    public int getNumberOfEpisodes() {
+        return episodes.size();
     }
 
    public boolean addNewEpisode(String name,

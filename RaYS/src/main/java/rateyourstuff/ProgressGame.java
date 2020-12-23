@@ -1,7 +1,10 @@
 package rateyourstuff;
-/*
+
+import java.text.DecimalFormat;
+
+/**
  *
- * Author: Robin Beck
+ * @author Robin Beck
  *
  * */
 
@@ -9,7 +12,7 @@ public class ProgressGame extends Progress {
 
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
-    private float hoursPlayed = 0;
+    private float currentPlayTime = 0;
     //endregion
 
     //region Constructors
@@ -21,14 +24,18 @@ public class ProgressGame extends Progress {
 
     //region Getter // Setter
     ////////////////////////////////////////////////////////////////////////////////////
-    public float getHoursPlayed() {
-        return hoursPlayed;
+    public float getCurrentPlayTime() {
+        return currentPlayTime;
     }
 
-    public void setHoursPlayed(float hoursPlayed) {
-        this.hoursPlayed = hoursPlayed;
+    public void setCurrentPlayTime(float currentPlayTime) {
+        this.currentPlayTime = (currentPlayTime < 0) ? 0 : currentPlayTime;
     }
 
+    /**
+     *
+     * @return the progress as percentage, can be larger than 100 %
+     */
     @Override
     public float getProgressPercentage() {
         float percentage = 0f;
@@ -36,10 +43,11 @@ public class ProgressGame extends Progress {
         {
             Game game = (Game) getMedium();
             if(getMedium() != null) {
-                percentage = hoursPlayed * 100 / game.getAveragePlaytime();
+                percentage = currentPlayTime * 100f / game.getAveragePlaytime();
             }
         }
-        return percentage;
+        DecimalFormat formatter = new DecimalFormat("#.##");
+        return Float.parseFloat(formatter.format(percentage));
     }
     //endregion
 }

@@ -1,9 +1,11 @@
 package rateyourstuff;
 
 
-/*
+import java.text.DecimalFormat;
+
+/**
  *
- * Author: John Klippstein
+ * @author John Klippstein, Robin Beck
  *
  * */
 
@@ -11,7 +13,7 @@ public class ProgressSeries extends Progress{
 
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
-    private Integer currentSeason;
+    private int currentEpisode = 0;
     //endregion
 
     //region Constructors
@@ -21,12 +23,17 @@ public class ProgressSeries extends Progress{
 
     //region Getter // Setter
     ////////////////////////////////////////////////////////////////////////////////////
-    public Integer getCurrentSeason() {
-        return currentSeason;
+    public int getCurrentEpisode() {
+        return currentEpisode;
     }
 
-    public void setCurrentSeason(Integer currentSeason) {
-        this.currentSeason = currentSeason;
+    public void setCurrentEpisode(int currentEpisode) {
+        int numberOfEpisodes = (getMedium() instanceof Series) ? ((Series) getMedium()).getNumberOfEpisodes() : 0;
+        if(currentEpisode < 0) {
+            this.currentEpisode = 0;
+        } else {
+            this.currentEpisode = Math.min(currentEpisode, numberOfEpisodes);
+        }
     }
     //endregion
 
@@ -41,10 +48,11 @@ public class ProgressSeries extends Progress{
         if(getMedium() instanceof Series)
         {
             Series series = (Series) getMedium();
-            percentage =  currentSeason * 100 / series.getNumberOfSeasons();
+            percentage =  currentEpisode * 100f / series.getNumberOfEpisodes();
         }
 
-        return percentage;
+        DecimalFormat formatter = new DecimalFormat("#.##");
+        return Float.parseFloat(formatter.format(percentage));
     }
     //endregion
 }

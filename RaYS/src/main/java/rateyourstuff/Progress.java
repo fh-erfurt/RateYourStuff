@@ -1,7 +1,9 @@
 package rateyourstuff;
-/*
- *
- * Author: Robin Beck
+/**
+ * <h1>Progress</h1>
+ * <p>Represents a progress that is created by a user and contains information about
+ * the medium and the current progression in that medium</p>
+ * @author Robin Beck
  *
  * */
 

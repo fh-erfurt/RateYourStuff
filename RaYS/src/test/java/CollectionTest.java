@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 /**
  * <h1>Collection Test</h1>
  * <p>This class is used to test the functionality of the media collections</p>
- * @author: Robin Beck
+ * @author Robin Beck
  *
  */
 

@@ -1,14 +1,17 @@
 package rateyourstuff;
-/*
+
+import java.text.DecimalFormat;
+
+/**
  *
- * Author: John Klippstein
+ * @author John Klippstein, Robin Beck
  *
  * */
 public class ProgressBook extends Progress {
 
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
-    private Integer currentPage;
+    private int currentPage;
     //endregion
 
     //region Constructors
@@ -20,20 +23,26 @@ public class ProgressBook extends Progress {
 
     //region Getter // Setter
     ////////////////////////////////////////////////////////////////////////////////////
-    public Integer getNumberOfPages() {
+    public int getCurrentPage() {
         return currentPage;
     }
 
-    public void setNumberOfPages(Integer currentPage) {
-        this.currentPage = currentPage;
+    public void setCurrentPage(int currentPage) {
+        int numberOfPages = (getMedium() instanceof Book) ? ((Book) getMedium()).getNumberOfPages() : 0;
+        if(currentPage < 0) {
+            this.currentPage = 0;
+        } else {
+            this.currentPage = Math.min(currentPage, numberOfPages);
+        }
     }
     //endregion
 
     //region Methods
     ////////////////////////////////////////////////////////////////////////////////////
 
-    /* the method bellow calculated the progress of the book in percent
-        the method is using the current page and the number of pages from the book itself
+    /**
+     * <p>the method bellow calculates the progress of the book in percent
+     * The method is using the current page and the number of pages from the book itself</p>
      */
     @Override
     public float getProgressPercentage() {
@@ -41,10 +50,10 @@ public class ProgressBook extends Progress {
         if(getMedium() instanceof Book)
         {
             Book book = (Book) getMedium();
-            percentage = currentPage * 100 / book.getNumberOfPages();
+            percentage = currentPage * 100f / book.getNumberOfPages();
         }
-
-        return percentage;
+        DecimalFormat formatter = new DecimalFormat("#.##");
+        return Float.parseFloat(formatter.format(percentage));
     }
     //endregion
 

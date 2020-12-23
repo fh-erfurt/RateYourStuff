@@ -8,6 +8,10 @@ import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ * @author Robin Beck
+ */
+
 public class SeriesTest {
     @Test
     public void should_add_new_season () {

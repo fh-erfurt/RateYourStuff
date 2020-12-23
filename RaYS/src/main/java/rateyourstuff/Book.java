@@ -1,8 +1,8 @@
 package rateyourstuff;
 
-/*
+/**
 *
-* Auhor: Christoph Frischmuth
+* @author Christoph Frischmuth
 *
 * */
 
@@ -21,7 +21,7 @@ public class Book extends Medium
     private boolean isEBook;
     private boolean isPrint;
     private List<String> languages;
-    private Integer numberOfPages;
+    private int numberOfPages;
     //endregion
 
     //region Constructors
@@ -113,11 +113,11 @@ public class Book extends Medium
         this.languages.addAll(languages);
     }
 
-    public void setNumberOfPages(Integer numberOfPages) {
+    public void setNumberOfPages(int numberOfPages) {
         this.numberOfPages = numberOfPages;
     }
 
-    public Integer getNumberOfPages() {
+    public int getNumberOfPages() {
         return numberOfPages;
     }
     //endregion

@@ -8,6 +8,10 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Robin Beck
+ */
+
 public class SeasonTest {
     @Test
     public void should_add_episode_to_series() {

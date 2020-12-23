@@ -5,6 +5,10 @@ import rateyourstuff.ISBN10;
 import rateyourstuff.ISBN13;
 import rateyourstuff.InvalidISBNException;
 
+/**
+ * @author Robin Beck
+ */
+
 public class ISBN13Test {
 
     @Test
@@ -16,7 +20,7 @@ public class ISBN13Test {
         boolean isValidISBN13 = ISBN13.isValid(isbnString);
 
         //Then
-        assertEquals(true, isValidISBN13, "The given ISBN13 is not correct");
+        assertTrue(isValidISBN13, "The given ISBN13 is not correct");
     }
 
     @Test
@@ -28,7 +32,7 @@ public class ISBN13Test {
         boolean isValidISBN13 = ISBN13.isValid(isbnString);
 
         //Then
-        assertEquals(false, isValidISBN13, "The given ISBN13 is correct");
+        assertFalse(isValidISBN13, "The given ISBN13 is correct");
     }
 
     @Test

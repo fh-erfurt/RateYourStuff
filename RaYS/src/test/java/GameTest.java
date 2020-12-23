@@ -6,6 +6,10 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Robin Beck
+ */
+
 public class GameTest {
     @Test
     public void games_should_be_equal() {
