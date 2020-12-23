@@ -3,7 +3,8 @@ package rateyourstuff;
 import java.text.DecimalFormat;
 
 /**
- *
+ * <h1>Progress Movie</h1>
+ * <p>This class is used to store and check the progress a user has made for a certain movie</p>
  * @author John Klippstein, Robin Beck
  *
  * */
@@ -41,8 +42,9 @@ public class ProgressMovie extends Progress{
     //region Methods
     ////////////////////////////////////////////////////////////////////////////////////
     /**
-     * <p>the method bellow calculated the progress of the book in percent
-     *   the method is using the current page and the number of pages from the book itself</p>
+     * <p>the method bellow calculates the progress of the movie in percent (rounded to two decimals)
+     * the method is using the current page and the number of pages from the book itself</p>
+     * @return float min 0, max 100, rounded to two decimals
      */
     @Override
     public float getProgressPercentage() {

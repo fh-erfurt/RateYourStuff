@@ -4,7 +4,8 @@ package rateyourstuff;
 import java.text.DecimalFormat;
 
 /**
- *
+ * <h1>Progress Book</h1>
+ * <p>This class is used to store and check the progress a user has made for a certain series</p>
  * @author John Klippstein, Robin Beck
  *
  * */
@@ -39,9 +40,11 @@ public class ProgressSeries extends Progress{
 
     //region Methods
     ////////////////////////////////////////////////////////////////////////////////////
-    /* the method bellow calculated the progress of the book in percent
-        the method is using the current page and the number of pages from the book itself
-     */
+    /**
+    * the method bellow calculates the progress of the series in percent
+    * the method is using the current page and the number of pages from the book itself
+    * @return float, min 0, max 100, rounded to two decimals
+    */
     @Override
     public float getProgressPercentage() {
         float percentage = 0f;

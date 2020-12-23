@@ -3,7 +3,8 @@ package rateyourstuff;
 import java.text.DecimalFormat;
 
 /**
- *
+ * <h1>Progress Game</h1>
+ * <p>This class is used to store and check the progress a user has made for a certain Game</p>
  * @author Robin Beck
  *
  * */
@@ -33,8 +34,8 @@ public class ProgressGame extends Progress {
     }
 
     /**
-     *
-     * @return the progress as percentage, can be larger than 100 %
+     * This function calculates the current percentage based on average playtime and current playtime of the user
+     * @return the progress as percentage width two decimals, can be larger than 100 %
      */
     @Override
     public float getProgressPercentage() {

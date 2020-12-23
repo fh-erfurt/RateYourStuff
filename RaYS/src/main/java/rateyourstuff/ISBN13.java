@@ -1,6 +1,7 @@
 package rateyourstuff;
 /**
- *
+ * <h1>ISBN13</h1>
+ * <p>This class represents the ISBN13 and contains methods to validate isbn13 und transform isbn10 to isbn13</p>
  * @author Robin Beck
  *
  * */
@@ -19,6 +20,12 @@ public class ISBN13 {
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Used to create a new isbn13 from a valid isbn13 string
+     * @param isbn13 isbn13 string, separated with "-"
+     * @throws InvalidISBNException, if the given isbn13 is not valid
+     */
     public ISBN13(String isbn13) throws InvalidISBNException {
         if (isValid(isbn13)) {
             this.isbn = isbn13;
@@ -62,7 +69,11 @@ public class ISBN13 {
         return isbn13.charAt(isbn13.length()-1);
     }
 
-    //returns the correct checksum, receives complete isbn
+    /**
+     * This function calculates the correct checksum for a given isbn13 string
+     * @param isbn complete isbn13 string (including the current or a false checksum)
+     * @return the correct checksum
+     */
     private static char calculateChecksum(String isbn) {
         String mainISBN = isbn;
         mainISBN = mainISBN.substring(0, mainISBN.length()-1).replace("-", "");
@@ -81,6 +92,12 @@ public class ISBN13 {
         return (char) (checkSum + '0');
     }
 
+    /**
+     * converts an ISBN10 object to an ISBN13 object
+     * @param isbn10 valid isbn10 object
+     * @return isbn13 object
+     * @throws InvalidISBNException, if it is not possible to create the isbn13 object
+     */
     public static ISBN13 toISBN13(ISBN10 isbn10) throws InvalidISBNException {
         String isbn13;
         String isbn10String = isbn10.toString();
