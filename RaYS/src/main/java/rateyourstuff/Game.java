@@ -1,8 +1,8 @@
 package rateyourstuff;
 
-/*
- *
- * Author: Christoph Frischmuth
+/**
+ * <h1>Game</h1>
+ * @author Christoph Frischmuth, Robin Beck
  *
  * */
 

@@ -1,8 +1,8 @@
 package rateyourstuff;
 
-/*
+/**
  *
- * Author: Christoph Frischmuth
+ * @author Christoph Frischmuth
  *
  * */
 

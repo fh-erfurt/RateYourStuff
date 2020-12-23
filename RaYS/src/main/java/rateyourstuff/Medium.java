@@ -1,14 +1,13 @@
 package rateyourstuff;
 
-/*
+/**
  *
- * Author: Christoph Frischmuth
+ * @author: Christoph Frischmuth, Robin Beck
  *
  * */
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public abstract class Medium
@@ -39,12 +38,12 @@ public abstract class Medium
         this.publicationDate = publicationDate;
         this.shortDescription = shortDescription;
 
-        this.comments = new ArrayList<Comment>();
+        this.comments = new ArrayList<>();
         this.averageRating = 0f;
         this.personalOpinion = "";
         this.ratingCounter = 0;
-        this.collections = new ArrayList<Collection>();
-        this.ratings = new ArrayList<Rate>();
+        this.collections = new ArrayList<>();
+        this.ratings = new ArrayList<>();
     }
     //endregion
 
@@ -130,9 +129,7 @@ public abstract class Medium
     }
 
     public void addCollections(List<Collection> collections){
-        for(Collection collection : collections){
-            this.collections.add(collection);
-        }
+        this.collections.addAll(collections);
     }
 
     public void setRatings(List<Rate> ratings) {
@@ -144,9 +141,15 @@ public abstract class Medium
     }
 
     public void addRatings(List<Rate> ratings){
-        for(Rate rating : ratings){
-            this.ratings.add(rating);
-        }
+        this.ratings.addAll(ratings);
     }
     //endregion
+
+    public void addMediaCollection(Collection collection) {
+        collections.add(collection);
+    }
+
+    public void removeMediaCollection(Collection collection) {
+        collections.remove(collection);
+    }
 }

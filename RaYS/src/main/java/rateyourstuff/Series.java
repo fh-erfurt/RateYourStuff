@@ -1,14 +1,15 @@
 package rateyourstuff;
 
-/*
- *
- * @author Christoph Frischmuth
+/**
+ * <h1>Series</h1>
+ * <p>Represents a series / TV Show, contains information about the tv-show, the seasons of the show and the
+ * episodes of the seasons. Series can be added to media collections</p>
+ * @author Christoph Frischmuth, Robin Beck
  *
  */
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Series extends Medium {

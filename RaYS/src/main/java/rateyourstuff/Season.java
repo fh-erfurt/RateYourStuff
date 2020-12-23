@@ -4,6 +4,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Robin Beck
+ */
+
+
 public class Season {
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
@@ -77,7 +82,8 @@ public class Season {
                 shortDescription,
                 episodeNumber,
                 guestStars,
-                length);
+                length,
+                this);
 
             if(checkIfEpisodeExists(currentEpisode)) {
                 return false;
@@ -91,7 +97,7 @@ public class Season {
     // returns true, if episode was found
     public boolean checkIfEpisodeExists(Episode episode) {
         for( Episode currentEpisode: episodes) {
-            if(currentEpisode.equals(episode)) {
+            if(currentEpisode.equals(episode) || currentEpisode.getEpisodeNumber() == episode.getEpisodeNumber()) {
                 return true;
             }
         }

@@ -1,7 +1,7 @@
 package rateyourstuff;
-/*
+/**
  *
- * Author: Robin Beck
+ * @author Robin Beck
  *
  * */
 

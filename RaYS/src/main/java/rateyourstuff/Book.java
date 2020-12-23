@@ -15,7 +15,6 @@ public class Book extends Medium
 {
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
-    private String name;
     private List<String> publishers;
     private List<Person> authors;
     private ISBN13 isbn;
@@ -120,14 +119,6 @@ public class Book extends Medium
 
     public Integer getNumberOfPages() {
         return numberOfPages;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
     //endregion
 
