@@ -6,8 +6,8 @@ package rateyourstuff;
  * <p>The Media Collections provide Features to group Media in a logical way.
  * This Class allows users to add and remove Media to a collection</p>
  *
- * @author: John Klippstein, Robin Beck
- * @version: 1.1
+ * @author John Klippstein, Robin Beck
+ * @version 1.1
  *
  * */
 

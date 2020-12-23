@@ -23,6 +23,7 @@ public class CollectionTest {
     private static Series exampleSeries;
     private static Episode exampleEpisode;
     private static Game exampleGame;
+    private static Season exampleSeason;
 
     @BeforeAll
     public static void prepare_example_book() {
@@ -109,15 +110,20 @@ public class CollectionTest {
 
     @BeforeAll
     public static void prepare_example_episode() {
+        exampleSeason = new Season(1,"", null);
+
         ArrayList<Person> guestStars = new ArrayList<>();
         guestStars.add(new Person("Leon", "Askin"));
+
 
         exampleEpisode = new Episode("Kuckuck im Nest",
                 LocalDate.of(1965, 11, 17),
                 "...",
                 1,
                 guestStars,
-                25);
+                25,
+                exampleSeason);
+
     }
 
     @BeforeAll
@@ -293,21 +299,41 @@ public class CollectionTest {
         assertNull(foundMedium, "The found Medium is not null");
     }
 
-    //TODO change implementation of equals function from episode
     @Test
     public void should_return_found_episode_from_collection() {
         //Given
         Episode myEpisode = exampleEpisode;
 
         //When
+        Medium foundMedium = mediaCollection.findMedium(myEpisode);
 
         //Then
+        assertEquals(myEpisode, foundMedium, "The found Episode is not the same as the example Episode");
     }
 
-    //TODO
     @Test
     public void should_return_null_instead_of_found_episode_from_collection() {
+        //Given
+        Season mySeason = new Season(1,"", null);
 
+        ArrayList<Person> guestStars = new ArrayList<>();
+        guestStars.add(new Person("Leon", "Askin"));
+
+
+
+        Episode myEpisode = new Episode("Farewell, Goodbye and Amen",
+                LocalDate.of(1982, 11, 17),
+                "...",
+                1,
+                guestStars,
+                25,
+                mySeason);
+
+        //When
+        Medium foundMedium = mediaCollection.findMedium(myEpisode);
+
+        //Then
+        assertNull(foundMedium, "The found Episode is not null!");
     }
 
     @Test

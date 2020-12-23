@@ -4,7 +4,7 @@ package rateyourstuff;
  *
  * <h1>Library</h1>
  * <p>This class is used to manage all media and all media collections</p>
- * @author: Mickey Knop, Robin Beck
+ * @author Mickey Knop, Robin Beck
  *
  * */
 
