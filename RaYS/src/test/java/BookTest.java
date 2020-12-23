@@ -9,7 +9,9 @@ import rateyourstuff.Person;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-
+/**
+ * @author Robin Beck
+ */
 
 public class BookTest {
     @Test

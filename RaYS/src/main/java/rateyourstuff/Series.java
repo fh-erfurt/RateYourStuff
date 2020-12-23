@@ -25,9 +25,6 @@ public class Series extends Medium {
     private Resolution highestResolution;
     private boolean isCompleted;
     private List<Season> seasons;
-    private int numberOfSeasons;
-    private int numberOfEpisodes;
-
 
     private Resolution resolution;
     //endregion
@@ -56,8 +53,6 @@ public class Series extends Medium {
         this.isCompleted = isCompleted;
 
         this.seasons = new ArrayList<>();
-        this.numberOfEpisodes = 0;
-        this.numberOfSeasons = 0;
     }
     //endregion
 
@@ -141,25 +136,32 @@ public class Series extends Medium {
         this.seasons.addAll(seasons);
     }
 
-    public void setNumberOfSeasons(int numberOfSeasons) {
-        this.numberOfSeasons = numberOfSeasons;
-    }
     public int getNumberOfSeasons() {
-        return numberOfSeasons;
+        return seasons.size();
     }
 
-    public void setNumberOfEpisodes(int numberOfEpisodes) {
-        this.numberOfEpisodes = numberOfEpisodes;
-    }
     public int getNumberOfEpisodes() {
+        int numberOfEpisodes = 0;
+        for(Season season : seasons) {
+            numberOfEpisodes += season.getNumberOfEpisodes();
+        }
         return numberOfEpisodes;
+    }
+
+    public Season getSeason(int seasonNumber, String title) {
+        for(Season season : seasons) {
+            if(season.getSeasonNumber() == seasonNumber && season.getTitle().equals(title)) {
+                return season;
+            }
+        }
+        return null;
     }
     //endregion
 
 
     public boolean addNewSeason(int seasonNumber, String title) {
-       for(Season season : seasons) {
-            if(season.getSeasonNumber() == seasonNumber || season.getTitle().equals(title)) {
+        for(Season season : seasons) {
+            if(season.getSeasonNumber() == seasonNumber) {
                 return false;
             }
         }
