@@ -19,17 +19,14 @@ public class User
     private String          nickname;
     private String          password;
     private boolean         isEnabled;
-    private UserRole        role;
+    public UserRole         role;
 
     private List<Comment>   comments;
     private List<Rate>      rates;
     private List<Progress>  progresses;
     //endregion
 
-    //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
-    public User(){};
-
     public User(String firstName, String lastName, String email, String nickname, String password, List<Comment>comments, List<Rate>rates, List<Progress>progresses)
     {
         this.firstName  = firstName;
@@ -37,10 +34,9 @@ public class User
         this.email      = email;
         this.nickname   = nickname;
         this.password   = password;
-        // Should we give following attribute for a new user? Where is the logic?
-//        this.comments   = comments;
-//        this.rates      = rates;
-//        this.progresses = progresses;
+        this.comments   = comments;
+        this.rates      = rates;
+        this.progresses = progresses;
     }
     //endregion
 
@@ -109,5 +105,6 @@ public class User
         return progresses;
     }
     public void addProgress(List<Progress> progresses) { this.progresses.addAll(progresses); }
+
     //endregion
 }
