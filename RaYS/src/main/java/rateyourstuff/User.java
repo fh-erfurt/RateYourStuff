@@ -15,8 +15,11 @@ public class User
     private String          firstName;
     private String          lastName;
     private String          email;
+    private String          address;
     private String          nickname;
     private String          password;
+    private boolean         isEnabled;
+    private UserRole        role;
 
     private List<Comment>   comments;
     private List<Rate>      rates;
@@ -25,6 +28,8 @@ public class User
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
+    public User(){};
+
     public User(String firstName, String lastName, String email, String nickname, String password, List<Comment>comments, List<Rate>rates, List<Progress>progresses)
     {
         this.firstName  = firstName;
@@ -62,6 +67,9 @@ public class User
         return email;
     }
 
+    public void setAddress(String address){this.address = address;}
+    public String getAddress(){return address;}
+
     public void setNickname(String nickname) {
         this.nickname = nickname;
     }
@@ -75,6 +83,12 @@ public class User
     public String getPassword() {
         return password;
     }
+
+    public void IsEnabled(boolean isEnabled) {this.isEnabled = isEnabled;}
+    public boolean IsEnabled() {return isEnabled;}
+
+    public void setRole(UserRole userRole) {this.role = userRole;}
+    public UserRole getRole() {return role;}
 
     public void setComment(List<Comment> comments) { this.comments = comments; }
     public List<Comment> getComment() { return comments; }
