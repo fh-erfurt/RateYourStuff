@@ -1,6 +1,6 @@
 package rateyourstuff;
 
-public enum UserStatus
+public enum UserRole
 {
     USER, MODERATOR, ADMIN
 }
