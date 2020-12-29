@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         System.out.println("Starting...!");
         //Address Test
@@ -59,6 +59,27 @@ public class Main {
         if(myISBN10 != null) {
             System.out.println("ISBN13 for \"A Beautiful Mind\" is:\t" + ISBN13.toISBN13(myISBN10));
         }
+/*        User newAuthor = new User("Chris", "F.", null, "Chris50", "5555", null, null, null);
+        User newAuthor1 = new User("Mickey", "K.", null, "Mickey50", "5555", null, null, null);
+        LocalDate now = LocalDate.now();
+        Comment newComment = new Comment("Hallo, ich bin der Gerd", newAuthor, now);
+        Comment response = new Comment("tüdeleüüü geil!", newAuthor, now);
+        Comment response1 = new Comment("Und der Zweite!", newAuthor1, now);
+
+
+        newComment.AddResponse(response);
+        newComment.AddResponse(response1);
+
+        for (Comment responses : newComment.getResponses())
+        {
+            System.out.println(responses.getAuthor());
+            System.out.println(responses.getDate());
+            System.out.println(responses.getText());
+            System.out.println("");
+
+        }*/
+
+
     }
 
 }

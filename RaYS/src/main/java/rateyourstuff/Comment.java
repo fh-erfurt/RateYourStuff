@@ -7,6 +7,7 @@ package rateyourstuff;
  * */
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -22,6 +23,15 @@ public class Comment {
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
+    Comment(String text, User author, LocalDate date) {
+        this.text = text;
+        this.author = author;
+        this.date = date;
+        this.isClosed = false;
+        ArrayList<Comment> responses = new ArrayList();
+        this.responses = responses;
+    }
+
     Comment(String text, User author, LocalDate date, List<Comment> responses) {
         this.text = text;
         this.author = author;
@@ -64,8 +74,10 @@ public class Comment {
         return responses;
     }
 
-    public void AddResponses(List<Comment> responses) {
-        this.responses.addAll(responses);
+    public void AddResponse(Comment response) {
+        if(!this.isClosed) {
+            this.responses.add(response);
+        }
     }
 
     public Boolean getClosed() {
@@ -73,7 +85,7 @@ public class Comment {
     }
 
     public void setClosed(Boolean closed) {
-        isClosed = closed;
+        this.isClosed = closed;
     }
     //endregion
 
