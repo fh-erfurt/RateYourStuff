@@ -1,7 +1,8 @@
 package rateyourstuff;
-/*
- *
- * Author: Robin Beck
+/**
+ * <h1>ISBN13</h1>
+ * <p>This class represents the ISBN13 and contains methods to validate isbn13 und transform isbn10 to isbn13</p>
+ * @author Robin Beck
  *
  * */
 
@@ -19,7 +20,13 @@ public class ISBN13 {
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
-    ISBN13(String isbn13) throws InvalidISBNException {
+
+    /**
+     * Used to create a new isbn13 from a valid isbn13 string
+     * @param isbn13 isbn13 string, separated with "-"
+     * @throws InvalidISBNException, if the given isbn13 is not valid
+     */
+    public ISBN13(String isbn13) throws InvalidISBNException {
         if (isValid(isbn13)) {
             this.isbn = isbn13;
         } else {
@@ -62,13 +69,17 @@ public class ISBN13 {
         return isbn13.charAt(isbn13.length()-1);
     }
 
-    //returns the correct checksum, receives complete isbn
+    /**
+     * This function calculates the correct checksum for a given isbn13 string
+     * @param isbn complete isbn13 string (including the current or a false checksum)
+     * @return the correct checksum
+     */
     private static char calculateChecksum(String isbn) {
         String mainISBN = isbn;
         mainISBN = mainISBN.substring(0, mainISBN.length()-1).replace("-", "");
 
         int isbnSum = 0;
-        int checkSum = 0;
+        int checkSum;
         for(int i = 0; i < mainISBN.length(); i++) {
             int currentValue = Integer.parseInt(String.valueOf(mainISBN.charAt(i)));
             isbnSum += ((i+1) % 2 == 0) ? 3 * currentValue : currentValue;
@@ -81,14 +92,20 @@ public class ISBN13 {
         return (char) (checkSum + '0');
     }
 
-    public static String toISBN13(ISBN10 isbn10) {
+    /**
+     * converts an ISBN10 object to an ISBN13 object
+     * @param isbn10 valid isbn10 object
+     * @return isbn13 object
+     * @throws InvalidISBNException, if it is not possible to create the isbn13 object
+     */
+    public static ISBN13 toISBN13(ISBN10 isbn10) throws InvalidISBNException {
         String isbn13;
         String isbn10String = isbn10.toString();
 
         isbn13 = ISBN_13_PREFIX + isbn10String;
         char isbn13CheckSum = calculateChecksum(isbn13);
         isbn13 = isbn13.substring(0, isbn13.length()-1) + isbn13CheckSum;
-        return isbn13;
+        return new ISBN13(isbn13);
     }
 
     public String toString() {

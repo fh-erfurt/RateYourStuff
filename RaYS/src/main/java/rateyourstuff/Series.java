@@ -1,65 +1,69 @@
 package rateyourstuff;
 
 /**
- *
- * @author Christoph Frischmuth
+ * <h1>Series</h1>
+ * <p>Represents a series / TV Show, contains information about the tv-show, the seasons of the show and the
+ * episodes of the seasons. Series can be added to media collections</p>
+ * @author Christoph Frischmuth, Robin Beck
  *
  */
 
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Series extends Medium {
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
-    private List<Person> producers;
+    private String network;
     private List<Person> directors;
-    private List<Person> cast;
-    private List<String> genres;
+    private List<Person> actors;
     private List<String> subtitles;
+    private List<String> languages;
     private int averageLength;
     private int ageRestriction;
     private Resolution highestResolution;
     private boolean isCompleted;
     private List<Season> seasons;
-    private int numberOfSeasons;
-    private int numberOfEpisodes;
-
 
     private Resolution resolution;
     //endregion
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
-    public Series(int mediumID,
-                  String name,
-                  LocalDate publicationDate,
-                  List<Person> directors,
-                  List<Person> cast,
-                  List<String> genres,
-                  int ageRestriction,
-                  boolean isCompleted) {
-        super(mediumID, name);
-        this.setPublicationDate(publicationDate);
-        this.directors.addAll(directors);
-        this.cast.addAll(cast);
-        this.genres.addAll(genres);
+    public Series (String name,
+                   LocalDate publicationDate,
+                   String shortDescription,
+                   String network,
+                   List<Person> directors,
+                   List<Person> actors,
+                   List<String> languages,
+                   int averageLength,
+                   int ageRestriction,
+                   Resolution highestResolution,
+                   boolean isCompleted) {
+        super(name, publicationDate, shortDescription);
+        this.network = network;
+        this.directors = directors;
+        this.actors = actors;
+        this.languages = languages;
+        this.averageLength = averageLength;
         this.ageRestriction = ageRestriction;
+        this.highestResolution = highestResolution;
         this.isCompleted = isCompleted;
+
+        this.seasons = new ArrayList<>();
     }
     //endregion
 
     //region Getter // Setter // Adder
     ////////////////////////////////////////////////////////////////////////////////////
-    public void setProducers(List<Person> producers) {
-        this.producers = producers;
+    public void setNetwork(String network) {
+        this.network = network;
     }
-    public List<Person> getProducers() {
-        return producers;
-    }
-    public void addProducers(List<Person> producers) {
-        this.producers.addAll(producers);
+
+    public String getNetwork() {
+        return network;
     }
 
     public void setDirectors(List<Person> directors) {
@@ -73,23 +77,13 @@ public class Series extends Medium {
     }
 
     public void setCast(List<Person> cast) {
-        this.cast = cast;
+        this.actors = cast;
     }
     public List<Person> getCast() {
-        return cast;
+        return actors;
     }
     public void addCast(List<Person> cast) {
-        this.cast.addAll(cast);
-    }
-
-    public void setGenres(List<String> genres) {
-        this.genres = genres;
-    }
-    public List<String> getGenres() {
-        return genres;
-    }
-    public void addGenres(List<String> genres) {
-        this.genres.addAll(genres);
+        this.actors.addAll(cast);
     }
 
     public void setSubtitles(List<String> subtitles) {
@@ -142,18 +136,44 @@ public class Series extends Medium {
         this.seasons.addAll(seasons);
     }
 
-    public void setNumberOfSeasons(int numberOfSeasons) {
-        this.numberOfSeasons = numberOfSeasons;
-    }
     public int getNumberOfSeasons() {
-        return numberOfSeasons;
+        return seasons.size();
     }
 
-    public void setNumberOfEpisodes(int numberOfEpisodes) {
-        this.numberOfEpisodes = numberOfEpisodes;
-    }
     public int getNumberOfEpisodes() {
+        int numberOfEpisodes = 0;
+        for(Season season : seasons) {
+            numberOfEpisodes += season.getNumberOfEpisodes();
+        }
         return numberOfEpisodes;
     }
+
+    public Season getSeason(int seasonNumber, String title) {
+        for(Season season : seasons) {
+            if(season.getSeasonNumber() == seasonNumber && season.getTitle().equals(title)) {
+                return season;
+            }
+        }
+        return null;
+    }
     //endregion
+
+
+    public boolean addNewSeason(int seasonNumber, String title) {
+        for(Season season : seasons) {
+            if(season.getSeasonNumber() == seasonNumber) {
+                return false;
+            }
+        }
+
+        Season currentSeason = new Season(seasonNumber, title, this);
+        seasons.add(currentSeason);
+        return true;
+    }
+
+    public boolean equals(Series series) {
+        return this.getName().equals(series.getName()) &&
+                this.getPublicationDate().isEqual(series.getPublicationDate()) &&
+                this.network.equals(series.getNetwork());
+    }
 }

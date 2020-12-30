@@ -3,6 +3,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import rateyourstuff.ISBN10;
 import rateyourstuff.InvalidISBNException;
 
+/**
+ * @author Robin Beck
+ */
+
 public class ISBN10Test {
 
     @Test
@@ -14,7 +18,7 @@ public class ISBN10Test {
         boolean isValidISBN10 = ISBN10.isValid(isbnString);
 
         //Then
-        assertEquals(true, isValidISBN10, "The given Variable is not a valid ISBN10");
+        assertTrue(isValidISBN10, "The given Variable is not a valid ISBN10");
     }
 
     @Test
@@ -26,7 +30,7 @@ public class ISBN10Test {
         boolean isValidISBN10 = ISBN10.isValid(isbnString);
 
         //Then
-        assertEquals(false, isValidISBN10, "The given Variable is a valid ISBN10");
+        assertFalse(isValidISBN10, "The given Variable is a valid ISBN10");
     }
 
     @Test

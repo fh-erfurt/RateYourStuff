@@ -25,6 +25,11 @@ public class Person {
     private List<Medium> mediums;
     //endregion
 
+    public Person (String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     //region Getter // Setter
     ////////////////////////////////////////////////////////////////////////////////////
     public String getFirstName() {

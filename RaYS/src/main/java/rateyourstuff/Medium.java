@@ -1,20 +1,19 @@
 package rateyourstuff;
 
-/*
+/**
  *
- * Author: Christoph Frischmuth
+ * @author: Christoph Frischmuth, Robin Beck
  *
  * */
 
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Medium
 {
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
-    private int mediumID;
     private String name;
     private LocalDate publicationDate;
     private List<Comment> comments;
@@ -25,27 +24,32 @@ public abstract class Medium
     private List<Collection> collections;
     private List<Rate> ratings;
 
-    private Comment comment;
-    private Rate rate;
     //endregion
 
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
-    public Medium(int mediumID,
-                  String name){
+    public Medium() {
+
+    }
+
+    public Medium(String name, LocalDate publicationDate, String shortDescription){
         this.name = name;
-        this.mediumID = mediumID;
+        this.publicationDate = publicationDate;
+        this.shortDescription = shortDescription;
+
+        this.comments = new ArrayList<>();
+        this.averageRating = 0f;
+        this.personalOpinion = "";
+        this.ratingCounter = 0;
+        this.collections = new ArrayList<>();
+        this.ratings = new ArrayList<>();
     }
     //endregion
 
 
     //region Getter // Setter // Adder
     ////////////////////////////////////////////////////////////////////////////////////
-    public int getMediumID() {
-        return mediumID;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -125,9 +129,7 @@ public abstract class Medium
     }
 
     public void addCollections(List<Collection> collections){
-        for(Collection collection : collections){
-            this.collections.add(collection);
-        }
+        this.collections.addAll(collections);
     }
 
     public void setRatings(List<Rate> ratings) {
@@ -139,9 +141,15 @@ public abstract class Medium
     }
 
     public void addRatings(List<Rate> ratings){
-        for(Rate rating : ratings){
-            this.ratings.add(rating);
-        }
+        this.ratings.addAll(ratings);
     }
     //endregion
+
+    public void addMediaCollection(Collection collection) {
+        collections.add(collection);
+    }
+
+    public void removeMediaCollection(Collection collection) {
+        collections.remove(collection);
+    }
 }

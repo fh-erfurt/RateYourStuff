@@ -1,8 +1,8 @@
 package rateyourstuff;
 
-/*
+/**
 *
-* Auhor: Christoph Frischmuth
+* @author Christoph Frischmuth
 *
 * */
 
@@ -15,33 +15,36 @@ public class Book extends Medium
 {
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
-    private String name;
     private List<String> publishers;
-    private ArrayList<Person> authors;
-    private String ISBN;
+    private List<Person> authors;
+    private ISBN13 isbn;
     private boolean isEBook;
     private boolean isPrint;
     private List<String> languages;
-    private List<Collection> bookSeries;
-    private Integer numberOfPages;
+    private int numberOfPages;
     //endregion
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
 
-    public Book(int mediumID,
-                String name,
-                LocalDate publicationDate,
+    public Book(String name,
+                LocalDate releaseDate,
                 String shortDescription,
                 List<String> publishers,
-                ArrayList<Person> authors){
-        super(mediumID, name);
-        this.authors = new ArrayList<Person>();
-        this.setPublicationDate(publicationDate);
-        this.setShortDescription(shortDescription);
-        this.setPublishers(publishers);
-        this.authors.addAll(authors);
-        this.setRatingCounter(0);
+                List<Person> authors,
+                ISBN13 isbn13,
+                List<String> languages,
+                boolean isEBook,
+                boolean isPrint,
+                int numberOfPages){
+        super(name, releaseDate, shortDescription);
+        this.publishers = publishers;
+        this.authors = authors;
+        this.isbn = isbn13;
+        this.languages = languages;
+        this.isEBook = isEBook;
+        this.isPrint = isPrint;
+        this.numberOfPages = numberOfPages;
     }
     //endregion
 
@@ -56,9 +59,7 @@ public class Book extends Medium
     }
 
     public void addPublishers(List<String> publishers) {
-        for(String publisher : publishers){
-            this.publishers.add(publisher);
-        }
+        this.publishers.addAll(publishers);
     }
 
     public void setAuthors(ArrayList<Person> authors) {
@@ -70,17 +71,15 @@ public class Book extends Medium
     }
 
     public void addAuthor(List<Person> authors) {
-        for(Person author : authors){
-            this.authors.add(author);
-        }
+        this.authors.addAll(authors);
     }
 
-    public void setISBN(String ISBN) {
-        this.ISBN = ISBN;
+    public void setISBN(ISBN13 isbn) {
+        this.isbn = isbn;
     }
 
-    public String getISBN() {
-        return ISBN;
+    public ISBN13 getISBN() {
+        return isbn;
     }
 
     public void setIsEBook(boolean isEBook) {
@@ -111,40 +110,20 @@ public class Book extends Medium
     }
 
     public void addLanguages(List<String> languages){
-        for(String language : languages){
-            this.languages.add(language);
-        }
+        this.languages.addAll(languages);
     }
 
-    public void setBookSeries(List<Collection> bookSeries) {
-        this.bookSeries = bookSeries;
-    }
-
-    public List<Collection> getBookSeries() {
-        return bookSeries;
-    }
-
-    public void addBookSeries(List<Collection> bookSeries){
-        for(Collection partOfBookSeries : bookSeries){
-            this.bookSeries.add(partOfBookSeries);
-        }
-    }
-
-    public void setNumberOfPages(Integer numberOfPages) {
+    public void setNumberOfPages(int numberOfPages) {
         this.numberOfPages = numberOfPages;
     }
 
-    public Integer getNumberOfPages() {
+    public int getNumberOfPages() {
         return numberOfPages;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
     //endregion
+
+    public boolean equals(Book book) {
+        return (this.isbn.toString().equals(book.getISBN().toString()));
+    }
 
 }

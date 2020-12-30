@@ -1,7 +1,13 @@
 package rateyourstuff;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
+/**
+ * @author Robin Beck
+ */
+
 
 public class Season {
     //region Attributes
@@ -15,13 +21,10 @@ public class Season {
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
-    public Season(Series series) {
-        this(series, "");
-    }
-
-    public Season(Series series, String title) {
-        this.series = series;
+    public Season(int seasonNumber, String title, Series series) {
+        this.seasonNumber = seasonNumber;
         this.title = title;
+        this.series = series;
         this.episodes = new ArrayList<>();
     }
     //endregion
@@ -32,16 +35,16 @@ public class Season {
         return series;
     }
 
-    public List<Episode> getEpisodes() {
-        return episodes;
-    }
-
     public void setEpisodes(List<Episode> episodes) {
         this.episodes = episodes;
     }
 
     public void addEpisodes(List<Episode> episodes) {
         this.episodes.addAll(episodes);
+    }
+
+    public void addEpisode(Episode episode) {
+        episodes.add(episode);
     }
 
     public String getTitle() {
@@ -51,5 +54,56 @@ public class Season {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    public int getSeasonNumber() {
+        return seasonNumber;
+    }
+
+    public void setSeasonNumber(int seasonNumber) {
+        this.seasonNumber = seasonNumber;
+    }
+
+    public int getNumberOfEpisodes() {
+        return episodes.size();
+    }
+
+   public boolean addNewEpisode(String name,
+                                LocalDate publicationDate,
+                                String shortDescription,
+                                int episodeNumber,
+                                List<Person> guestStars,
+                                int length) {
+        if(name.equals("") || publicationDate == null || episodeNumber <= 0 || length <= 0) {
+            return false;
+        }
+
+        Episode currentEpisode = new Episode(name,
+                publicationDate,
+                shortDescription,
+                episodeNumber,
+                guestStars,
+                length,
+                this);
+
+            if(checkIfEpisodeExists(currentEpisode)) {
+                return false;
+            } else {
+                episodes.add(currentEpisode);
+                return true;
+            }
+    }
+
+    // checks if other episode with same episode Number or with same name and date exists
+    // returns true, if episode was found
+    public boolean checkIfEpisodeExists(Episode episode) {
+        for( Episode currentEpisode: episodes) {
+            if(currentEpisode.equals(episode) || currentEpisode.getEpisodeNumber() == episode.getEpisodeNumber()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     //endregion
+
 }

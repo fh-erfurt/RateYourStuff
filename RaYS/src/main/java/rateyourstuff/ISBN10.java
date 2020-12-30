@@ -1,7 +1,8 @@
 package rateyourstuff;
-/*
- *
- * Author: Robin Beck
+/**
+ * <h1>ISBN10</h1>
+ * <p>This class represents the old ISBN10 standard</p>
+ * @author Robin Beck
  *
  * */
 
@@ -19,6 +20,12 @@ public class ISBN10 {
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * creates a valid isbn10
+     * @param isbn10 isbn10 string, separated by "-"
+     * @throws InvalidISBNException, if the given string does not represent a valid isbn10
+     */
     public ISBN10(String isbn10) throws InvalidISBNException {
         if (isValid(isbn10)) {
             this.isbn = isbn10;
@@ -62,7 +69,11 @@ public class ISBN10 {
         return isbn10.charAt(isbn10.length()-1);
     }
 
-    //returns the correct checksum, receives complete isbn
+    /**
+     * This function calculates the correct checksum for a given isbn10 string
+     * @param isbn10 complete isbn10 string (including the current or a false checksum)
+     * @return the correct checksum
+     */
     private static char calculateChecksum(String isbn10) {
         String mainISBN = isbn10;
         mainISBN = mainISBN.substring(0, mainISBN.length()-1).replace("-", "");

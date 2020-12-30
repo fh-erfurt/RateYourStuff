@@ -1,8 +1,8 @@
 package rateyourstuff;
 
-/*
+/**
  *
- * Author: Mickey Knop
+ * @author Mickey Knop, Robin Beck
  *
  * */
 
@@ -87,12 +87,67 @@ public class User
     }
     public void addRate(List<Rate> rates) { this.rates.addAll(rates); }
 
-    public void setProgress(List<Progress> progresses) {
+    public void setProgresses(List<Progress> progresses) {
         this.progresses = progresses;
     }
-    public List<Progress> getProgress() {
+    public List<Progress> getProgresses() {
         return progresses;
     }
     public void addProgress(List<Progress> progresses) { this.progresses.addAll(progresses); }
     //endregion
+
+    /**
+     * @param medium which is used to search for a progress
+     * @return null, if not progress is found or the Progress that was found
+     */
+    public Progress findProgress(Medium medium) {
+        for(Progress progress : progresses ) {
+            if(progress.getMedium().equals(medium)) {
+                return progress;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * @param medium for which a new progress should be added
+     * @return true, if adding was successful, false, if adding was not successful
+     */
+    public boolean addNewProgress(Medium medium) {
+        if(findProgress(medium) != null) {
+            return false;
+        }
+        Progress currentProgress = null;
+        if(medium instanceof Book) {
+            currentProgress = new ProgressBook((Book) medium);
+        } else if(medium instanceof Movie) {
+            currentProgress = new ProgressMovie((Movie) medium);
+        } else if(medium instanceof Series) {
+            currentProgress = new ProgressSeries((Series) medium);
+        } else if(medium instanceof Game) {
+            currentProgress = new ProgressGame((Game) medium);
+        }
+        if(currentProgress != null) {
+            progresses.add(currentProgress);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * @param medium that is used to search the progress, that should be removed
+     * @return true, if removing was successful, false, if removing was not successful
+     */
+    public boolean removeProgress(Medium medium) {
+        Progress foundProgress = findProgress(medium);
+        if(foundProgress == null) {
+            return false;
+        }
+        progresses.remove(foundProgress);
+        return true;
+    }
+
+    public int getNumberOfProgresses() {
+        return progresses.size();
+    }
 }
