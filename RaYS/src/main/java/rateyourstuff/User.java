@@ -6,6 +6,7 @@ package rateyourstuff;
  *
  * */
 
+import javax.print.DocFlavor;
 import java.util.List;
 
 public class User
@@ -149,5 +150,20 @@ public class User
 
     public int getNumberOfProgresses() {
         return progresses.size();
+    }
+
+
+    public boolean addNewRate(Medium medium, Integer rating, String description)
+    {
+        Integer newRating = rating;
+        String newDescription = description;
+        List<Rate> mediumRates = medium.getRatings();
+
+        Rate userRate = new Rate (newRating, newDescription, medium);
+        mediumRates.add(userRate);
+        medium.addRatings(mediumRates);
+        this.rates.add(userRate);
+
+        return false;
     }
 }

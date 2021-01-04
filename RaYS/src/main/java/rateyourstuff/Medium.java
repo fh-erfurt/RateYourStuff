@@ -2,7 +2,7 @@ package rateyourstuff;
 
 /**
  *
- * @author: Christoph Frischmuth, Robin Beck
+ * @author: Christoph Frischmuth, Robin Beck, John Klippstein
  *
  * */
 
@@ -151,5 +151,22 @@ public abstract class Medium
 
     public void removeMediaCollection(Collection collection) {
         collections.remove(collection);
+    }
+
+    public Float calculateAvarageRating(){
+
+        Integer count = 0;
+        Float raiting = 0.0f;
+        Float avarageRating = 0.0f;
+
+        for (int i = 0; i<ratings.size();i++)
+        {
+            raiting = raiting + ratings.get(i).getRating();
+            count ++;
+        }
+
+        avarageRating = raiting/count;
+
+        return avarageRating;
     }
 }
