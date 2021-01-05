@@ -163,6 +163,8 @@ public abstract class Medium
         {
             raiting = raiting + ratings.get(i).getRating();
             count ++;
+
+            System.out.println(count + " und " + raiting);
         }
 
         avarageRating = raiting/count;

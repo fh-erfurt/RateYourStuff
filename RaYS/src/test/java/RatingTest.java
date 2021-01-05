@@ -17,8 +17,7 @@ public class RatingTest {
         Float avarageRaiting = 0.0f;
         Resolution resolution = new Resolution();
         User standardUser = new User("Vorname", "Nachname",
-                "VornameNachname@web.de", "Nickname", "SuperSecret",
-                null, null, null);
+                "VornameNachname@web.de", "Nickname", "SuperSecret");
 
         Movie coolMovie = new Movie("BestMovieEver", LocalDate.of(1989,12,24), null, "greatStudio",
                 null, null, null, 120, 16,
@@ -32,7 +31,7 @@ public class RatingTest {
 
         System.out.println(avarageRaiting);
 
-        if(avarageRaiting == 3.0f)
+        if(avarageRaiting == 6.0f)
         {
             averageRatingResult = true;
         }

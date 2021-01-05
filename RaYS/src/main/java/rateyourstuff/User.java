@@ -7,6 +7,7 @@ package rateyourstuff;
  * */
 
 import javax.print.DocFlavor;
+import java.util.ArrayList;
 import java.util.List;
 
 public class User
@@ -19,25 +20,28 @@ public class User
     private String          nickname;
     private String          password;
 
-    private List<Comment>   comments;
-    private List<Rate>      rates;
-    private List<Progress>  progresses;
+    private List<Comment>   comments = new ArrayList<>();
+    private List<Rate>      rates = new ArrayList<>();;
+    private List<Progress>  progresses = new ArrayList<>();;
     //endregion
+
+
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
-    public User(String firstName, String lastName, String email, String nickname, String password, List<Comment>comments, List<Rate>rates, List<Progress>progresses)
+    public User(String firstName, String lastName, String email, String nickname, String password)
     {
         this.firstName  = firstName;
         this.lastName   = lastName;
         this.email      = email;
         this.nickname   = nickname;
         this.password   = password;
-        this.comments   = comments;
+        /*this.comments   = comments;
         this.rates      = rates;
-        this.progresses = progresses;
+        this.progresses = progresses;*/
     }
     //endregion
+
 
     //region Getter // Setter
     ////////////////////////////////////////////////////////////////////////////////////
@@ -161,7 +165,7 @@ public class User
 
         Rate userRate = new Rate (newRating, newDescription, medium);
         mediumRates.add(userRate);
-        medium.addRatings(mediumRates);
+       /* medium.addRatings(userRate);*/
         this.rates.add(userRate);
 
         return false;

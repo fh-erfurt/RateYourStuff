@@ -128,10 +128,7 @@ public class UserTest {
                 "Guenther",
                 "test@mail.de",
                 "hamue",
-                "Sicher",
-                null,
-                null,
-                new ArrayList<>());
+                "Sicher");
         //Fill collection with test-data
         exampleUser.addNewProgress(exampleBook);
         exampleUser.addNewProgress(exampleMovie);
