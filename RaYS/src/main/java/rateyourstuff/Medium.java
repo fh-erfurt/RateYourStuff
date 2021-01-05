@@ -140,8 +140,8 @@ public abstract class Medium
         return ratings;
     }
 
-    public void addRatings(List<Rate> ratings){
-        this.ratings.addAll(ratings);
+    public void addRating(Rate rating){
+        this.ratings.add(rating);
     }
     //endregion
 
@@ -164,7 +164,6 @@ public abstract class Medium
             raiting = raiting + ratings.get(i).getRating();
             count ++;
 
-            System.out.println(count + " und " + raiting);
         }
 
         avarageRating = raiting/count;

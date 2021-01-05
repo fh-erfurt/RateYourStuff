@@ -164,8 +164,8 @@ public class User
         List<Rate> mediumRates = medium.getRatings();
 
         Rate userRate = new Rate (newRating, newDescription, medium);
-        mediumRates.add(userRate);
-       /* medium.addRatings(userRate);*/
+        /*mediumRates.add(userRate);*/
+        medium.addRating(userRate);
         this.rates.add(userRate);
 
         return false;

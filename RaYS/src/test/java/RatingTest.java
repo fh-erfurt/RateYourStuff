@@ -5,8 +5,16 @@ import rateyourstuff.User;
 
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.logging.Logger;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+/*
+* @author John Klippstein
+*
+* This test should show that the average rating of a medium works correctly and that the ratings are also insert
+*
+* */
 
 public class RatingTest {
     @Test
@@ -23,13 +31,20 @@ public class RatingTest {
                 null, null, null, 120, 16,
                 resolution);
 
-        standardUser.addNewRate(coolMovie, 7, "Best Movie ever ever ever!");
+        standardUser.addNewRate(coolMovie, 7, "Best Movie ever ever ever!1");
         standardUser.addNewRate(coolMovie, 10, "Best Movie ever ever ever!2");
         standardUser.addNewRate(coolMovie, 1, "Best Movie ever ever ever!3");
 
         avarageRaiting = coolMovie.calculateAvarageRating();
 
-        System.out.println(avarageRaiting);
+
+
+        Logger ratingTestLogger = Logger.getLogger("Rating Test");
+        ratingTestLogger.info("Durchschnittliche Bewertung der Testfälle "+avarageRaiting.toString());
+        ratingTestLogger.info("Bewertung vom ersten Rating: "+ coolMovie.getRatings().get(0).getDescription());
+        ratingTestLogger.info("Bewertung vom zweiten Rating: "+ coolMovie.getRatings().get(1).getDescription());
+        ratingTestLogger.info("Bewertung vom dritten Rating: "+ coolMovie.getRatings().get(2).getDescription());
+
 
         if(avarageRaiting == 6.0f)
         {
