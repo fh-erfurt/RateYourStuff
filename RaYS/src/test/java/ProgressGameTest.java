@@ -1,8 +1,5 @@
 import org.junit.jupiter.api.*;
-import rateyourstuff.Game;
-import rateyourstuff.Progress;
-import rateyourstuff.ProgressGame;
-import rateyourstuff.ProgressMovie;
+import rateyourstuff.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -31,6 +28,7 @@ public class ProgressGameTest {
         exampleGame = new Game("Dreams",
                 LocalDate.of(2020, 2,29),
                 "Spiel zum Erstellen von Spielen",
+                Genre.EDUCATION,
                 6f,
                 "Sony",
                 "MediaMolecule",
@@ -46,13 +44,13 @@ public class ProgressGameTest {
     public void should_set_current_time_of_progress_to_10 () {
         //Given
         float currentPlayTime = 10f;
-        Progress myGameProgress = new ProgressGame(exampleGame);
+        ProgressGame myGameProgress = new ProgressGame(exampleGame);
 
         //When
-        ((ProgressGame)myGameProgress).setCurrentPlayTime(currentPlayTime);
+        myGameProgress.setCurrentPlayTime(currentPlayTime);
 
         //Then
-        assertEquals(currentPlayTime,((ProgressGame)myGameProgress).getCurrentPlayTime(), "The time is not 10");
+        assertEquals(currentPlayTime, myGameProgress.getCurrentPlayTime(), "The time is not 10");
     }
 
     @Test
@@ -73,8 +71,8 @@ public class ProgressGameTest {
     public void should_return_0 () {
         //Given
         float currentPlayTime = 0f;
-        Progress myGameProgress = new ProgressGame(exampleGame);
-        ((ProgressGame)myGameProgress).setCurrentPlayTime(currentPlayTime);
+        ProgressGame myGameProgress = new ProgressGame(exampleGame);
+        myGameProgress.setCurrentPlayTime(currentPlayTime);
 
         //When
         float percentage = myGameProgress.getProgressPercentage();
@@ -88,8 +86,8 @@ public class ProgressGameTest {
     public void should_return_150 () {
         //Given
         float currentPlayTime = 9f;
-        Progress myGameProgress = new ProgressGame(exampleGame);
-        ((ProgressGame)myGameProgress).setCurrentPlayTime(currentPlayTime);
+        ProgressGame myGameProgress = new ProgressGame(exampleGame);
+        myGameProgress.setCurrentPlayTime(currentPlayTime);
 
         //When
         float percentage = myGameProgress.getProgressPercentage();

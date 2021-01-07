@@ -70,6 +70,7 @@ public class Season {
    public boolean addNewEpisode(String name,
                                 LocalDate publicationDate,
                                 String shortDescription,
+                                Genre genre,
                                 int episodeNumber,
                                 List<Person> guestStars,
                                 int length) {
@@ -80,6 +81,7 @@ public class Season {
         Episode currentEpisode = new Episode(name,
                 publicationDate,
                 shortDescription,
+                genre,
                 episodeNumber,
                 guestStars,
                 length,

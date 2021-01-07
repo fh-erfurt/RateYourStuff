@@ -30,6 +30,7 @@ public class Game extends Medium {
     public Game (String name,
                  LocalDate publicationDate,
                  String shortDescription,
+                 Genre genre,
                  float averagePlayTime,
                  String publisher,
                  String developer,
@@ -39,7 +40,7 @@ public class Game extends Medium {
                  int maxNumberOfPlayers,
                  List<String> platforms,
                  int ageRestriction) {
-        super(name, publicationDate, shortDescription);
+        super(name, publicationDate, shortDescription, genre);
         this.averagePlaytime = averagePlayTime;
         this.publisher = publisher;
         this.developer = developer;

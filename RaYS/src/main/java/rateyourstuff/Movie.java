@@ -27,6 +27,7 @@ public class Movie extends Medium
     public Movie (String name,
                   LocalDate publicationDate,
                   String shortDescription,
+                  Genre genre,
                   String studio,
                   List<Person> directors,
                   List<String> languages,
@@ -34,7 +35,7 @@ public class Movie extends Medium
                   int totalDuration,
                   int ageRestriction,
                   Resolution highestResolution) {
-        super(name, publicationDate, shortDescription);
+        super(name, publicationDate, shortDescription, genre);
         this.studio = studio;
         this.directors = directors;
         this.languages = languages;

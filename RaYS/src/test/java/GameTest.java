@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import rateyourstuff.Game;
+import rateyourstuff.Genre;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -26,6 +27,7 @@ public class GameTest {
         Game myGame = new Game("Dreams",
                 LocalDate.of(2020, 2,29),
                 "Spiel zum Erstellen von Spielen",
+                Genre.EDUCATION,
                 6f,
                 "Sony",
                 "MediaMolecule",
@@ -39,6 +41,7 @@ public class GameTest {
         Game my2ndGame = new Game("Dreams",
                 LocalDate.of(2020, 2,29),
                 "...",
+                Genre.EDUCATION,
                 6f,
                 "Sony",
                 "Sumo Digital",
@@ -71,6 +74,7 @@ public class GameTest {
         Game myGame = new Game("Dreams",
                 LocalDate.of(2020, 2,29),
                 "Spiel zum Erstellen von Spielen",
+                Genre.EDUCATION,
                 6f,
                 "Sony",
                 "MediaMolecule",
@@ -84,6 +88,7 @@ public class GameTest {
         Game my2ndGame = new Game("WipEout Omega Collection",
                 LocalDate.of(2020, 2,29),
                 "...",
+                Genre.RACING,
                 10f,
                 "Sony",
                 "Studio Liverpool",

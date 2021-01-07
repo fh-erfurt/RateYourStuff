@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import rateyourstuff.Episode;
+import rateyourstuff.Genre;
 import rateyourstuff.Person;
 import rateyourstuff.Season;
 
@@ -17,6 +18,7 @@ public class EpisodeTest {
         //Given
         Season mySeason = new Season(1,"", null);
         String name = "Kuckuck im Nest";
+        Genre genre = Genre.COMEDY;
         LocalDate publicationDate = LocalDate.of(1965, 11, 17);
         String shortDescription = "...";
         int episodeNumber = 1;
@@ -27,6 +29,7 @@ public class EpisodeTest {
         Episode myEpisode = new Episode(name,
                 publicationDate,
                 shortDescription,
+                genre,
                 episodeNumber,
                 guestStars,
                 length,
@@ -34,6 +37,7 @@ public class EpisodeTest {
         Episode my2ndEpisode = new Episode(name,
                 publicationDate,
                 shortDescription,
+                genre,
                 episodeNumber,
                 guestStars,
                 length,
@@ -54,6 +58,7 @@ public class EpisodeTest {
         String name = "Kuckuck im Nest";
         LocalDate publicationDate = LocalDate.of(1965, 11, 17);
         String shortDescription = "Um Carters Flucht zu beschleunigen, erhält Stalag 13 einen Neuankömmling: Wagner.";
+        Genre genre = Genre.COMEDY;
         int episodeNumber = 1;
         ArrayList<Person> guestStars = new ArrayList<>();
         guestStars.add(new Person("Leon", "Askin"));
@@ -62,6 +67,7 @@ public class EpisodeTest {
         Episode myEpisode = new Episode(name,
                 publicationDate,
                 shortDescription,
+                genre,
                 episodeNumber,
                 guestStars,
                 length,
@@ -69,6 +75,7 @@ public class EpisodeTest {
         Episode my2ndEpisode = new Episode("Fassen Sie sich, Kurtz",
                 publicationDate,
                 shortDescription,
+                genre,
                 2,
                 guestStars,
                 length,

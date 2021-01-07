@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*
         ;
+
+import rateyourstuff.Genre;
 import rateyourstuff.Movie;
 import rateyourstuff.Person;
 import rateyourstuff.Resolution;
@@ -33,6 +35,7 @@ public class MovieTest {
         Movie myMovie = new Movie("Zwei Asse Trumpfen auf",
                 LocalDate.of(1981,12,9),
                 "...",
+                Genre.COMEDY,
                 "3L",
                 directors,
                 languages,
@@ -44,6 +47,7 @@ public class MovieTest {
         Movie my2ndMovie = new Movie("Zwei Asse Trumpfen auf",
                 LocalDate.of(1981,12,9),
                 "...",
+                Genre.COMEDY,
                 "3L",
                 directors,
                 languages,
@@ -78,6 +82,7 @@ public class MovieTest {
         Movie myMovie = new Movie("Zwei Asse Trumpfen auf",
                 LocalDate.of(1981,12,9),
                 "...",
+                Genre.COMEDY,
                 "3L",
                 directors,
                 languages,
@@ -89,6 +94,7 @@ public class MovieTest {
         Movie my2ndMovie = new Movie("Zwei wie Pech und Schwefel",
                 LocalDate.of(1974,3,29),
                 "...",
+                Genre.COMEDY,
                 "3L",
                 directors,
                 languages,

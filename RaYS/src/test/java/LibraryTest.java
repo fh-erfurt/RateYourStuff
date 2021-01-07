@@ -12,7 +12,7 @@ import java.util.List;
  *
  * <h1>LibraryTest</h1>
  * <p>This class is used to test the functionality of the library class</p>
- * @author: Robin Beck
+ * @author Robin Beck
  *
  */
 
@@ -29,6 +29,7 @@ public class LibraryTest {
         String name = "Programmieren Lernen mit Java";
         LocalDate publicationDate = LocalDate.of(2016, 8, 23);
         String shortDescription = "Schritt für Schritt zum ersten Java Programm";
+        Genre genre = Genre.EDUCATION;
 
         ArrayList<String> publishers = new ArrayList<>();
         publishers.add("Rheinwerk Computing");
@@ -49,6 +50,7 @@ public class LibraryTest {
         bookHasBeenInserted = library.addNewBook(name,
                 publicationDate,
                 shortDescription,
+                genre,
                 publishers,
                 authors,
                 isbn,
@@ -68,6 +70,7 @@ public class LibraryTest {
         String name = "";
         LocalDate publicationDate = LocalDate.of(2016, 8, 23);
         String shortDescription = "Schritt für Schritt zum ersten Java Programm";
+        Genre genre = Genre.EDUCATION;
 
         ArrayList<String> publishers = new ArrayList<>();
         publishers.add("Rheinwerk Computing");
@@ -87,6 +90,7 @@ public class LibraryTest {
         bookHasBeenInserted = library.addNewBook(name,
                 publicationDate,
                 shortDescription,
+                genre,
                 publishers,
                 authors,
                 isbn,
@@ -107,6 +111,7 @@ public class LibraryTest {
         String shortDescription = "Alan hat Wettschulden und muss vor seinen Gläubigern fliehen. " +
                 "Mit einer Schatzkarte, die er von seinem Onkel Brady bekommen hat, versteckt er sich auf dem Schiff " +
                 "des Skippers Charlie, der zu einer Werbefahrt aufbricht.";
+        Genre genre = Genre.COMEDY;
 
         String studio = "3L";
 
@@ -129,6 +134,7 @@ public class LibraryTest {
         movieHasBeenInserted = library.addNewMovie(name,
                 publicationDate,
                 shortDescription,
+                genre,
                 studio,
                 directors,
                 languages,
@@ -150,6 +156,7 @@ public class LibraryTest {
         String shortDescription = "Alan hat Wettschulden und muss vor seinen Gläubigern fliehen. " +
                 "Mit einer Schatzkarte, die er von seinem Onkel Brady bekommen hat, versteckt er sich auf dem Schiff " +
                 "des Skippers Charlie, der zu einer Werbefahrt aufbricht.";
+        Genre genre = Genre.COMEDY;
 
         String studio = "3L";
 
@@ -170,6 +177,7 @@ public class LibraryTest {
         movieHasBeenInserted = library.addNewMovie(name,
                 publicationDate,
                 shortDescription,
+                genre,
                 studio,
                 directors,
                 languages,
@@ -191,6 +199,8 @@ public class LibraryTest {
                 "versteckten Tunneln, konfiszierten Vorräten und geheimen Radios ist Hogans Mission in erster Linie " +
                 "nicht die Flucht.";
 
+        Genre genre = Genre.COMEDY;
+
         String network = "CBS";
 
         ArrayList<Person> directors = new ArrayList<>();
@@ -211,6 +221,7 @@ public class LibraryTest {
         boolean seriesHasBeenInserted = library.addNewSeries(name,
                 publicationDate,
                 shortDescription,
+                genre,
                 network,
                 directors,
                 actors,
@@ -230,6 +241,8 @@ public class LibraryTest {
         String name = "Dreams";
         LocalDate publicationDate = LocalDate.of(2020, 2,29);
         String shortDescription = "Spiel zum Erstellen von Spielen";
+        Genre genre = Genre.EDUCATION;
+
         float averagePlayTime = 6f;
         String publisher = "Sony";
         String developer = "MediaMolecule";
@@ -250,6 +263,7 @@ public class LibraryTest {
         boolean gameHasBeenInserted = library.addNewGame(name,
                 publicationDate,
                 shortDescription,
+                genre,
                 averagePlayTime,
                 publisher,
                 developer,

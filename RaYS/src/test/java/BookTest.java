@@ -1,10 +1,7 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import rateyourstuff.Book;
-import rateyourstuff.ISBN13;
-import rateyourstuff.InvalidISBNException;
-import rateyourstuff.Person;
+import rateyourstuff.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -37,6 +34,7 @@ public class BookTest {
         Book myBook =new Book("Programmieren Lernen mit Java",
                 LocalDate.of(2016, 8, 23),
                 "...",
+                Genre.EDUCATION,
                 publishers,
                 authors,
                 isbn,
@@ -48,6 +46,7 @@ public class BookTest {
         Book my2ndBook =new Book("Mehr Programmieren Lernen mit Java",
                 LocalDate.of(2016, 9, 10),
                 "...",
+                Genre.EDUCATION,
                 publishers,
                 authors,
                 isbn,
@@ -93,6 +92,7 @@ public class BookTest {
         Book myBook =new Book("Programmieren Lernen mit Java",
                 LocalDate.of(2016, 8, 23),
                 "...",
+                Genre.EDUCATION,
                 publishers,
                 authors,
                 isbn,
@@ -104,6 +104,7 @@ public class BookTest {
         Book my2ndBook =new Book("Programmieren Lernen mit Java",
                 LocalDate.of(2020, 4, 24),
                 "...",
+                Genre.EDUCATION,
                 publishers,
                 authors,
                 isbn2ndBook,

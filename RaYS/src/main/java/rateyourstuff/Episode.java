@@ -26,11 +26,12 @@ public class Episode extends Medium {
     public Episode(String name,
                    LocalDate publicationDate,
                    String shortDescription,
+                   Genre genre,
                    int episodeNumber,
                    List<Person> guestStars,
                    int length,
                    Season season) {
-        super(name, publicationDate, shortDescription);
+        super(name, publicationDate, shortDescription, genre);
         this.episodeNumber = episodeNumber;
         this.guestStars = guestStars;
         this.length = length;

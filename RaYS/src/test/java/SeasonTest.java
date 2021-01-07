@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Test;
+import rateyourstuff.Genre;
 import rateyourstuff.Person;
 import rateyourstuff.Season;
 
@@ -21,6 +22,7 @@ public class SeasonTest {
         String episodeName = "Kuckuck im Nest";
         LocalDate episodeDate = LocalDate.of(1965, 11, 17);
         String episodeDescription = "Um Carters Flucht zu beschleunigen, erhält Stalag 13 einen Neuankömmling: Wagner.";
+        Genre genre = Genre.COMEDY;
         int episodeNumber = 1;
         ArrayList<Person> guestStars = new ArrayList<>();
         guestStars.add(new Person("Leon", "Askin"));
@@ -30,6 +32,7 @@ public class SeasonTest {
         boolean episodeHasBeenInserted = mySeason.addNewEpisode(episodeName,
                 episodeDate,
                 episodeDescription,
+                genre,
                 episodeNumber,
                 guestStars,
                 length);
@@ -46,6 +49,7 @@ public class SeasonTest {
         String episodeName = "Kuckuck im Nest";
         LocalDate episodeDate = LocalDate.of(1965, 11, 17);
         String episodeDescription = "Um Carters Flucht zu beschleunigen, erhält Stalag 13 einen Neuankömmling: Wagner.";
+        Genre genre = Genre.COMEDY;
         int episodeNumber = 1;
         ArrayList<Person> guestStars = new ArrayList<>();
         guestStars.add(new Person("Leon", "Askin"));
@@ -54,6 +58,7 @@ public class SeasonTest {
         mySeason.addNewEpisode(episodeName,
                 episodeDate,
                 episodeDescription,
+                genre,
                 episodeNumber,
                 guestStars,
                 length);
@@ -63,6 +68,7 @@ public class SeasonTest {
         boolean episodeHasBeenInserted = mySeason.addNewEpisode(episodeName,
                 episodeDate,
                 episodeDescription,
+                genre,
                 episodeNumber,
                 guestStars,
                 length);

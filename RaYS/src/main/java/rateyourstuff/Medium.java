@@ -19,8 +19,11 @@ public abstract class Medium
     private List<Comment> comments;
     private String shortDescription;
     private float averageRating;
+    private Genre genre;
+
     private String personalOpinion;
     private int ratingCounter;
+
     private List<Collection> collections;
     private List<Rate> ratings;
 
@@ -33,10 +36,11 @@ public abstract class Medium
 
     }
 
-    public Medium(String name, LocalDate publicationDate, String shortDescription){
+    public Medium(String name, LocalDate publicationDate, String shortDescription, Genre genre){
         this.name = name;
         this.publicationDate = publicationDate;
         this.shortDescription = shortDescription;
+        this.genre = genre;
 
         this.comments = new ArrayList<>();
         this.averageRating = 0f;
@@ -74,10 +78,6 @@ public abstract class Medium
         return comments;
     }
 
-    public void addComments(Comment comment){
-        this.comments.add(comment);
-    }
-
     public void addComment(List<Comment> comments){
         //Add new comments
     }
@@ -88,6 +88,14 @@ public abstract class Medium
 
     public String getShortDescription() {
         return shortDescription;
+    }
+
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
     }
 
     public float setAverageRate(List<Rate> ratings){
@@ -155,17 +163,16 @@ public abstract class Medium
 
     public Float calculateAvarageRating(){
 
-        Integer count = 0;
-        Float raiting = 0.0f;
-        Float avarageRating = 0.0f;
+        int count = 0;
+        float rating = 0.0f;
+        float avarageRating = 0.0f;
 
-        for (int i = 0; i<ratings.size();i++)
-        {
-            raiting = raiting + ratings.get(i).getRating();
-            count ++;
+        for (Rate currentRating : ratings) {
+            rating = rating + currentRating.getRating();
+            count++;
         }
 
-        avarageRating = raiting/count;
+        avarageRating = rating/count;
 
         return avarageRating;
     }
