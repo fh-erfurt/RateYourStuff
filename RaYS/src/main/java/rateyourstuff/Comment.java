@@ -23,7 +23,7 @@ public class Comment {
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
-    Comment(String text, User author, LocalDate date) {
+    public Comment(String text, User author, LocalDate date) {
         this.text = text;
         this.author = author;
         this.date = date;
@@ -32,12 +32,12 @@ public class Comment {
         this.responses = responses;
     }
 
-    Comment(String text, User author, LocalDate date, List<Comment> responses) {
+/*    Comment(String text, User author, LocalDate date, List<Comment> responses) {
         this.text = text;
         this.author = author;
         this.date = date;
         this.responses = responses;
-    }
+    }*/
     //endregion
 
     //region Getter // Setter // Adder
