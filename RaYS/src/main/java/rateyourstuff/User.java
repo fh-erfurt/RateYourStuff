@@ -17,8 +17,11 @@ public class User
     private String          firstName;
     private String          lastName;
     private String          email;
+    private String          address;
     private String          nickname;
     private String          password;
+    private boolean         isEnabled;
+    public UserRole         role;
 
     private List<Comment>   comments = new ArrayList<>();
     private List<Rate>      rates = new ArrayList<>();;
@@ -36,12 +39,8 @@ public class User
         this.email      = email;
         this.nickname   = nickname;
         this.password   = password;
-        /*this.comments   = comments;
-        this.rates      = rates;
-        this.progresses = progresses;*/
     }
     //endregion
-
 
     //region Getter // Setter
     ////////////////////////////////////////////////////////////////////////////////////
@@ -66,6 +65,9 @@ public class User
         return email;
     }
 
+    public void setAddress(String address){this.address = address;}
+    public String getAddress(){return address;}
+
     public void setNickname(String nickname) {
         this.nickname = nickname;
     }
@@ -80,6 +82,12 @@ public class User
         return password;
     }
 
+    public void IsEnabled(boolean isEnabled) {this.isEnabled = isEnabled;}
+    public boolean IsEnabled() {return isEnabled;}
+
+    public void setRole(UserRole userRole) {this.role = userRole;}
+    public UserRole getRole() {return role;}
+
     public void setComment(List<Comment> comments) { this.comments = comments; }
     public List<Comment> getComment() { return comments; }
     public void addComment(List<Comment> comments) { this.comments.addAll(comments); }
@@ -92,13 +100,14 @@ public class User
     }
     public void addRate(List<Rate> rates) { this.rates.addAll(rates); }
 
-    public void setProgresses(List<Progress> progresses) {
+    public void setProgress(List<Progress> progresses) {
         this.progresses = progresses;
     }
-    public List<Progress> getProgresses() {
+    public List<Progress> getProgress() {
         return progresses;
     }
     public void addProgress(List<Progress> progresses) { this.progresses.addAll(progresses); }
+
     //endregion
 
     /**

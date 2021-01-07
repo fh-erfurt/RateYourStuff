@@ -7,6 +7,7 @@ package rateyourstuff;
  * */
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -22,7 +23,16 @@ public class Comment {
 
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
-    public Comment(String text, User author, LocalDate date, List<Comment> responses) {
+    public Comment(String text, User author, LocalDate date) {
+        this.text = text;
+        this.author = author;
+        this.date = date;
+        this.isClosed = false;
+        ArrayList<Comment> responses = new ArrayList();
+        this.responses = responses;
+    }
+
+    Comment(String text, User author, LocalDate date, List<Comment> responses) {
         this.text = text;
         this.author = author;
         this.date = date;

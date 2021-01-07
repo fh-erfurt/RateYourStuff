@@ -2,7 +2,7 @@ package rateyourstuff;
 
 /**
  *
- * @author: Christoph Frischmuth, Robin Beck, John Klippstein
+ * @author Christoph Frischmuth, Robin Beck, John Klippstein
  *
  * */
 

@@ -16,7 +16,7 @@ public class CommentTest {
         ArrayList<Rate> rates = new ArrayList<>();
         User author = new User("Jane", "Doe", "jane.doe@example.org", "Nickname", "password1");
         LocalDate date = LocalDate.now();
-        Comment comment = new Comment("Text", author, date, new ArrayList<>());
+        Comment comment = new Comment("Text", author, date);
         comment.setText("Text");
         assertEquals("Text", comment.getText());
     }
@@ -27,7 +27,7 @@ public class CommentTest {
         ArrayList<Rate> rates1 = new ArrayList<>();
         User author = new User("Jane", "Doe", "jane.doe@example.org", "Nickname", "password1");
         LocalDate date = LocalDate.now();
-        Comment comment = new Comment("Text", author, date, new ArrayList<>());
+        Comment comment = new Comment("Text", author, date);
         ArrayList<Comment> comments2 = new ArrayList<>();
         ArrayList<Rate> rates2 = new ArrayList<>();
         User user = new User("Jane", "Doe", "jane.doe@example.org", "Nickname", "password1");
@@ -41,7 +41,7 @@ public class CommentTest {
         ArrayList<Rate> rates = new ArrayList<>();
         User author = new User("Jane", "Doe", "jane.doe@example.org", "Nickname", "password1");
         LocalDate date = LocalDate.now();
-        Comment comment = new Comment("Text", author, date, new ArrayList<>());
+        Comment comment = new Comment("Text", author, date);
         LocalDate Yesterday = date.minusDays(1);
         comment.setDate(Yesterday);
         assertSame(Yesterday, comment.getDate());
@@ -53,7 +53,7 @@ public class CommentTest {
         ArrayList<Rate> rates = new ArrayList<>();
         User author = new User("Jane", "Doe", "jane.doe@example.org", "Nickname", "password1");
         LocalDate date = LocalDate.now();
-        Comment comment = new Comment("Text", author, date, new ArrayList<>());
+        Comment comment = new Comment("Text", author, date);
         ArrayList<Comment> commentList = new ArrayList<>();
         comment.setResponses(commentList);
         assertSame(commentList, comment.getResponses());
@@ -65,7 +65,7 @@ public class CommentTest {
         ArrayList<Rate> rates = new ArrayList<>();
         User author = new User("Jane", "Doe", "jane.doe@example.org", "JohnDoe", "password1");
         LocalDate date = LocalDate.now();
-        Comment comment = new Comment("Text", author, date, new ArrayList<>());
+        Comment comment = new Comment("Text", author, date);
         comment.AddResponses(new ArrayList<>());
         assertEquals("JohnDoe", comment.getAuthor().getNickname());
     }
@@ -76,7 +76,7 @@ public class CommentTest {
         ArrayList<Rate> rates = new ArrayList<>();
         User author = new User("Jane", "Doe", "jane.doe@example.org", "Nickname", "password1");
         LocalDate date = LocalDate.now();
-        Comment comment = new Comment("Text", author, date, new ArrayList<>());
+        Comment comment = new Comment("Text", author, date);
         comment.setClosed(true);
         assertTrue(comment.getClosed());
     }
@@ -89,7 +89,7 @@ public class CommentTest {
         ArrayList<Rate> rates = new ArrayList<>();
         User author = new User("Jane", "Doe", "jane.doe@example.org", "Nickname", "password1");
         LocalDate date = LocalDate.now();
-        Comment comment = new Comment("You need to delete this", author, date, new ArrayList<>());
+        Comment comment = new Comment("You need to delete this", author, date);
         //System.out.print(comment);
         //comments.remove(comment.getAuthor().getNickname());
         //assertEquals(1, comment.getId() );
