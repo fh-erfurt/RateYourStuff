@@ -1,8 +1,8 @@
 package rateyourstuff;
 
-/*
+/**
 *
-* Author: John Klippstein
+* @author John Klippstein, Robin Beck
 *
 * */
 
@@ -13,21 +13,20 @@ public class Person {
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
     private String firstName;
-
     private String lastName;
-
-    private Boolean isActor;
-
-    private Boolean isWriter;
-
-    private Boolean isProducer;
+    private PersonType personType;
 
     private List<Medium> mediums;
     //endregion
 
     public Person (String firstName, String lastName) {
+        this(firstName, lastName, PersonType.UNDEFINED);
+    }
+
+    public Person(String firstName, String lastName, PersonType personType) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.personType = personType;
     }
 
     //region Getter // Setter
@@ -48,28 +47,12 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public Boolean getActor() {
-        return isActor;
+    public PersonType getPersonType() {
+        return personType;
     }
 
-    public void setActor(Boolean actor) {
-        isActor = actor;
-    }
-
-    public Boolean getWriter() {
-        return isWriter;
-    }
-
-    public void setWriter(Boolean writer) {
-        isWriter = writer;
-    }
-
-    public Boolean getProducer() {
-        return isProducer;
-    }
-
-    public void setProducer(Boolean producer) {
-        isProducer = producer;
+    public void setPersonType(PersonType personType) {
+        this.personType = personType;
     }
 
     public List<Medium> getMediumList() {
