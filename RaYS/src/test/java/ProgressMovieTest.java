@@ -32,6 +32,7 @@ public class ProgressMovieTest {
         exampleMovie = new Movie("Zwei Asse Trumpfen auf",
                 LocalDate.of(1981,12,9),
                 "...",
+                Genre.COMEDY,
                 "3L",
                 directors,
                 languages,
@@ -58,8 +59,8 @@ public class ProgressMovieTest {
     public void should_return_100 () {
         //Given
         int currentTime = 110;
-        Progress myMovieProgress = new ProgressMovie(exampleMovie);
-        ((ProgressMovie)myMovieProgress).setCurrentTime(currentTime);
+        ProgressMovie myMovieProgress = new ProgressMovie(exampleMovie);
+        myMovieProgress.setCurrentTime(currentTime);
 
         //When
         float percentage = myMovieProgress.getProgressPercentage();
@@ -72,8 +73,8 @@ public class ProgressMovieTest {
     public void should_return_0 () {
         //Given
         int currentTime = 0;
-        Progress myMovieProgress = new ProgressMovie(exampleMovie);
-        ((ProgressMovie)myMovieProgress).setCurrentTime(currentTime);
+        ProgressMovie myMovieProgress = new ProgressMovie(exampleMovie);
+        myMovieProgress.setCurrentTime(currentTime);
 
         //When
         float percentage = myMovieProgress.getProgressPercentage();
@@ -87,8 +88,8 @@ public class ProgressMovieTest {
     public void should_return_50 () {
         //Given
         int currentTime = 55;
-        Progress myMovieProgress = new ProgressMovie(exampleMovie);
-        ((ProgressMovie)myMovieProgress).setCurrentTime(currentTime);
+        ProgressMovie myMovieProgress = new ProgressMovie(exampleMovie);
+        myMovieProgress.setCurrentTime(currentTime);
 
         //When
         float percentage = myMovieProgress.getProgressPercentage();

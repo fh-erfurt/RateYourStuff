@@ -30,6 +30,7 @@ public class Book extends Medium
     public Book(String name,
                 LocalDate releaseDate,
                 String shortDescription,
+                Genre genre,
                 List<String> publishers,
                 List<Person> authors,
                 ISBN13 isbn13,
@@ -37,7 +38,7 @@ public class Book extends Medium
                 boolean isEBook,
                 boolean isPrint,
                 int numberOfPages){
-        super(name, releaseDate, shortDescription);
+        super(name, releaseDate, shortDescription, genre);
         this.publishers = publishers;
         this.authors = authors;
         this.isbn = isbn13;

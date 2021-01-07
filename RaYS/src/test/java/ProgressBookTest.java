@@ -34,6 +34,7 @@ public class ProgressBookTest {
         exampleBook = new Book("Programmieren Lernen mit Java",
                 LocalDate.of(2016, 8, 23),
                 "...",
+                Genre.EDUCATION,
                 publishers,
                 authors,
                 isbn,
@@ -60,8 +61,8 @@ public class ProgressBookTest {
     public void should_return_100 () {
         //Given
         int currentPage = 600;
-        Progress myBookProgress = new ProgressBook(exampleBook);
-        ((ProgressBook)myBookProgress).setCurrentPage(currentPage);
+        ProgressBook myBookProgress = new ProgressBook(exampleBook);
+        myBookProgress.setCurrentPage(currentPage);
 
         //When
         float percentage = myBookProgress.getProgressPercentage();
@@ -74,8 +75,8 @@ public class ProgressBookTest {
     public void should_return_0 () {
         //Given
         int currentPage = -10;
-        Progress myBookProgress = new ProgressBook(exampleBook);
-        ((ProgressBook)myBookProgress).setCurrentPage(currentPage);
+        ProgressBook myBookProgress = new ProgressBook(exampleBook);
+        myBookProgress.setCurrentPage(currentPage);
 
         //When
         float percentage = myBookProgress.getProgressPercentage();
@@ -88,8 +89,8 @@ public class ProgressBookTest {
     public void should_return_50 () {
         //Given
         int currentPage = 300;
-        Progress myBookProgress = new ProgressBook(exampleBook);
-        ((ProgressBook)myBookProgress).setCurrentPage(currentPage);
+        ProgressBook myBookProgress = new ProgressBook(exampleBook);
+        myBookProgress.setCurrentPage(currentPage);
 
         //When
         float percentage = myBookProgress.getProgressPercentage();

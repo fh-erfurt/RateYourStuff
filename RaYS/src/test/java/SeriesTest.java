@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+
+import rateyourstuff.Genre;
 import rateyourstuff.Person;
 import rateyourstuff.Resolution;
 import rateyourstuff.Series;
@@ -30,6 +32,7 @@ public class SeriesTest {
         Series currentSeries = new Series("Ein Käfig voller Helden",
                 LocalDate.of(1965,11,17),
                 "...",
+                Genre.COMEDY,
                 "CBS",
                 directors,
                 actors,
@@ -64,6 +67,7 @@ public class SeriesTest {
         Series currentSeries = new Series("Ein Käfig voller Helden",
                 LocalDate.of(1965,11,17),
                 "...",
+                Genre.COMEDY,
                 "CBS",
                 directors,
                 actors,
@@ -97,6 +101,7 @@ public class SeriesTest {
         Series mySeries = new Series("Ein Käfig voller Helden",
                 LocalDate.of(1965,11,17),
                 "...",
+                Genre.COMEDY,
                 "CBS",
                 directors,
                 actors,
@@ -109,6 +114,7 @@ public class SeriesTest {
         Series my2ndSeries = new Series("Ein Käfig voller Helden",
                 LocalDate.of(1965,11,17),
                 "...",
+                Genre.COMEDY,
                 "CBS",
                 directors,
                 actors,
@@ -142,6 +148,7 @@ public class SeriesTest {
         Series mySeries = new Series("Ein Käfig voller Helden",
                 LocalDate.of(1965,11,17),
                 "...",
+                Genre.COMEDY,
                 "CBS",
                 directors,
                 actors,
@@ -154,6 +161,7 @@ public class SeriesTest {
         Series my2ndSeries = new Series("M*A*S*H",
                 LocalDate.of(1972,11,17),
                 "...",
+                Genre.COMEDY,
                 "CBS",
                 directors,
                 actors,

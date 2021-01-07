@@ -30,6 +30,7 @@ public class ProgressSeriesTest {
         exampleSeries = new Series("Ein Käfig voller Helden",
                 LocalDate.of(1965,11,17),
                 "...",
+                Genre.COMEDY,
                 "CBS",
                 directors,
                 actors,
@@ -50,6 +51,7 @@ public class ProgressSeriesTest {
             season1.addNewEpisode("Episode " + i,
                     LocalDate.of(1967, 12, i+1),
                     "...",
+                    Genre.COMEDY,
                     i+1,
                     null,
                     25);
@@ -60,6 +62,7 @@ public class ProgressSeriesTest {
             season2.addNewEpisode("Episode " + i,
                     LocalDate.of(1968, 12, i+1),
                     "...",
+                    Genre.COMEDY,
                     i+1,
                     null,
                     25);
@@ -83,8 +86,8 @@ public class ProgressSeriesTest {
     public void should_return_100 () {
         //Given
         int currentEpisode = 20;
-        Progress mySeriesProgress = new ProgressSeries(exampleSeries);
-        ((ProgressSeries)mySeriesProgress).setCurrentEpisode(currentEpisode);
+        ProgressSeries mySeriesProgress = new ProgressSeries(exampleSeries);
+        mySeriesProgress.setCurrentEpisode(currentEpisode);
 
         //When
         float percentage = mySeriesProgress.getProgressPercentage();
@@ -97,8 +100,8 @@ public class ProgressSeriesTest {
     public void should_return_0 () {
         //Given
         int currentEpisode = 0;
-        Progress mySeriesProgress = new ProgressSeries(exampleSeries);
-        ((ProgressSeries)mySeriesProgress).setCurrentEpisode(currentEpisode);
+        ProgressSeries mySeriesProgress = new ProgressSeries(exampleSeries);
+        mySeriesProgress.setCurrentEpisode(currentEpisode);
 
         //When
         float percentage = mySeriesProgress.getProgressPercentage();
@@ -112,8 +115,8 @@ public class ProgressSeriesTest {
     public void should_return_80 () {
         //Given
         int currentEpisode = 16;
-        Progress mySeriesProgress = new ProgressSeries(exampleSeries);
-        ((ProgressSeries)mySeriesProgress).setCurrentEpisode(currentEpisode);
+        ProgressSeries mySeriesProgress = new ProgressSeries(exampleSeries);
+        mySeriesProgress.setCurrentEpisode(currentEpisode);
 
         //When
         float percentage = mySeriesProgress.getProgressPercentage();

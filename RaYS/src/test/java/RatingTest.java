@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Test;
+import rateyourstuff.Genre;
 import rateyourstuff.Movie;
 import rateyourstuff.Resolution;
 import rateyourstuff.User;
@@ -27,8 +28,16 @@ public class RatingTest {
         User standardUser = new User("Vorname", "Nachname",
                 "VornameNachname@web.de", "Nickname", "SuperSecret");
 
-        Movie coolMovie = new Movie("BestMovieEver", LocalDate.of(1989,12,24), null, "greatStudio",
-                null, null, null, 120, 16,
+        Movie coolMovie = new Movie("BestMovieEver",
+                LocalDate.of(1989,12,24),
+                "[...]",
+                Genre.COMEDY,
+                "greatStudio",
+                null,
+                null,
+                null,
+                120,
+                16,
                 resolution);
 
         standardUser.addNewRate(coolMovie, 7, "Best Movie ever ever ever!1");

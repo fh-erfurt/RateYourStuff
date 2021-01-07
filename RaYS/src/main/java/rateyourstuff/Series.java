@@ -34,6 +34,7 @@ public class Series extends Medium {
     public Series (String name,
                    LocalDate publicationDate,
                    String shortDescription,
+                   Genre genre,
                    String network,
                    List<Person> directors,
                    List<Person> actors,
@@ -42,7 +43,7 @@ public class Series extends Medium {
                    int ageRestriction,
                    Resolution highestResolution,
                    boolean isCompleted) {
-        super(name, publicationDate, shortDescription);
+        super(name, publicationDate, shortDescription, genre);
         this.network = network;
         this.directors = directors;
         this.actors = actors;
