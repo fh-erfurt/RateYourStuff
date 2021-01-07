@@ -19,6 +19,8 @@ public class Person {
     private List<Medium> mediums;
     //endregion
 
+    //region Constructors
+    ////////////////////////////////////////////////////////////////////////////////////
     public Person (String firstName, String lastName) {
         this(firstName, lastName, PersonType.UNDEFINED);
     }
@@ -28,6 +30,7 @@ public class Person {
         this.lastName = lastName;
         this.personType = personType;
     }
+    //endregion
 
     //region Getter // Setter
     ////////////////////////////////////////////////////////////////////////////////////
