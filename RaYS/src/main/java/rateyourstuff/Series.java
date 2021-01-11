@@ -157,6 +157,24 @@ public class Series extends Medium {
         }
         return null;
     }
+
+    public List<String> getFullNameOfPerson(List<Person> listOfPersons){
+        String fullName;
+        List<String> listOfFullNames = new ArrayList<>();
+        for(Person person : listOfPersons)
+        {
+            fullName= person.getFirstName() + person.getLastName();
+
+            listOfFullNames.add(fullName);
+        }
+        return listOfFullNames;
+    }
+
+    public String toString() {
+        return getName() + getGenre() + this.network
+                + getFullNameOfPerson(this.directors) + getFullNameOfPerson(this.actors)
+                + this.languages + this.ageRestriction;
+    }
     //endregion
 
 

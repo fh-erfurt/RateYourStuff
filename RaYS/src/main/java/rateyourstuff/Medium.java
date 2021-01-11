@@ -175,5 +175,23 @@ public abstract class Medium
         avarageRating = rating/count;
 
         return avarageRating;
+
+
     }
+
+    static void mediumToString(ArrayList<Medium> allMedia, ArrayList<String> allMediaAsString) {
+        for (Medium medium : allMedia) {
+            allMediaAsString.add(medium.toString());
+        }
+    }
+
+    static void searchHitInAllMediaStringList
+            (String keyword, ArrayList<String> allMediaAsString, ArrayList<String> searchResults) {
+        for (String medium : allMediaAsString) {
+            if (medium.toLowerCase().contains(keyword) || medium.contains(keyword)) {
+                searchResults.add(medium);
+            }
+        }
+    }
+
 }

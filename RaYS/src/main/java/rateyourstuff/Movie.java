@@ -7,6 +7,7 @@ package rateyourstuff;
  * */
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Movie extends Medium
@@ -117,6 +118,21 @@ public class Movie extends Medium
 
     public Resolution getHighestResolution() {
         return highestResolution;
+    }
+
+    public List<String> getFullNameOfPerson(List<Person> listOfPersons){
+        String fullName;
+        List<String> listOfFullNames = new ArrayList<>();
+        for(Person person : listOfPersons)
+        {
+            fullName= person.getFirstName() + person.getLastName();
+            listOfFullNames.add(fullName);
+        }
+        return listOfFullNames;
+    }
+
+    public String toString() {
+        return getName() + getGenre() + getFullNameOfPerson(this.directors) + this.languages + getFullNameOfPerson(this.mainActors) + this.ageRestriction;
     }
     //endregion
 

@@ -70,12 +70,13 @@ public class UserManagement {
                                  String password,
                                  ArrayList<User> userList) {
         if (isValidUser(nickname, email, userList) == false) {
-            ArrayList<Comment> userComments = new ArrayList<>();
+/*            ArrayList<Comment> userComments = new ArrayList<>();
             ArrayList<Rate> userRates = new ArrayList<>();
-            ArrayList<Progress> userProgress = new ArrayList<>();
-            password = BCrypt.hashpw(password, BCrypt.gensalt());
-            User user = new User(firstName, lastName, email, nickname, password);
-//            user.setPassword(password);
+            ArrayList<Progress> userProgress = new ArrayList<>();*/
+
+            String saltedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+            User user = new User(firstName, lastName, email, nickname, saltedPassword);
+/*            user.setPassword(password);*/
             userList.add(user);
 //            System.out.println("Saved user with Nickname " + nickname + "!");
         }
@@ -105,17 +106,16 @@ public class UserManagement {
     }
 
     public User viewPersonalData(String nickname, ArrayList<User> users) {
-
-        if (isValidUser(nickname, null, users)) {
+/*        if (isValidUser(nickname, null, users)) {*/
             for (User user : users) {
-                if (user.getNickname() == nickname) {
+                if (user.getNickname().equals(nickname)) {
                     System.out.println("First_Name: " + user.getFirstName());
                     System.out.println("Last_Name: " + user.getLastName());
                     System.out.println("Address: " + user.getAddress());
                     System.out.println("Nickname: " + user.getNickname());
                     System.out.println("email: " + user.getEmail());
                     return user;
-                }
+/*                }*/
             }
         }
         System.out.println("Nickname " + nickname + " dont exists!");

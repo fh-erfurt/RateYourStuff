@@ -140,6 +140,10 @@ public class Game extends Medium {
     public int getAgeRestriction() {
         return ageRestriction;
     }
+
+    public String toString() {
+        return getName() + getGenre() + this.publisher + this.languages + this.platforms + this.ageRestriction;
+    }
     //endregion
 
     public boolean equals(Game game) {
@@ -147,4 +151,6 @@ public class Game extends Medium {
                 this.getPublicationDate().isEqual(game.getPublicationDate()) &&
                 this.publisher.equals(game.getPublisher());
     }
+
+
 }

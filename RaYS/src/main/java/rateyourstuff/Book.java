@@ -121,6 +121,22 @@ public class Book extends Medium
     public int getNumberOfPages() {
         return numberOfPages;
     }
+
+    public List<String> getFullNameOfPerson(List<Person> listOfPersons){
+        String fullName;
+        List<String> listOfFullNames = new ArrayList<>();
+        for(Person person : listOfPersons)
+        {
+            fullName= person.getFirstName() + person.getLastName();
+            listOfFullNames.add(fullName);
+        }
+        return listOfFullNames;
+    }
+
+    public String toString() {
+        Person person = null;
+        return getName() + getGenre() + getFullNameOfPerson(this.authors) + this.isbn + this.languages;
+    }
     //endregion
 
     public boolean equals(Book book) {

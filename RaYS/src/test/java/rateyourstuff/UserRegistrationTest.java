@@ -3,6 +3,7 @@ package rateyourstuff;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -43,6 +44,6 @@ public class UserRegistrationTest {
         assertEquals(2, userList.size());
         //The following test will collapse because the user already exists
         userManagement.userRegistration("Karsten", "Papagei", "Karsten@knop.de", "Karsti", "2255", userList);
-        assertEquals(3, userList.size());
+        assertNotEquals(3, userList.size());
     }
 }

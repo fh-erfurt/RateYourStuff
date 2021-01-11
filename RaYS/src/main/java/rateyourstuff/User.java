@@ -107,7 +107,6 @@ public class User
         return progresses;
     }
     public void addProgress(List<Progress> progresses) { this.progresses.addAll(progresses); }
-
     //endregion
 
     /**
