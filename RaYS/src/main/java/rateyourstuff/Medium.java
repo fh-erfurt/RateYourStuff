@@ -78,6 +78,10 @@ public abstract class Medium
         return comments;
     }
 
+    public void removeComment(Comment comment) {
+        comments.remove(comment);
+    }
+
     public void addComment(List<Comment> comments){
         //Add new comments
     }
@@ -151,6 +155,11 @@ public abstract class Medium
     public void addRating(Rate rating){
         this.ratings.add(rating);
     }
+
+    public void removeRatings(Rate rating) {
+        ratings.remove(rating);
+    }
+
     //endregion
 
     public void addMediaCollection(Collection collection) {
@@ -194,4 +203,38 @@ public abstract class Medium
         }
     }
 
+    public Medium findMediumInLibrary(String name, Library library) {
+        Medium foundMedium = null;
+        for(Medium medium : library.getMedia()) {
+            if(medium.getName().equals(name)) {
+                foundMedium = medium;
+                break;
+            }
+        }
+        return foundMedium;
+    }
+
+    public void removeMedium(String name, Library library) {
+        Medium foundMedium = findMediumInLibrary(name, library);
+        /* if(foundMedium != null) {
+            for(int i=0; i < foundMedium.comments.size();i++)
+            {
+
+
+            }
+
+            for(int i=0; i < foundMedium.ratings.size();i++)
+            {
+
+            }
+
+            return true;
+        }
+        return false;*/
+
+        comments = null;
+        ratings = null;
+         library.getMedia().remove(foundMedium);
+
+    }
 }
