@@ -16,7 +16,8 @@ The uml-Class diagram-preview is available at: https://lucid.app/documents/view/
 
 ## Who is the RateYourStuff-Team?
 The RYS-Team constists of four persons
+- Robin Beck
 - Christoph Frischmuth
 - John Klippstein
 - Mickey Knop
-- Robin Beck
+
