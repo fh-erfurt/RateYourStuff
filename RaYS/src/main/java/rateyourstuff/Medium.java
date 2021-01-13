@@ -10,8 +10,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Medium
-{
+public abstract class Medium {
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
     private String name;
@@ -26,6 +25,7 @@ public abstract class Medium
 
     private List<Collection> collections;
     private List<Rate> ratings;
+    private List<User> usersWithProgress;
 
     //endregion
 
@@ -36,7 +36,7 @@ public abstract class Medium
 
     }
 
-    public Medium(String name, LocalDate publicationDate, String shortDescription, Genre genre){
+    public Medium(String name, LocalDate publicationDate, String shortDescription, Genre genre) {
         this.name = name;
         this.publicationDate = publicationDate;
         this.shortDescription = shortDescription;
@@ -48,6 +48,7 @@ public abstract class Medium
         this.ratingCounter = 0;
         this.collections = new ArrayList<>();
         this.ratings = new ArrayList<>();
+        this.usersWithProgress = new ArrayList<>();
     }
     //endregion
 
@@ -82,7 +83,7 @@ public abstract class Medium
         comments.remove(comment);
     }
 
-    public void addComment(List<Comment> comments){
+    public void addComment(List<Comment> comments) {
         //Add new comments
     }
 
@@ -102,12 +103,12 @@ public abstract class Medium
         this.genre = genre;
     }
 
-    public float setAverageRate(List<Rate> ratings){
+    public float setAverageRate(List<Rate> ratings) {
         float tempAverage = 0f;
-        for(Rate currentRating : ratings) {
+        for (Rate currentRating : ratings) {
             tempAverage = tempAverage + currentRating.getRating();
         }
-        tempAverage = tempAverage/ratings.size();   //Devide the computed sum of ratings by the length of the list
+        tempAverage = tempAverage / ratings.size();   //Devide the computed sum of ratings by the length of the list
 
         return this.averageRating = tempAverage;
     }
@@ -140,7 +141,7 @@ public abstract class Medium
         return collections;
     }
 
-    public void addCollections(List<Collection> collections){
+    public void addCollections(List<Collection> collections) {
         this.collections.addAll(collections);
     }
 
@@ -152,13 +153,26 @@ public abstract class Medium
         return ratings;
     }
 
-    public void addRating(Rate rating){
+    public void addRating(Rate rating) {
         this.ratings.add(rating);
     }
 
     public void removeRatings(Rate rating) {
         ratings.remove(rating);
     }
+
+    public List<User> getUsersWithProgress() {
+        return usersWithProgress;
+    }
+
+    public void setUsersWithProgress(List<User> usersWithProgress) {
+        this.usersWithProgress = usersWithProgress;
+    }
+
+    public void removeUserWithProgress(User user) {
+        usersWithProgress.remove(user);
+    }
+
 
     //endregion
 
@@ -170,7 +184,7 @@ public abstract class Medium
         collections.remove(collection);
     }
 
-    public Float calculateAvarageRating(){
+    public Float calculateAvarageRating() {
 
         int count = 0;
         float rating = 0.0f;
@@ -181,7 +195,7 @@ public abstract class Medium
             count++;
         }
 
-        avarageRating = rating/count;
+        avarageRating = rating / count;
 
         return avarageRating;
 
@@ -203,38 +217,4 @@ public abstract class Medium
         }
     }
 
-    public Medium findMediumInLibrary(String name, Library library) {
-        Medium foundMedium = null;
-        for(Medium medium : library.getMedia()) {
-            if(medium.getName().equals(name)) {
-                foundMedium = medium;
-                break;
-            }
-        }
-        return foundMedium;
-    }
-
-    public void removeMedium(String name, Library library) {
-        Medium foundMedium = findMediumInLibrary(name, library);
-        /* if(foundMedium != null) {
-            for(int i=0; i < foundMedium.comments.size();i++)
-            {
-
-
-            }
-
-            for(int i=0; i < foundMedium.ratings.size();i++)
-            {
-
-            }
-
-            return true;
-        }
-        return false;*/
-
-        comments = null;
-        ratings = null;
-         library.getMedia().remove(foundMedium);
-
-    }
 }

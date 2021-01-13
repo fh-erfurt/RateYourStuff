@@ -19,6 +19,7 @@ public class Comment {
     private LocalDate date;
     private Boolean isClosed;
     private List<Comment> responses;
+    private Medium medium = null;
     //endregion
 
     //region Constructors
@@ -95,6 +96,9 @@ public class Comment {
     public boolean isSpoiler() {
         return false;
     }
+
+    public void setMedium(Medium medium) { this.medium = medium; }
+    public Medium getMedium() { return medium; }
 
 
     //endregion

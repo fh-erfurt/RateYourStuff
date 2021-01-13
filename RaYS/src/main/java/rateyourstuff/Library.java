@@ -320,4 +320,36 @@ public class Library {
         return false;
     }
     //endregion
+
+
+
+    public boolean removeMedium(Medium medium)
+    {
+        int foundMediumIndex = media.indexOf(medium);
+
+        if (foundMediumIndex != -1 )
+        {
+          Medium foundMedium = media.get(foundMediumIndex);
+
+            List<User> usersWithProgress = foundMedium.getUsersWithProgress();
+
+            for (int i = 0; i < usersWithProgress.size(); i++)
+            {
+                User userProgress = usersWithProgress.get(i);
+                userProgress.removeProgress(foundMedium);
+                userProgress.removeRateInUSer(foundMedium);
+                userProgress.removeComment(foundMedium);
+            }
+
+            foundMedium.setComment(null);
+            foundMedium.setRatings(null);
+            media.remove(foundMedium);
+
+            return true;
+        }
+
+        return false;
+
+    }
+
 }

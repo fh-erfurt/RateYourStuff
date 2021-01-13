@@ -354,4 +354,82 @@ public class LibraryTest {
         assertNull(foundCollection, "The found Collection is not null");
     }
 
+
+    @Test
+    public void should_delet_Medium()
+    {
+
+        //Given
+        String name = "Zwei Asse trumpfen auf";
+        LocalDate publicationDate = LocalDate.of(1981,12,9);
+        String shortDescription = "Alan hat Wettschulden und muss vor seinen Gläubigern fliehen. " +
+                "Mit einer Schatzkarte, die er von seinem Onkel Brady bekommen hat, versteckt er sich auf dem Schiff " +
+                "des Skippers Charlie, der zu einer Werbefahrt aufbricht.";
+        Genre genre = Genre.COMEDY;
+
+        String studio = "3L";
+
+        List<Person> directors = new ArrayList<>();
+        directors.add(new Person("Sergio", "Corbucci"));
+
+        List<String> languages = new ArrayList<>();
+        languages.add("Itanlienisch");
+        languages.add("Deutsch");
+
+        List<Person> mainActors = new ArrayList<>();
+        mainActors.add(new Person("Bud", "Spencer"));
+        mainActors.add(new Person("Terence", "Hill"));
+        int totalDuration = 110;
+        int ageRestriction = 12;
+        Resolution highestResolution = new Resolution();
+
+        //When
+        boolean movieHasBeenInserted;
+        movieHasBeenInserted = library.addNewMovie(name,
+                publicationDate,
+                shortDescription,
+                genre,
+                studio,
+                directors,
+                languages,
+                mainActors,
+                totalDuration,
+                ageRestriction,
+                highestResolution);
+
+        //library.removeMedium(library.getMedia().get(library.getMedia().size()-1));
+
+        int currentMediaSizeOfList = library.getMedia().size();
+
+        boolean deleteSucc = library.removeMedium(library.getMedia().get(library.getMedia().size()-1));
+
+        int updatedMediaSizeOfList = library.getMedia().size();
+
+        assertEquals(currentMediaSizeOfList-1, updatedMediaSizeOfList);
+
+        assertTrue(deleteSucc);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
