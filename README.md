@@ -15,9 +15,11 @@ Users will be able to rate media with different criteria. For each media there w
 The uml-Class diagram-preview is available at: https://lucid.app/documents/view/c6c65f1a-d09a-422a-ade8-80eab27f8dcb
 
 ## Who is the RateYourStuff-Team?
-The RYS-Team constists of four persons
+The RYS-Team consists of four fantastic persons
 - Robin Beck
 - Christoph Frischmuth
 - John Klippstein
 - Mickey Knop
+
+Nobody can touch this *Mic drop*
 
