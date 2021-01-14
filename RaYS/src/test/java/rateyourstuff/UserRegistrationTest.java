@@ -34,7 +34,7 @@ public class UserRegistrationTest {
     }
 
     @Test
-    void isValidUserTest() {
+    void should_return_if_its_Valid_User() {
         //When
         // The first two tests includes already existent values for nickname and/or email and should return true
         //Then
@@ -44,7 +44,7 @@ public class UserRegistrationTest {
     }
 
     @Test
-    void userRegistrationTest() {
+    void should_sign_up_user() {
         //When
         userManagement.userRegistration("Robin",
                 "Beck",

@@ -153,11 +153,11 @@ public class UserManagement {
 
     public User viewPersonalData(User user) {
         if (isExistingNickname(user.getNickname())) {
-            System.out.println("First_Name: " + user.getFirstName());
+/*            System.out.println("First_Name: " + user.getFirstName());
             System.out.println("Last_Name: " + user.getLastName());
             System.out.println("Address: " + user.getAddress());
             System.out.println("Nickname: " + user.getNickname());
-            System.out.println("email: " + user.getEmail());
+            System.out.println("email: " + user.getEmail());*/
             return user;
         } else {
             System.out.println("Nickname " + user.getNickname() + " dont exists!");
