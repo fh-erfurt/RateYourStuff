@@ -14,7 +14,6 @@ public class ISBN10 {
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
     public static final int    ISBN_10_LENGTH = 10;
-
     private String isbn;
     //endregion
 
@@ -38,12 +37,21 @@ public class ISBN10 {
     //region Methods
     ////////////////////////////////////////////////////////////////////////////////////
 
-    //returns true if given isbn10 is valid
+    /**
+     * Checks whether an ISBN10 is valid or not
+     * @param isbn10    ISBN10 as String separated by "-"
+     * @return          true, if the ISBN is valid, fals if not
+     */
     public static boolean isValid (String isbn10) {
         return (hasValidFormat(isbn10) && hasValidChecksum(isbn10));
     }
 
-    //returns true if format of the isbn is valid (ignores checksum-correctness)
+
+    /**
+     * Checks if the format of the ISBN is correct, does not check if the checksum is valid
+     * @param isbn10    ISBN10 String separated by "-"
+     * @return          true, if the format is valid, false if not
+     */
     private static boolean hasValidFormat (String isbn10) {
         //RegEx pattern to determine structure of ISBN
         Pattern isbnPattern = Pattern.compile("\\b\\d{1,5}-\\d{2,7}-\\d{2,7}-(\\d|X)\\b");
@@ -54,7 +62,12 @@ public class ISBN10 {
         return ((isbnLength == ISBN_10_LENGTH) && isbnMatcher.matches());
     }
 
-    //returns true if the given isbn has a valid checksum
+
+    /**
+     * checks if the checksum of the given ISBN10 is correct
+     * @param isbn10    ISBN10 string separated by "-"
+     * @return          true, if the checksum is correct, false if not
+     */
     private static boolean hasValidChecksum(String isbn10) {
         //Extract the checksum of the given ISBN
         char placedCheckSum = extractChecksum(isbn10);
@@ -64,22 +77,26 @@ public class ISBN10 {
         return placedCheckSum == actualCheckSum;
     }
 
-    //returns the checksum of a given isbn
+    /**
+     * Used to extract the Checksum that is in an ISBN10 String
+     * Does not check whether the checksum is correct or not
+     * @param isbn10    ISBN10 String separated with "-"
+     * @return          The checksum as char
+     */
     private static char extractChecksum(String isbn10) {
         return isbn10.charAt(isbn10.length()-1);
     }
 
     /**
-     * This function calculates the correct checksum for a given isbn10 string
-     * @param isbn10 complete isbn10 string (including the current or a false checksum)
-     * @return the correct checksum
+     * This Method calculates the correct checksum for a given isbn10 string
+     * @param isbn10    complete isbn10 string (including the current or a false checksum)
+     * @return          the correct checksum
      */
     private static char calculateChecksum(String isbn10) {
         String mainISBN = isbn10;
         mainISBN = mainISBN.substring(0, mainISBN.length()-1).replace("-", "");
 
         int isbnSum = 0;
-        int checkSum = 0;
         char checkSumChar;
         for(int i = 0; i < mainISBN.length(); i++) {
             int currentValue = Integer.parseInt(String.valueOf(mainISBN.charAt(i)));

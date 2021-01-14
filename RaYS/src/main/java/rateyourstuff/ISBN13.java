@@ -23,8 +23,8 @@ public class ISBN13 {
 
     /**
      * Used to create a new isbn13 from a valid isbn13 string
-     * @param isbn13 isbn13 string, separated with "-"
-     * @throws InvalidISBNException, if the given isbn13 is not valid
+     * @param isbn13                isbn13 string, separated with "-"
+     * @throws InvalidISBNException if the given isbn13 is not valid
      */
     public ISBN13(String isbn13) throws InvalidISBNException {
         if (isValid(isbn13)) {
@@ -38,12 +38,21 @@ public class ISBN13 {
     //region Methods
     ////////////////////////////////////////////////////////////////////////////////////
 
-    //returns true if given isbn13 is valid
+    /**
+     * Checks whether an ISBN13 is valid or not
+     * @param isbn13    ISBN13 as String separated by "-"
+     * @return          true, if the ISBN is valid, fals if not
+     */
     public static boolean isValid (String isbn13) {
         return (hasValidFormat(isbn13) && hasValidChecksum(isbn13));
     }
 
-    //returns true if format of the isbn is valid (ignores checksum-correctness)
+
+    /**
+     * Checks if the format of the ISBN is correct, does not check if the checksum is valid
+     * @param isbn13    ISBN13 String separated by "-"
+     * @return          true, if the format is valid, false if not
+     */
     public static boolean hasValidFormat (String isbn13) {
         //RegEx pattern to determine structure of ISBN
         Pattern isbnPattern = Pattern.compile("\\b978-\\d{1,5}-\\d{2,7}-\\d{2,7}-\\d\\b");
@@ -54,7 +63,11 @@ public class ISBN13 {
         return ((isbnLength == ISBN_13_LENGTH) && isbnMatcher.matches());
     }
 
-    //returns true if the given isbn has a valid checksum
+    /**
+     * checks if the checksum of the given ISBN10 is correct
+     * @param isbn13    ISBN13 string separated by "-"
+     * @return          true, if the checksum is correct, false if not
+     */
     private static boolean hasValidChecksum(String isbn13) {
         //Extract the checksum of the given ISBN
         char placedCheckSum = extractChecksum(isbn13);
@@ -64,15 +77,20 @@ public class ISBN13 {
         return placedCheckSum == actualCheckSum;
     }
 
-    //returns the checksum of a given isbn
+    /**
+     * Used to extract the Checksum that is in an ISBN10 String
+     * Does not check whether the checksum is correct or not
+     * @param isbn13    ISBN13 String separated with "-"
+     * @return          the checksum as char
+     */
     private static char extractChecksum(String isbn13) {
         return isbn13.charAt(isbn13.length()-1);
     }
 
     /**
-     * This function calculates the correct checksum for a given isbn13 string
-     * @param isbn complete isbn13 string (including the current or a false checksum)
-     * @return the correct checksum
+     * This method calculates the correct checksum for a given isbn13 string
+     * @param isbn  complete isbn13 string (including the current or a false checksum)
+     * @return      the correct checksum as char
      */
     private static char calculateChecksum(String isbn) {
         String mainISBN = isbn;
@@ -94,8 +112,8 @@ public class ISBN13 {
 
     /**
      * converts an ISBN10 object to an ISBN13 object
-     * @param isbn10 valid isbn10 object
-     * @return isbn13 object
+     * @param isbn10    valid isbn10 object
+     * @return          isbn13 object
      * @throws InvalidISBNException, if it is not possible to create the isbn13 object
      */
     public static ISBN13 toISBN13(ISBN10 isbn10) throws InvalidISBNException {

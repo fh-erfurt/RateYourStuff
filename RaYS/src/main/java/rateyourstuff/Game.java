@@ -2,6 +2,8 @@ package rateyourstuff;
 
 /**
  * <h1>Game</h1>
+ * <p>Represents an game and contains different information about the game including playtime, publisher, developer
+ * Games can be added to collections</p>
  * @author Christoph Frischmuth, Robin Beck
  *
  * */
@@ -17,11 +19,14 @@ public class Game extends Medium {
     private float averagePlaytime;
     private String publisher;
     private String developer;
+    //Enum List might be better
     private List<String> languages;
     private List<String> subtitles;
     private int minNumberOfPlayers;
     private int maxNumberOfPlayers;
+    //Enum would fit better
     private List<String> platforms;
+    //Enum would fit better
     private int ageRestriction;
     //endregion
 
@@ -146,6 +151,12 @@ public class Game extends Medium {
     }
     //endregion
 
+
+    /**
+     * This method compares two games
+     * @param game  The game that should be compared with the current game
+     * @return      true, if name, publication date und the publisher are the same
+     */
     public boolean equals(Game game) {
         return this.getName().equals(game.getName()) &&
                 this.getPublicationDate().isEqual(game.getPublicationDate()) &&

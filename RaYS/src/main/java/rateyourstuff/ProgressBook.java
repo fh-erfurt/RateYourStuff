@@ -44,7 +44,7 @@ public class ProgressBook extends Progress {
     /**
      * <p>the method bellow calculates the progress of the book in percent
      * The method is using the current page and the number of pages from the book itself</p>
-     * @return float rounded to have two decimals
+     * @return      float min 0, max 100, rounded to two decimals
      */
     @Override
     public float getProgressPercentage() {

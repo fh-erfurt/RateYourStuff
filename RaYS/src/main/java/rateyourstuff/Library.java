@@ -19,11 +19,9 @@ public class Library {
     private List<Collection> mediaCollections;
     //endregion
 
-    //construct rateyourstuff.Comment
+    //region
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
     public Library() {
-
         media = new ArrayList<>();
         mediaCollections = new ArrayList<>();
     }
@@ -31,14 +29,17 @@ public class Library {
 
     //region Getter // Setter // Adder
     ////////////////////////////////////////////////////////////////////////////////////
+    //TODO: Should be replaced, interferes with data encapsulation
     public List<Medium> getMedia() {
         return media;
     }
 
+    //TODO: Should be removed, interferes with data encapsulation
     public void setMedia(List<Medium> media) {
         this.media = media;
     }
 
+    //TODO: Should be replaced, interferes with data encapsulation
     public void AddMedia(List<Medium> media) {
         this.media.addAll(media);
     }
@@ -47,6 +48,22 @@ public class Library {
 
     // region methods
     // Adds a new Book to library, returns true, if successful, false if unsuccessful
+
+    /**
+     * <p>This function is used to add a new book to the collection</p>
+     * @param name              name of the book
+     * @param publicationDate   publication date of the book
+     * @param shortDescription  a short description of the book
+     * @param genre             the main genre of the book
+     * @param publishers        a list of publishers
+     * @param authors           a list of authors
+     * @param isbn              the isbn of the book
+     * @param languages         the languages the book is available in
+     * @param isEBook           true, if the book is available as eBook
+     * @param isPrint           true, if book is available as print media
+     * @param numberOfPages     the total number of pages
+     * @return                  true, if the book has been added successfully, false if not
+     */
     public boolean addNewBook(String name,
                            LocalDate publicationDate,
                            String shortDescription,
@@ -117,7 +134,21 @@ public class Library {
     }
 
 
-    // Adds new Movie to library, returns true, if successful, fals if unsuccessful
+    /**
+     * <p>Adds a new movie to the library</p>
+     * @param name              name of the movie
+     * @param publicationDate   publication date of the movie
+     * @param shortDescription  short description of the movie
+     * @param genre             main genre of the movie
+     * @param studio            the studio, that produced the movie
+     * @param directors         the directors of the movie
+     * @param languages         the languages the movie is available in
+     * @param mainActors        the main actors
+     * @param totalDuration     total duration in minutes
+     * @param ageRestriction    age restriction in years
+     * @param highestResolution highest resolution the film is available in
+     * @return                  true, if the movie has been added successfully, false if not
+     */
     public boolean addNewMovie (String name,
                                 LocalDate publicationDate,
                                 String shortDescription,
@@ -168,6 +199,22 @@ public class Library {
         return false;
     }
 
+    /**
+     * <p>Adds a new Series to the library</p>
+     * @param name              name of the series
+     * @param publicationDate   publication date of the series
+     * @param shortDescription  short description of the series
+     * @param genre             the main genre of the series
+     * @param network           the network that published the series
+     * @param directors         the directors of the series
+     * @param actors            the actors of the series
+     * @param languages         the languages of the series
+     * @param averageLength     the average length of an episode of the series in minutes
+     * @param ageRestriction    age restriction in years
+     * @param highestResolution highest resolution the series is available in
+     * @param isCompleted       true, if the last episode of the series has already been produced
+     * @return                  true, if the series has been added successfully, false, if not
+     */
     public boolean addNewSeries(String name,
                                 LocalDate publicationDate,
                                 String shortDescription,
@@ -219,6 +266,23 @@ public class Library {
         return false;
     }
 
+    /**
+     * <p>Adds a new game to the library</p>
+     * @param name                  name of the game
+     * @param publicationDate       publication date of the game
+     * @param shortDescription      short description of the game
+     * @param genre                 main genre of the game
+     * @param averagePlayTime       average play time that is needed to complete the main game in hours
+     * @param publisher             publisher of the game
+     * @param developer             studio that developed the game
+     * @param languages             list of available spoken language in the game
+     * @param subtitles             list of subtitle languages in the game
+     * @param minNumberOfPlayers    minimum number of players that is required to play the game
+     * @param maxNumberOfPlayers    maximum number of players that can play the game together
+     * @param platforms             list of platforms the game is available for
+     * @param ageRestriction        age restriction of th game in years
+     * @return                      true, if the game has been added successfully, false if not
+     */
     public boolean addNewGame(String name,
                               LocalDate publicationDate,
                               String shortDescription,
@@ -323,6 +387,7 @@ public class Library {
 
 
 
+
     public boolean removeMedium(Medium medium)
     {
         int foundMediumIndex = media.indexOf(medium);
@@ -333,9 +398,7 @@ public class Library {
 
             List<User> usersWithProgress = foundMedium.getUsersWithProgress();
 
-            for (int i = 0; i < usersWithProgress.size(); i++)
-            {
-                User userProgress = usersWithProgress.get(i);
+            for (User userProgress : usersWithProgress) {
                 userProgress.removeProgress(foundMedium);
                 userProgress.removeRateInUSer(foundMedium);
                 userProgress.removeComment(foundMedium);

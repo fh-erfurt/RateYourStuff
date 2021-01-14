@@ -25,8 +25,8 @@ public class User
     public UserRole         role;
 
     private List<Comment>   comments = new ArrayList<>();
-    private List<Rate>      rates = new ArrayList<>();;
-    private List<Progress>  progresses = new ArrayList<>();;
+    private List<Rate>      rates = new ArrayList<>();
+    private List<Progress>  progresses = new ArrayList<>();
     //endregion
 
 
@@ -119,8 +119,9 @@ public class User
     //endregion
 
     /**
-     * @param medium which is used to search for a progress
-     * @return null, if not progress is found or the Progress that was found
+     * <p>Checks if the user has a progress for the given medium</p>
+     * @param medium    Medium which is used to search for a progress
+     * @return          null, if not progress is found or the Progress that was found
      */
     public Progress findProgress(Medium medium) {
         for(Progress progress : progresses ) {
@@ -132,8 +133,9 @@ public class User
     }
 
     /**
-     * @param medium for which a new progress should be added
-     * @return true, if adding was successful, false, if adding was not successful
+     * <p>Adds a new progress to the user</p>
+     * @param medium    Medium for which a new progress should be added
+     * @return          true, if adding was successful, false, if adding was not successful
      */
     public boolean addNewProgress(Medium medium) {
         if(findProgress(medium) != null) {
@@ -157,8 +159,9 @@ public class User
     }
 
     /**
-     * @param medium that is used to search the progress, that should be removed
-     * @return true, if removing was successful, false, if removing was not successful
+     * <p>Removes a progress for a given medium from the users progress list</p>
+     * @param medium Medium that is used to search the progress, that should be removed
+     * @return       true, if removing was successful, false, if removing was not successful
      */
     public boolean removeProgress(Medium medium) {
         Progress foundProgress = findProgress(medium);
@@ -177,6 +180,7 @@ public class User
     public boolean addNewRate(Medium medium, Integer rating, String description)
     {
         Integer newRating = rating;
+        //TODO: variable is redundant
         String newDescription = description;
         List<Rate> mediumRates = medium.getRatings();
 

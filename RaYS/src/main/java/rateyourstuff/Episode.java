@@ -5,7 +5,6 @@ package rateyourstuff;
  * <p>Represents an episode of an tv show, contains information about episode number, guest stars, episode title
  * Episodes can be added to collections</p>
  * @author Robin Beck
- *
  */
 
 import java.time.LocalDate;
@@ -49,14 +48,17 @@ public class Episode extends Medium {
         this.episodeNumber = episodeNumber;
     }
 
+    //TODO: method interferes with data encapsulation
     public List<Person> getGuestStars() {
         return guestStars;
     }
 
+    //TODO: method interferes with data encapsulation
     public void setGuestStars(List<Person> guestStars) {
         this.guestStars = guestStars;
     }
 
+    //TODO: method interferes with data encapsulation
     public void addGuestStars (List<Person> guestStars) {
         this.guestStars.addAll(guestStars);
     }
@@ -78,10 +80,13 @@ public class Episode extends Medium {
     }
     //endregion
 
-    //compares two episodes
-    //returns true if episodes have the same number or the same name AND publication date
+    /**
+     * This Method compares two episodes
+     * @param episode   Episode that should be compared with the current episode
+     * @return          true, if season, episode name and publication Date are the same
+     */
     public boolean equals(Episode episode) {
         return (this.season.equals(episode.getSeason())) &&
-                (this.getName().equals(episode.getName()) && this.getPublicationDate().isEqual(episode.getPublicationDate()));
+                this.getName().equals(episode.getName()) && this.getPublicationDate().isEqual(episode.getPublicationDate());
     }
 }

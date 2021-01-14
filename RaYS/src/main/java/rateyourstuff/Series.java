@@ -67,32 +67,41 @@ public class Series extends Medium {
         return network;
     }
 
+    //TODO: data encapsulation stuff
     public void setDirectors(List<Person> directors) {
         this.directors = directors;
     }
+    //TODO: data encapsulation stuff
     public List<Person> getDirectors() {
         return directors;
     }
+    //TODO: data encapsulation stuff
     public void addDirectors(List<Person> directors) {
         this.directors.addAll(directors);
     }
 
+    //TODO: data encapsulation stuff
     public void setCast(List<Person> cast) {
         this.actors = cast;
     }
+    //TODO: data encapsulation stuff
     public List<Person> getCast() {
         return actors;
     }
+    //TODO: data encapsulation stuff
     public void addCast(List<Person> cast) {
         this.actors.addAll(cast);
     }
 
+    //TODO: data encapsulation stuff
     public void setSubtitles(List<String> subtitles) {
         this.subtitles = subtitles;
     }
+    //TODO: data encapsulation stuff
     public List<String> getSubtitles() {
         return subtitles;
     }
+    //TODO: data encapsulation stuff
     public void addSubtitles(List<String> subtitles) {
         this.subtitles.addAll(subtitles);
     }
@@ -111,6 +120,7 @@ public class Series extends Medium {
         return ageRestriction;
     }
 
+    //TODO: remove, resolution adjustment could be handled by resolution class
     public void setHighestResolution(int height, int width) {
         resolution.setHeight(height);
         resolution.setWidth(width);
@@ -123,18 +133,18 @@ public class Series extends Medium {
     public void setIsCompleted(boolean isCompleted){
         this.isCompleted = isCompleted;
     }
+    //TODO: rename to isCompleted()
     public boolean getIsCompleted(){
         return isCompleted;
     }
 
+    //TODO: data encapsulation stuff
     public void setSeasons(List<Season> seasons) {
         this.seasons = seasons;
     }
+    //TODO: data encapsulation stuff
     public List<Season> getSeasons() {
         return seasons;
-    }
-    public void addSeasons(List<Season> seasons) {
-        this.seasons.addAll(seasons);
     }
 
     public int getNumberOfSeasons() {
@@ -149,6 +159,12 @@ public class Series extends Medium {
         return numberOfEpisodes;
     }
 
+    /**
+     * <p>Returns a season that matches a given season number and title</p>
+     * @param seasonNumber  number of the searched season
+     * @param title         title of the searched season
+     * @return              the season, if it has been found, otherwise null
+     */
     public Season getSeason(int seasonNumber, String title) {
         for(Season season : seasons) {
             if(season.getSeasonNumber() == seasonNumber && season.getTitle().equals(title)) {
@@ -178,6 +194,12 @@ public class Series extends Medium {
     //endregion
 
 
+    /**
+     * <p>Adds a new season to the series</p>
+     * @param seasonNumber  number of the season
+     * @param title         title of the season
+     * @return              true, if the season has been added successfully, otherwise false
+     */
     public boolean addNewSeason(int seasonNumber, String title) {
         for(Season season : seasons) {
             if(season.getSeasonNumber() == seasonNumber) {
@@ -190,6 +212,11 @@ public class Series extends Medium {
         return true;
     }
 
+    /**
+     * <p>Checks if a given series is equal to the current series</p>
+     * @param series    Series that should be compared to the current series
+     * @return          true, if name, publication date and network are the same, otherwise false
+     */
     public boolean equals(Series series) {
         return this.getName().equals(series.getName()) &&
                 this.getPublicationDate().isEqual(series.getPublicationDate()) &&

@@ -1,8 +1,8 @@
 package rateyourstuff;
 
-/*
+/**
  *
- * Author: Mickey Knop
+ * @author Mickey Knop
  *
  * */
 

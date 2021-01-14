@@ -117,12 +117,18 @@ public class Collection {
         return foundMedium;
     }
 
+    /**
+     * This Method is used to get a string containing all media titles and the title of the collection
+     * @return String with schema collectionName {media1name,...,medianName}
+     */
     public String toString() {
         StringBuilder collectionOutput = new StringBuilder();
         collectionOutput.append(name).append(": {");
+
         for(Medium medium: mediaCollection) {
             collectionOutput.append(medium.getName()).append(", ");
         }
+
         collectionOutput.append("}");
         return collectionOutput.toString();
     }

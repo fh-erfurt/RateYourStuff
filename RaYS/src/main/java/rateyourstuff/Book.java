@@ -51,26 +51,33 @@ public class Book extends Medium
 
     //region Getter // Setter // Adder
     ////////////////////////////////////////////////////////////////////////////////////
+
+    //TODO: below function interferes with data encapsulation
     public void setPublishers(List<String> publishers) {
         this.publishers = publishers;
     }
 
+    //TODO: below function interferes with data encapsulation
     public List<String> getPublishers() {
         return publishers;
     }
 
+    //TODO: below function interferes with data encapsulation
     public void addPublishers(List<String> publishers) {
         this.publishers.addAll(publishers);
     }
 
+    //TODO: below function interferes with data encapsulation
     public void setAuthors(ArrayList<Person> authors) {
         this.authors = authors;
     }
 
+    //TODO: below function interferes with data encapsulation
     public List<Person> getAuthors() {
         return authors;
     }
 
+    //TODO: below function interferes with data encapsulation, could cause multiple entries that are the same
     public void addAuthor(List<Person> authors) {
         this.authors.addAll(authors);
     }
@@ -87,6 +94,7 @@ public class Book extends Medium
         this.isEBook = isEBook;
     }
 
+    //TODO: rename to "isEbook"
     public boolean getIsEbook()
     {
         return isEBook;
@@ -97,19 +105,23 @@ public class Book extends Medium
         this.isPrint = isPrint;
     }
 
+    //TODO. rename to isPrint
     public boolean getIsPrint()
     {
         return isPrint;
     }
 
+    //TODO: below function interferes with data encapsulation
     public void setLanguages(List<String> languages) {
         this.languages = languages;
     }
 
+    //TODO: below function interferes with data encapsulation
     public List<String> getLanguages() {
         return languages;
     }
 
+    //TODO: below function interferes with data encapsulation
     public void addLanguages(List<String> languages){
         this.languages.addAll(languages);
     }

@@ -60,38 +60,47 @@ public class Movie extends Medium
         return studio;
     }
 
+    //TODO: data encapsulation stuff
     public void setDirectors(List<Person> directors) {
         this.directors = directors;
     }
 
+    //TODO: data encapsulation stuff
     public List<Person> getDirectors() {
         return directors;
     }
 
+    //TODO: data encapsulation stuff
     public void addDirectors(List<Person> directors){
         this.directors.addAll(directors);
     }
 
+    //TODO: data encapsulation stuff
     public void setMainActors(List<Person> mainActors) {
         this.mainActors = mainActors;
     }
 
+    //TODO: data encapsulation stuff
     public List<Person> getMainActors() {
         return mainActors;
     }
 
+    //TODO: data encapsulation stuff
     public void addMainActors(List<Person> mainActors){
         this.mainActors.addAll(mainActors);
     }
 
+    //TODO: data encapsulation stuff
     public void setLanguages(List<String> languages) {
         this.languages = languages;
     }
 
+    //TODO: data encapsulation stuff
     public List<String> getLanguages() {
         return languages;
     }
 
+    //TODO: data encapsulation stuff
     public void addLanguages(List<String> languages){
         this.languages.addAll(languages);
     }
@@ -136,6 +145,11 @@ public class Movie extends Medium
     }
     //endregion
 
+    /**
+     * <p>Checks if two movies are the same</p>
+     * @param movie Movie that should be compared to the current movie
+     * @return  true, if name, publication date and studio are the same
+     */
     public boolean equals(Movie movie) {
         return this.getName().equals(movie.getName()) &&
                 this.getPublicationDate().isEqual(movie.getPublicationDate()) &&

@@ -35,7 +35,7 @@ public class ProgressGame extends Progress {
 
     /**
      * This function calculates the current percentage based on average playtime and current playtime of the user
-     * @return the progress as percentage width two decimals, can be larger than 100 %
+     * @return      the progress as percentage width two decimals, can be larger than 100 %
      */
     @Override
     public float getProgressPercentage() {

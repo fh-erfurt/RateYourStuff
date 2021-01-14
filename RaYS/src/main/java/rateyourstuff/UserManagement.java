@@ -6,9 +6,9 @@ import org.mindrot.jbcrypt.BCrypt;
 
 
 
-/*
+/**
  *
- * Author: Christoph Frischmuth
+ * @author Christoph Frischmuth
  *
  * */
 

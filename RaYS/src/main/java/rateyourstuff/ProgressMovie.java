@@ -44,7 +44,7 @@ public class ProgressMovie extends Progress{
     /**
      * <p>the method bellow calculates the progress of the movie in percent (rounded to two decimals)
      * the method is using the current page and the number of pages from the book itself</p>
-     * @return float min 0, max 100, rounded to two decimals
+     * @return      float min 0, max 100, rounded to two decimals
      */
     @Override
     public float getProgressPercentage() {

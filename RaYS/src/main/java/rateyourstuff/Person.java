@@ -1,7 +1,9 @@
 package rateyourstuff;
 
 /**
-*
+* <h1>Person</h1>
+* <p>Contains information about a person including first name, last name and information about the person</p>
+* <p>The Person class must not be associated with the user, this class should be used to add persons to a medium</p>
 * @author John Klippstein, Robin Beck
 *
 * */
@@ -17,6 +19,7 @@ public class Person {
     private String lastName;
     private PersonType personType;
 
+    //TODO: clear if medium should be deleted
     private List<Medium> mediums;
     //endregion
 
@@ -59,10 +62,12 @@ public class Person {
         this.personType = personType;
     }
 
+    //TODO: data encapsulation stuff
     public List<Medium> getMediumList() {
         return mediums;
     }
 
+    //TODO: data encapsulation stuff
     public void setMediumList(List<Medium> mediumList) {
         this.mediums = mediumList;
     }

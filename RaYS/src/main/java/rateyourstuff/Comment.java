@@ -1,8 +1,8 @@
 package rateyourstuff;
 
-/*
+/**
  *
- * Author: Mickey Knop
+ * @author Mickey Knop
  *
  * */
 
@@ -29,6 +29,7 @@ public class Comment {
         this.author = author;
         this.date = date;
         this.isClosed = false;
+        //TODO: please check again what this is used for
         ArrayList<Comment> responses = new ArrayList();
         this.responses = responses;
     }
@@ -67,30 +68,29 @@ public class Comment {
         return date;
     }
 
+    //TODO: below function interferes with data encapsulation
     public void setResponses(List<Comment> responses) {
         this.responses = responses;
     }
 
+    //TODO: below function interferes with data encapsulation
     public List<Comment> getResponses() {
         return responses;
     }
 
+    //TODO: below function interferes with data encapsulation
     public void AddResponses(List<Comment> responses) {
         this.responses.addAll(responses);
     }
 
+    //TODO: rename method to isClosed()
     public Boolean getClosed() {
         return isClosed;
     }
 
+    //TODO: rename method
     public void setClosed(Boolean closed) {
         isClosed = closed;
-    }
-    //endregion
-
-    //region Methods
-    ////////////////////////////////////////////////////////////////////////////////////
-    public void delete() {
     }
 
     public boolean isSpoiler() {
@@ -99,8 +99,13 @@ public class Comment {
 
     public void setMedium(Medium medium) { this.medium = medium; }
     public Medium getMedium() { return medium; }
+    //endregion
 
-
+    //region Methods
+    ////////////////////////////////////////////////////////////////////////////////////
+    //TODO: implement deletion of comment reference in media and subcomments in user
+    public void delete() {
+    }
     //endregion
 
 }
