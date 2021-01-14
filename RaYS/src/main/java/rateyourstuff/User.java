@@ -188,5 +188,41 @@ public class User
         return false;
     }
 
+    public Rate findRate(Medium medium) {
+        for(Rate rate : rates ) {
+            if(rate.getMedium().equals(medium)) {
+                return rate;
+            }
+        }
+        return null;
+    }
+
+    public boolean removeRateInUSer(Medium medium) {
+        Rate foundRate = findRate(medium);
+        if(foundRate == null) {
+            return false;
+        }
+        rates.remove(foundRate);
+        return true;
+    }
+
+    public Comment findComment(Medium medium) {
+        for(Comment comment : comments ) {
+            if(comment.getMedium().equals(medium)) {
+                return comment;
+            }
+        }
+        return null;
+    }
+
+    public boolean removeComment(Medium medium){
+        Comment foundComment = findComment(medium);
+        if(foundComment == null) {
+            return false;
+        }
+        comments.remove(foundComment);
+        return true;
+    }
+
 
 }
