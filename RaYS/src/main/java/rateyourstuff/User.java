@@ -2,7 +2,7 @@ package rateyourstuff;
 
 /**
  *
- * @author Mickey Knop, Robin Beck
+ * @author Mickey Knop, Robin Beck, John Klippsteim, Christoph Frischmuth
  *
  * */
 
@@ -177,6 +177,13 @@ public class User
     }
 
 
+    /**
+     *
+     * @param medium
+     * @param rating
+     * @param description
+     * @return
+     */
     public boolean addNewRate(Medium medium, Integer rating, String description)
     {
         Integer newRating = rating;
@@ -192,6 +199,11 @@ public class User
         return false;
     }
 
+    /**
+     *
+     * @param medium
+     * @return
+     */
     public Rate findRate(Medium medium) {
         for(Rate rate : rates ) {
             if(rate.getMedium().equals(medium)) {
@@ -201,6 +213,11 @@ public class User
         return null;
     }
 
+    /**
+     *
+     * @param medium
+     * @return
+     */
     public boolean removeRateInUSer(Medium medium) {
         Rate foundRate = findRate(medium);
         if(foundRate == null) {
@@ -210,6 +227,11 @@ public class User
         return true;
     }
 
+    /**
+     *
+     * @param medium
+     * @return
+     */
     public Comment findComment(Medium medium) {
         for(Comment comment : comments ) {
             if(comment.getMedium().equals(medium)) {
@@ -219,6 +241,11 @@ public class User
         return null;
     }
 
+    /**
+     *
+     * @param medium
+     * @return
+     */
     public boolean removeComment(Medium medium){
         Comment foundComment = findComment(medium);
         if(foundComment == null) {
