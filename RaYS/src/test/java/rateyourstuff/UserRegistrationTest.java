@@ -1,9 +1,7 @@
 package rateyourstuff;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -11,39 +9,61 @@ import java.util.ArrayList;
 import rateyourstuff.User;
 import rateyourstuff.UserManagement;
 
+import static org.junit.jupiter.api.Assertions.*;
+
+//@TODO: Delete userList in this test rack
+    //@TODO: Create users with register function
+    //@TODO: Add GIVEN WHEN THEN
+    //@TODO: Java doc
+    //@TODO: Add should_ to the test method names
+
+
 public class UserRegistrationTest {
-    private ArrayList<User> userList = new ArrayList<User>();
     private UserManagement userManagement = new UserManagement();
 
-    User nick = new User("Mickey", "Knop", "mickey_k@knop.de", "Mickmin",
-            null);
-    User chris = new User("Chris", "Frischmuth", "chris_f@knop.de", "Chris",
-            null);
-
-    void fillList() {
-        userList.add(nick);
-        userList.add(chris);
+    @BeforeEach
+    void should_generate_Users_And_Add_It_To_Their_List()
+    {
+        //Given
+        userManagement.userRegistration(
+                "Mickey",
+                "Knop",
+                "mickey@rays.com",
+                "Mic11",
+                "LMFAO");
     }
 
     @Test
     void isValidUserTest() {
-        fillList(); //execute function to fill 2 Users to userList
-
+        //When
         // The first two tests includes already existent values for nickname and/or email and should return true
-        assertEquals(true, userManagement.isValidUser("Chris", "chris_f@knop.de", userList));
-        assertEquals(true, userManagement.isValidUser("Chris", "ben@knop.de", userList));
-        // The last test includes unknown values for nickname and value and the test should return false
-        assertEquals(false, userManagement.isValidUser("Ben", "ben@knop.de", userList));
+        //Then
+        assertEquals(true, userManagement.isValidUser("Mic11", "mickey@rays.com"));
+        assertFalse(userManagement.isValidUser("Chris", "ben@knop.de"));
+
     }
 
     @Test
     void userRegistrationTest() {
-        userManagement.userRegistration("Ben", "Papagei", "papagei@vogel.com", "BenPap", "2255", userList);
-        assertEquals(1, userList.size());
-        userManagement.userRegistration("Karsten", "Papagei", "Karsten@knop.de", "Karsti", "2255", userList);
-        assertEquals(2, userList.size());
-        //The following test will collapse because the user already exists
-        userManagement.userRegistration("Karsten", "Papagei", "Karsten@knop.de", "Karsti", "2255", userList);
-        assertNotEquals(3, userList.size());
+        //When
+        userManagement.userRegistration("Robin",
+                "Beck",
+                "littlebigplayer@rays.com",
+                "LittleBigPlayer",
+                "admin001");
+
+        userManagement.userRegistration("John",
+                "Klippstein",
+                "Avartos@rays.de",
+                "Avartos",
+                "admin010");
+
+        User John_Rays = userManagement.findUserByNickname("Avartos");
+        User Robin_Rays = userManagement.findUserByNickname("LittleBigPlayer");
+        User Unknown_Rays = userManagement.findUserByNickname("UnknownSoldier");
+        //Then
+        assertEquals(John_Rays, userManagement.viewPersonalData(userManagement.findUserByNickname("Avartos")));
+        assertEquals(Robin_Rays, userManagement.viewPersonalData(Robin_Rays));
+        /*assertNull(userManagement.viewPersonalData(Unknown_Rays));*/
     }
 }

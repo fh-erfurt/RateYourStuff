@@ -14,19 +14,21 @@ class UserLoginTest {
     @BeforeAll
     static void initializeLists() {
         userManagement = new UserManagement();
-        userList = new ArrayList<>();
     }
 
     @BeforeEach
+    //Given
     void initializeUsers() {
         userManagement.userRegistration("Harry", "Potter", "Potter@grifindor.magic",
-                "Harry123", "Hedwig", userList);
+                "Harry123", "Hedwig");
     }
 
     @Test
     void loginUserTest() {
-        assertEquals(true, userManagement.loginUser("Harry123", "Hedwig", userList));
-        assertEquals(false, userManagement.loginUser("Harry123", "Kroete", userList));
-        assertEquals(false, userManagement.loginUser("Ron345", "Hedwig", userList));
+        //When
+        User Chris_Rays = userManagement.findUserByNickname("Harry123");
+        //Then
+        assertEquals(true, userManagement.loginUser(Chris_Rays, "Hedwig"));
+        assertEquals(false, userManagement.loginUser(Chris_Rays, "Kroete"));
     }
 }

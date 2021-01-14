@@ -1,22 +1,48 @@
 package rateyourstuff;
 
 import java.util.ArrayList;
-
 import org.mindrot.jbcrypt.BCrypt;
 
-
-
-/**
+/*
  *
- * @author Christoph Frischmuth
+ * Author: Christoph Frischmuth
  *
  * */
 
+//@LESSONS_LEARNED: Listen die in einer Klasse immer wieder benutzt werden,
+//// sollten als Attribut dieser Klasse verwendet werden
+
+//@LESSONS_LEARNED: Keep simple stupid // Kleine Funktionen schreiben,
+//// die in Komplexeren Methoden zusammen verwendet werden können
+
+//@TODO: Methodenbeschreibungen /JavaDOC/ hinzufügen
 
 public class UserManagement {
+
+    //region Attributes
+    ArrayList<User> userList;
+
+    //endregion
+
+
+    //region Constructor
+    public UserManagement() {
+        userList = new ArrayList<>();
+    }
+
+    //endregion
+
+
+    //region methods
+
+    /**
+     * @param nickname
+     * @param email
+     * @return returns true if the user is already exists in user list
+     */
     //Check if user already exists in current user list and return true if the user exists
     //If the list is empty function returns false directly
-    public boolean isValidUser(String nickname, String email, ArrayList<User> userList) {
+    public boolean isValidUser(String nickname, String email) {
         for (User listedUser : userList) {
             if (listedUser.getNickname().equals(nickname)
                     || listedUser.getEmail().equals(email)) {
@@ -27,7 +53,7 @@ public class UserManagement {
         return false;
     }
 
-    public boolean isExistingEmail(String email, ArrayList<User> userList) {
+    public boolean isExistingEmail(String email) {
         for (User user : userList) {
             if (user.getEmail().equals(email)) {
                 return true;
@@ -36,9 +62,9 @@ public class UserManagement {
         return false;
     }
 
-    public void changeNickname(User user, String nickname, ArrayList<User> userList) {
-        //If the new nickname is existent and isn't the current nickname print error message
-        if (isExistingNickname(nickname, userList) && !user.getNickname().equals(nickname)) {
+    public void changeNickname(User user, String nickname) {
+        //If the new nickname is existent and isnt the current nickname print error message
+        if (isExistingNickname(nickname) && !user.getNickname().equals(nickname)) {
             System.out.println("Nickname already used!");
         } else {
             //else store new nickname
@@ -46,15 +72,15 @@ public class UserManagement {
         }
     }
 
-    public void changeEmail(User user, String email, ArrayList<User> userList) {
-        if (isExistingEmail(email, userList) && !user.getEmail().equals(email)) {
+    public void changeEmail(User user, String email) {
+        if (isExistingEmail(email) && !user.getEmail().equals(email)) {
             System.out.println("Email already used!");
         } else {
             user.setEmail(email);
         }
     }
 
-    public boolean isExistingNickname(String nickname, ArrayList<User> userList) {
+    public boolean isExistingNickname(String nickname) {
         for (User user : userList) {
             if (user.getNickname().equals(nickname)) {
                 return true;
@@ -68,11 +94,11 @@ public class UserManagement {
                                  String lastName,
                                  String email,
                                  String nickname,
-                                 String password,
-                                 ArrayList<User> userList) {
-        if (!isValidUser(nickname, email, userList)) {
+                                 String password
+            /*ArrayList<User> userList*/) {
+        if (!isValidUser(nickname, email)) {
             String passwordSalt = BCrypt.gensalt();
-            String saltedPassword = BCrypt.hashpw(password,passwordSalt);
+            String saltedPassword = BCrypt.hashpw(password, passwordSalt);
             User user = new User(firstName, lastName, email, nickname, saltedPassword);
             user.setPasswordSalt(passwordSalt);
             /*            user.setPassword(password);*/
@@ -81,20 +107,40 @@ public class UserManagement {
         }
     }
 
-    public boolean loginUser(String nickname, String password, ArrayList<User> users) {
-        if (users.size() != 0) {
-            for (User user : users) {
-                if (BCrypt.checkpw(password, user.getPassword()) && user.getNickname().equals(nickname)) {
+    public boolean loginUser(User user, String password/*, ArrayList<User> users*/) {
+        if (userList.size() != 0) {
+            if (BCrypt.checkpw(password, user.getPassword())) {
+                System.out.println("Login successful");
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //Original
+    /*public boolean loginUser(String nickname, String password*//*, ArrayList<User> users*//*) {
+        if (userList.size() != 0) {
+            for (User user : userList) {
+                if (BCrypt.checkpw(password, user.getPassword()) && user.getNickname() == nickname) {
                     System.out.println("Login successful");
                     return true;
                 }
             }
         }
         return false;
+    }*/
+
+    public void changePassword(User user, String oldPassword, String newPassword) {
+        if (BCrypt.checkpw(oldPassword, user.getPassword())) {
+            System.out.println(user.getNickname());
+            user.setPassword(BCrypt.hashpw(newPassword, user.getPasswordSalt()));
+            System.out.println("password successfully saved!");
+        }
     }
 
-    public void changePassword(String nickname, String oldPassword, String newPassword, ArrayList<User> userList) {
-        if (isValidUser(nickname, "", userList)) {
+    //Original
+/*    public void changePassword(String nickname, String oldPassword, String newPassword) {
+        if (isValidUser(nickname, "")) {
             for (User user : userList) {
                 if (user.getNickname().equals(nickname) && BCrypt.checkpw(oldPassword, user.getPassword())) {
                     System.out.println(user.getNickname());
@@ -103,34 +149,31 @@ public class UserManagement {
                 }
             }
         }
-    }
+    }*/
 
-    public User viewPersonalData(String nickname, ArrayList<User> users) {
-        /*        if (isValidUser(nickname, null, users)) {*/
-        for (User user : users) {
-            if (user.getNickname().equals(nickname)) {
-                System.out.println("First_Name: " + user.getFirstName());
-                System.out.println("Last_Name: " + user.getLastName());
-                System.out.println("Address: " + user.getAddress());
-                System.out.println("Nickname: " + user.getNickname());
-                System.out.println("email: " + user.getEmail());
-                return user;
-                /*                }*/
-            }
+    public User viewPersonalData(User user) {
+        if (isExistingNickname(user.getNickname())) {
+            System.out.println("First_Name: " + user.getFirstName());
+            System.out.println("Last_Name: " + user.getLastName());
+            System.out.println("Address: " + user.getAddress());
+            System.out.println("Nickname: " + user.getNickname());
+            System.out.println("email: " + user.getEmail());
+            return user;
+        } else {
+            System.out.println("Nickname " + user.getNickname() + " dont exists!");
+            return null;
         }
-        System.out.println("Nickname " + nickname + " doesn't exist!");
-        return null;
     }
 
     public User changeUserData(User user, String firstName, String lastName,
-                               String nickname, String address, String email, ArrayList<User> userList) {
-        if (isExistingNickname(nickname, userList)) {
+                               String nickname, String address, String email) {
+        if (isExistingNickname(nickname)) {
             if (user.getNickname().equals(nickname)) {
                 user.setFirstName(firstName);
                 user.setLastName(lastName);
                 user.setAddress(address);
                 user.setNickname(nickname);
-                changeEmail(user, email, userList);
+                changeEmail(user, email);
                 return user;
             } else {
                 System.out.println("Unable to change User data!");
@@ -142,7 +185,7 @@ public class UserManagement {
     }
 
 
-    public User findUserByNickname(String nickname, ArrayList<User> userList) {
+    public User findUserByNickname(String nickname) {
         if (userList.size() != 0) {
             for (User user : userList) {
                 if (user.getNickname().equals(nickname)) return user;
@@ -151,44 +194,25 @@ public class UserManagement {
         return null;
     }
 
-    public void disableUser(String nickname, ArrayList<User> userList) {
-        if (isExistingNickname(nickname, userList)) {
-            for (User user : userList) {
-                if (user.getNickname().equals(nickname)) {
-                    user.IsEnabled(false);
-                }
-            }
+    public void disableUser(User user) {
+        if (user.IsEnabled()) {
+            user.IsEnabled(false);
         }
     }
 
-    public void enableUser(String nickname, ArrayList<User> userList) {
-        if (isExistingNickname(nickname, userList)) {
-            for (User user : userList) {
-                if (user.getNickname().equals(nickname)) user.IsEnabled(true);
-            }
+    public void enableUser(User user) {
+        if (!user.IsEnabled()) {
+            user.IsEnabled(true);
         }
     }
 
-    public void setModeratorRights(String nickname, ArrayList<User> userList) {
-        if (isExistingNickname(nickname, userList)) {
-            for (User user : userList) {
-                if (user.getNickname().equals(nickname)) {
-                    user.setRole(UserRole.MODERATOR);
-                }
-            }
-        }
+    public void setModeratorRights(User user) {
+        user.setRole(UserRole.MODERATOR);
     }
 
-    public boolean resetPassword(String nickname, ArrayList<User> userList) {
-        if (isExistingNickname(nickname, userList)) {
-            for (User user : userList) {
-                if(user.getNickname().equals(nickname)) {
-                    user.setPassword(BCrypt.hashpw("P@sSwOrD", user.getPasswordSalt()));
-                    return true;
-                }
-            }
-        }
-        return false;
+    public void resetPassword(User user) {
+        user.setPassword(BCrypt.hashpw("P@sSwOrD", user.getPasswordSalt()));
     }
-
+    //endregion
 }
+
