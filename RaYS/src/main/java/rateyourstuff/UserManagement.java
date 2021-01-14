@@ -18,8 +18,8 @@ public class UserManagement {
     //If the list is empty function returns false directly
     public boolean isValidUser(String nickname, String email, ArrayList<User> userList) {
         for (User listedUser : userList) {
-            if (listedUser.getNickname() == nickname
-                    || listedUser.getEmail() == email) {
+            if (listedUser.getNickname().equals(nickname)
+                    || listedUser.getEmail().equals(email)) {
 //                System.out.println("nickname or email already exists!");
                 return true;
             }
@@ -29,7 +29,7 @@ public class UserManagement {
 
     public boolean isExistingEmail(String email, ArrayList<User> userList) {
         for (User user : userList) {
-            if (user.getEmail() == email) {
+            if (user.getEmail().equals(email)) {
                 return true;
             }
         }
@@ -37,8 +37,8 @@ public class UserManagement {
     }
 
     public void changeNickname(User user, String nickname, ArrayList<User> userList) {
-        //If the new nickname is existent and isnt the current nickname print error message
-        if (isExistingNickname(nickname, userList) && user.getNickname() != nickname) {
+        //If the new nickname is existent and isn't the current nickname print error message
+        if (isExistingNickname(nickname, userList) && !user.getNickname().equals(nickname)) {
             System.out.println("Nickname already used!");
         } else {
             //else store new nickname
@@ -47,7 +47,7 @@ public class UserManagement {
     }
 
     public void changeEmail(User user, String email, ArrayList<User> userList) {
-        if (isExistingEmail(email, userList) && user.getEmail() != email) {
+        if (isExistingEmail(email, userList) && !user.getEmail().equals(email)) {
             System.out.println("Email already used!");
         } else {
             user.setEmail(email);
@@ -56,7 +56,7 @@ public class UserManagement {
 
     public boolean isExistingNickname(String nickname, ArrayList<User> userList) {
         for (User user : userList) {
-            if (user.getNickname() == nickname) {
+            if (user.getNickname().equals(nickname)) {
                 return true;
             }
         }
@@ -70,7 +70,7 @@ public class UserManagement {
                                  String nickname,
                                  String password,
                                  ArrayList<User> userList) {
-        if (isValidUser(nickname, email, userList) == false) {
+        if (!isValidUser(nickname, email, userList)) {
             String passwordSalt = BCrypt.gensalt();
             String saltedPassword = BCrypt.hashpw(password,passwordSalt);
             User user = new User(firstName, lastName, email, nickname, saltedPassword);
@@ -84,7 +84,7 @@ public class UserManagement {
     public boolean loginUser(String nickname, String password, ArrayList<User> users) {
         if (users.size() != 0) {
             for (User user : users) {
-                if (BCrypt.checkpw(password, user.getPassword()) && user.getNickname() == nickname) {
+                if (BCrypt.checkpw(password, user.getPassword()) && user.getNickname().equals(nickname)) {
                     System.out.println("Login successful");
                     return true;
                 }
@@ -118,14 +118,14 @@ public class UserManagement {
                 /*                }*/
             }
         }
-        System.out.println("Nickname " + nickname + " dont exists!");
+        System.out.println("Nickname " + nickname + " doesn't exist!");
         return null;
     }
 
     public User changeUserData(User user, String firstName, String lastName,
                                String nickname, String address, String email, ArrayList<User> userList) {
         if (isExistingNickname(nickname, userList)) {
-            if (user.getNickname() == nickname) {
+            if (user.getNickname().equals(nickname)) {
                 user.setFirstName(firstName);
                 user.setLastName(lastName);
                 user.setAddress(address);
@@ -145,7 +145,7 @@ public class UserManagement {
     public User findUserByNickname(String nickname, ArrayList<User> userList) {
         if (userList.size() != 0) {
             for (User user : userList) {
-                if (user.getNickname() == nickname) return user;
+                if (user.getNickname().equals(nickname)) return user;
             }
         }
         return null;
@@ -154,7 +154,7 @@ public class UserManagement {
     public void disableUser(String nickname, ArrayList<User> userList) {
         if (isExistingNickname(nickname, userList)) {
             for (User user : userList) {
-                if (user.getNickname() == nickname) {
+                if (user.getNickname().equals(nickname)) {
                     user.IsEnabled(false);
                 }
             }
@@ -164,7 +164,7 @@ public class UserManagement {
     public void enableUser(String nickname, ArrayList<User> userList) {
         if (isExistingNickname(nickname, userList)) {
             for (User user : userList) {
-                if (user.getNickname() == nickname) user.IsEnabled(true);
+                if (user.getNickname().equals(nickname)) user.IsEnabled(true);
             }
         }
     }
@@ -172,7 +172,7 @@ public class UserManagement {
     public void setModeratorRights(String nickname, ArrayList<User> userList) {
         if (isExistingNickname(nickname, userList)) {
             for (User user : userList) {
-                if (user.getNickname() == nickname) {
+                if (user.getNickname().equals(nickname)) {
                     user.setRole(UserRole.MODERATOR);
                 }
             }
