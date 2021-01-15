@@ -1,102 +1,160 @@
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import rateyourstuff.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class CommentTest {
+    static Movie myMovie;
+    @BeforeAll
+    static void initializeMovies() {
+        User author = new User("Jane", "Doe", "jane.doe@example.org", "Nickname", "password1");
+        LocalDate date = LocalDate.now();
+
+        List<Person> directors = new ArrayList<>();
+        directors.add(new Person("Sergio", "Corbucci"));
+
+        List<String> languages = new ArrayList<>();
+        languages.add("Itanlienisch");
+        languages.add("Deutsch");
+
+        List<Person> mainActors = new ArrayList<>();
+        mainActors.add(new Person("Bud", "Spencer"));
+        mainActors.add(new Person("Terence", "Hill"));
+
+        Resolution highestResolution = new Resolution();
+
+        myMovie = new Movie("Zwei Asse Trumpfen auf",
+                LocalDate.of(1981, 12, 9),
+                "...",
+                Genre.COMEDY,
+                "3L",
+                directors,
+                languages,
+                mainActors,
+                110,
+                12,
+                highestResolution);
+
+        myMovie.setComment(myMovie.getComment());
+
+        myMovie.getComment().add(new Comment("This text has the ID = 0", author, date));
+        myMovie.getComment().add(new Comment("This text has the ID = 1", author, date));
+
+
+
+    }
+
+
     @Test
-    public void testSetText() {
-        ArrayList<Comment> comments = new ArrayList<>();
-        ArrayList<Rate> rates = new ArrayList<>();
+    public void should_change_Text() {
+        //Given
         User author = new User("Jane", "Doe", "jane.doe@example.org", "Nickname", "password1");
         LocalDate date = LocalDate.now();
         Comment comment = new Comment("Text", author, date);
+
+        //When
         comment.setText("Text");
+
+        //Then
         assertEquals("Text", comment.getText());
     }
 
     @Test
-    public void testSetAuthor() {
-        ArrayList<Comment> comments1 = new ArrayList<>();
-        ArrayList<Rate> rates1 = new ArrayList<>();
+    public void should_change_Author() {
+        //Given
         User author = new User("Jane", "Doe", "jane.doe@example.org", "Nickname", "password1");
         LocalDate date = LocalDate.now();
         Comment comment = new Comment("Text", author, date);
-        ArrayList<Comment> comments2 = new ArrayList<>();
-        ArrayList<Rate> rates2 = new ArrayList<>();
-        User user = new User("Jane", "Doe", "jane.doe@example.org", "Nickname", "password1");
+        User user = new User("John", "Doe", "john.doe@example.org", "Nickname", "password1");
+
+        //When
         comment.setAuthor(user);
+
+        //Then
         assertSame(user, comment.getAuthor());
     }
 
     @Test
-    public void testSetDate() {
-        ArrayList<Comment> comments = new ArrayList<>();
-        ArrayList<Rate> rates = new ArrayList<>();
+    public void should_change_Date() {
+        //Given
         User author = new User("Jane", "Doe", "jane.doe@example.org", "Nickname", "password1");
         LocalDate date = LocalDate.now();
         Comment comment = new Comment("Text", author, date);
+
+        //When
         LocalDate Yesterday = date.minusDays(1);
         comment.setDate(Yesterday);
+
+        //Then
         assertSame(Yesterday, comment.getDate());
     }
 
     @Test
-    public void testSetResponses() {
-        ArrayList<Comment> comments = new ArrayList<>();
-        ArrayList<Rate> rates = new ArrayList<>();
-        User author = new User("Jane", "Doe", "jane.doe@example.org", "Nickname", "password1");
-        LocalDate date = LocalDate.now();
-        Comment comment = new Comment("Text", author, date);
-        ArrayList<Comment> commentList = new ArrayList<>();
-        comment.setResponses(commentList);
-        assertSame(commentList, comment.getResponses());
-    }
-
-    @Test
-    public void testAddResponses() {
-        ArrayList<Comment> comments = new ArrayList<>();
-        ArrayList<Rate> rates = new ArrayList<>();
+    public void should_add_Responses() {
+        //Given
         User author = new User("Jane", "Doe", "jane.doe@example.org", "JohnDoe", "password1");
         LocalDate date = LocalDate.now();
         Comment comment = new Comment("Text", author, date);
+
+        //When
         comment.AddResponses(new ArrayList<>());
+
+        //Then
         assertEquals("JohnDoe", comment.getAuthor().getNickname());
     }
 
     @Test
-    public void testSetClosed() {
-        ArrayList<Comment> comments = new ArrayList<>();
-        ArrayList<Rate> rates = new ArrayList<>();
+    public void should_set_Closed_true() {
+        //Given
         User author = new User("Jane", "Doe", "jane.doe@example.org", "Nickname", "password1");
         LocalDate date = LocalDate.now();
         Comment comment = new Comment("Text", author, date);
+
+        //When
         comment.setClosed(true);
+
+        //Then
         assertTrue(comment.getClosed());
     }
 
-    // TODO: The following tests are incomplete.
-
     @Test
-    public void testDeleteComment() {
-        ArrayList<Comment> comments = new ArrayList<>();
-        ArrayList<Rate> rates = new ArrayList<>();
-        User author = new User("Jane", "Doe", "jane.doe@example.org", "Nickname", "password1");
+    public void should_delete_Comment() {
+        //Given
+        int listSizeBeforeDeletion = myMovie.getComment().size();
+
+        //When
+        assertTrue(myMovie.deleteComment(myMovie.getComment(), 1));
+
+        //Then
+        assertNotEquals(listSizeBeforeDeletion,myMovie.getComment().size());
+
+    }
+    @Test
+    public void should_delete_Response() {
+        //Given
         LocalDate date = LocalDate.now();
-        Comment comment = new Comment("You need to delete this", author, date);
-        //System.out.print(comment);
-        //comments.remove(comment.getAuthor().getNickname());
-        //assertEquals(1, comment.getId() );
+        User author = new User("John", "Doe", "john.doe@example.org", "Nickname", "password1");
+        List<Comment> responseList = new ArrayList<>();
+        responseList.add(new Comment("This text has the ID = 2", author, date));
+        responseList.add(new Comment("This text has the ID = 3", author, date));
+        Comment comment = new Comment("Text", author, date);
+        comment.AddResponses(responseList);
+        int listSizeBeforeDeletion = comment.getResponses().size();
+
+        //When
+        assertTrue(comment.deleteResponse(comment.getResponses(), 3));
+
+        //THen
+        assertNotEquals(listSizeBeforeDeletion,comment.getResponses().size());
+
     }
 
-    @Test
-    public void testIsSpoiler() {
-        assertTrue(true);
-    }
+
 }

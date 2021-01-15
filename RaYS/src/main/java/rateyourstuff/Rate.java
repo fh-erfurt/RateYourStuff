@@ -6,13 +6,11 @@ package rateyourstuff;
  *
  * */
 
-import rateyourstuff.Medium;
-
 public class Rate
 {
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
-    final static int minPoints = 0; //ToDo: Entscheidung übner Konstante oder keine Konstante
+    final static int minPoints = 0;
     final static int maxPoints = 10;
     private int rating;
     private String description;

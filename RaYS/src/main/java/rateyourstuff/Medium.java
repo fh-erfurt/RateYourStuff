@@ -2,7 +2,7 @@ package rateyourstuff;
 
 /**
  *
- * @author Christoph Frischmuth, Robin Beck, John Klippstein
+ * @author Christoph Frischmuth, Robin Beck, John Klippstein und Mickey Knop
  *
  * */
 
@@ -215,6 +215,16 @@ public abstract class Medium {
                 searchResults.add(medium);
             }
         }
+    }
+
+    public boolean deleteComment(List <Comment> listOfComments, int Id) {
+        for(Comment currentComment: listOfComments){
+            if(currentComment.getId() == Id){
+                listOfComments.remove(currentComment);
+                return true;
+            }
+        }
+        return false;
     }
 
 }

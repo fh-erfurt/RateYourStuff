@@ -14,6 +14,8 @@ import java.util.List;
 public class Comment {
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
+    private static int count = 0;
+    private int id;
     private String text;
     private User author;
     private LocalDate date;
@@ -25,6 +27,7 @@ public class Comment {
     //region Constructors
     ////////////////////////////////////////////////////////////////////////////////////
     public Comment(String text, User author, LocalDate date) {
+        this.id = count++;
         this.text = text;
         this.author = author;
         this.date = date;
@@ -35,6 +38,7 @@ public class Comment {
     }
 
     Comment(String text, User author, LocalDate date, List<Comment> responses) {
+        this.id = count++;
         this.text = text;
         this.author = author;
         this.date = date;
@@ -44,9 +48,12 @@ public class Comment {
 
     //region Getter // Setter // Adder
     ////////////////////////////////////////////////////////////////////////////////////
-    public void setText(String text) {
-        this.text = text;
+
+    public int getId() {
+        return id;
     }
+
+    public void setText(String text) { this.text = text; }
 
     public String getText() {
         return text;
@@ -104,7 +111,14 @@ public class Comment {
     //region Methods
     ////////////////////////////////////////////////////////////////////////////////////
     //TODO: implement deletion of comment reference in media and subcomments in user
-    public void delete() {
+    public boolean deleteResponse(List <Comment> listOfResponses, int Id) {
+        for(Comment currentResponse: listOfResponses){
+            if(currentResponse.getId() == Id){
+                listOfResponses.remove(currentResponse);
+                return true;
+            }
+        }
+        return false;
     }
     //endregion
 
