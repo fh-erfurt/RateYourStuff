@@ -217,6 +217,12 @@ public abstract class Medium {
         }
     }
 
+    /**
+     * <p>This function will delete a comment from a list of comments</p>
+     * @param listOfComments is the list where the comment will remove from
+     * @param Id is necessary to find the right comment
+     * @return true if the is deleted successful, false if not
+     */
     public boolean deleteComment(List <Comment> listOfComments, int Id) {
         for(Comment currentComment: listOfComments){
             if(currentComment.getId() == Id){

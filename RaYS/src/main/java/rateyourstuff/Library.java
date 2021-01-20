@@ -386,8 +386,11 @@ public class Library {
     //endregion
 
 
-
-
+    /**
+     * <p>This function removes a medium from the library, with raitings and comments</p>
+     * @param medium which will be remove from the library
+     * @return true, if the medium is removed; false if not
+     */
     public boolean removeMedium(Medium medium)
     {
         int foundMediumIndex = media.indexOf(medium);

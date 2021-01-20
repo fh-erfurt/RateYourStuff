@@ -119,7 +119,7 @@ public class User
     //endregion
 
     /**
-     * <p>Checks if the user has a progress for the given medium</p>
+     * <p>Checks if the user has a progress for the given medium.</p>
      * @param medium    Medium which is used to search for a progress
      * @return          null, if not progress is found or the Progress that was found
      */
@@ -133,7 +133,7 @@ public class User
     }
 
     /**
-     * <p>Adds a new progress to the user</p>
+     * <p>Adds a new progress to the user.</p>
      * @param medium    Medium for which a new progress should be added
      * @return          true, if adding was successful, false, if adding was not successful
      */
@@ -159,7 +159,7 @@ public class User
     }
 
     /**
-     * <p>Removes a progress for a given medium from the users progress list</p>
+     * <p>Removes a progress for a given medium from the users progress list.</p>
      * @param medium Medium that is used to search the progress, that should be removed
      * @return       true, if removing was successful, false, if removing was not successful
      */
@@ -178,21 +178,19 @@ public class User
 
 
     /**
-     *
-     * @param medium
+     *<p>This function add a rate to a medium and this user.</p>
+     * @param medium medium that is used to get the rate for the user
      * @param rating
-     * @param description
+     * @param description this is the description which is set in the rate
      * @return
      */
-    public boolean addNewRate(Medium medium, Integer rating, String description)
-    {
+    public boolean addNewRate(Medium medium, Integer rating, String description) {
         Integer newRating = rating;
         //TODO: variable is redundant
         String newDescription = description;
         List<Rate> mediumRates = medium.getRatings();
 
         Rate userRate = new Rate (newRating, newDescription, medium);
-        /*mediumRates.add(userRate);*/
         medium.addRating(userRate);
         this.rates.add(userRate);
 
@@ -200,9 +198,9 @@ public class User
     }
 
     /**
-     *
-     * @param medium
-     * @return
+     *<p>this function find a rate in a given medium.</p>
+     * @param medium contains the rate
+     * @return true if the rate was found, false if not
      */
     public Rate findRate(Medium medium) {
         for(Rate rate : rates ) {
@@ -214,9 +212,9 @@ public class User
     }
 
     /**
-     *
-     * @param medium
-     * @return
+     *<p>This function will remove a Rate from this user.</p>
+     * @param medium contains the needed rate
+     * @return true if the rate was removed, false if not
      */
     public boolean removeRateInUSer(Medium medium) {
         Rate foundRate = findRate(medium);
@@ -228,9 +226,9 @@ public class User
     }
 
     /**
-     *
-     * @param medium
-     * @return
+     *<p>This function will find a comment in a given medium.</p>
+     * @param medium contains the needed comment
+     * @return false if no comment was found, else the comment
      */
     public Comment findComment(Medium medium) {
         for(Comment comment : comments ) {
@@ -242,9 +240,9 @@ public class User
     }
 
     /**
-     *
-     * @param medium
-     * @return
+     *<p>this function will remove a comment in this user.</p>
+     * @param medium contains the needed comment
+     * @return true if the comment was removed, false if not
      */
     public boolean removeComment(Medium medium){
         Comment foundComment = findComment(medium);
