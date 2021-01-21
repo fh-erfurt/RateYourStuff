@@ -1,14 +1,14 @@
 package de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.books.isbn;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * <h1>ISBN13</h1>
  * <p>This class represents the ISBN13 and contains methods to validate isbn13 und transform isbn10 to isbn13</p>
  * @author Robin Beck
  *
  * */
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class ISBN13 {
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
@@ -126,6 +126,10 @@ public class ISBN13 {
         return new ISBN13(isbn13);
     }
 
+    /**
+     * <p>Used to print the isbn as string</p>
+     * @return  the isbn string
+     */
     public String toString() {
         return isbn;
     }

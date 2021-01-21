@@ -1,15 +1,5 @@
 package de.fourzerofournotfound.rateyourstuff.mediamanagement;
 
-/**
- * <h1>Media-Collections</h1>
- * <p>The Media Collections provide Features to group Media in a logical way.
- * This Class allows users to add and remove Media to a collection</p>
- *
- * @author John Klippstein, Robin Beck
- * @version 1.1
- *
- * */
-
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.Medium;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.books.Book;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.games.Game;
@@ -20,6 +10,14 @@ import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.series.S
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * <h1>Media-Collections</h1>
+ * <p>The Media Collections provide Features to group Media in a logical way.
+ * This Class allows users to add and remove Media to a collection</p>
+ *
+ * @author John Klippstein, Robin Beck
+ *
+ * */
 public class Collection {
 
     //region Attributes
@@ -50,13 +48,17 @@ public class Collection {
         this.name = name;
     }
 
-    public List<Medium> getMediaCollection() {
-        return mediaCollection;
+    public int getMediaCollectionSize() {
+        return mediaCollection.size();
     }
 
-    public void setMediaCollection(List<Medium> mediumCollection) {
-        this.mediaCollection = mediumCollection;
+    public Medium getMediumAtIndex(int index) {
+        if(index >= 0 && index < mediaCollection.size()) {
+            return mediaCollection.get(index);
+        }
+        return null;
     }
+
     //endregion
 
     /**

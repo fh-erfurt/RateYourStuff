@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.Genre;
+import de.fourzerofournotfound.rateyourstuff.mediamanagement.Resolution;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.Medium;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.books.Book;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.books.isbn.ISBN13;
@@ -127,8 +128,6 @@ class MediumTest {
         mainActors.add(new Person("Bud", "Spencer"));
         mainActors.add(new Person("Terence", "Hill"));
 
-        Resolution highestResolution = new Resolution();
-
         Movie myMovie = new Movie("Zwei Asse Trumpfen auf",
                 LocalDate.of(1981, 12, 9),
                 "...",
@@ -139,7 +138,7 @@ class MediumTest {
                 mainActors,
                 110,
                 12,
-                highestResolution);
+                Resolution.HD);
 
         Movie my2ndMovie = new Movie("Vier Fäuste für ein Halleluja",
                 LocalDate.of(1972, 5, 25),

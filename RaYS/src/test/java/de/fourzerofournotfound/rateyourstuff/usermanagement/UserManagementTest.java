@@ -70,7 +70,6 @@ class UserManagementTest {
                     "Chris",
                     "NeuerNachname",
                     "Chris29",
-                    "Erfurt",
                     "reis@rays.com"));
             userManagement.viewPersonalData(Chris_Rays);
         }

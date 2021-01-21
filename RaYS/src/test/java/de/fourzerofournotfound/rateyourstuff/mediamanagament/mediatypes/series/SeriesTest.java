@@ -1,5 +1,6 @@
 package de.fourzerofournotfound.rateyourstuff.mediamanagament.mediatypes.series;
 
+import de.fourzerofournotfound.rateyourstuff.mediamanagement.Resolution;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -39,7 +40,7 @@ public class SeriesTest {
                 languages,
                 25,
                 0,
-                null,
+                Resolution.SD,
                 true);
 
         //When
@@ -74,7 +75,7 @@ public class SeriesTest {
                 languages,
                 25,
                 0,
-                null,
+                Resolution.SD,
                 true);
 
         //When
@@ -108,7 +109,7 @@ public class SeriesTest {
                 languages,
                 25,
                 0,
-                null,
+                Resolution.SD,
                 true);
 
         Series my2ndSeries = new Series("Ein Käfig voller Helden",
@@ -121,7 +122,7 @@ public class SeriesTest {
                 languages,
                 45,
                 12,
-                null,
+                Resolution.SD,
                 false);
 
         //When
@@ -155,7 +156,7 @@ public class SeriesTest {
                 languages,
                 25,
                 0,
-                null,
+                Resolution.SD,
                 true);
 
         Series my2ndSeries = new Series("M*A*S*H",
@@ -168,7 +169,7 @@ public class SeriesTest {
                 languages,
                 45,
                 12,
-                null,
+                Resolution.SD,
                 false);
 
         //When

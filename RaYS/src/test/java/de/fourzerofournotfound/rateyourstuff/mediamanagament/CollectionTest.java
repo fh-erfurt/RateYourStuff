@@ -3,6 +3,7 @@ package de.fourzerofournotfound.rateyourstuff.mediamanagament;
 import de.fourzerofournotfound.rateyourstuff.*;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.Collection;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.Genre;
+import de.fourzerofournotfound.rateyourstuff.mediamanagement.Resolution;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.Medium;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.books.Book;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.books.isbn.ISBN13;
@@ -83,8 +84,6 @@ public class CollectionTest {
         mainActors.add(new Person("Bud", "Spencer"));
         mainActors.add(new Person("Terence", "Hill"));
 
-        Resolution highestResolution = new Resolution();
-
         exampleMovie = new Movie("Zwei Asse Trumpfen auf",
                 LocalDate.of(1981,12,9),
                 "...",
@@ -95,7 +94,7 @@ public class CollectionTest {
                 mainActors,
                 110,
                 12,
-                highestResolution);
+                Resolution.HD);
     }
 
     @BeforeAll
@@ -121,7 +120,7 @@ public class CollectionTest {
                 languages,
                 25,
                 0,
-                null,
+                Resolution.HD,
                 true);
     }
 
@@ -256,8 +255,6 @@ public class CollectionTest {
         mainActors.add(new Person("Bud", "Spencer"));
         mainActors.add(new Person("Terence", "Hill"));
 
-        Resolution highestResolution = new Resolution();
-
         Movie myMovie = new Movie("Zwei wie Pech und Schwefel",
                 LocalDate.of(1974,3,29),
                 "...",
@@ -268,7 +265,7 @@ public class CollectionTest {
                 mainActors,
                 90,
                 6,
-                highestResolution);
+                Resolution.HD);
         //When
         Medium foundMedium = mediaCollection.findMedium(myMovie);
 
@@ -312,7 +309,7 @@ public class CollectionTest {
                 languages,
                 30,
                 12,
-                null,
+                Resolution.HD,
                 true);
         //When
         Medium foundMedium = mediaCollection.findMedium(mySeries);
@@ -433,7 +430,7 @@ public class CollectionTest {
                 true,
                 false,
                 10);
-        int collectionSize = mediaCollection.getMediaCollection().size();
+        int collectionSize = mediaCollection.getMediaCollectionSize();
 
         //When
         mediaCollection.addNewMedium(myBook);
@@ -450,7 +447,7 @@ public class CollectionTest {
                 bookCollectionReference,
                 "The Collection that has been added to the book is not the correct collection");
         assertEquals(collectionSize+1,
-                mediaCollection.getMediaCollection().size(),
+                mediaCollection.getMediaCollectionSize(),
                 "The collection size has not been increased");
     }
 
@@ -468,8 +465,6 @@ public class CollectionTest {
         mainActors.add(new Person("Bud", "Spencer"));
         mainActors.add(new Person("Terence", "Hill"));
 
-        Resolution highestResolution = new Resolution();
-
         Movie myMovie = new Movie("Zwei Asse Trumpfen auf",
                 LocalDate.of(1981,12,9),
                 "...",
@@ -480,9 +475,9 @@ public class CollectionTest {
                 mainActors,
                 110,
                 12,
-                highestResolution);
+                Resolution.HD);
         int movieCollectionSize = myMovie.getCollections().size();
-        int collectionSize = mediaCollection.getMediaCollection().size();
+        int collectionSize = mediaCollection.getMediaCollectionSize();
 
         //When
         mediaCollection.addNewMedium(myMovie);
@@ -495,7 +490,7 @@ public class CollectionTest {
                 myMovie.getCollections().size(),
                 "The size of the collection list of the medium has changed");
         assertEquals(collectionSize,
-                mediaCollection.getMediaCollection().size(),
+                mediaCollection.getMediaCollectionSize(),
                 "The collection size has changed");
     }
 
@@ -503,7 +498,7 @@ public class CollectionTest {
     public void should_remove_given_medium_from_list() {
         //Given
         Book myBook = exampleBook;
-        int collectionSize = mediaCollection.getMediaCollection().size();
+        int collectionSize = mediaCollection.getMediaCollectionSize();
 
         //When
         mediaCollection.removeMedium(myBook);
@@ -520,7 +515,7 @@ public class CollectionTest {
                 bookCollectionReference,
                 "The Collection that has not been removed from the book");
         assertEquals(collectionSize-1,
-                mediaCollection.getMediaCollection().size(),
+                mediaCollection.getMediaCollectionSize(),
                 "The collection size has not been decreased");
     }
 
@@ -554,7 +549,7 @@ public class CollectionTest {
                 true,
                 false,
                 10);
-        int collectionSize = mediaCollection.getMediaCollection().size();
+        int collectionSize = mediaCollection.getMediaCollectionSize();
         int myBookCollectionLength = myBook.getCollections().size();
 
         //When
@@ -562,7 +557,7 @@ public class CollectionTest {
 
         //Then
         assertEquals(collectionSize,
-                mediaCollection.getMediaCollection().size(),
+                mediaCollection.getMediaCollectionSize(),
                 "The collection size has been decreased");
     }
 
@@ -591,7 +586,7 @@ public class CollectionTest {
 
         //Then
         assertEquals(0,
-                mediaCollection.getMediaCollection().size(),
+                mediaCollection.getMediaCollectionSize(),
                 "The collection still has media");
         assertEquals(bookCollections-1,
                 exampleBook.getCollections().size(),

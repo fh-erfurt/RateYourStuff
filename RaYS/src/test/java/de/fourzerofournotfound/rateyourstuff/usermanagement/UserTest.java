@@ -2,6 +2,7 @@ package de.fourzerofournotfound.rateyourstuff.usermanagement;
 
 import de.fourzerofournotfound.rateyourstuff.*;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.Genre;
+import de.fourzerofournotfound.rateyourstuff.mediamanagement.Resolution;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.books.Book;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.books.isbn.ISBN13;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.books.isbn.InvalidISBNException;
@@ -70,8 +71,6 @@ public class UserTest {
         mainActors.add(new Person("Bud", "Spencer"));
         mainActors.add(new Person("Terence", "Hill"));
 
-        Resolution highestResolution = new Resolution();
-
         exampleMovie = new Movie("Zwei Asse Trumpfen auf",
                 LocalDate.of(1981,12,9),
                 "...",
@@ -82,7 +81,7 @@ public class UserTest {
                 mainActors,
                 110,
                 12,
-                highestResolution);
+                Resolution.HD);
     }
 
     @BeforeAll
@@ -179,8 +178,6 @@ public class UserTest {
         mainActors.add(new Person("Bud", "Spencer"));
         mainActors.add(new Person("Terence", "Hill"));
 
-        Resolution highestResolution = new Resolution();
-
         Movie myMovie = new Movie("Zwei sind nicht zu bremsen",
                 LocalDate.of(1982,12,9),
                 "...",
@@ -191,7 +188,7 @@ public class UserTest {
                 mainActors,
                 110,
                 12,
-                highestResolution);
+                Resolution.HD);
 
         //When
         Progress foundProgress = exampleUser.findProgress(myMovie);
@@ -215,8 +212,6 @@ public class UserTest {
         mainActors.add(new Person("Bud", "Spencer"));
         mainActors.add(new Person("Terence", "Hill"));
 
-        Resolution highestResolution = new Resolution();
-
         Movie myMovie = new Movie("Zwei sind nicht zu bremsen",
                 LocalDate.of(1982,12,9),
                 "...",
@@ -227,7 +222,7 @@ public class UserTest {
                 mainActors,
                 110,
                 12,
-                highestResolution);
+                Resolution.HD);
 
         //When
         boolean progressHasBeenAdded = exampleUser.addNewProgress(myMovie);
@@ -288,8 +283,6 @@ public class UserTest {
         mainActors.add(new Person("Bud", "Spencer"));
         mainActors.add(new Person("Terence", "Hill"));
 
-        Resolution highestResolution = new Resolution();
-
         Movie myMovie = new Movie("Zwei sind nicht zu bremsen",
                 LocalDate.of(1982,12,9),
                 "...",
@@ -300,7 +293,7 @@ public class UserTest {
                 mainActors,
                 110,
                 12,
-                highestResolution);
+                Resolution.HD);
         int numberOfProgresses = exampleUser.getNumberOfProgresses();
         //When
         boolean progressHasBeenRemoved = exampleUser.removeProgress(myMovie);

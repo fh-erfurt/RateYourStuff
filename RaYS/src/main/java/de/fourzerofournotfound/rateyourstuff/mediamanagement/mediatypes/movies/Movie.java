@@ -1,20 +1,19 @@
 package de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.movies;
 
-/**
- *
- * @author Christoph Frischmuth
- *
- * */
-
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.Genre;
+import de.fourzerofournotfound.rateyourstuff.mediamanagement.Resolution;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.Medium;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.persons.Person;
-import de.fourzerofournotfound.rateyourstuff.Resolution;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * <h1>Movie</h1>
+ * @author Christoph Frischmuth
+ *
+ * */
 public class Movie extends Medium
 {
     //region Attributes
@@ -25,7 +24,7 @@ public class Movie extends Medium
     private List<String> languages;
     private int totalDuration;
     private int ageRestriction;
-    private Resolution highestResolution; //To type as XXXXxXXXX e.G. 1750x1050
+    private Resolution highestResolution;
     //endregion
 
     //region Constructors
@@ -65,50 +64,7 @@ public class Movie extends Medium
         return studio;
     }
 
-    //TODO: data encapsulation stuff
-    public void setDirectors(List<Person> directors) {
-        this.directors = directors;
-    }
 
-    //TODO: data encapsulation stuff
-    public List<Person> getDirectors() {
-        return directors;
-    }
-
-    //TODO: data encapsulation stuff
-    public void addDirectors(List<Person> directors){
-        this.directors.addAll(directors);
-    }
-
-    //TODO: data encapsulation stuff
-    public void setMainActors(List<Person> mainActors) {
-        this.mainActors = mainActors;
-    }
-
-    //TODO: data encapsulation stuff
-    public List<Person> getMainActors() {
-        return mainActors;
-    }
-
-    //TODO: data encapsulation stuff
-    public void addMainActors(List<Person> mainActors){
-        this.mainActors.addAll(mainActors);
-    }
-
-    //TODO: data encapsulation stuff
-    public void setLanguages(List<String> languages) {
-        this.languages = languages;
-    }
-
-    //TODO: data encapsulation stuff
-    public List<String> getLanguages() {
-        return languages;
-    }
-
-    //TODO: data encapsulation stuff
-    public void addLanguages(List<String> languages){
-        this.languages.addAll(languages);
-    }
 
     public void setTotalDuration(int totalDuration) {
         this.totalDuration = totalDuration;

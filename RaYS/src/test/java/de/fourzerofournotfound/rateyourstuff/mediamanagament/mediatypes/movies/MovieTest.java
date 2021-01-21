@@ -1,13 +1,13 @@
 package de.fourzerofournotfound.rateyourstuff.mediamanagament.mediatypes.movies;
 
+
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*
-        ;
+import static org.junit.jupiter.api.Assertions.*;
 
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.Genre;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.movies.Movie;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.persons.Person;
-import de.fourzerofournotfound.rateyourstuff.Resolution;
+import de.fourzerofournotfound.rateyourstuff.mediamanagement.Resolution;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -32,8 +32,6 @@ public class MovieTest {
         mainActors.add(new Person("Bud", "Spencer"));
         mainActors.add(new Person("Terence", "Hill"));
 
-        Resolution highestResolution = new Resolution();
-
         Movie myMovie = new Movie("Zwei Asse Trumpfen auf",
                 LocalDate.of(1981,12,9),
                 "...",
@@ -44,7 +42,7 @@ public class MovieTest {
                 mainActors,
                 110,
                 12,
-                highestResolution);
+                Resolution.HD);
 
         Movie my2ndMovie = new Movie("Zwei Asse Trumpfen auf",
                 LocalDate.of(1981,12,9),
@@ -56,7 +54,7 @@ public class MovieTest {
                 mainActors,
                 90,
                 18,
-                null);
+                Resolution.HD);
 
         //When
         boolean moviesAreEqual = myMovie.equals(my2ndMovie);
@@ -79,8 +77,6 @@ public class MovieTest {
         mainActors.add(new Person("Bud", "Spencer"));
         mainActors.add(new Person("Terence", "Hill"));
 
-        Resolution highestResolution = new Resolution();
-
         Movie myMovie = new Movie("Zwei Asse Trumpfen auf",
                 LocalDate.of(1981,12,9),
                 "...",
@@ -91,7 +87,7 @@ public class MovieTest {
                 mainActors,
                 110,
                 12,
-                highestResolution);
+                Resolution.HD);
 
         Movie my2ndMovie = new Movie("Zwei wie Pech und Schwefel",
                 LocalDate.of(1974,3,29),

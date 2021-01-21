@@ -1,11 +1,5 @@
 package de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.books;
 
-/**
-*
-* @author Christoph Frischmuth
-*
-* */
-
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.Genre;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.books.isbn.ISBN13;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.Medium;
@@ -15,6 +9,12 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ *  <h1>Book</h1>
+ * @author Christoph Frischmuth
+ *
+ * */
 public class Book extends Medium
 {
     //region Attributes

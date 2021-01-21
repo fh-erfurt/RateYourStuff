@@ -1,11 +1,5 @@
 package de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes;
 
-/**
- *
- * @author Christoph Frischmuth, Robin Beck, John Klippstein und Mickey Knop
- *
- * */
-
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.Collection;
 import de.fourzerofournotfound.rateyourstuff.commentmanagement.Comment;
 import de.fourzerofournotfound.rateyourstuff.ratingmanagement.Rate;
@@ -16,6 +10,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ * @author Christoph Frischmuth, Robin Beck, John Klippstein und Mickey Knop
+ *
+ * */
 public abstract class Medium {
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
@@ -114,7 +113,7 @@ public abstract class Medium {
         for (Rate currentRating : ratings) {
             tempAverage = tempAverage + currentRating.getRating();
         }
-        tempAverage = tempAverage / ratings.size();   //Devide the computed sum of ratings by the length of the list
+        tempAverage = tempAverage / ratings.size();   //Divide the computed sum of ratings by the length of the list
 
         return this.averageRating = tempAverage;
     }

@@ -1,5 +1,14 @@
 package de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.series;
 
+import de.fourzerofournotfound.rateyourstuff.mediamanagement.Genre;
+import de.fourzerofournotfound.rateyourstuff.mediamanagement.Resolution;
+import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.Medium;
+import de.fourzerofournotfound.rateyourstuff.mediamanagement.persons.Person;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * <h1>Series</h1>
  * <p>Represents a series / TV Show, contains information about the tv-show, the seasons of the show and the
@@ -7,16 +16,6 @@ package de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.series;
  * @author Christoph Frischmuth, Robin Beck
  *
  */
-
-import de.fourzerofournotfound.rateyourstuff.mediamanagement.Genre;
-import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.Medium;
-import de.fourzerofournotfound.rateyourstuff.mediamanagement.persons.Person;
-import de.fourzerofournotfound.rateyourstuff.Resolution;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-
 public class Series extends Medium {
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
@@ -72,46 +71,7 @@ public class Series extends Medium {
         return network;
     }
 
-    //TODO: data encapsulation stuff
-    public void setDirectors(List<Person> directors) {
-        this.directors = directors;
-    }
-    //TODO: data encapsulation stuff
-    public List<Person> getDirectors() {
-        return directors;
-    }
-    //TODO: data encapsulation stuff
-    public void addDirectors(List<Person> directors) {
-        this.directors.addAll(directors);
-    }
-
-    //TODO: data encapsulation stuff
-    public void setCast(List<Person> cast) {
-        this.actors = cast;
-    }
-    //TODO: data encapsulation stuff
-    public List<Person> getCast() {
-        return actors;
-    }
-    //TODO: data encapsulation stuff
-    public void addCast(List<Person> cast) {
-        this.actors.addAll(cast);
-    }
-
-    //TODO: data encapsulation stuff
-    public void setSubtitles(List<String> subtitles) {
-        this.subtitles = subtitles;
-    }
-    //TODO: data encapsulation stuff
-    public List<String> getSubtitles() {
-        return subtitles;
-    }
-    //TODO: data encapsulation stuff
-    public void addSubtitles(List<String> subtitles) {
-        this.subtitles.addAll(subtitles);
-    }
-
-    public void setAverageLength(int averageLength) {
+   public void setAverageLength(int averageLength) {
         this.averageLength = averageLength;
     }
     public int getAverageLength() {
@@ -125,12 +85,10 @@ public class Series extends Medium {
         return ageRestriction;
     }
 
-    //TODO: remove, resolution adjustment could be handled by resolution class
-    public void setHighestResolution(int height, int width) {
-        resolution.setHeight(height);
-        resolution.setWidth(width);
-
+    public void setHighestResolution(Resolution highestResolution) {
+        this.highestResolution = highestResolution;
     }
+
     public Resolution getHighestResolution() {
         return highestResolution;
     }
@@ -138,18 +96,16 @@ public class Series extends Medium {
     public void setIsCompleted(boolean isCompleted){
         this.isCompleted = isCompleted;
     }
-    //TODO: rename to isCompleted()
-    public boolean getIsCompleted(){
+
+    public boolean isCompleted(){
         return isCompleted;
     }
 
-    //TODO: data encapsulation stuff
-    public void setSeasons(List<Season> seasons) {
-        this.seasons = seasons;
-    }
-    //TODO: data encapsulation stuff
-    public List<Season> getSeasons() {
-        return seasons;
+    public Season getSeasonAtIndex(int index) {
+        if(index >= 0 && index < seasons.size()) {
+            return seasons.get(index);
+        }
+        return null;
     }
 
     public int getNumberOfSeasons() {

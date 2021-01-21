@@ -1,12 +1,6 @@
 package de.fourzerofournotfound.rateyourstuff.mediamanagement;
 
-/**
- *
- * <h1>Library</h1>
- * <p>This class is used to manage all media and all media collections</p>
- * @author Mickey Knop, Robin Beck
- *
- * */
+
 
 import de.fourzerofournotfound.rateyourstuff.*;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.Medium;
@@ -24,6 +18,13 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ * <h1>Library</h1>
+ * <p>This class is used to manage all media and all media collections</p>
+ * @author Mickey Knop, Robin Beck
+ *
+ * */
 public class Library {
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
@@ -41,11 +42,6 @@ public class Library {
 
     //region Getter // Setter // Adder
     ////////////////////////////////////////////////////////////////////////////////////
-    //TODO: Should be replaced, interferes with data encapsulation
-    public List<Medium> getMedia() {
-        return media;
-    }
-
     public int getMediaListSize() {
         return media.size();
     }
@@ -56,22 +52,10 @@ public class Library {
         }
         return null;
     }
-
-    //TODO: Should be removed, interferes with data encapsulation
-    public void setMedia(List<Medium> media) {
-        this.media = media;
-    }
-
-    //TODO: Should be replaced, interferes with data encapsulation
-    public void AddMedia(List<Medium> media) {
-        this.media.addAll(media);
-    }
     //endregion
 
 
     // region methods
-    // Adds a new Book to library, returns true, if successful, false if unsuccessful
-
     /**
      * <p>This function is used to add a new book to the collection</p>
      * @param name              name of the book
@@ -135,27 +119,13 @@ public class Library {
                 isPrint,
                 numberOfPages);
 
-        if(checkIfBookExists(currentBook)) {
+        if(checkIfMediumExists(currentBook)) {
             return false;
         } else {
             media.add(currentBook);
             return true;
         }
     }
-
-    public boolean checkIfBookExists(Book book) {
-        Book currentBook;
-        for( Medium medium : media) {
-            if( medium instanceof Book) {
-                currentBook = (Book) medium;
-                if(currentBook.equals(book)) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
 
     /**
      * <p>Adds a new movie to the library</p>
@@ -201,7 +171,7 @@ public class Library {
                 ageRestriction,
                 highestResolution);
 
-        if(checkIfMovieExists(currentMovie)) {
+        if(checkIfMediumExists(currentMovie)) {
             return false;
         } else {
             media.add(currentMovie);
@@ -209,14 +179,21 @@ public class Library {
         }
     }
 
-    public boolean checkIfMovieExists(Movie movie) {
-        Movie currentMovie;
-        for( Medium medium : media) {
-            if( medium instanceof Movie) {
-                currentMovie = (Movie) medium;
-                if(currentMovie.equals(movie)) {
-                    return true;
-                }
+    /**
+     * <p>Checks if the given medium exists within the library</p>
+     * @param medium    Medium that should be searched within the library
+     * @return          true, if the medium has been found, otherwise false
+     */
+    public boolean checkIfMediumExists(Medium medium) {
+        for(Medium currentMedium: media) {
+            if(medium instanceof Book && currentMedium instanceof Book && ((Book)medium).equals((Book)currentMedium)) {
+                return true;
+            } else if(medium instanceof Movie && currentMedium instanceof Movie && ((Movie)medium).equals((Movie)currentMedium)) {
+                return true;
+            } else if (medium instanceof Series && currentMedium instanceof Series && ((Series)medium).equals((Series)currentMedium)) {
+                return true;
+            } else if (medium instanceof Game && currentMedium instanceof Game && ((Game)medium).equals((Game)currentMedium)){
+                return true;
             }
         }
         return false;
@@ -268,25 +245,12 @@ public class Library {
                 highestResolution,
                 isCompleted);
 
-        if(checkIfSeriesExists(currentSeries)) {
+        if(checkIfMediumExists(currentSeries)) {
             return false;
         } else {
             media.add(currentSeries);
             return true;
         }
-    }
-
-    public boolean checkIfSeriesExists(Series series) {
-        Series currentSeries;
-        for( Medium medium : media) {
-            if( medium instanceof Series) {
-                currentSeries = (Series) medium;
-                if(currentSeries.equals(series)) {
-                    return true;
-                }
-            }
-        }
-        return false;
     }
 
     /**
@@ -340,25 +304,12 @@ public class Library {
                 platforms,
                 ageRestriction);
 
-        if(checkIfGameExists(currentGame)) {
+        if(checkIfMediumExists(currentGame)) {
             return false;
         } else {
             media.add(currentGame);
             return true;
         }
-    }
-
-    public boolean checkIfGameExists(Game game) {
-        Game currentGame;
-        for( Medium medium : media) {
-            if( medium instanceof Game) {
-               currentGame = (Game) medium;
-                if(currentGame.equals(game)) {
-                    return true;
-                }
-            }
-        }
-        return false;
     }
 
     /**
@@ -410,7 +361,7 @@ public class Library {
 
 
     /**
-     * <p>This function removes a medium from the library, with raitings and comments</p>
+     * <p>This function removes a medium from the library, with ratings and comments</p>
      * @param medium which will be remove from the library
      * @return true, if the medium is removed; false if not
      */
@@ -438,7 +389,6 @@ public class Library {
         }
 
         return false;
-
     }
 
 }

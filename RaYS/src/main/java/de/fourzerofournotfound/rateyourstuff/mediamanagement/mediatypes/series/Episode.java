@@ -1,12 +1,5 @@
 package de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.series;
 
-/**
- * <h1>Episode</h1>
- * <p>Represents an episode of an tv show, contains information about episode number, guest stars, episode title
- * Episodes can be added to collections</p>
- * @author Robin Beck
- */
-
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.Genre;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.Medium;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.persons.Person;
@@ -14,6 +7,12 @@ import de.fourzerofournotfound.rateyourstuff.mediamanagement.persons.Person;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * <h1>Episode</h1>
+ * <p>Represents an episode of an tv show, contains information about episode number, guest stars, episode title
+ * Episodes can be added to collections</p>
+ * @author Robin Beck
+ */
 public class Episode extends Medium {
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
@@ -52,20 +51,6 @@ public class Episode extends Medium {
         this.episodeNumber = episodeNumber;
     }
 
-    //TODO: method interferes with data encapsulation
-    public List<Person> getGuestStars() {
-        return guestStars;
-    }
-
-    //TODO: method interferes with data encapsulation
-    public void setGuestStars(List<Person> guestStars) {
-        this.guestStars = guestStars;
-    }
-
-    //TODO: method interferes with data encapsulation
-    public void addGuestStars (List<Person> guestStars) {
-        this.guestStars.addAll(guestStars);
-    }
 
     public int getLength() {
         return length;

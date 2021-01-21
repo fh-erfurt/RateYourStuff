@@ -1,14 +1,15 @@
 package de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.books.isbn;
+
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * <h1>ISBN10</h1>
  * <p>This class represents the old ISBN10 standard</p>
  * @author Robin Beck
  *
  * */
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class ISBN10 {
 
     //region Attributes
@@ -113,6 +114,10 @@ public class ISBN10 {
         return  checkSumChar;
     }
 
+    /**
+     * <p>Used to print a the isbn as string</p>
+     * @return  isbn string
+     */
     @Override
     public String toString() {
         return isbn;

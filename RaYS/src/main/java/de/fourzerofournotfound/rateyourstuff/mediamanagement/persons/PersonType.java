@@ -5,7 +5,6 @@ package de.fourzerofournotfound.rateyourstuff.mediamanagement.persons;
  * <p>This class is used to list the possible types of persons. Each type has the german equation as label</p>
  * @author Robin Beck
  */
-
 public enum PersonType {
     ACTOR("Schauspieler"),
     DIRECTOR("Regisseur"),

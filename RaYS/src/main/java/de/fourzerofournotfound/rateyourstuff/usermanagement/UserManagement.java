@@ -169,12 +169,11 @@ public class UserManagement {
     }
 
     public User changeUserData(User user, String firstName, String lastName,
-                               String nickname, String address, String email) {
+                               String nickname, String email) {
         if (isExistingNickname(nickname)) {
             if (user.getNickname().equals(nickname)) {
                 user.setFirstName(firstName);
                 user.setLastName(lastName);
-                user.setAddress(address);
                 user.setNickname(nickname);
                 changeEmail(user, email);
                 return user;

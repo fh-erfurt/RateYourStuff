@@ -1,5 +1,11 @@
 package de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.games;
 
+import de.fourzerofournotfound.rateyourstuff.mediamanagement.Genre;
+import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.Medium;
+
+import java.time.LocalDate;
+import java.util.List;
+
 /**
  * <h1>Game</h1>
  * <p>Represents an game and contains different information about the game including playtime, publisher, developer
@@ -7,13 +13,6 @@ package de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.games;
  * @author Christoph Frischmuth, Robin Beck
  *
  * */
-
-import de.fourzerofournotfound.rateyourstuff.mediamanagement.Genre;
-import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.Medium;
-
-import java.time.LocalDate;
-import java.util.List;
-
 public class Game extends Medium {
 
     //region Attributes
@@ -108,8 +107,10 @@ public class Game extends Medium {
         return subtitles;
     }
 
-    public void addSubtitles(List<String> subtitles) {
-        this.subtitles.addAll(subtitles);
+    public void addSubtitle(String subtitle) {
+        if(!subtitles.contains(subtitle)) {
+            this.subtitles.add(subtitle);
+        }
     }
 
     public void setMinNumberOfPlayers(int minNumberOfPlayers) {
@@ -128,16 +129,14 @@ public class Game extends Medium {
         return maxNumberOfPlayers;
     }
 
-    public void setPlatforms(List<String> platforms) {
-        this.platforms = platforms;
-    }
-
     public List<String> getPlatforms() {
         return platforms;
     }
 
-    public void addPlatforms(List<String> platforms) {
-        this.platforms.addAll(platforms);
+    public void addPlatform(String platform) {
+        if(!subtitles.contains(platform)) {
+            this.subtitles.add(platform);
+        }
     }
 
     public void setAgeRestriction(int ageRestriction) {
@@ -155,7 +154,7 @@ public class Game extends Medium {
 
 
     /**
-     * This method compares two games
+     * <p>This method compares two games</p>
      * @param game  The game that should be compared with the current game
      * @return      true, if name, publication date und the publisher are the same
      */

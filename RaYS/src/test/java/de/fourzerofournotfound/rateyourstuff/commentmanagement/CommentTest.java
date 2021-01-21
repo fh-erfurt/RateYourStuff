@@ -3,6 +3,7 @@ package de.fourzerofournotfound.rateyourstuff.commentmanagement;
 import de.fourzerofournotfound.rateyourstuff.*;
 import de.fourzerofournotfound.rateyourstuff.commentmanagement.Comment;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.Genre;
+import de.fourzerofournotfound.rateyourstuff.mediamanagement.Resolution;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.movies.Movie;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.persons.Person;
 import de.fourzerofournotfound.rateyourstuff.usermanagement.User;
@@ -19,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class CommentTest {
     static Movie myMovie;
     @BeforeAll
-    static void initializeMovies() {
+    static void initialize_movies() {
         User author = new User("Jane", "Doe", "jane.doe@example.org", "Nickname", "password1");
         LocalDate date = LocalDate.now();
 
@@ -34,8 +35,6 @@ public class CommentTest {
         mainActors.add(new Person("Bud", "Spencer"));
         mainActors.add(new Person("Terence", "Hill"));
 
-        Resolution highestResolution = new Resolution();
-
         myMovie = new Movie("Zwei Asse Trumpfen auf",
                 LocalDate.of(1981, 12, 9),
                 "...",
@@ -46,15 +45,12 @@ public class CommentTest {
                 mainActors,
                 110,
                 12,
-                highestResolution);
+                Resolution.HD);
 
         myMovie.setComment(myMovie.getComment());
 
         myMovie.getComment().add(new Comment("This text has the ID = 0", author, date));
         myMovie.getComment().add(new Comment("This text has the ID = 1", author, date));
-
-
-
     }
 
 

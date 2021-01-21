@@ -40,17 +40,6 @@ public class Season {
         return series;
     }
 
-    //TODO: Data Encapsulation stuff
-    public void setEpisodes(List<Episode> episodes) {
-        this.episodes = episodes;
-    }
-
-    //TODO: Data Encapsulation stuff
-    public void addEpisodes(List<Episode> episodes) {
-        this.episodes.addAll(episodes);
-    }
-
-
     public String getTitle() {
         return title;
     }
@@ -109,9 +98,6 @@ public class Season {
             return true;
         }
     }
-
-    // checks if other episode with same episode Number or with same name and date exists
-    // returns true, if episode was found
 
     /**
      * <p>checks if the season already constains another episode that matches the given episode</p>

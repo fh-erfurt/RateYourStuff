@@ -2,6 +2,7 @@ package de.fourzerofournotfound.rateyourstuff.progressmanagament;
 
 import de.fourzerofournotfound.rateyourstuff.*;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.Genre;
+import de.fourzerofournotfound.rateyourstuff.mediamanagement.Resolution;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.movies.Movie;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.persons.Person;
 import de.fourzerofournotfound.rateyourstuff.progressmanagement.ProgressMovie;
@@ -33,8 +34,6 @@ public class ProgressMovieTest {
         mainActors.add(new Person("Bud", "Spencer"));
         mainActors.add(new Person("Terence", "Hill"));
 
-        Resolution highestResolution = new Resolution();
-
         exampleMovie = new Movie("Zwei Asse Trumpfen auf",
                 LocalDate.of(1981,12,9),
                 "...",
@@ -45,7 +44,7 @@ public class ProgressMovieTest {
                 mainActors,
                 110,
                 12,
-                highestResolution);
+                Resolution.HD);
     }
 
     @Test

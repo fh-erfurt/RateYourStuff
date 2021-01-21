@@ -1,9 +1,9 @@
 package de.fourzerofournotfound.rateyourstuff.mediamanagament;
 
-import de.fourzerofournotfound.rateyourstuff.*;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.Collection;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.Genre;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.Library;
+import de.fourzerofournotfound.rateyourstuff.mediamanagement.Resolution;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.persons.Person;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -20,7 +20,6 @@ import java.util.List;
  * @author Robin Beck
  *
  */
-
 public class LibraryTest {
     private static Library library;
     @BeforeAll
@@ -132,7 +131,6 @@ public class LibraryTest {
         mainActors.add(new Person("Terence", "Hill"));
         int totalDuration = 110;
         int ageRestriction = 12;
-        Resolution highestResolution = new Resolution();
 
         //When
         boolean movieHasBeenInserted;
@@ -146,7 +144,7 @@ public class LibraryTest {
                 mainActors,
                 totalDuration,
                 ageRestriction,
-                highestResolution);
+                Resolution.HD);
 
         //Then
         assertTrue(movieHasBeenInserted);
@@ -175,7 +173,6 @@ public class LibraryTest {
         List<Person> mainActors = new ArrayList<>();
         int totalDuration = 110;
         int ageRestriction = 12;
-        Resolution highestResolution = new Resolution();
 
         //When
         boolean movieHasBeenInserted;
@@ -189,7 +186,7 @@ public class LibraryTest {
                 mainActors,
                 totalDuration,
                 ageRestriction,
-                highestResolution);
+                Resolution.HD);
 
         //Then
         assertFalse(movieHasBeenInserted, "Move has been added successfully");
@@ -219,7 +216,6 @@ public class LibraryTest {
 
         int averageLength = 25;
         int ageRestriction = 0;
-        Resolution highestResolution = new Resolution();
         boolean isCompleted = true;
 
         //When
@@ -233,7 +229,7 @@ public class LibraryTest {
                 languages,
                 averageLength,
                 ageRestriction,
-                highestResolution,
+                Resolution.HD,
                 isCompleted);
 
         //Then
@@ -359,9 +355,8 @@ public class LibraryTest {
         assertNull(foundCollection, "The found Collection is not null");
     }
 
-
     @Test
-    public void should_delet_Medium()
+    public void should_delete_Medium()
     {
 
         //Given
@@ -386,7 +381,6 @@ public class LibraryTest {
         mainActors.add(new Person("Terence", "Hill"));
         int totalDuration = 110;
         int ageRestriction = 12;
-        Resolution highestResolution = new Resolution();
 
         //When
         library.addNewMovie(name,
@@ -399,13 +393,13 @@ public class LibraryTest {
                 mainActors,
                 totalDuration,
                 ageRestriction,
-                highestResolution);
+                Resolution.HD);
 
-        int currentMediaSizeOfList = library.getMedia().size();
+        int currentMediaSizeOfList = library.getMediaListSize();
 
-        boolean deleteSucc = library.removeMedium(library.getMedia().get(library.getMedia().size()-1));
+        boolean deleteSucc = library.removeMedium(library.getMediumAtIndex(library.getMediaListSize()-1));
 
-        int updatedMediaSizeOfList = library.getMedia().size();
+        int updatedMediaSizeOfList = library.getMediaListSize();
 
         assertEquals(currentMediaSizeOfList-1, updatedMediaSizeOfList);
 

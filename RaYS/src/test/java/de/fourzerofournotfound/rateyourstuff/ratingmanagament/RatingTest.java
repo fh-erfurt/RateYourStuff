@@ -1,9 +1,9 @@
 package de.fourzerofournotfound.rateyourstuff.ratingmanagament;
 
+import de.fourzerofournotfound.rateyourstuff.mediamanagement.Resolution;
 import org.junit.jupiter.api.Test;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.Genre;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.movies.Movie;
-import de.fourzerofournotfound.rateyourstuff.Resolution;
 import de.fourzerofournotfound.rateyourstuff.usermanagement.User;
 
 import java.time.LocalDate;
@@ -11,13 +11,12 @@ import java.util.logging.Logger;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/*
-* @author John Klippstein
-*
-* This test should show that the average rating of a medium works correctly and that the ratings are also insert
-*
-* */
-
+/**
+ *
+ * <p>This test should show that the average rating of a medium works correctly and that the ratings are also insert</p>
+ * @author John Klippstein
+ *
+ */
 public class RatingTest {
     @Test
     public void ratings_should_be_in_Medium_list(){
@@ -25,7 +24,6 @@ public class RatingTest {
         //Given
         boolean averageRatingResult = false;
         Float avarageRaiting = 0.0f;
-        Resolution resolution = new Resolution();
         User standardUser = new User("Vorname", "Nachname",
                 "VornameNachname@web.de", "Nickname", "SuperSecret");
 
@@ -39,7 +37,7 @@ public class RatingTest {
                 null,
                 120,
                 16,
-                resolution);
+                Resolution.HD);
 
         standardUser.addNewRate(coolMovie, 7, "Best Movie ever ever ever!1");
         standardUser.addNewRate(coolMovie, 10, "Best Movie ever ever ever!2");

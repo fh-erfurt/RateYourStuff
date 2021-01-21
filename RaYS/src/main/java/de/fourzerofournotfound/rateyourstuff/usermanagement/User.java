@@ -1,11 +1,5 @@
 package de.fourzerofournotfound.rateyourstuff.usermanagement;
 
-/**
- *
- * @author Mickey Knop, Robin Beck, John Klippsteim, Christoph Frischmuth
- *
- * */
-
 import de.fourzerofournotfound.rateyourstuff.commentmanagement.Comment;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.Medium;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.books.Book;
@@ -18,6 +12,11 @@ import de.fourzerofournotfound.rateyourstuff.ratingmanagement.Rate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ * @author Mickey Knop, Robin Beck, John Klippsteim, Christoph Frischmuth
+ *
+ * */
 public class User
 {
     //region Attributes
@@ -25,7 +24,6 @@ public class User
     private String          firstName;
     private String          lastName;
     private String          email;
-    private String          address;
     private String          nickname;
     private String          password;
     private String          passwordSalt;
@@ -73,9 +71,6 @@ public class User
     public String getEmail() {
         return email;
     }
-
-    public void setAddress(String address){this.address = address;}
-    public String getAddress(){return address;}
 
     public void setNickname(String nickname) {
         this.nickname = nickname;
