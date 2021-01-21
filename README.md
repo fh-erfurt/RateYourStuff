@@ -1,5 +1,8 @@
 # RateYourStuff
+![build](https://github.com/fh-erfurt/RateYourStuff/workflows/build/badge.svg)
+
 Project to rate different types of multimedia and share your current progress.
+
 
 ## What is RateYourStuff?
 RateYourStuff aims to be a rating-platform for different kinds of media. It is planned to support the following types of media:
