@@ -46,6 +46,17 @@ public class Library {
         return media;
     }
 
+    public int getMediaListSize() {
+        return media.size();
+    }
+
+    public Medium getMediumAtIndex(int index) {
+        if(index >= 0 && index < media.size()) {
+            return media.get(index);
+        }
+        return null;
+    }
+
     //TODO: Should be removed, interferes with data encapsulation
     public void setMedia(List<Medium> media) {
         this.media = media;

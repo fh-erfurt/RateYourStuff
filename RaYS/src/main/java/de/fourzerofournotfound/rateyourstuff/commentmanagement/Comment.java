@@ -34,9 +34,7 @@ public class Comment {
         this.author = author;
         this.date = date;
         this.isClosed = false;
-        //TODO: please check again what this is used for
-        ArrayList<Comment> responses = new ArrayList<>();
-        this.responses = responses;
+        this.responses = new ArrayList<>();
     }
 
     Comment(String text, User author, LocalDate date, List<Comment> responses) {
