@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 /**
- * <h1>Episode</h1>
+ * Episode
  * <p>Represents an episode of an tv show, contains information about episode number, guest stars, episode title
  * Episodes can be added to collections</p>
  * @author Robin Beck
@@ -66,6 +66,23 @@ public class Episode extends Medium {
 
     public Season getSeason() {
         return season;
+    }
+
+    public Person getGuestStarAtIndex(int index) {
+        if(index >= 0 && index < guestStars.size()) {
+            return guestStars.get(index);
+        }
+        return null;
+    }
+
+    public void addGuestStar(Person person) {
+        if(!guestStars.contains(person)) {
+            guestStars.add(person);
+        }
+    }
+
+    public void removeGuestStar(Person person) {
+        guestStars.remove(person);
     }
     //endregion
 

@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 /**
- * <h1>Collection Test</h1>
+ * Collection Test
  * <p>This class is used to test the functionality of the media collections</p>
  * @author Robin Beck
  *

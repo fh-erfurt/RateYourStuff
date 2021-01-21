@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * <h1>ISBN10</h1>
+ * ISBN10
  * <p>This class represents the old ISBN10 standard</p>
  * @author Robin Beck
  *

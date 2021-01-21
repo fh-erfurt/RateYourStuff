@@ -1,7 +1,7 @@
 package de.fourzerofournotfound.rateyourstuff.mediamanagement.persons;
 
 /**
- * <h>Person Type</h>
+ * Person Type
  * <p>This class is used to list the possible types of persons. Each type has the german equation as label</p>
  * @author Robin Beck
  */

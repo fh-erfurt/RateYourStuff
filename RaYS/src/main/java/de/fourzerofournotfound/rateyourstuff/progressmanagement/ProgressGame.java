@@ -5,7 +5,7 @@ import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.games.Ga
 import java.text.DecimalFormat;
 
 /**
- * <h1>Progress Game</h1>
+ * Progress Game
  * <p>This class is used to store and check the progress a user has made for a certain Game</p>
  * @author Robin Beck
  *

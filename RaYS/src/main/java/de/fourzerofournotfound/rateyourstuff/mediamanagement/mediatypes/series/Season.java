@@ -6,9 +6,10 @@ import de.fourzerofournotfound.rateyourstuff.mediamanagement.persons.Person;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
- * <h1>Season</h1>
+ * Season
  * <p>This class represents a season of a series and contains information of the episodes,
  * the season title and the season Number</p>
  * @author Robin Beck
@@ -60,6 +61,13 @@ public class Season {
         return episodes.size();
     }
 
+    public Episode getEpisodeAtIndex(int index) {
+        if(index >= 0 && index < episodes.size()) {
+            return episodes.get(index);
+        }
+        return null;
+    }
+
     /**
      * <p>Adds new Episode to the current season</p>
      * @param name              name of the episode
@@ -100,6 +108,19 @@ public class Season {
     }
 
     /**
+     * <p>removes the given episode, if it is within the episodes list</p>
+     * @param episode   The episode that should be searched
+     * @return          true, if the episode has been found, otherwise false
+     */
+    public boolean removeEpisode(Episode episode) {
+       if(episodes.contains(episode)) {
+           episodes.remove(episode);
+           return true;
+       }
+       return false;
+    }
+
+    /**
      * <p>checks if the season already constains another episode that matches the given episode</p>
      * @param episode Episode that should be searched within the season
      * @return        true, if an episode with the same episode number exists or, if the episode matches another episode
@@ -109,6 +130,19 @@ public class Season {
             if(currentEpisode.equals(episode) || currentEpisode.getEpisodeNumber() == episode.getEpisodeNumber()) {
                 return true;
             }
+        }
+        return false;
+    }
+
+    /**
+     * <p>Checks if two seasons are equal.
+     * Two Seasons are equal, if they have the same number and are within the same series</p>
+     * @param season     The object that should be compared to the season
+     * @return      true, if the seasons are equal, otherwise false
+     */
+    public boolean equals(Season season) {
+        if(season.getSeries() == this.series && season.getSeasonNumber() == this.seasonNumber) {
+                return true;
         }
         return false;
     }

@@ -1,6 +1,7 @@
 package de.fourzerofournotfound.rateyourstuff.mediamanagament.mediatypes.series;
 
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.Resolution;
+import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.series.Season;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -83,6 +84,44 @@ public class SeriesTest {
         boolean seasonHasBeenAdded = currentSeries.addNewSeason(1,"...");
         //Then
         assertFalse(seasonHasBeenAdded, "Season has been added successfully!");
+    }
+
+    @Test
+    public void should_remove_season_from_series() {
+        //Given
+        ArrayList<Person> directors = new ArrayList<>();
+        directors.add(new Person("Bernard", "Fein"));
+
+        ArrayList<Person> actors = new ArrayList<>();
+        actors.add(new Person("John", "Banner"));
+
+        ArrayList<String> languages = new ArrayList<>();
+        languages.add("Englisch");
+
+        int averageLength = 25;
+        int ageRestriction = 0;
+        Series currentSeries = new Series("Ein Käfig voller Helden",
+                LocalDate.of(1965,11,17),
+                "...",
+                Genre.COMEDY,
+                "CBS",
+                directors,
+                actors,
+                languages,
+                25,
+                0,
+                Resolution.SD,
+                true);
+        currentSeries.addNewSeason(1,"");
+
+        //When
+        Season addedSeason = currentSeries.getSeasonAtIndex(currentSeries.getNumberOfSeasons()-1);
+        int numberOfSeasons = currentSeries.getNumberOfSeasons();
+        boolean seasonHasBeenDeleted = currentSeries.removeSeason(addedSeason);
+
+        //Then
+        assertTrue(seasonHasBeenDeleted, "The season has not been deleted");
+        assertEquals(numberOfSeasons-1, currentSeries.getNumberOfSeasons());
     }
 
     @Test

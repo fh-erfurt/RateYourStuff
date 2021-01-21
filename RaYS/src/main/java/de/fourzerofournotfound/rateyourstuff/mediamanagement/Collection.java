@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * <h1>Media-Collections</h1>
+ * Media-Collections
  * <p>The Media Collections provide Features to group Media in a logical way.
  * This Class allows users to add and remove Media to a collection</p>
  *

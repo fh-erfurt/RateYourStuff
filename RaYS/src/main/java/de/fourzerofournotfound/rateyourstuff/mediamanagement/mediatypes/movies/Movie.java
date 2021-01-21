@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * <h1>Movie</h1>
+ * Movie
  * @author Christoph Frischmuth
  *
  * */

@@ -1,6 +1,11 @@
 package de.fourzerofournotfound.rateyourstuff.mediamanagement;
 
-
+/**
+ * Resolution
+ *
+ * <p>Used to Reference a resolution for video media</p>
+ * @author Robin Beck
+ */
 public enum Resolution {
     LOW_QUALITY("<480p"),
     SD("720x576"),

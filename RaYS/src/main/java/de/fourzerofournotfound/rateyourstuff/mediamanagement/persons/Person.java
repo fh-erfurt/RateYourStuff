@@ -5,7 +5,7 @@ import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.Medium;
 import java.util.List;
 
 /**
- * <h1>Person</h1>
+ * Person
  * <p>Contains information about a person including first name, last name and information about the person</p>
  * <p>The Person class must not be associated with the user, this class should be used to add persons to a medium</p>
  * @author John Klippstein, Robin Beck

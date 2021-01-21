@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * <h1>Series</h1>
+ * Series
  * <p>Represents a series / TV Show, contains information about the tv-show, the seasons of the show and the
  * episodes of the seasons. Series can be added to media collections</p>
  * @author Christoph Frischmuth, Robin Beck
@@ -88,7 +88,6 @@ public class Series extends Medium {
     public void setHighestResolution(Resolution highestResolution) {
         this.highestResolution = highestResolution;
     }
-
     public Resolution getHighestResolution() {
         return highestResolution;
     }
@@ -96,7 +95,6 @@ public class Series extends Medium {
     public void setIsCompleted(boolean isCompleted){
         this.isCompleted = isCompleted;
     }
-
     public boolean isCompleted(){
         return isCompleted;
     }
@@ -171,6 +169,21 @@ public class Series extends Medium {
         Season currentSeason = new Season(seasonNumber, title, this);
         seasons.add(currentSeason);
         return true;
+    }
+
+    /**
+     * <p>removes a season from the series, if the season exists</p>
+     * @param season    The season that should be searched within the series
+     * @return          true, if the season has been removed, otherwise false
+     */
+    public boolean removeSeason(Season season) {
+        for(Season currentSeason : seasons) {
+            if(currentSeason.equals(season)) {
+                seasons.remove(currentSeason);
+                return true;
+            }
+        }
+        return false;
     }
 
     /**

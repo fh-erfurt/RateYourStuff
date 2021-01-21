@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  *
- *  <h1>Book</h1>
+ * Book
  * @author Christoph Frischmuth
  *
  * */

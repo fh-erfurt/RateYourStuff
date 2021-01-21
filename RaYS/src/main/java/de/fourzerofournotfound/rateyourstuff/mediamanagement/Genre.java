@@ -1,7 +1,7 @@
 package de.fourzerofournotfound.rateyourstuff.mediamanagement;
 
 /**
- * <h1>Genre</h1>
+ * Genre
  * <p>This Enum is used to provide Genres for the Class Medium. Each Enum value has a german string as equation</p>
  * @author Robin Beck
  */

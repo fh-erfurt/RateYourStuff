@@ -5,7 +5,7 @@ import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.movies.M
 import java.text.DecimalFormat;
 
 /**
- * <h1>Progress Movie</h1>
+ * Progress Movie
  * <p>This class is used to store and check the progress a user has made for a certain movie</p>
  * @author John Klippstein, Robin Beck
  *

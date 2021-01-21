@@ -20,7 +20,7 @@ import java.util.List;
 
 /**
  *
- * <h1>Library</h1>
+ * Library
  * <p>This class is used to manage all media and all media collections</p>
  * @author Mickey Knop, Robin Beck
  *

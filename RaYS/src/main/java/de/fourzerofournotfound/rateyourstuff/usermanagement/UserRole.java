@@ -2,7 +2,7 @@ package de.fourzerofournotfound.rateyourstuff.usermanagement;
 
 /**
  * <h1>User Role</h1>
- * <p></p>
+ * <p>Used to set the role of a user</p>
  * @author Christoph Frischmuth
  */
 

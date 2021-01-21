@@ -5,7 +5,7 @@ import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.books.Bo
 import java.text.DecimalFormat;
 
 /**
- * <h1>Progress Book</h1>
+ * Progress Book
  * <p>This class is used to store and check the progress a user has made for a certain book</p>
  * @author John Klippstein, Robin Beck
  *

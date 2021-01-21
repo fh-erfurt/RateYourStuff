@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 /**
- * <h1>Game</h1>
+ * Game
  * <p>Represents an game and contains different information about the game including playtime, publisher, developer
  * Games can be added to collections</p>
  * @author Christoph Frischmuth, Robin Beck
