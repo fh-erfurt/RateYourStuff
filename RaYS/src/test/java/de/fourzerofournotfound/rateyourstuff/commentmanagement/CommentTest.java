@@ -1,5 +1,9 @@
 package de.fourzerofournotfound.rateyourstuff.commentmanagement;
 
+/**
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
+ */
+
 import de.fourzerofournotfound.rateyourstuff.*;
 import de.fourzerofournotfound.rateyourstuff.commentmanagement.Comment;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.Genre;

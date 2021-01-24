@@ -27,7 +27,7 @@ import java.util.logging.Logger;
 /**
  * Collection Test
  * <p>This class is used to test the functionality of the media collections</p>
- * @author Robin Beck
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  */
 

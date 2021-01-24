@@ -22,7 +22,7 @@ import java.util.List;
  *
  * Library
  * <p>This class is used to manage all media and all media collections</p>
- * @author Mickey Knop, Robin Beck
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  * */
 public class Library {

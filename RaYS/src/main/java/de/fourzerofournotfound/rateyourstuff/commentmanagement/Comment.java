@@ -2,7 +2,7 @@ package de.fourzerofournotfound.rateyourstuff.commentmanagement;
 
 /**
  *
- * @author Mickey Knop
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  * */
 

@@ -1,5 +1,9 @@
 package de.fourzerofournotfound.rateyourstuff;
 
+/**
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
+ */
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;

@@ -6,16 +6,16 @@ import de.fourzerofournotfound.rateyourstuff.usermanagement.User;
 import de.fourzerofournotfound.rateyourstuff.usermanagement.UserRole;
 import org.mindrot.jbcrypt.BCrypt;
 
-/*
+/**
  *
- * Author: Christoph Frischmuth
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  * */
 
 //@LESSONS_LEARNED: Listen die in einer Klasse immer wieder benutzt werden,
 //// sollten als Attribut dieser Klasse verwendet werden
 
-//@LESSONS_LEARNED: Keep simple stupid // Kleine Funktionen schreiben,
+//@LESSONS_LEARNED: Keep simple stupid (i hope you mean "keep it short and simple" // Kleine Funktionen schreiben,
 //// die in Komplexeren Methoden zusammen verwendet werden können
 
 //@TODO: Methodenbeschreibungen /JavaDOC/ hinzufügen

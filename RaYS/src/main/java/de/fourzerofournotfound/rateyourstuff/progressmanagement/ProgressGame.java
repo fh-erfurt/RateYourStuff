@@ -7,7 +7,7 @@ import java.text.DecimalFormat;
 /**
  * Progress Game
  * <p>This class is used to store and check the progress a user has made for a certain Game</p>
- * @author Robin Beck
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  * */
 

@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  *
- * @author Mickey Knop, Robin Beck, John Klippsteim, Christoph Frischmuth
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  * */
 public class User

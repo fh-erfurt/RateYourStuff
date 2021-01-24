@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  *
- * @author Christoph Frischmuth, Robin Beck, John Klippstein und Mickey Knop
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  * */
 public abstract class Medium {

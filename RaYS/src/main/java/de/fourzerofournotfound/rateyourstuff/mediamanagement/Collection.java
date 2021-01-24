@@ -15,7 +15,7 @@ import java.util.List;
  * <p>The Media Collections provide Features to group Media in a logical way.
  * This Class allows users to add and remove Media to a collection</p>
  *
- * @author John Klippstein, Robin Beck
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  * */
 public class Collection {

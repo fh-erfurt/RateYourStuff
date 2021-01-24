@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  *
  * <p>This test should show that the average rating of a medium works correctly and that the ratings are also insert</p>
- * @author John Klippstein
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  */
 public class RatingTest {

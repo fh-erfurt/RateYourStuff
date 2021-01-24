@@ -8,7 +8,7 @@ import java.util.List;
  * Person
  * <p>Contains information about a person including first name, last name and information about the person</p>
  * <p>The Person class must not be associated with the user, this class should be used to add persons to a medium</p>
- * @author John Klippstein, Robin Beck
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  * */
 public class Person {

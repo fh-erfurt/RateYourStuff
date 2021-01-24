@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 /**
  * ISBN10
  * <p>This class represents the old ISBN10 standard</p>
- * @author Robin Beck
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  * */
 public class ISBN10 {

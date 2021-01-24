@@ -8,7 +8,7 @@ import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.books.is
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.books.isbn.InvalidISBNException;
 
 /**
- * @author Robin Beck
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  */
 
 public class ISBN13Test {

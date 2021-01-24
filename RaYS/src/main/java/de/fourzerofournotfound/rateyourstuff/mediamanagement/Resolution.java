@@ -4,7 +4,7 @@ package de.fourzerofournotfound.rateyourstuff.mediamanagement;
  * Resolution
  *
  * <p>Used to Reference a resolution for video media</p>
- * @author Robin Beck
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  */
 public enum Resolution {
     LOW_QUALITY("<480p"),

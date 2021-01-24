@@ -12,7 +12,7 @@ import java.util.List;
 /**
  *
  * Book
- * @author Christoph Frischmuth
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  * */
 public class Book extends Medium

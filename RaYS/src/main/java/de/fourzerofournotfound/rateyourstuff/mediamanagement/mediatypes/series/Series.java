@@ -13,7 +13,7 @@ import java.util.List;
  * Series
  * <p>Represents a series / TV Show, contains information about the tv-show, the seasons of the show and the
  * episodes of the seasons. Series can be added to media collections</p>
- * @author Christoph Frischmuth, Robin Beck
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  */
 public class Series extends Medium {

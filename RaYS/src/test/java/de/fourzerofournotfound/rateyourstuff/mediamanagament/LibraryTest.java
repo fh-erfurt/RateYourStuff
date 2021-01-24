@@ -17,7 +17,7 @@ import java.util.List;
  *
  * <h1>LibraryTest</h1>
  * <p>This class is used to test the functionality of the library class</p>
- * @author Robin Beck
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  */
 public class LibraryTest {

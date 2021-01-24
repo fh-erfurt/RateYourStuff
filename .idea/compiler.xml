@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="RaYS (1)" />
         <module name="RaYS" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="RaYS" target="11" />
+      <module name="RaYS (1)" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
