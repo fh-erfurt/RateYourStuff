@@ -46,6 +46,7 @@ public class User
         this.email      = email;
         this.nickname   = nickname;
         this.password   = password;
+        this.isEnabled  = true;
     }
     //endregion
 

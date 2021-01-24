@@ -28,9 +28,14 @@ class UserLoginTest {
     @Test
     void loginUserTest() {
         //When
-        User Chris_Rays = userManagement.findUserByNickname("Harry123");
+        User Harry_Rays = userManagement.findUserByNickname("Harry123");
+
         //Then
-        assertEquals(true, userManagement.loginUser(Chris_Rays, "Hedwig"));
-        assertEquals(false, userManagement.loginUser(Chris_Rays, "Kroete"));
+        assertEquals(true, userManagement.loginUser(Harry_Rays, "Hedwig"));
+        assertEquals(false, userManagement.loginUser(Harry_Rays, "Kroete"));
+
+        //When
+        userManagement.disableUser(Harry_Rays);
+        assertEquals(false, userManagement.loginUser(Harry_Rays, "Hedwig"));
     }
 }

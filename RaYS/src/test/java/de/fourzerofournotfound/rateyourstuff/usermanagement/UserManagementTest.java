@@ -45,6 +45,16 @@ class UserManagementTest {
     }
 
     @Test
+    void should_change_Nickname() {
+        //Given
+        User Chris_Rays = userManagement.findUserByNickname("Chris29");
+        //When
+        userManagement.changeNickname(Chris_Rays, "Chris30");
+        //Then
+        assertEquals("Chris30", Chris_Rays.getNickname());
+    }
+
+    @Test
     void should_change_Password() {
         //Given
         User Chris_Rays = userManagement.findUserByNickname("Chris29");
@@ -93,8 +103,9 @@ class UserManagementTest {
 
     @Test
     void should_enable_User_Test() {
-        //When
+        //Given
         User Mickey_Rays = userManagement.findUserByNickname("Mic11");
+        //When
         userManagement.enableUser(Mickey_Rays);
         //Then
         assertTrue(Mickey_Rays.IsEnabled());
@@ -102,8 +113,9 @@ class UserManagementTest {
 
     @Test
     void should_set_Moderator_Rights() {
-        //When
+        //Given
         User Mickey_Rays = userManagement.findUserByNickname("Mic11");
+        //When
         userManagement.setModeratorRights(Mickey_Rays);
         //Then
         assertNotEquals(UserRole.USER, Mickey_Rays.getRole());
