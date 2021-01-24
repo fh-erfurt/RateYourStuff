@@ -84,6 +84,10 @@ public class Episode extends Medium {
     public void removeGuestStar(Person person) {
         guestStars.remove(person);
     }
+
+    public int getNumberOfGuestStars() {
+        return guestStars.size();
+    }
     //endregion
 
     /**

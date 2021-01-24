@@ -106,12 +106,85 @@ public class Movie extends Medium
         }
         return listOfFullNames;
     }
+
+    //advanced "set" and "get" methods for languages
+    public String getLanguageAtIndex(int index) {
+        if(index >= 0 && index < languages.size()) {
+            return languages.get(index);
+        }
+        return null;
+    }
+
+    public void addLanguage(String language) {
+        if(!languages.contains(language)) {
+            languages.add(language);
+        }
+    }
+
+    public void removeLanguage(String language) {
+        languages.remove(language);
+    }
+
+    public int getNumberOfLanguages() {
+        return languages.size();
+    }
+
+    //advanced "set" and "get" methods for actors
+    public Person getMainActorAtIndex(int index) {
+        if(index >= 0 && index < mainActors.size()) {
+            return mainActors.get(index);
+        }
+        return null;
+    }
+
+    public void addMainActor(Person actor) {
+        if(!mainActors.contains(actor)) {
+            mainActors.add(actor);
+        }
+    }
+
+    public void removeMainActor(Person actor) {
+        mainActors.remove(actor);
+    }
+
+    public int getNumberOfMainActors() {
+        return mainActors.size();
+    }
+
+
+    //advanced "set" and "get" methods for directors
+    public Person getDirectorAtIndex(int index) {
+        if(index >= 0 && index < directors.size()) {
+            return directors.get(index);
+        }
+        return null;
+    }
+
+    public void addDirector(Person director) {
+        if(!directors.contains(director)) {
+            directors.add(director);
+        }
+    }
+
+    public void removeDirectors(Person director) {
+        directors.remove(director);
+    }
+
+    public int getNumberOfDirectors() {
+        return directors.size();
+    }
+
     /**
      * This method is used to build a string of all attributes of movie
      * @return all attributes of movie
      */
     public String toString() {
-        return getName() + getGenre() + getFullNameOfPerson(this.directors) + this.languages + getFullNameOfPerson(this.mainActors) + this.ageRestriction;
+        return getName() +
+                getGenre() +
+                getFullNameOfPerson(this.directors) +
+                this.languages +
+                getFullNameOfPerson(this.mainActors) +
+                this.ageRestriction;
     }
     //endregion
 

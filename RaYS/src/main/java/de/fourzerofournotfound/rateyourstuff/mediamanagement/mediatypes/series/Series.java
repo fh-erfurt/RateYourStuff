@@ -22,7 +22,6 @@ public class Series extends Medium {
     private String network;
     private List<Person> directors;
     private List<Person> actors;
-    private List<String> subtitles;
     private List<String> languages;
     private int averageLength;
     private int ageRestriction;
@@ -30,7 +29,6 @@ public class Series extends Medium {
     private boolean isCompleted;
     private List<Season> seasons;
 
-    private Resolution resolution;
     //endregion
 
     //region Constructors
@@ -98,6 +96,73 @@ public class Series extends Medium {
     public boolean isCompleted(){
         return isCompleted;
     }
+
+    //advanced "set" and "get" methods for directors
+    public Person getDirectorAtIndex(int index) {
+        if(index >= 0 && index < directors.size()) {
+            return directors.get(index);
+        }
+        return null;
+    }
+
+    public void addDirector(Person director) {
+        if(!directors.contains(director)) {
+            directors.add(director);
+        }
+    }
+
+    public void removeDirector(Person director) {
+        directors.remove(director);
+    }
+
+    public int getNumberOfDirectors() {
+        return directors.size();
+    }
+
+    //advanced "set" and "get" methods for languages
+    public String getLanguageAtIndex(int index) {
+        if(index >= 0 && index < languages.size()) {
+            return languages.get(index);
+        }
+        return null;
+    }
+
+    public void addLanguage(String language) {
+        if(!languages.contains(language)) {
+            languages.add(language);
+        }
+    }
+
+    public void removeLanguage(String language) {
+        languages.remove(language);
+    }
+
+    public int getNumberOfLanguages() {
+        return languages.size();
+    }
+
+    //advanced "set" and "get" methods for actors
+    public Person getActorAtIndex(int index) {
+        if(index >= 0 && index < actors.size()) {
+            return actors.get(index);
+        }
+        return null;
+    }
+
+    public void addGuestStar(Person actor) {
+        if(!actors.contains(actor)) {
+            actors.add(actor);
+        }
+    }
+
+    public void removeGuestStar(Person actor) {
+        actors.remove(actor);
+    }
+
+    public int getNumberOfActors() {
+        return actors.size();
+    }
+
 
     public Season getSeasonAtIndex(int index) {
         if(index >= 0 && index < seasons.size()) {
