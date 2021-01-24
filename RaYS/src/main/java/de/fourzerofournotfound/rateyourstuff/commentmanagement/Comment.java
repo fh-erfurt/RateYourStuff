@@ -78,42 +78,47 @@ public class Comment {
         return date;
     }
 
-    //TODO: below function interferes with data encapsulation
-    public void setResponses(List<Comment> responses) {
-        this.responses = responses;
-    }
-
-    //TODO: below function interferes with data encapsulation
+    //TODO: below function interferes with data encapsulation //used in deleteResponse which has to be provided with a list
     public List<Comment> getResponses() {
         return responses;
     }
 
+    public int getResponsesListSize() {
+        return responses.size();
+    }
+
+    public Comment getResponseAtIndex(int id) {
+        if(id >= 0 && id < responses.size()) {
+            return responses.get(id);
+        }
+        return null;
+    }
     //TODO: below function interferes with data encapsulation
     public void AddResponses(List<Comment> responses) {
         this.responses.addAll(responses);
     }
 
-    //TODO: rename method to isClosed()
-    public Boolean getClosed() {
+    public Boolean isClosed() {
         return isClosed;
     }
 
-    //TODO: rename method
-    public void setClosed(Boolean closed) {
+    public void closeComment(Boolean closed) {
         isClosed = closed;
     }
 
-    public boolean isSpoiler() {
-        return false;
-    }
-
     public void setMedium(Medium medium) { this.medium = medium; }
+
     public Medium getMedium() { return medium; }
     //endregion
 
     //region Methods
     ////////////////////////////////////////////////////////////////////////////////////
-    //TODO: implement deletion of comment reference in media and subcomments in user
+    /**
+     * <p>This function will delete a response(subcomment) from a list of responses</p>
+     * @param listOfResponses is the list where the response will remove from
+     * @param Id is necessary to find the right comment
+     * @return true if the is deleted successful, false if not
+     */
     public boolean deleteResponse(List <Comment> listOfResponses, int Id) {
         for(Comment currentResponse: listOfResponses){
             if(currentResponse.getId() == Id){

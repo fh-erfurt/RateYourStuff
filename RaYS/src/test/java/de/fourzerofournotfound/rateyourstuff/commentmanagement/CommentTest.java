@@ -21,6 +21,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 
+
 public class CommentTest {
     static Movie myMovie;
     @BeforeAll
@@ -124,10 +125,10 @@ public class CommentTest {
         Comment comment = new Comment("Text", author, date);
 
         //When
-        comment.setClosed(true);
+        comment.closeComment(true);
 
         //Then
-        assertTrue(comment.getClosed());
+        assertTrue(comment.isClosed());
     }
 
     @Test
@@ -152,12 +153,11 @@ public class CommentTest {
         responseList.add(new Comment("This text has the ID = 3", author, date));
         Comment comment = new Comment("Text", author, date);
         comment.AddResponses(responseList);
-        int listSizeBeforeDeletion = comment.getResponses().size();
-
+        int listSizeBeforeDeletion = comment.getResponsesListSize();
         //When
         assertTrue(comment.deleteResponse(comment.getResponses(), 3));
 
-        //THen
+        //Then
         assertNotEquals(listSizeBeforeDeletion,comment.getResponses().size());
 
     }

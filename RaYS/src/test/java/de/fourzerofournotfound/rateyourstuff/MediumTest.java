@@ -22,6 +22,12 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Comment Test
+ * <p>This class is used to test the functionality of finding media in lists</p>
+ * @author Christph Frischmuth, Mickey Knop
+ *
+ */
 
 class MediumTest {
 
