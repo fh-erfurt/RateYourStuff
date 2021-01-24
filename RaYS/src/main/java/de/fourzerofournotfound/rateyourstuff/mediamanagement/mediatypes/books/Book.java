@@ -57,21 +57,6 @@ public class Book extends Medium
     ////////////////////////////////////////////////////////////////////////////////////
 
     //TODO: below function interferes with data encapsulation
-    public void setPublishers(List<String> publishers) {
-        this.publishers = publishers;
-    }
-
-    //TODO: below function interferes with data encapsulation
-    public List<String> getPublishers() {
-        return publishers;
-    }
-
-    //TODO: below function interferes with data encapsulation
-    public void addPublishers(List<String> publishers) {
-        this.publishers.addAll(publishers);
-    }
-
-    //TODO: below function interferes with data encapsulation
     public void setAuthors(ArrayList<Person> authors) {
         this.authors = authors;
     }
@@ -138,6 +123,12 @@ public class Book extends Medium
         return numberOfPages;
     }
 
+    /**
+     * This method is used to build a full name string of the first name and the last name
+     * of persons which are contained in teh given list
+     * @param listOfPersons contains the names which should be build to a string
+     * @return a list of full name strings of the given person object list
+     */
     public List<String> getFullNameOfPerson(List<Person> listOfPersons){
         String fullName;
         List<String> listOfFullNames = new ArrayList<>();
@@ -149,6 +140,10 @@ public class Book extends Medium
         return listOfFullNames;
     }
 
+    /**
+     * This method is used to build a string of all attributes of book
+     * @return all attributes of book
+     */
     public String toString() {
         Person person = null;
         return getName() + getGenre() + getFullNameOfPerson(this.authors) + this.isbn + this.languages;

@@ -9,6 +9,10 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Christoph Frischmuth
+ */
+
 class UserLoginTest {
     private static UserManagement userManagement;
     private static ArrayList<User> userList;
@@ -31,11 +35,11 @@ class UserLoginTest {
         User Harry_Rays = userManagement.findUserByNickname("Harry123");
 
         //Then
-        assertEquals(true, userManagement.loginUser(Harry_Rays, "Hedwig"));
-        assertEquals(false, userManagement.loginUser(Harry_Rays, "Kroete"));
+        assertTrue(userManagement.loginUser(Harry_Rays, "Hedwig"));
+        assertFalse(userManagement.loginUser(Harry_Rays, "Kroete"));
 
         //When
         userManagement.disableUser(Harry_Rays);
-        assertEquals(false, userManagement.loginUser(Harry_Rays, "Hedwig"));
+        assertFalse(userManagement.loginUser(Harry_Rays, "Hedwig"));
     }
 }

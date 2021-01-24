@@ -7,7 +7,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mindrot.jbcrypt.BCrypt;
 
+import java.util.logging.Logger;
+
 import static org.junit.jupiter.api.Assertions.*;
+
+/**
+ * @author Christoph Frischmuth
+ */
 
 class UserManagementTest {
     private static UserManagement userManagement = new UserManagement();
@@ -21,23 +27,30 @@ class UserManagementTest {
                 "Reis",
                 "reis@rays.com",
                 "Holgi19",
-                "admin");
+                "meineEhefrau15");
         userManagement.userRegistration(
                 "Chris",
                 "Frischmuth",
                 "frischmuth@rays.com",
                 "Chris29",
-                "admin");
+                "loremIpsUm554");
         userManagement.userRegistration(
                 "Mickey",
                 "Knop",
                 "knop@rays.com",
                 "Mic11",
-                "admin");
+                "IpsumLorem889");
+        userManagement.userRegistration(
+                "George",
+                "Clooney",
+                "george@rays.com",
+                "Cloonster56",
+                "user887");
     }
 
     @Test
     void should_view_Personal_Data() {
+        //Given
         //When
         User Holgi_Rays = userManagement.findUserByNickname("Holgi19");
         //Then
@@ -47,27 +60,25 @@ class UserManagementTest {
     @Test
     void should_change_Nickname() {
         //Given
-        User Chris_Rays = userManagement.findUserByNickname("Chris29");
+        User Holgi_Rays = userManagement.findUserByNickname("Cloonster56");
         //When
-        userManagement.changeNickname(Chris_Rays, "Chris30");
+        userManagement.changeNickname(Holgi_Rays, "Cloonster57");
         //Then
-        assertEquals("Chris30", Chris_Rays.getNickname());
+        assertEquals("Cloonster57", Holgi_Rays.getNickname());
     }
 
     @Test
     void should_change_Password() {
         //Given
-        User Chris_Rays = userManagement.findUserByNickname("Chris29");
+        User Cloonster56_Rays = userManagement.findUserByNickname("Holgi19");
         //When
-        //Change password from admin to mod
         userManagement.changePassword(
-                Chris_Rays,
-                "admin",
+                Cloonster56_Rays,
+                "meineEhefrau15",
                 "mod");
         //Then
-        //Try to login with new password mod
         assertTrue(userManagement.loginUser(
-                Chris_Rays,
+                Cloonster56_Rays,
                 "mod"));
     }
 
@@ -76,12 +87,12 @@ class UserManagementTest {
         //Given
         User Chris_Rays = userManagement.findUserByNickname("Chris29");
         //Then
-            assertEquals(Chris_Rays, userManagement.changeUserData(Chris_Rays,
+            assertEquals(Chris_Rays, userManagement.changeUserData(
+                    Chris_Rays,
                     "Chris",
                     "NeuerNachname",
                     "Chris29",
                     "reis@rays.com"));
-            userManagement.viewPersonalData(Chris_Rays);
         }
 
     @Test

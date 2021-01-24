@@ -43,7 +43,7 @@ public class RatingTest {
         standardUser.addNewRate(coolMovie, 10, "Best Movie ever ever ever!2");
         standardUser.addNewRate(coolMovie, 1, "Best Movie ever ever ever!3");
 
-        avarageRaiting = coolMovie.calculateAvarageRating();
+        avarageRaiting = coolMovie.calculateAverageRating();
 
 
 

@@ -189,20 +189,24 @@ public abstract class Medium {
         collections.remove(collection);
     }
 
-    public Float calculateAvarageRating() {
+    /**
+     * This method is used to calculate the average rating of one medium
+     * @return the average of a medium
+     */
+    public float calculateAverageRating() {
 
         int count = 0;
         float rating = 0.0f;
-        float avarageRating = 0.0f;
+        float averageRating = 0.0f;
 
         for (Rate currentRating : ratings) {
             rating = rating + currentRating.getRating();
             count++;
         }
 
-        avarageRating = rating / count;
+        averageRating = rating / count;
 
-        return avarageRating;
+        return averageRating;
 
 
     }

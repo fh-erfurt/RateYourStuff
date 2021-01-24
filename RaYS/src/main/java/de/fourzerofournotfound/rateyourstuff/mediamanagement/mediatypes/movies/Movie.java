@@ -90,6 +90,12 @@ public class Movie extends Medium
         return highestResolution;
     }
 
+    /**
+     * This method is used to build a full name string of the first name and the last name
+     * of persons which are contained in teh given list
+     * @param listOfPersons contains the names which should be build to a string
+     * @return a list of full name strings of the given person object list
+     */
     public List<String> getFullNameOfPerson(List<Person> listOfPersons){
         String fullName;
         List<String> listOfFullNames = new ArrayList<>();
@@ -100,7 +106,10 @@ public class Movie extends Medium
         }
         return listOfFullNames;
     }
-
+    /**
+     * This method is used to build a string of all attributes of movie
+     * @return all attributes of movie
+     */
     public String toString() {
         return getName() + getGenre() + getFullNameOfPerson(this.directors) + this.languages + getFullNameOfPerson(this.mainActors) + this.ageRestriction;
     }

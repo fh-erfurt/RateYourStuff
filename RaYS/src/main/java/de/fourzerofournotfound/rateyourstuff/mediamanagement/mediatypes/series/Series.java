@@ -133,6 +133,12 @@ public class Series extends Medium {
         return null;
     }
 
+    /**
+     * This method is used to build a full name string of the first name and the last name
+     * of persons which are contained in teh given list
+     * @param listOfPersons contains the names which should be build to a string
+     * @return a list of full name strings of the given person object list
+     */
     public List<String> getFullNameOfPerson(List<Person> listOfPersons){
         String fullName;
         List<String> listOfFullNames = new ArrayList<>();
@@ -144,7 +150,10 @@ public class Series extends Medium {
         }
         return listOfFullNames;
     }
-
+    /**
+     * This method is used to build a string of all attributes of series
+     * @return all attributes of series
+     */
     public String toString() {
         return getName() + getGenre() + this.network
                 + getFullNameOfPerson(this.directors) + getFullNameOfPerson(this.actors)

@@ -7,12 +7,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-//@TODO: Delete userList in this test rack
-    //@TODO: Create users with register function
-    //@TODO: Add GIVEN WHEN THEN
-    //@TODO: Java doc
-    //@TODO: Add should_ to the test method names
-
+/**
+ * @author Christoph Frischmuth
+ */
 
 public class UserRegistrationTest {
     private UserManagement userManagement = new UserManagement();
@@ -31,11 +28,9 @@ public class UserRegistrationTest {
 
     @Test
     void should_return_if_its_Valid_User() {
-        //When
-        // The first two tests includes already existent values for nickname and/or email and should return true
         //Then
-        assertEquals(true, userManagement.isValidUser("Mic11", "mickey@rays.com"));
-        assertFalse(userManagement.isValidUser("Chris", "ben@knop.de"));
+        assertTrue(userManagement.isValidUser("Mic11", "mickey@rays.com"));
+        assertFalse(userManagement.isValidUser("Helga", "helga@univesal.de"));
 
     }
 
@@ -58,8 +53,7 @@ public class UserRegistrationTest {
         User Robin_Rays = userManagement.findUserByNickname("LittleBigPlayer");
         User Unknown_Rays = userManagement.findUserByNickname("UnknownSoldier");
         //Then
-        assertEquals(John_Rays, userManagement.viewPersonalData(userManagement.findUserByNickname("Avartos")));
-        assertEquals(Robin_Rays, userManagement.viewPersonalData(Robin_Rays));
-        /*assertNull(userManagement.viewPersonalData(Unknown_Rays));*/
+        assertEquals("Avartos", userManagement.findUserByNickname("Avartos").getNickname());
+        assertEquals("LittleBigPlayer", userManagement.findUserByNickname("LittleBigPlayer").getNickname());
     }
 }

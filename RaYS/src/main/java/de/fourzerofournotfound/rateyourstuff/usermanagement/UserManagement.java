@@ -1,6 +1,8 @@
 package de.fourzerofournotfound.rateyourstuff.usermanagement;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import de.fourzerofournotfound.rateyourstuff.usermanagement.User;
 import de.fourzerofournotfound.rateyourstuff.usermanagement.UserRole;
@@ -16,6 +18,7 @@ import org.mindrot.jbcrypt.BCrypt;
 public class UserManagement {
     //region Attributes
     ArrayList<User> userList;
+    private static final Logger UMLogger = Logger.getLogger( UserManagement.class.getName());
 
     //endregion
 
@@ -25,6 +28,7 @@ public class UserManagement {
     public UserManagement() {
         userList = new ArrayList<>();
 }
+
     //endregion
 
 
@@ -71,7 +75,7 @@ public class UserManagement {
     public void changeNickname(User user, String nickname) {
         //If the new nickname is existent and isnt the current nickname print error message
         if (isExistingNickname(nickname) && !user.getNickname().equals(nickname)) {
-            System.out.println("Nickname already used!");
+            UMLogger.warning("Nickname already used@"+nickname);
         } else {
             //else store new nickname
             user.setNickname(nickname);
@@ -86,7 +90,7 @@ public class UserManagement {
      */
     public void changeEmail(User user, String email) {
         if (isExistingEmail(email) && !user.getEmail().equals(email)) {
-            System.out.println("Email already used!");
+            UMLogger.warning("email already exits; can´t store@"+email);
         } else {
             user.setEmail(email);
         }
@@ -124,15 +128,25 @@ public class UserManagement {
                                  String password
             /*ArrayList<User> userList*/) {
         if (!isValidUser(nickname, email)) {
-            String passwordSalt = BCrypt.gensalt();
-            String saltedPassword = BCrypt.hashpw(password, passwordSalt);
-            User user = new User(firstName, lastName, email, nickname, saltedPassword);
-            user.setPasswordSalt(passwordSalt);
-            /*            user.setPassword(password);*/
-            userList.add(user);
-//            System.out.println("Saved user with Nickname " + nickname + "!");
+            try {
+                String passwordSalt = BCrypt.gensalt();
+                String saltedPassword = BCrypt.hashpw(password, passwordSalt);
+                try {
+                    User user = new User(firstName, lastName, email, nickname, saltedPassword);
+                    user.setPasswordSalt(passwordSalt);
+                    userList.add(user);
+                } catch (Exception excAdd) {
+                    UMLogger.log(Level.INFO, "Unable to add user", excAdd);
+                }
+            }
+                catch(Exception excSalt)
+                {
+                    UMLogger.log(Level.INFO, "Unable to hash password", excSalt);
+                }
+            }
+
         }
-    }
+
 
     /**
      * This method is used to check the Login - data of a user
@@ -143,9 +157,14 @@ public class UserManagement {
      */
     public boolean loginUser(User user, String password) {
         if (userList.size() != 0) {
-            if (BCrypt.checkpw(password, user.getPassword()) && user.IsEnabled() == true) {
-                System.out.println("Login successful");
-                return true;
+            try {
+                if (BCrypt.checkpw(password, user.getPassword()) && user.IsEnabled()) {
+                    UMLogger.info("Login of User successful@"+user.getNickname());
+                    return true;
+                }
+            } catch(Exception e)
+            {
+                UMLogger.log(Level.SEVERE, "SEVERE failure/ password or user", e);
             }
         }
         return false;
@@ -159,17 +178,21 @@ public class UserManagement {
      */
     public void changePassword(User user, String oldPassword, String newPassword) {
         if (BCrypt.checkpw(oldPassword, user.getPassword())) {
-            System.out.println(user.getNickname());
-            user.setPassword(BCrypt.hashpw(newPassword, user.getPasswordSalt()));
-            System.out.println("password successfully saved!");
+            try {
+                user.setPassword(BCrypt.hashpw(newPassword, user.getPasswordSalt()));
+                /*            System.out.println("password successfully saved!");*/
+            } catch (Exception e)
+            {
+                UMLogger.log(Level.SEVERE, "Error: ", e);
+            }
+            UMLogger.info("Password successfully saved@"+user.getNickname());
         }
     }
 
     /**
      * This method just shows the personal data of an given user
      * @param user Object of the user you want to see user data
-     * @return null and a log if the user isn´t available
-     * @return user if the user is valid in database
+     * @return null and a log if the user isn´t available user if the user is valid in database
      */
     public User viewPersonalData(User user) {
         if (isExistingNickname(user.getNickname())) {
@@ -192,7 +215,7 @@ public class UserManagement {
      * @param nickname String, Nickname to be changed
      * @param email String, email address to be changed
      * @return Object of the user which will be changed if the given user was existing before changing
-     * @return Log, if the user isn´t existing or given mail was already taken by another user
+     * Log, if the user isn´t existing or given mail was already taken by another user
      */
     public User changeUserData(User user, String firstName, String lastName,
                                String nickname, String email) {
@@ -202,9 +225,10 @@ public class UserManagement {
                 user.setLastName(lastName);
                 user.setNickname(nickname);
                 changeEmail(user, email);
+                UMLogger.info("user data successfully changed@"+user.getNickname());
                 return user;
             } else {
-                System.out.println("Unable to change User data!");
+                UMLogger.warning("Unable to change user data@"+user.getNickname());
                 return null;
             }
         }
@@ -222,6 +246,7 @@ public class UserManagement {
             for (User user : userList) {
                 if (user.getNickname().equals(nickname)) return user;
             }
+            UMLogger.warning("UserList has no entries!");
         }
         return null;
     }
@@ -233,6 +258,7 @@ public class UserManagement {
     public void disableUser(User user) {
         if (user.IsEnabled()) {
             user.IsEnabled(false);
+            UMLogger.info("User disabled@"+user);
         }
     }
 
@@ -243,6 +269,7 @@ public class UserManagement {
     public void enableUser(User user) {
         if (!user.IsEnabled()) {
             user.IsEnabled(true);
+            UMLogger.info("User enabled@"+user);
         }
     }
 
@@ -260,6 +287,7 @@ public class UserManagement {
      */
     public void resetPassword(User user) {
         user.setPassword(BCrypt.hashpw("P@sSwOrD", user.getPasswordSalt()));
+        UMLogger.info("Password reseted@"+user);
     }
     //endregion
 }
