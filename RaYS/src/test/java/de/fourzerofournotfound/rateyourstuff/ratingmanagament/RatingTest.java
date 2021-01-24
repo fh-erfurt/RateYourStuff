@@ -27,6 +27,12 @@ public class RatingTest {
         User standardUser = new User("Vorname", "Nachname",
                 "VornameNachname@web.de", "Nickname", "SuperSecret");
 
+        User standardUser2 = new User("Vorname", "Nachname",
+                "VornameNachname@web.de", "Nickname", "SuperSecret");
+
+        User standardUser3 = new User("Vorname", "Nachname",
+                "VornameNachname@web.de", "Nickname", "SuperSecret");
+
         Movie coolMovie = new Movie("BestMovieEver",
                 LocalDate.of(1989,12,24),
                 "[...]",
@@ -40,8 +46,8 @@ public class RatingTest {
                 Resolution.HD);
 
         standardUser.addNewRate(coolMovie, 7, "Best Movie ever ever ever!1");
-        standardUser.addNewRate(coolMovie, 10, "Best Movie ever ever ever!2");
-        standardUser.addNewRate(coolMovie, 1, "Best Movie ever ever ever!3");
+        standardUser2.addNewRate(coolMovie, 10, "Best Movie ever ever ever!2");
+        standardUser3.addNewRate(coolMovie, 1, "Best Movie ever ever ever!3");
 
         avarageRaiting = coolMovie.calculateAvarageRating();
 
