@@ -87,31 +87,53 @@ public class Game extends Medium {
         return developer;
     }
 
-    public void setLanguages(List<String> languages) {
-        this.languages = languages;
+    //advanced "set" and "get" methods for languages
+    public String getLanguageAtIndex(int index) {
+        if(index >= 0 && index < languages.size()) {
+            return languages.get(index);
+        }
+        return null;
     }
 
-    public List<String> getLanguages() {
-        return languages;
+    public void addLanguage(String language) {
+        if(!languages.contains(language)) {
+            languages.add(language);
+        }
     }
 
-    public void addLanguages(List<String> languages) {
-        this.languages.addAll(languages);
+    public void removeLanguage(String language) {
+        languages.remove(language);
     }
 
+    public int getNumberOfLanguages() {
+        return languages.size();
+    }
+
+    //advanced "set" and "get" methods for subtitles
+    public String getSubtitleAtIndex(int index) {
+        if(index >= 0 && index < subtitles.size()) {
+            return subtitles.get(index);
+        }
+        return null;
+    }
+
+    public void addSubtitle(String subtitle) {
+        if(!languages.contains(subtitle)) {
+            languages.add(subtitle);
+        }
+    }
+
+    public void removeSubtitle(String subtitle) {
+        subtitles.remove(subtitle);
+    }
+
+    public int getNumberOfSubtitles() {
+        return subtitles.size();
+    }
     public void setSubtitles(List<String> subtitles) {
         this.subtitles = subtitles;
     }
 
-    public List<String> getSubtitles() {
-        return subtitles;
-    }
-
-    public void addSubtitle(String subtitle) {
-        if(!subtitles.contains(subtitle)) {
-            this.subtitles.add(subtitle);
-        }
-    }
 
     public void setMinNumberOfPlayers(int minNumberOfPlayers) {
         this.minNumberOfPlayers = minNumberOfPlayers;
@@ -129,14 +151,26 @@ public class Game extends Medium {
         return maxNumberOfPlayers;
     }
 
-    public List<String> getPlatforms() {
-        return platforms;
+    //advanced "set" and "get" methods for platforms
+    public String getPlatformAtIndex(int index) {
+        if(index >= 0 && index < platforms.size()) {
+            return platforms.get(index);
+        }
+        return null;
     }
 
     public void addPlatform(String platform) {
-        if(!subtitles.contains(platform)) {
-            this.subtitles.add(platform);
+        if(!platforms.contains(platform)) {
+            platforms.add(platform);
         }
+    }
+
+    public void removePlatform(String platform) {
+        platforms.remove(platform);
+    }
+
+    public int getNumberOfPlatforms() {
+        return platforms.size();
     }
 
     public void setAgeRestriction(int ageRestriction) {

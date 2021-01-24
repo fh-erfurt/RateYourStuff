@@ -56,35 +56,50 @@ public class Book extends Medium
     //region Getter // Setter // Adder
     ////////////////////////////////////////////////////////////////////////////////////
 
-    //TODO: below function interferes with data encapsulation
-    public void setPublishers(List<String> publishers) {
-        this.publishers = publishers;
+    //advanced "set" and "get" methods for publishers
+    public String getPublisherAtIndex(int index) {
+        if(index >= 0 && index < publishers.size()) {
+            return publishers.get(index);
+        }
+        return null;
     }
 
-    //TODO: below function interferes with data encapsulation
-    public List<String> getPublishers() {
-        return publishers;
+    public void addPublisher(String publisher) {
+        if(!publishers.contains(publisher)) {
+            publishers.add(publisher);
+        }
     }
 
-    //TODO: below function interferes with data encapsulation
-    public void addPublishers(List<String> publishers) {
-        this.publishers.addAll(publishers);
+    public void removePublisher(String publisher) {
+        languages.remove(publisher);
     }
 
-    //TODO: below function interferes with data encapsulation
-    public void setAuthors(ArrayList<Person> authors) {
-        this.authors = authors;
+    public int getNumberOfPublishers() {
+        return publishers.size();
     }
 
-    //TODO: below function interferes with data encapsulation
-    public List<Person> getAuthors() {
-        return authors;
+    //advanced "set" and "get" methods for authors
+    public Person getAuthorAtIndex(int index) {
+        if(index >= 0 && index < authors.size()) {
+            return authors.get(index);
+        }
+        return null;
     }
 
-    //TODO: below function interferes with data encapsulation, could cause multiple entries that are the same
-    public void addAuthor(List<Person> authors) {
-        this.authors.addAll(authors);
+    public void addAuthor(Person author) {
+        if(!authors.contains(author)) {
+            authors.add(author);
+        }
     }
+
+    public void removeAuthor(Person author) {
+        authors.remove(author);
+    }
+
+    public int getNumberOfAuthor() {
+        return authors.size();
+    }
+
 
     public void setISBN(ISBN13 isbn) {
         this.isbn = isbn;
@@ -94,12 +109,11 @@ public class Book extends Medium
         return isbn;
     }
 
-    public void setIsEBook(boolean isEBook) {
+    public void setIsEbook(boolean isEBook) {
         this.isEBook = isEBook;
     }
 
-    //TODO: rename to "isEbook"
-    public boolean getIsEbook()
+    public boolean isEbook()
     {
         return isEBook;
     }
@@ -109,26 +123,33 @@ public class Book extends Medium
         this.isPrint = isPrint;
     }
 
-    //TODO. rename to isPrint
     public boolean getIsPrint()
     {
         return isPrint;
     }
 
-    //TODO: below function interferes with data encapsulation
-    public void setLanguages(List<String> languages) {
-        this.languages = languages;
+    //advanced "set" and "get" methods for languages
+    public String getLanguageAtIndex(int index) {
+        if(index >= 0 && index < languages.size()) {
+            return languages.get(index);
+        }
+        return null;
     }
 
-    //TODO: below function interferes with data encapsulation
-    public List<String> getLanguages() {
-        return languages;
+    public void addLanguage(String language) {
+        if(!languages.contains(language)) {
+            languages.add(language);
+        }
     }
 
-    //TODO: below function interferes with data encapsulation
-    public void addLanguages(List<String> languages){
-        this.languages.addAll(languages);
+    public void removeLanguage(String language) {
+        languages.remove(language);
     }
+
+    public int getNumberOfLanguages() {
+        return languages.size();
+    }
+
 
     public void setNumberOfPages(int numberOfPages) {
         this.numberOfPages = numberOfPages;
@@ -151,7 +172,11 @@ public class Book extends Medium
 
     public String toString() {
         Person person = null;
-        return getName() + getGenre() + getFullNameOfPerson(this.authors) + this.isbn + this.languages;
+        return getName() +
+                getGenre() +
+                getFullNameOfPerson(this.authors) +
+                this.isbn +
+                this.languages;
     }
     //endregion
 
