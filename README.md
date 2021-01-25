@@ -156,50 +156,81 @@ Unter diesem Punkt befinden sich unsere UML-Diagramme die wir im Vorfeld erstell
 
 <details>
   <summary>Medium anlegen</summary>  
-  
+  Bild einfügen
 </details>
 
 <details>
   <summary>neues Buch anlegen</summary>  
-  
+  Bild einfügen
 </details>
 
 <details>
   <summary>neues Film anlegen</summary>  
-  
+  Bild einfügen
 </details>
 
 <details>
   <summary>neues Serie anlegen</summary>  
-  
+  Bild einfügen
 </details>
 
 <details>
   <summary>neues Episode anlegen</summary>  
-  
+  Bild einfügen
 </details>
 
 <details>
   <summary>neues Spiel anlegen</summary>  
-  
+  Bild einfügen
 </details>
 
 <details>
   <summary>Medien-Kollektion verwalten</summary>  
-  
+  Bild einfügen
 </details>
 
 <details>
-  <summary>Medien-Kollektion bearbeiten</summary>  
-  
+  <summary>vohandene Medien-Kollektion bearbeiten</summary>  
+  Bild einfügen
 </details>
 
 <details>
-  <summaryNeuen Fortschritt anlegen</summary>  
-  
+  <summary>Neuen Fortschritt anlegen</summary>  
+  Bild einfügen
 </details>
 
 ## Zusammenarbeit
+Im Rahmen des Projektes haben wir auf gewissen Elemente von Scrum und Kanban zurückgegriffen.
+
+Das Team um "RateYourStuff" haben sich alle 7 Tage zusammengefunden. 
+Zu diesen Treffen hat jeder seinen PPP (Progress, Planned, Problems) der Runde mitgeteilt und es wurden die Ziele für die nächsten 7 Tage gesetzt. 
+Diese gesetzten Ziele wurden in einem Kanban-Board festgehalten.
+
+<details>
+  <summary>Kanban-Board des Teams</summary>
+  Bild einfügen
+</details>
+
+Das Board wurde unterteilt in <br>
+"ToDo" --> Hier wurden alle Issues eingestellt, die erledigt werden mussten <br>
+<br>
+"In progress 'Vorname des Teammitgliedes'" --> Jedes Teammitglied konnte sich dann selbst Issues aus dem Bereich ToDo nehmen und in seinen Bereich verschieben. So konnte jeder aus dem Team sehen wer sich gerade um welchen Part kümmert. Issues wurden meistens mit Checklisten versehen, so konnte auch gleichzeitig mit eingesehen werden, wie weit der Issue abgearbeitet ist <br>
+<br>
+"currently Done" --> in diesem BEreich des Boards wandern alle Issues, die fertigestellt wurden. dort verweilen sie bis zum nächsten Meeting. Bei diesem Meeting wird über die fertiggestellten Issues gesprochen und wenn diese in Ordnung sind, werden sie geschlossen und wandern in den BEreich "Done". <br>
+<br>
+"Done" --> in diesem BEreich befinden sich alle geschlossenen Issues, also alles was bisher abgearbeitet und für "fertig" erklärt wurde.<br>
+<br>
+Die Aufgaben wurden somit fair untereinander aufgeteilt, jeder hat meistens das genommen was ihm am besten gelegen hat und am Ende wurde alles durch das Team geprüft.<br>
+<br>
+Alles in allem lief das Projekt nahezu problemlos ab. Was auf unsere gute Planung und unser sehr gut harmonisierendes Team zurückzuführen ist
+
+## Lessons Learned
+Wie schon im vorhergehenden Part erwähnt hatten wir keine wirklichen Probleme in unserem Projekt. Die meisten Probleme existierten durch Unwissheit und mit einem geringen Aufwand an Selbststudium konnten diese auch behoben werden. Spätestens durch gegenseitige Hilfe waren Probleme schnell vom Tisch. <br> <br>
+Dennoch soll dieses Kapitel nicht gänzlich leer bleiben. <br> 
+
+   - Listen die in einer Klasse immer wieder benutzt werden, sollten als Attribut dieser Klasse verwendet werden! <br>
+   - Keep simple stupid // Kleine Funktionen schreiben, die in Komplexeren Methoden zusammen verwendet werden können! <br>
+
 
 Nobody can touch this *Mic drop*
 
