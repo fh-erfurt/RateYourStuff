@@ -117,14 +117,14 @@ Für jedes Medium gibt es eine allgemeine Bewertung, die durch die Bewertungskri
   <summary>Wunsch-Kriterien</summary>  
   
   Es ist wünschenswert, das System zu einem späteren Zeitpunkt um folgende Kriterien zu erweitern: 
-    - Anzeigen von empfohlenen Medien auf Basis der bereits genutzten / bewerteten Medien 
-    - gezieltes Ausblenden von Medien, die man nicht sehen möchte (z. B.: Anhand des Genres) 
-    - Private Nachrichten an andere Nutzer senden 
-    - Andere Benutzer zu Freundesliste hinzufügen 
-    - Medien abonnieren, um bei Aktualisierungen / Neuerscheinungen benachrichtigt zu werden 
-    - Filtern und Suchen nach Fortschritten, die Nutzer zu Medien angelegt haben 
-    - Eigene Videos, die Ausschnitte des Mediums zeigen, im Rahmen des Zitatrechts, sollen als Kommentar beziehungsweise als Meinung möglich sein. So können, zum Beispiel,     Spielabschnitte zitiert und kommentiert werden, um seinen Freunden oder Interessierten eine Möglichkeit zu bieten die Bildung der Meinung nachvollziehen zu können. 
-Ein weiteres Wunschkriterium ist eine Merkliste, in der Medien hinterlegt werden können, welche man sich später ansieht/liest/spielt.
+    - Anzeigen von empfohlenen Medien auf Basis der bereits genutzten / bewerteten Medien <br>
+    - gezieltes Ausblenden von Medien, die man nicht sehen möchte (z. B.: Anhand des Genres) <br>
+    - Private Nachrichten an andere Nutzer senden <br>
+    - Andere Benutzer zu Freundesliste hinzufügen <br>
+    - Medien abonnieren, um bei Aktualisierungen / Neuerscheinungen benachrichtigt zu werden <br>
+    - Filtern und Suchen nach Fortschritten, die Nutzer zu Medien angelegt haben <br>
+    - Eigene Videos, die Ausschnitte des Mediums zeigen, im Rahmen des Zitatrechts, sollen als Kommentar beziehungsweise als Meinung möglich sein. So können, zum Beispiel,     Spielabschnitte zitiert und kommentiert werden, um seinen Freunden oder Interessierten eine Möglichkeit zu bieten die Bildung der Meinung nachvollziehen zu können. <br>
+    - Ein weiteres Wunschkriterium ist eine Merkliste, in der Medien hinterlegt werden können, welche man sich später ansieht/liest/spielt.<br>
   
 </details>
 
