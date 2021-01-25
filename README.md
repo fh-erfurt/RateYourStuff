@@ -45,6 +45,19 @@ Für jedes Medium gibt es eine allgemeine Bewertung, die durch die Bewertungskri
 
 
 ## Zielbestimmungen
+Das System soll eine Plattform zum Bewerten von diversen Mediatypen darstellen. Zu den zu bewertenden Media-Typen zählen Bücher, Filme, Serien – inklusive Episoden – sowie Videospiele. 
+Nutzer sollen Ihre Medien-Fortschritte für ihr Profil verwalten und anzeigen lassen können. 
+Für jedes Medium sollen Kommentare geschrieben und diese auch entsprechend kommentiert werden können. 
+Den Nutzern soll es möglich sein untereinander die eigenen Fortschritte zu teilen.  
+
+Das System soll in mehreren Etappen entwickelt werden: 
+    - Grundsystem 
+    - Datenbankanbindung 
+    - Webfrontend 
+
+Für das Modul Java 01 wird vorerst jedoch nur das Grundsystem umgesetzt und implementiert. 
+
+
 <details>
   <summary>Muss-Kriterien</summary>
   
@@ -125,7 +138,18 @@ Für jedes Medium gibt es eine allgemeine Bewertung, die durch die Bewertungskri
     - Filtern und Suchen nach Fortschritten, die Nutzer zu Medien angelegt haben <br>
     - Eigene Videos, die Ausschnitte des Mediums zeigen, im Rahmen des Zitatrechts, sollen als Kommentar beziehungsweise als Meinung möglich sein. So können, zum Beispiel,     Spielabschnitte zitiert und kommentiert werden, um seinen Freunden oder Interessierten eine Möglichkeit zu bieten die Bildung der Meinung nachvollziehen zu können. <br>
     - Ein weiteres Wunschkriterium ist eine Merkliste, in der Medien hinterlegt werden können, welche man sich später ansieht/liest/spielt.<br>
-  
+</details>
+
+<details>
+  <summary>Abgrenzungskriterien</summary>
+  „Rate Your Stuff“ soll keine herkömmliche Produktbewertung sein. Die Plattform gibt verschiedene Kriterien vor, die sich mit den Inhalten beschäftigen und nicht mit dem Auslieferungszustand oder der Qualität des Papieres. 
+
+ 
+
+Nicht realisiert werden, sollen: 
+    - Möglichkeit zur Wiedergabe der Medien auf der Seite <br>
+    - Ermitteln von Bewertungen für Medien auf anderen Seiten <br>
+    - Trennung von Benutzerbewertungen und Journalistischen Rezensionen <br> 
 </details>
 
 
