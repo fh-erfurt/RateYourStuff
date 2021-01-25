@@ -66,6 +66,51 @@ Für jedes Medium gibt es eine allgemeine Bewertung, die durch die Bewertungskri
         - bereits angelegte Fortschritte zu löschen <br>
       </details>
       
+  <details>
+  <summary>Verwaltung von Kommentaren</summary>
+      Das System muss den Nutzern die Möglichkeit bieten: 
+        - Kommentare zu einem Medium zu schreiben <br>
+        - auf die Kommentare von anderen Nutzern zu antworten <br>
+        - Kommentare mit potenziellen Spoilern auszublenden <br>
+        - Kommentare zu löschen <br>
+        - Kommentare zu deaktivieren  <br>
+        - Kommentare wieder zu öffnen <br>
+  </details>
+  
+  <details>
+  <summary>Verwaltung von Kollektionen</summary>
+      Das System muss den Nutzern die Möglichkeit bieten: 
+      - Kollektionen anzulegen <br>
+      - Medien zu Kollektionen zuzuweisen <br>
+      - nach Kollektionen zu suchen <br>
+  </details>
+      
+      
+  <details>
+  <summary>Bewerten von Medien</summary>
+      Das System muss den Nutzern und Moderatoren die Möglichkeit bieten: 
+        - eine Bewertung für ein Medium abzugeben 
+        - die eigene Bewertung zu editieren 
+        - die eigene Bewertung zu löschen 
+        - eine aus den bisher abgegebenen Bewertungen ermittelte Durchschnittsbewertung anzeigen lassen 
+        - einen Bewertungstext zu verfassen 
+  </details>
+  
+  <details>
+  <summary>Verwalten von Benutzern</summary>
+      Das System muss den Nutzern und Moderatoren die Möglichkeit bieten: 
+        - andere Nutzer anhand ihres Nutzernamens zu suchen 
+        - andere Nutzer der Freundesliste hinzuzufügen 
+        - andere Nutzer von der Freundesliste zu entfernen 
+        - die eigenen Nutzerdaten einzusehen 
+        - die eigenen Nutzerdaten zu ändern 
+        - sich am System zu registrieren     
+        - Nutzer-Accounts zu deaktivieren 
+        - Nutzer-Accounts zu reaktivieren 
+        - das Passwort von Benutzern zurückzusetzen 
+        - Benutzern Moderator-Rechte zu geben 
+        - von Benutzern angelegte Kollektionen und Medien vor Veröffentlichung zu prüfen und freizugeben 
+  </details>
 </details>
 
 
