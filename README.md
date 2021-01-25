@@ -57,7 +57,7 @@ Für jedes Medium gibt es eine allgemeine Bewertung, die durch die Bewertungskri
         - Medien in Kollektionen einzuteilen <br>
       </details>
       
-      <details>
+  <details>
   <summary>Verwaltung von Fortschritten</summary>
       Das System muss den Nutzern die Möglichkeit bieten: 
         - eigene Fortschritte für Medien anzulegen <br>
