@@ -44,17 +44,17 @@ Für jedes Medium gibt es eine allgemeine Bewertung, die durch die Bewertungskri
 </details>
 
 
-## UML-Class diagram 
-The uml-Class diagram-preview is available at: https://lucid.app/documents/view/c6c65f1a-d09a-422a-ade8-80eab27f8dcb
-
+## Zielbestimmungen
 <details>
-  <summary>Who is the RateYourStuff-Team?</summary>
-  The RYS-Team consists of four fantastic persons<br>
-  - Robin Beck<br>
-  - Christoph Frischmuth<br>
-  - John Klippstein<br>
-  - Mickey Knop<br>
- </details>
+  <summary>Muss-Kriterien</summary>
+  
+  <details>
+  <summary>Verwaltung von Medien</summary>
+  </details>
+  </details>
+
+
+
 
 Nobody can touch this *Mic drop*
 
