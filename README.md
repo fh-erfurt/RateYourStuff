@@ -30,7 +30,7 @@ Im Rahmen der Pandemie, im Jahre 2020 n.Chr., wurden, gefühlt, unendlich viele 
 Nun existiert schone eine größere Menge an Portalen, die sich mit der Bewertung von Medien beschäftigen, aber auch hier zeigen sich Probleme. Andere Portale sind oft nur für ein Medium ausgelegt und, oder sind einfach unübersichtlich, nicht gut organisiert oder bieten nicht die gewünschten Funktionen. An dieser Stelle soll das Konzept von „Rate Your Stuff“ greifen. „RYS“ bietet die Möglichkeit für die populärsten Medien Meinungen abzugeben und Wertungen. Die Meinungen und Wertungen können von anderen Usern/Freunden kommentiert werden und so kann ein Austausch über unterschiedliche Medien, auf einer Plattform stattfinden
 </details>
 
-## What is RateYourStuff?
+## Was ist RateYourStuff?
 <details>
   <summary>RateYourStuff soll eine Bewertungsplattform für verschiedene Arten von Medien sein. Es ist geplant, folgende Medientypen vorerst zu unterstützen:</summary>
 
@@ -51,9 +51,9 @@ Für jedes Medium sollen Kommentare geschrieben und diese auch entsprechend komm
 Den Nutzern soll es möglich sein untereinander die eigenen Fortschritte zu teilen.  
 
 Das System soll in mehreren Etappen entwickelt werden: 
-    - Grundsystem 
-    - Datenbankanbindung 
-    - Webfrontend 
+    - Grundsystem <br>
+    - Datenbankanbindung <br>
+    - Webfrontend <br>
 
 Für das Modul Java 01 wird vorerst jedoch nur das Grundsystem umgesetzt und implementiert. 
 
@@ -142,11 +142,10 @@ Für das Modul Java 01 wird vorerst jedoch nur das Grundsystem umgesetzt und imp
 
 <details>
   <summary>Abgrenzungskriterien</summary>
-  „Rate Your Stuff“ soll keine herkömmliche Produktbewertung sein. Die Plattform gibt verschiedene Kriterien vor, die sich mit den Inhalten beschäftigen und nicht mit dem Auslieferungszustand oder der Qualität des Papieres. 
+  „Rate Your Stuff“ soll keine herkömmliche Produktbewertung sein. Die Plattform gibt verschiedene Kriterien vor, die sich mit den Inhalten beschäftigen und nicht mit dem Auslieferungszustand oder der Qualität des Papieres. <br>
 
  
-
-Nicht realisiert werden, sollen: 
+Nicht realisiert werden, sollen: <br>
     - Möglichkeit zur Wiedergabe der Medien auf der Seite <br>
     - Ermitteln von Bewertungen für Medien auf anderen Seiten <br>
     - Trennung von Benutzerbewertungen und Journalistischen Rezensionen <br> 
