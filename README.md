@@ -1,5 +1,5 @@
 # RateYourStuff
-![build](https://github.com/fh-erfurt/RateYourStuff/workflows/build/badge.svg)
+[![Build Status](https://github.com/jonashackt/java1-start/workflows/build/badge.svg)](https://github.com/fh-erfurt/RateYourStuff/actions)
 
 Project to rate different types of multimedia and share your current progress.
 
