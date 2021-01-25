@@ -50,7 +50,7 @@ Nutzer sollen Ihre Medien-Fortschritte für ihr Profil verwalten und anzeigen la
 Für jedes Medium sollen Kommentare geschrieben und diese auch entsprechend kommentiert werden können. 
 Den Nutzern soll es möglich sein untereinander die eigenen Fortschritte zu teilen.  
 
-Das System soll in mehreren Etappen entwickelt werden: 
+Das System soll in mehreren Etappen entwickelt werden: <br>
     - Grundsystem <br>
     - Datenbankanbindung <br>
     - Webfrontend <br>
@@ -151,6 +151,53 @@ Nicht realisiert werden, sollen: <br>
     - Trennung von Benutzerbewertungen und Journalistischen Rezensionen <br> 
 </details>
 
+## UML-Diagramme
+Unter diesem Punkt befinden sich unsere UML-Diagramme die wir im Vorfeld erstellt haben um unsere Idee von der Applikation grafisch darzustellen und um eine bessere Vorstellung des Ganzen zu bekommen.
+
+<details>
+  <summary>Medium anlegen</summary>  
+  
+</details>
+
+<details>
+  <summary>neues Buch anlegen</summary>  
+  
+</details>
+
+<details>
+  <summary>neues Film anlegen</summary>  
+  
+</details>
+
+<details>
+  <summary>neues Serie anlegen</summary>  
+  
+</details>
+
+<details>
+  <summary>neues Episode anlegen</summary>  
+  
+</details>
+
+<details>
+  <summary>neues Spiel anlegen</summary>  
+  
+</details>
+
+<details>
+  <summary>Medien-Kollektion verwalten</summary>  
+  
+</details>
+
+<details>
+  <summary>Medien-Kollektion bearbeiten</summary>  
+  
+</details>
+
+<details>
+  <summaryNeuen Fortschritt anlegen</summary>  
+  
+</details>
 
 Nobody can touch this *Mic drop*
 
