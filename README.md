@@ -1,5 +1,6 @@
 # RateYourStuff
 [![Build Status](https://github.com/jonashackt/java1-start/workflows/build/badge.svg)](https://github.com/fh-erfurt/RateYourStuff/actions)
+[![Docs](https://img.shields.io/badge/javadoc-see%20here-9cf.svg?style=flat&logo=java)](https://fh-erfurt.github.io/RateYourStuff)
 
 Project to rate different types of multimedia and share your current progress.
 
