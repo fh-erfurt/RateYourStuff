@@ -89,30 +89,44 @@ Für jedes Medium gibt es eine allgemeine Bewertung, die durch die Bewertungskri
   <details>
   <summary>Bewerten von Medien</summary>
       Das System muss den Nutzern und Moderatoren die Möglichkeit bieten: 
-        - eine Bewertung für ein Medium abzugeben 
-        - die eigene Bewertung zu editieren 
-        - die eigene Bewertung zu löschen 
-        - eine aus den bisher abgegebenen Bewertungen ermittelte Durchschnittsbewertung anzeigen lassen 
-        - einen Bewertungstext zu verfassen 
+        - eine Bewertung für ein Medium abzugeben <br>
+        - die eigene Bewertung zu editieren <br>
+        - die eigene Bewertung zu löschen <br>
+        - eine aus den bisher abgegebenen Bewertungen ermittelte Durchschnittsbewertung anzeigen lassen <br>
+        - einen Bewertungstext zu verfassen <br>
   </details>
   
   <details>
   <summary>Verwalten von Benutzern</summary>
       Das System muss den Nutzern und Moderatoren die Möglichkeit bieten: 
-        - andere Nutzer anhand ihres Nutzernamens zu suchen 
-        - andere Nutzer der Freundesliste hinzuzufügen 
-        - andere Nutzer von der Freundesliste zu entfernen 
-        - die eigenen Nutzerdaten einzusehen 
-        - die eigenen Nutzerdaten zu ändern 
-        - sich am System zu registrieren     
-        - Nutzer-Accounts zu deaktivieren 
-        - Nutzer-Accounts zu reaktivieren 
-        - das Passwort von Benutzern zurückzusetzen 
-        - Benutzern Moderator-Rechte zu geben 
-        - von Benutzern angelegte Kollektionen und Medien vor Veröffentlichung zu prüfen und freizugeben 
+        - andere Nutzer anhand ihres Nutzernamens zu suchen <br>
+        - andere Nutzer der Freundesliste hinzuzufügen <br>
+        - andere Nutzer von der Freundesliste zu entfernen <br>
+        - die eigenen Nutzerdaten einzusehen <br>
+        - die eigenen Nutzerdaten zu ändern <br>
+        - sich am System zu registrieren     <br>
+        - Nutzer-Accounts zu deaktivieren <br>
+        - Nutzer-Accounts zu reaktivieren <br>
+        - das Passwort von Benutzern zurückzusetzen <br>
+        - Benutzern Moderator-Rechte zu geben <br>
+        - von Benutzern angelegte Kollektionen und Medien vor Veröffentlichung zu prüfen und freizugeben <br>
   </details>
 </details>
 
+<details>
+  <summary>Wunsch-Kriterien</summary>  
+  
+  Es ist wünschenswert, das System zu einem späteren Zeitpunkt um folgende Kriterien zu erweitern: 
+    - Anzeigen von empfohlenen Medien auf Basis der bereits genutzten / bewerteten Medien 
+    - gezieltes Ausblenden von Medien, die man nicht sehen möchte (z. B.: Anhand des Genres) 
+    - Private Nachrichten an andere Nutzer senden 
+    - Andere Benutzer zu Freundesliste hinzufügen 
+    - Medien abonnieren, um bei Aktualisierungen / Neuerscheinungen benachrichtigt zu werden 
+    - Filtern und Suchen nach Fortschritten, die Nutzer zu Medien angelegt haben 
+    - Eigene Videos, die Ausschnitte des Mediums zeigen, im Rahmen des Zitatrechts, sollen als Kommentar beziehungsweise als Meinung möglich sein. So können, zum Beispiel,     Spielabschnitte zitiert und kommentiert werden, um seinen Freunden oder Interessierten eine Möglichkeit zu bieten die Bildung der Meinung nachvollziehen zu können. 
+Ein weiteres Wunschkriterium ist eine Merkliste, in der Medien hinterlegt werden können, welche man sich später ansieht/liest/spielt.
+  
+</details>
 
 
 Nobody can touch this *Mic drop*
