@@ -199,5 +199,7 @@ Unter diesem Punkt befinden sich unsere UML-Diagramme die wir im Vorfeld erstell
   
 </details>
 
+## Zusammenarbeit
+
 Nobody can touch this *Mic drop*
 
