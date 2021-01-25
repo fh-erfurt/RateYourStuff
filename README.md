@@ -4,6 +4,12 @@
 
 Projekt, um verschiedene Arten von Multimedia zu bewerten und Ihre aktuellen Fortschritte zu teilen.
 
+Und wer sind die Köpfe hinter dieser großartigen und überwältigend Idee?
+- Robin Beck
+- Christoph Frischmuth
+- Mickey Knop
+- John Klippstein
+
 ## Einleitung
 <details>
   <summary>Die Welt dreht sich immer mehr um ...</summary>
