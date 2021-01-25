@@ -50,9 +50,14 @@ Für jedes Medium gibt es eine allgemeine Bewertung, die durch die Bewertungskri
   
   <details>
   <summary>Verwaltung von Medien</summary>
-  </details>
-  </details>
-
+      <details
+      Das System muss den Nutzern die Möglichkeit bieten: 
+        - Medien anzulegen <br>
+        - Medien zu suchen <br>
+        - Medien zu bearbeiten <br>
+        - Medien in Kollektionen einzuteilen <br>
+      </details>
+</details>
 
 
 
