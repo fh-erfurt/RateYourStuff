@@ -18,7 +18,7 @@ Users will be able to rate media with different criteria. For each media there w
 ## UML-Class diagram 
 The uml-Class diagram-preview is available at: https://lucid.app/documents/view/c6c65f1a-d09a-422a-ade8-80eab27f8dcb
 
-##<details>
+<details>
   <summary>Who is the RateYourStuff-Team?</summary>
   The RYS-Team consists of four fantastic persons<br>
   - Robin Beck<br>
