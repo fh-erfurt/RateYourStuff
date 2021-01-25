@@ -3,7 +3,7 @@ package de.fourzerofournotfound.rateyourstuff.mediamanagement;
 /**
  * Genre
  * <p>This Enum is used to provide Genres for the Class Medium. Each Enum value has a german string as equation</p>
- * @author Robin Beck
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  */
 
 public enum Genre {

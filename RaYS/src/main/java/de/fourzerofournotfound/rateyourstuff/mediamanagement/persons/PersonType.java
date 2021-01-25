@@ -3,7 +3,7 @@ package de.fourzerofournotfound.rateyourstuff.mediamanagement.persons;
 /**
  * Person Type
  * <p>This class is used to list the possible types of persons. Each type has the german equation as label</p>
- * @author Robin Beck
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  */
 public enum PersonType {
     ACTOR("Schauspieler"),

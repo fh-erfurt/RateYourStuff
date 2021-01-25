@@ -4,7 +4,7 @@ import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.Medium;
 
 /**
  *
- * @author Mickey Knop
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  * */
 

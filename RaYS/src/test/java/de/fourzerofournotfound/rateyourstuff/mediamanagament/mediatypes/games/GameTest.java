@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Robin Beck
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  */
 
 public class GameTest {

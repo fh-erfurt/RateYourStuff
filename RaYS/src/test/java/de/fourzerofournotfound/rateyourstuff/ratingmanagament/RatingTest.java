@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  *
  * <p>This test should show that the average rating of a medium works correctly and that the ratings are also insert</p>
- * @author John Klippstein
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  */
 public class RatingTest {
@@ -25,6 +25,12 @@ public class RatingTest {
         boolean averageRatingResult = false;
         Float avarageRaiting = 0.0f;
         User standardUser = new User("Vorname", "Nachname",
+                "VornameNachname@web.de", "Nickname", "SuperSecret");
+
+        User standardUser2 = new User("Vorname", "Nachname",
+                "VornameNachname@web.de", "Nickname", "SuperSecret");
+
+        User standardUser3 = new User("Vorname", "Nachname",
                 "VornameNachname@web.de", "Nickname", "SuperSecret");
 
         Movie coolMovie = new Movie("BestMovieEver",
@@ -40,8 +46,8 @@ public class RatingTest {
                 Resolution.HD);
 
         standardUser.addNewRate(coolMovie, 7, "Best Movie ever ever ever!1");
-        standardUser.addNewRate(coolMovie, 10, "Best Movie ever ever ever!2");
-        standardUser.addNewRate(coolMovie, 1, "Best Movie ever ever ever!3");
+        standardUser2.addNewRate(coolMovie, 10, "Best Movie ever ever ever!2");
+        standardUser3.addNewRate(coolMovie, 1, "Best Movie ever ever ever!3");
 
         avarageRaiting = coolMovie.calculateAverageRating();
 

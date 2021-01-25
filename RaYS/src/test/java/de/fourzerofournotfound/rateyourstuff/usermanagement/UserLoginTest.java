@@ -1,5 +1,9 @@
 package de.fourzerofournotfound.rateyourstuff.usermanagement;
 
+/**
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
+ */
+
 import de.fourzerofournotfound.rateyourstuff.usermanagement.User;
 import de.fourzerofournotfound.rateyourstuff.usermanagement.UserManagement;
 import org.junit.jupiter.api.BeforeAll;

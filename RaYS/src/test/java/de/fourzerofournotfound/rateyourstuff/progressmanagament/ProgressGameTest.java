@@ -12,7 +12,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * @author Robin Beck
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  */
 
 public class ProgressGameTest {

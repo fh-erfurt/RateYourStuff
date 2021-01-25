@@ -6,7 +6,7 @@ import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.Medium;
  * Progress
  * <p>Represents a progress that is created by a user and contains information about
  * the medium and the current progression in that medium</p>
- * @author Robin Beck
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  * */
 

@@ -12,7 +12,7 @@ import java.util.Objects;
  * Season
  * <p>This class represents a season of a series and contains information of the episodes,
  * the season title and the season Number</p>
- * @author Robin Beck
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  */
 
 

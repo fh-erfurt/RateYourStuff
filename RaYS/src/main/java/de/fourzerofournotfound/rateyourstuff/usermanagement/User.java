@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  *
- * @author Mickey Knop, Robin Beck, John Klippsteim, Christoph Frischmuth
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  * */
 public class User
@@ -184,17 +184,15 @@ public class User
     /**
      *<p>This function add a rate to a medium and this user.</p>
      * @param medium medium that is used to get the rate for the user
-     * @param rating
+     * @param rating is a number between 0 and 10
      * @param description this is the description which is set in the rate
      * @return
      */
     public boolean addNewRate(Medium medium, Integer rating, String description) {
         Integer newRating = rating;
-        //TODO: variable is redundant
-        String newDescription = description;
         List<Rate> mediumRates = medium.getRatings();
 
-        Rate userRate = new Rate (newRating, newDescription, medium);
+        Rate userRate = new Rate (newRating, description, medium);
         medium.addRating(userRate);
         this.rates.add(userRate);
 

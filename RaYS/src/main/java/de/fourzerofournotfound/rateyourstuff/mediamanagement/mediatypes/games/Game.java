@@ -10,7 +10,7 @@ import java.util.List;
  * Game
  * <p>Represents an game and contains different information about the game including playtime, publisher, developer
  * Games can be added to collections</p>
- * @author Christoph Frischmuth, Robin Beck
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  * */
 public class Game extends Medium {

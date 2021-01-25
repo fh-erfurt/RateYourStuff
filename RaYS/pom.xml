@@ -16,7 +16,6 @@
         <maven.compiler.target>11</maven.compiler.target>
         <maven.compiler.source>11</maven.compiler.source>
         <junit.version>5.7.0</junit.version>
-
     </properties>
 
     <dependencies>
@@ -26,13 +25,13 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.mindrot/jbcrypt -->
         <dependency>
             <groupId>org.mindrot</groupId>
             <artifactId>jbcrypt</artifactId>
             <version>0.3m</version>
         </dependency>
-
     </dependencies>
 
     <build>

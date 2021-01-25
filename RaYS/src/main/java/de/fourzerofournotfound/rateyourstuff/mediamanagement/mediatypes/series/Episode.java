@@ -11,7 +11,7 @@ import java.util.List;
  * Episode
  * <p>Represents an episode of an tv show, contains information about episode number, guest stars, episode title
  * Episodes can be added to collections</p>
- * @author Robin Beck
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  */
 public class Episode extends Medium {
     //region Attributes

@@ -7,7 +7,7 @@ import java.text.DecimalFormat;
 /**
  * Progress Movie
  * <p>This class is used to store and check the progress a user has made for a certain movie</p>
- * @author John Klippstein, Robin Beck
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  * */
 

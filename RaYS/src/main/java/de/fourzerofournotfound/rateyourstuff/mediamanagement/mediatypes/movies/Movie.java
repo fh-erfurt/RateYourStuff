@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * Movie
- * @author Christoph Frischmuth
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  * */
 public class Movie extends Medium
