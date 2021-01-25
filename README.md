@@ -50,13 +50,22 @@ Für jedes Medium gibt es eine allgemeine Bewertung, die durch die Bewertungskri
   
   <details>
   <summary>Verwaltung von Medien</summary>
-      <details
       Das System muss den Nutzern die Möglichkeit bieten: 
         - Medien anzulegen <br>
         - Medien zu suchen <br>
         - Medien zu bearbeiten <br>
         - Medien in Kollektionen einzuteilen <br>
       </details>
+      
+      <details>
+  <summary>Verwaltung von Fortschritten</summary>
+      Das System muss den Nutzern die Möglichkeit bieten: 
+        - eigene Fortschritte für Medien anzulegen <br>
+        - den aktuellen Fortschritt prozentual oder Medienspezifisch (Buchseite, Episode, Filmminute, Spielzeit) anzuzeigen <br>
+        - bereits angelegte Fortschritte zu ändern <br>
+        - bereits angelegte Fortschritte zu löschen <br>
+      </details>
+      
 </details>
 
 
