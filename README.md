@@ -219,6 +219,15 @@ Unter diesem Punkt befinden sich unsere UML-Diagramme die wir im Vorfeld erstell
 <details>
   <summary>Benutzer verwalten</summary>
   <img src="https://user-images.githubusercontent.com/71118367/105817335-c5f7c200-5fb5-11eb-8921-caf694b492f7.png">
+  <img src="https://user-images.githubusercontent.com/56632916/105867987-fbbc9b00-5ff5-11eb-83b9-36d4802ce6a3.jpg">
+  <img src="https://user-images.githubusercontent.com/56632916/105867998-ff502200-5ff5-11eb-83b0-abf2404a56a3.jpg">
+  <img src="https://user-images.githubusercontent.com/56632916/105868032-05de9980-5ff6-11eb-85bf-f2d5a944d88e.jpg">
+  <img src="https://user-images.githubusercontent.com/56632916/105868036-07a85d00-5ff6-11eb-934f-b72fa2ec60e3.jpg">
+  <img src="https://user-images.githubusercontent.com/56632916/105868054-0a0ab700-5ff6-11eb-9be6-47f9358c1db6.jpg">
+  <img src="https://user-images.githubusercontent.com/56632916/105868060-0b3be400-5ff6-11eb-9c44-fe09d401860c.jpg">
+  <img src="https://user-images.githubusercontent.com/56632916/105868197-37effb80-5ff6-11eb-885c-d446262cba40.jpg">
+  <img src="https://user-images.githubusercontent.com/56632916/105868194-37576500-5ff6-11eb-9301-fd6472538713.jpg">
+  <img src="https://user-images.githubusercontent.com/56632916/105868196-37576500-5ff6-11eb-8527-9a73a611beb9.jpg">
 </details>
 
 <details>
