@@ -152,12 +152,12 @@ Unter diesem Punkt befinden sich unsere UML-Diagramme die wir im Vorfeld erstell
 <details>
   <summary>Business-Use-Case</summary>
   <img src="https://user-images.githubusercontent.com/71118367/105817333-c55f2b80-5fb5-11eb-8f0a-b00e6bf0ec16.png">
- </details
+</details>
 
 <details>
   <summary>Medien verwalten</summary>
   <img src="https://user-images.githubusercontent.com/71118367/105817334-c55f2b80-5fb5-11eb-97a8-f803c8de4a5a.png">
-</details
+</details>
 
 <details>
   <summary>Medium anlegen</summary>  
