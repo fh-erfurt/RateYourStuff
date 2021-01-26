@@ -227,10 +227,21 @@ Unter diesem Punkt befinden sich unsere UML-Diagramme die wir im Vorfeld erstell
 </details>
 
 <details>
-  <summary>Bewertungen verwalten</summary>
-  <img src="https://user-images.githubusercontent.com/71118367/105817343-c7c18580-5fb5-11eb-81f4-0b9f9b49c15d.png">
+  <summary>Bewertungen zu Medium hinzufügen</summary>
+  <img src="https://user-images.githubusercontent.com/59014772/102727203-b0430d00-4324-11eb-8a94-10d0a775756f.png">
 </details>
 
+<details>
+  <summary>Bewertungen verwalten</summary>
+  <img src="https://user-images.githubusercontent.com/71118367/105817343-c7c18580-5fb5-11eb-81f4-0b9f9b49c15d.png">
+  <img src="https://user-images.githubusercontent.com/59014772/102727673-5263f480-4327-11eb-99b1-89149c22c14b.png">
+</details>
+
+<details>
+  <summary>Gesamtbewertung aus allen Bewertungen anzeigen lassen</summary>
+  <img src="https://user-images.githubusercontent.com/59014772/102727339-732b4a80-4325-11eb-9108-f074ee7d437a.png">
+  <img src="https://user-images.githubusercontent.com/59014772/102727291-1def3900-4325-11eb-93fb-9416f5da1755.png">
+</details>
 
 ## Zusammenarbeit
 Im Rahmen des Projektes haben wir auf gewissen Elemente von Scrum und Kanban zurückgegriffen.
