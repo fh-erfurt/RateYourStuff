@@ -150,56 +150,87 @@ Nicht realisiert werden, sollen: <br>
 Unter diesem Punkt befinden sich unsere UML-Diagramme die wir im Vorfeld erstellt haben um unsere Idee von der Applikation grafisch darzustellen und um eine bessere Vorstellung des Ganzen zu bekommen.
 
 <details>
+  <summary>Business-Use-Case</summary>
+  <img src="https://user-images.githubusercontent.com/71118367/105817333-c55f2b80-5fb5-11eb-8f0a-b00e6bf0ec16.png">
+ </details
+
+<details>
+  <summary>Medien verwalten</summary>
+  <img src="https://user-images.githubusercontent.com/71118367/105817334-c55f2b80-5fb5-11eb-97a8-f803c8de4a5a.png">
+</details
+
+<details>
   <summary>Medium anlegen</summary>  
-  ![java_use_case](https://user-images.githubusercontent.com/71118367/102505464-4e637880-4082-11eb-8418-53bea2a0c7cd.png)
+  <img src="https://user-images.githubusercontent.com/71118367/105817344-c7c18580-5fb5-11eb-8202-40acbe244e5e.png">
+  <img src="https://user-images.githubusercontent.com/71118367/105817348-c85a1c00-5fb5-11eb-9e25-320fa124ca68.png">
 </details>
 
 <details>
   <summary>neues Buch anlegen</summary>  
-  Bild einfügen
+  <img src="https://user-images.githubusercontent.com/71118367/105817352-c8f2b280-5fb5-11eb-95c2-85281a2a9bd1.png">
 </details>
 
 <details>
   <summary>neues Film anlegen</summary>  
-  Bild einfügen
+  <img src="https://user-images.githubusercontent.com/71118367/105817356-c98b4900-5fb5-11eb-8606-891ce5ab54f8.png">
 </details>
 
 <details>
   <summary>neues Serie anlegen</summary>  
-  Bild einfügen
+  <img src="https://user-images.githubusercontent.com/71118367/105817359-ca23df80-5fb5-11eb-8515-c8fe32300565.png">
 </details>
 
 <details>
   <summary>neues Episode anlegen</summary>  
-  Bild einfügen
+  <img src="https://user-images.githubusercontent.com/71118367/105817360-cabc7600-5fb5-11eb-8612-bd4592c584ff.png">
 </details>
 
 <details>
   <summary>neues Spiel anlegen</summary>  
-  Bild einfügen
+  <img src="https://user-images.githubusercontent.com/71118367/105817323-c1330e00-5fb5-11eb-92b6-94ea9f3a79c2.png">
 </details>
 
 <details>
   <summary>Medien-Kollektion verwalten</summary>  
-  ![medienkollektionen_verwalten](https://user-images.githubusercontent.com/71118367/102487254-8bbc0c00-406a-11eb-9cb5-f5fe7547de85.png)
+  <img src="https://user-images.githubusercontent.com/71118367/102487254-8bbc0c00-406a-11eb-9cb5-f5fe7547de85.png">
 </details>
 
 <details>
   <summary>Medien-Kollektion anlegen</summary>  
-  ![neue_medienkollektion_anlegen](https://user-images.githubusercontent.com/71118367/102487308-a55d5380-406a-11eb-8b5c-ee638b19a421.png)
+  <img src="https://user-images.githubusercontent.com/71118367/102487308-a55d5380-406a-11eb-8b5c-ee638b19a421.png">
 </details>
 
 <details>
   <summary>vohandene Medien-Kollektion bearbeiten</summary>  
-  ![vorhandene_kollektion_bearbeiten](https://user-images.githubusercontent.com/71118367/102487426-d63d8880-406a-11eb-80e1-2558a2c1ba71.png)
-  ![ablaufdiagramme_medienkollektionen](https://user-images.githubusercontent.com/71118367/102506629-9afb8380-4083-11eb-9e93-ae4adb850ecd.png)
+  <img src="https://user-images.githubusercontent.com/71118367/102487426-d63d8880-406a-11eb-80e1-2558a2c1ba71.png">
+  <img src="https://user-images.githubusercontent.com/71118367/102506629-9afb8380-4083-11eb-9e93-ae4adb850ecd.png">
 </details>
 
 <details>
-  <summary>Neuen Fortschritt anlegen</summary>  
-  ![usecase_fortschritt_anlegen](https://user-images.githubusercontent.com/71118367/102483413-ff5b1a80-4064-11eb-9eaa-b8abf8dcde3a.png)
-  ![ablaufdiagramm_fortschritt_anlegen](https://user-images.githubusercontent.com/71118367/102485076-6aa5ec00-4067-11eb-8d7d-a04649e59a4d.png)
+  <summary>Fortschritte verwalten</summary>
+  <img src="https://user-images.githubusercontent.com/71118367/105817337-c6905880-5fb5-11eb-820f-2ba352946ed8.png">
 </details>
+<details>
+  <summary>Neuen Fortschritt anlegen</summary>  
+  <img src="https://user-images.githubusercontent.com/71118367/102483413-ff5b1a80-4064-11eb-9eaa-b8abf8dcde3a.png">
+  <img src="https://user-images.githubusercontent.com/71118367/102485076-6aa5ec00-4067-11eb-8d7d-a04649e59a4d.png">
+</details>
+
+<details>
+  <summary>Benutzer verwalten</summary>
+  <img src="https://user-images.githubusercontent.com/71118367/105817335-c5f7c200-5fb5-11eb-8921-caf694b492f7.png">
+</details>
+
+<details>
+  <summary>Kommentare verwalten</summary>
+  <img src="https://user-images.githubusercontent.com/71118367/105817341-c728ef00-5fb5-11eb-989c-9e1b4ec59b43.png">
+</details>
+
+<details>
+  <summary>Bewertungen verwalten</summary>
+  <img src="https://user-images.githubusercontent.com/71118367/105817343-c7c18580-5fb5-11eb-81f4-0b9f9b49c15d.png">
+</details>
+
 
 ## Zusammenarbeit
 Im Rahmen des Projektes haben wir auf gewissen Elemente von Scrum und Kanban zurückgegriffen.
