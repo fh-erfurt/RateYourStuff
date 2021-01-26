@@ -236,6 +236,12 @@ Unter diesem Punkt befinden sich unsere UML-Diagramme die wir im Vorfeld erstell
 </details>
 
 <details>
+  <summary>Kommentare verwalten</summary>
+  <img src="https://user-images.githubusercontent.com/56631092/105870522-a6ce5400-5ff8-11eb-81e2-090499ec8f59.png">
+  <img src="https://user-images.githubusercontent.com/56631092/105870698-ce252100-5ff8-11eb-92bd-f5c56bc77da9.png">
+</details>
+
+<details>
   <summary>Bewertungen zu Medium hinzufügen</summary>
   <img src="https://user-images.githubusercontent.com/59014772/102727203-b0430d00-4324-11eb-8a94-10d0a775756f.png">
 </details>
@@ -250,6 +256,11 @@ Unter diesem Punkt befinden sich unsere UML-Diagramme die wir im Vorfeld erstell
   <summary>Gesamtbewertung aus allen Bewertungen anzeigen lassen</summary>
   <img src="https://user-images.githubusercontent.com/59014772/102727339-732b4a80-4325-11eb-9108-f074ee7d437a.png">
   <img src="https://user-images.githubusercontent.com/59014772/102727291-1def3900-4325-11eb-93fb-9416f5da1755.png">
+</details>
+
+<details>
+  <summary>Medium suchen</summary>
+  <img src="https://user-images.githubusercontent.com/56631092/105870785-e7c66880-5ff8-11eb-909f-0cb18b2e83b5.png">
 </details>
 
 ## Zusammenarbeit
