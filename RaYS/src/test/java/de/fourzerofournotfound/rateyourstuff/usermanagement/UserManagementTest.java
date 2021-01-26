@@ -4,23 +4,18 @@ package de.fourzerofournotfound.rateyourstuff.usermanagement;
  * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  */
 
-import de.fourzerofournotfound.rateyourstuff.usermanagement.User;
-import de.fourzerofournotfound.rateyourstuff.usermanagement.UserManagement;
-import de.fourzerofournotfound.rateyourstuff.usermanagement.UserRole;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mindrot.jbcrypt.BCrypt;
 
-import java.util.logging.Logger;
-
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * @author Christoph Frischmuth
- */
 
 class UserManagementTest {
-    private static UserManagement userManagement = new UserManagement();
+    final static UserManagement userManagement = new UserManagement();
+    User notListedUser;
+    User emptyUser;
 
     @BeforeEach
     void should_generate_Users_And_Add_It_To_Their_List()
@@ -50,15 +45,28 @@ class UserManagementTest {
                 "george@rays.com",
                 "Cloonster56",
                 "user887");
+
+        notListedUser = new User(
+                "Bat",
+                "Man",
+                "batman@notlisted.info",
+                "BatMan15",
+                "CatWomanMyDeere"
+        );
     }
 
     @Test
     void should_view_Personal_Data() {
         //Given
+
+
         //When
         User Holgi_Rays = userManagement.findUserByNickname("Holgi19");
         //Then
-        assertEquals(Holgi_Rays, userManagement.viewPersonalData(Holgi_Rays));
+        assertEquals("HolgerReisHolgi19reis@rays.com", userManagement.viewPersonalData(Holgi_Rays));
+        assertNull(userManagement.viewPersonalData(notListedUser));
+        assertNull(userManagement.viewPersonalData(userManagement.findUserByNickname("Matze567")));
+        assertNull(userManagement.viewPersonalData(emptyUser));
     }
 
     @Test
@@ -105,6 +113,8 @@ class UserManagementTest {
         User Mickey_Rays = userManagement.findUserByNickname("Mic11");
         //Then
         assertEquals(Mickey_Rays, userManagement.findUserByNickname("Mic11"));
+        assertNotEquals(Mickey_Rays, userManagement.findUserByNickname("Mickey567"));
+
     }
 
     @Test
