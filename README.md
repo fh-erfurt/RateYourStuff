@@ -40,7 +40,7 @@ Nun existiert schone eine größere Menge an Portalen, die sich mit der Bewertun
 - Videospiele
 
 Benutzer können Medien mit unterschiedlichen Kriterien bewerten. 
-Für jedes Medium gibt es eine allgemeine Bewertung, die durch die Bewertungskriterien bestimmt wird. Benutzer können ihren Fortschritt auf verschiedenen Medientypen teilen. Jedes Medium hat einen eigenen Kommentarbereich. Je nach Fortschritt jedes Benutzers gibt es Spoiler-Warnungen. Darüber hinaus ist eine Art Mediensammlung geplant, um Medien logisch zu gruppieren.
+Für jedes Medium gibt es eine allgemeine Bewertung, die durch die Bewertungskriterien bestimmt wird. Benutzer können ihren Fortschritt auf verschiedenen Medientypen teilen. Jedes Medium hat einen eigenen Kommentarbereich. Darüber hinaus ist eine Art Mediensammlung geplant, um Medien logisch zu gruppieren.
 </details>
 
 
@@ -95,7 +95,6 @@ Für das Modul Java 01 wird vorerst jedoch nur das Grundsystem umgesetzt und imp
       Das System muss den Nutzern die Möglichkeit bieten: 
       - Kollektionen anzulegen <br>
       - Medien zu Kollektionen zuzuweisen <br>
-      - nach Kollektionen zu suchen <br>
   </details>
       
       
@@ -106,15 +105,12 @@ Für das Modul Java 01 wird vorerst jedoch nur das Grundsystem umgesetzt und imp
         - die eigene Bewertung zu editieren <br>
         - die eigene Bewertung zu löschen <br>
         - eine aus den bisher abgegebenen Bewertungen ermittelte Durchschnittsbewertung anzeigen lassen <br>
-        - einen Bewertungstext zu verfassen <br>
   </details>
   
   <details>
   <summary>Verwalten von Benutzern</summary>
       Das System muss den Nutzern und Moderatoren die Möglichkeit bieten: 
         - andere Nutzer anhand ihres Nutzernamens zu suchen <br>
-        - andere Nutzer der Freundesliste hinzuzufügen <br>
-        - andere Nutzer von der Freundesliste zu entfernen <br>
         - die eigenen Nutzerdaten einzusehen <br>
         - die eigenen Nutzerdaten zu ändern <br>
         - sich am System zu registrieren     <br>
@@ -122,7 +118,6 @@ Für das Modul Java 01 wird vorerst jedoch nur das Grundsystem umgesetzt und imp
         - Nutzer-Accounts zu reaktivieren <br>
         - das Passwort von Benutzern zurückzusetzen <br>
         - Benutzern Moderator-Rechte zu geben <br>
-        - von Benutzern angelegte Kollektionen und Medien vor Veröffentlichung zu prüfen und freizugeben <br>
   </details>
 </details>
 
