@@ -151,7 +151,7 @@ Unter diesem Punkt befinden sich unsere UML-Diagramme die wir im Vorfeld erstell
 
 <details>
   <summary>Medium anlegen</summary>  
-  Bild einfügen
+  ![java_use_case](https://user-images.githubusercontent.com/71118367/102505464-4e637880-4082-11eb-8418-53bea2a0c7cd.png)
 </details>
 
 <details>
@@ -181,17 +181,24 @@ Unter diesem Punkt befinden sich unsere UML-Diagramme die wir im Vorfeld erstell
 
 <details>
   <summary>Medien-Kollektion verwalten</summary>  
-  Bild einfügen
+  ![medienkollektionen_verwalten](https://user-images.githubusercontent.com/71118367/102487254-8bbc0c00-406a-11eb-9cb5-f5fe7547de85.png)
+</details>
+
+<details>
+  <summary>Medien-Kollektion anlegen</summary>  
+  ![neue_medienkollektion_anlegen](https://user-images.githubusercontent.com/71118367/102487308-a55d5380-406a-11eb-8b5c-ee638b19a421.png)
 </details>
 
 <details>
   <summary>vohandene Medien-Kollektion bearbeiten</summary>  
-  Bild einfügen
+  ![vorhandene_kollektion_bearbeiten](https://user-images.githubusercontent.com/71118367/102487426-d63d8880-406a-11eb-80e1-2558a2c1ba71.png)
+  ![ablaufdiagramme_medienkollektionen](https://user-images.githubusercontent.com/71118367/102506629-9afb8380-4083-11eb-9e93-ae4adb850ecd.png)
 </details>
 
 <details>
   <summary>Neuen Fortschritt anlegen</summary>  
-  Bild einfügen
+  ![usecase_fortschritt_anlegen](https://user-images.githubusercontent.com/71118367/102483413-ff5b1a80-4064-11eb-9eaa-b8abf8dcde3a.png)
+  ![ablaufdiagramm_fortschritt_anlegen](https://user-images.githubusercontent.com/71118367/102485076-6aa5ec00-4067-11eb-8d7d-a04649e59a4d.png)
 </details>
 
 ## Zusammenarbeit
