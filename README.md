@@ -241,7 +241,7 @@ Diese gesetzten Ziele wurden in einem Kanban-Board festgehalten.
 
 <details>
   <summary>Kanban-Board des Teams</summary>
-  Bild einfügen
+  https://github.com/fh-erfurt/RateYourStuff/projects/1
 </details>
 
 Das Board wurde unterteilt in <br>
