@@ -233,10 +233,6 @@ Unter diesem Punkt befinden sich unsere UML-Diagramme die wir im Vorfeld erstell
 <details>
   <summary>Kommentare verwalten</summary>
   <img src="https://user-images.githubusercontent.com/71118367/105817341-c728ef00-5fb5-11eb-989c-9e1b4ec59b43.png">
-</details>
-
-<details>
-  <summary>Kommentare verwalten</summary>
   <img src="https://user-images.githubusercontent.com/56631092/105870522-a6ce5400-5ff8-11eb-81e2-090499ec8f59.png">
   <img src="https://user-images.githubusercontent.com/56631092/105870698-ce252100-5ff8-11eb-92bd-f5c56bc77da9.png">
 </details>
