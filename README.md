@@ -148,6 +148,10 @@ Nicht realisiert werden, sollen: <br>
 
 ## UML-Diagramme
 Unter diesem Punkt befinden sich unsere UML-Diagramme die wir im Vorfeld erstellt haben um unsere Idee von der Applikation grafisch darzustellen und um eine bessere Vorstellung des Ganzen zu bekommen.
+<details>
+  <summary>UML-Klassen Diagramm</summary>
+  https://lucid.app/documents/view/c6c65f1a-d09a-422a-ade8-80eab27f8dcb
+</details>
 
 <details>
   <summary>Business-Use-Case</summary>
