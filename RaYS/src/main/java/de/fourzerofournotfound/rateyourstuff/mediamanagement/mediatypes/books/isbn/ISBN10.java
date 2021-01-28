@@ -24,7 +24,6 @@ public class ISBN10 {
     /**
      * creates a valid isbn10
      * @param isbn10 isbn10 string, separated by "-"
-     * @throws InvalidISBNException, if the given string does not represent a valid isbn10
      */
     public ISBN10(String isbn10) throws InvalidISBNException {
         if (isValid(isbn10)) {

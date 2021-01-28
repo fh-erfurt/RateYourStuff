@@ -55,7 +55,7 @@ public class UserManagement {
      * This Method checks if there is another similar entry in userList
      *
      * @param email String, which has to be checked on duplications in userList
-     * @return boolean true if email is already existing in userList, false if the email hasn´t a accordance.
+     * @return boolean true if email is already existing in userList, false if the email hasn't a accordance.
      */
     public boolean isExistingEmail(String email) {
         for (User user : userList) {
@@ -73,7 +73,7 @@ public class UserManagement {
      * @param nickname String, new Nickname
      */
     public void changeNickname(User user, String nickname) {
-        //If the new nickname is existent and isnt the current nickname print error message
+        //If the new nickname is existent and isn't the current nickname print error message
         if (isExistingNickname(nickname) && !user.getNickname().equals(nickname)) {
             UM_LOGGER.warning("Nickname already used@" + nickname);
         } else {
@@ -152,7 +152,7 @@ public class UserManagement {
 
     /**
      * This method is used to check the Login - data of a user
-     * The user only can login if he wasn´t disabled by an admin
+     * The user only can login if he wasn't disabled by an admin
      *
      * @param user     String, of the user which will login to user-area
      * @param password String, of the user which will login to user-ea
@@ -202,11 +202,10 @@ public class UserManagement {
     public String viewPersonalData(User user) {
         if (user != null) {
             if(isExistingNickname(user.getNickname())) {
-                String personalDataString = user.getFirstName()
+                return user.getFirstName()
                         + user.getLastName()
                         + user.getNickname()
                         + user.getEmail();
-                return personalDataString;
             }
         }
         UM_LOGGER.warning("Can´t generate string of user data");
@@ -300,7 +299,7 @@ public class UserManagement {
      */
     public void resetPassword(User user) {
         user.setPassword(BCrypt.hashpw("P@sSwOrD", user.getPasswordSalt()));
-        UM_LOGGER.info("Password reseted@" + user);
+        UM_LOGGER.info("Password reset@" + user);
     }
     //endregion
 }

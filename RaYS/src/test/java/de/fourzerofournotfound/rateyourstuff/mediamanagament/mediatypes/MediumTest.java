@@ -1,8 +1,4 @@
-package de.fourzerofournotfound.rateyourstuff;
-
-/**
- * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
- */
+package de.fourzerofournotfound.rateyourstuff.mediamanagament.mediatypes;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -25,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Comment Test
  * <p>This class is used to test the functionality of finding media in lists</p>
- * @author Christph Frischmuth, Mickey Knop
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  */
 
@@ -34,8 +30,6 @@ class MediumTest {
     static ArrayList<Medium> allMedia = new ArrayList<>();
     static ArrayList<String> allMediaAsString = new ArrayList<>();
     static ArrayList<String> searchResults = new ArrayList<>();
-    Medium testMedium;
-
 
 
     @BeforeAll
@@ -176,8 +170,6 @@ class MediumTest {
         ArrayList<String> languages = new ArrayList<>();
         languages.add("Englisch");
 
-        int averageLength = 25;
-        int ageRestriction = 0;
         Series mySeries = new Series("Ein Käfig voller Helden",
                 LocalDate.of(1965, 11, 17),
                 "...",
@@ -207,7 +199,7 @@ class MediumTest {
 
     @Test
     void should_check_if_medium_is_string() {
-        testMedium.mediumToString(allMedia, allMediaAsString);
+        Medium.mediumToString(allMedia, allMediaAsString);
         assertEquals(   "Zwei Asse Trumpfen auf" +
                                 "COMEDY" +
                                 "[SergioCorbucci]" +
@@ -218,9 +210,8 @@ class MediumTest {
 
     @Test
     void should_find_keyword_in_medium() {
-        //Hatte es in BeforeEach geplant, führt jedoch nicht zu gewuenschtem Erfolg!
-        testMedium.mediumToString(allMedia, allMediaAsString);
-        testMedium.searchHitInAllMediaStringList("itanlienisch", allMediaAsString, searchResults);
+        Medium.mediumToString(allMedia, allMediaAsString);
+        Medium.searchHitInAllMediaStringList("itanlienisch", allMediaAsString, searchResults);
         assertEquals(2, searchResults.size());
     }
 }

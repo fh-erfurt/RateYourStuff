@@ -1,6 +1,7 @@
 package de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.series;
 
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.Genre;
+import de.fourzerofournotfound.rateyourstuff.mediamanagement.Library;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.Resolution;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.Medium;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.persons.Person;
@@ -8,6 +9,7 @@ import de.fourzerofournotfound.rateyourstuff.mediamanagement.persons.Person;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * Series
@@ -19,6 +21,8 @@ import java.util.List;
 public class Series extends Medium {
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
+    private static final Logger SERIES_LOGGER = Logger.getLogger(Series.class.getName());
+
     private String network;
     private List<Person> directors;
     private List<Person> actors;
@@ -236,12 +240,16 @@ public class Series extends Medium {
     public boolean addNewSeason(int seasonNumber, String title) {
         for(Season season : seasons) {
             if(season.getSeasonNumber() == seasonNumber) {
+                SERIES_LOGGER.warning("Unable to add Season " + seasonNumber +
+                        "@\"" + title + "\" to " + this.getName());
                 return false;
             }
         }
 
         Season currentSeason = new Season(seasonNumber, title, this);
         seasons.add(currentSeason);
+        SERIES_LOGGER.info("Season " + currentSeason.getSeasonNumber() + "@\""  + currentSeason.getTitle() +
+                "\" has been added successfully to @\"" + this.getName()+ "\"");
         return true;
     }
 
@@ -254,6 +262,8 @@ public class Series extends Medium {
         for(Season currentSeason : seasons) {
             if(currentSeason.equals(season)) {
                 seasons.remove(currentSeason);
+                SERIES_LOGGER.info("Season " + currentSeason.getSeasonNumber() + "@\""  + currentSeason.getTitle() +
+                        "\" has been removed successfully from @\"" + this.getName()+ "\"");
                 return true;
             }
         }

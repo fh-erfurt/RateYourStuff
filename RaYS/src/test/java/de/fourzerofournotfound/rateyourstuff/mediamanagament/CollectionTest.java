@@ -3,6 +3,7 @@ package de.fourzerofournotfound.rateyourstuff.mediamanagament;
 import de.fourzerofournotfound.rateyourstuff.*;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.Collection;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.Genre;
+import de.fourzerofournotfound.rateyourstuff.mediamanagement.Library;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.Resolution;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.Medium;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.books.Book;
@@ -564,7 +565,7 @@ public class CollectionTest {
     @Test
     public void should_return_string_with_collection_data() {
         //Given
-        Logger myLogger = Logger.getLogger("CollectionLogger");
+        Logger myLogger = Logger.getLogger(CollectionTest.class.getName());
         //When
         String collectionOutput = mediaCollection.toString();
         myLogger.info(collectionOutput);

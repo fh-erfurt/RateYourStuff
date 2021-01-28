@@ -25,7 +25,12 @@ public class Rate
     ////////////////////////////////////////////////////////////////////////////////////
     public Rate(int rating, String description, Medium medium)
     {
-        this.rating = rating;
+        if(rating < MIN_POINTS) {
+            this.rating = MIN_POINTS;
+        } else {
+            this.rating = Math.min(rating, MAX_POINTS);
+        }
+
         this.description = description;
         this.medium = medium;
     }

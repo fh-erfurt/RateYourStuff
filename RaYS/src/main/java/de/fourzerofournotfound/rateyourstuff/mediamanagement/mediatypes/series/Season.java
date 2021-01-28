@@ -7,6 +7,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.logging.Logger;
 
 /**
  * Season
@@ -19,6 +20,8 @@ import java.util.Objects;
 public class Season {
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////
+    private static final Logger SEASON_LOGGER = Logger.getLogger(Season.class.getName());
+
     private int seasonNumber;
     private Series series;
     private String title;
@@ -75,7 +78,7 @@ public class Season {
      * @param shortDescription  short description of the episode
      * @param genre             main genre of the episode
      * @param episodeNumber     number of the episode
-     * @param guestStars        guest stars that appear in the epsiode
+     * @param guestStars        guest stars that appear in the episode
      * @param length            length of the episode in minutes
      * @return                  true, if the episode has been added successfully, otherwise false
      */
@@ -115,13 +118,17 @@ public class Season {
     public boolean removeEpisode(Episode episode) {
        if(episodes.contains(episode)) {
            episodes.remove(episode);
+           SEASON_LOGGER.info("Episode " + episode.getEpisodeNumber() +
+                   "@\"" + episode.getName() + "\" has been removed successfully");
            return true;
        }
+        SEASON_LOGGER.warning("Unable to remove Episode " + episode.getEpisodeNumber() +
+                "@\"" + episode.getName() + "\"");
        return false;
     }
 
     /**
-     * <p>checks if the season already constains another episode that matches the given episode</p>
+     * <p>checks if the season already contains another episode that matches the given episode</p>
      * @param episode Episode that should be searched within the season
      * @return        true, if an episode with the same episode number exists or, if the episode matches another episode
      */
@@ -141,11 +148,7 @@ public class Season {
      * @return      true, if the seasons are equal, otherwise false
      */
     public boolean equals(Season season) {
-        if(season.getSeries() == this.series && season.getSeasonNumber() == this.seasonNumber) {
-                return true;
-        }
-        return false;
+        return season.getSeries() == this.series && season.getSeasonNumber() == this.seasonNumber;
     }
     //endregion
-
 }

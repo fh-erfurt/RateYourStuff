@@ -2,7 +2,6 @@ package de.fourzerofournotfound.rateyourstuff.mediamanagement;
 
 
 
-import de.fourzerofournotfound.rateyourstuff.*;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.Medium;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.books.Book;
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.books.isbn.ISBN10;
@@ -17,6 +16,7 @@ import de.fourzerofournotfound.rateyourstuff.usermanagement.User;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  *
@@ -30,6 +30,7 @@ public class Library {
     ////////////////////////////////////////////////////////////////////////////////////
     private List<Medium> media;
     private List<Collection> mediaCollections;
+    private static final Logger LIBRARY_LOGGER = Logger.getLogger(Library.class.getName());
     //endregion
 
     //region
@@ -120,9 +121,11 @@ public class Library {
                 numberOfPages);
 
         if(checkIfMediumExists(currentBook)) {
+            LIBRARY_LOGGER.warning("Unable to add Book @\"" + currentBook.getName() + "\" to library");
             return false;
         } else {
             media.add(currentBook);
+            LIBRARY_LOGGER.info("Book @\"" + currentBook.getName() + "\" has been added to library");
             return true;
         }
     }
@@ -172,9 +175,11 @@ public class Library {
                 highestResolution);
 
         if(checkIfMediumExists(currentMovie)) {
+            LIBRARY_LOGGER.warning("Unable to add Movie @\"" + currentMovie.getName() + "\" to library");
             return false;
         } else {
             media.add(currentMovie);
+            LIBRARY_LOGGER.info("Movie @\"" + currentMovie.getName() + "\" has been added to library");
             return true;
         }
     }
@@ -246,9 +251,11 @@ public class Library {
                 isCompleted);
 
         if(checkIfMediumExists(currentSeries)) {
+            LIBRARY_LOGGER.warning("Unable to add Series @\"" + currentSeries.getName() + "\" to library");
             return false;
         } else {
             media.add(currentSeries);
+            LIBRARY_LOGGER.info("Series @\"" + currentSeries.getName() + "\" has been added to library");
             return true;
         }
     }
@@ -305,9 +312,11 @@ public class Library {
                 ageRestriction);
 
         if(checkIfMediumExists(currentGame)) {
+            LIBRARY_LOGGER.warning("Unable to add Game @\"" + currentGame.getName() + "\" to library");
             return false;
         } else {
             media.add(currentGame);
+            LIBRARY_LOGGER.info("Game @\"" + currentGame.getName() + "\" has been added to library");
             return true;
         }
     }
@@ -337,6 +346,7 @@ public class Library {
         if(foundCollection == null) {
             Collection currentCollection = new Collection(name);
             mediaCollections.add(currentCollection);
+            LIBRARY_LOGGER.info("Media-Collection @\"" + currentCollection.getName() + "\" has been added");
             return true;
         }
         return false;
@@ -353,6 +363,7 @@ public class Library {
         if(foundCollection != null) {
             foundCollection.removeAllMedia();
             mediaCollections.remove(foundCollection);
+            LIBRARY_LOGGER.info("Collection @\"" + foundCollection.getName() + "\" has been removed from library");
             return true;
         }
         return false;
@@ -384,7 +395,7 @@ public class Library {
             foundMedium.setComment(null);
             foundMedium.setRatings(null);
             media.remove(foundMedium);
-
+            LIBRARY_LOGGER.info("Medium @\"" + foundMedium.getName() + "\" has been removed from library");
             return true;
         }
 

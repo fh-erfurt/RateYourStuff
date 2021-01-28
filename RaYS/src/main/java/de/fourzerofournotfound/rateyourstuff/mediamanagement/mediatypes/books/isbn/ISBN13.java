@@ -114,7 +114,6 @@ public class ISBN13 {
      * converts an ISBN10 object to an ISBN13 object
      * @param isbn10    valid isbn10 object
      * @return          isbn13 object
-     * @throws InvalidISBNException, if it is not possible to create the isbn13 object
      */
     public static ISBN13 toISBN13(ISBN10 isbn10) throws InvalidISBNException {
         String isbn13;
