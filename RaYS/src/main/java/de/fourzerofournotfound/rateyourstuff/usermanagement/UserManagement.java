@@ -204,10 +204,10 @@ public class UserManagement {
                         + user.getLastName()
                         + user.getNickname()
                         + user.getEmail();
-                System.out.println(personalDataString);
                 return personalDataString;
             }
         }
+        UMLogger.warning("Can´t generate string of user data");
         return null;
     }
 
