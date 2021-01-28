@@ -70,6 +70,14 @@ class UserManagementTest {
     }
 
     @Test
+    void should_not_view_Personal_Data() {
+        //Then
+        assertNull(userManagement.viewPersonalData(notListedUser));
+        assertNull(userManagement.viewPersonalData(userManagement.findUserByNickname("Matze567")));
+        assertNull(userManagement.viewPersonalData(emptyUser));
+    }
+
+    @Test
     void should_change_Nickname() {
         //Given
         User Holgi_Rays = userManagement.findUserByNickname("Cloonster56");
@@ -114,7 +122,14 @@ class UserManagementTest {
         //Then
         assertEquals(Mickey_Rays, userManagement.findUserByNickname("Mic11"));
         assertNotEquals(Mickey_Rays, userManagement.findUserByNickname("Mickey567"));
+    }
 
+    @Test
+    void should_not_find_User_By_Nickname() {
+        //When
+        User Mickey_Rays = userManagement.findUserByNickname("Mic11");
+        //Then
+        assertNotEquals(Mickey_Rays, userManagement.findUserByNickname("Mickey567"));
     }
 
     @Test

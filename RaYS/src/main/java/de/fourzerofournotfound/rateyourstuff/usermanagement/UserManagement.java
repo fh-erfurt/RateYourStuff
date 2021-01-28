@@ -16,7 +16,7 @@ import org.mindrot.jbcrypt.BCrypt;
 public class UserManagement {
     //region Attributes
     ArrayList<User> userList;
-    private static final Logger UMLogger = Logger.getLogger(UserManagement.class.getName());
+    private static final Logger UM_LOGGER = Logger.getLogger(UserManagement.class.getName());
 
     //endregion
 
@@ -75,7 +75,7 @@ public class UserManagement {
     public void changeNickname(User user, String nickname) {
         //If the new nickname is existent and isnt the current nickname print error message
         if (isExistingNickname(nickname) && !user.getNickname().equals(nickname)) {
-            UMLogger.warning("Nickname already used@" + nickname);
+            UM_LOGGER.warning("Nickname already used@" + nickname);
         } else {
             //else store new nickname
             user.setNickname(nickname);
@@ -91,7 +91,7 @@ public class UserManagement {
      */
     public void changeEmail(User user, String email) {
         if (isExistingEmail(email) && !user.getEmail().equals(email)) {
-            UMLogger.warning("email already exits; can´t store@" + email);
+            UM_LOGGER.warning("email already exits; can´t store@" + email);
         } else {
             user.setEmail(email);
         }
@@ -109,7 +109,7 @@ public class UserManagement {
                 return true;
             }
         }
-        UMLogger.warning("Nickname not taken or listed@" + nickname);
+        UM_LOGGER.warning("Nickname not taken or listed@" + nickname);
         return false;
     }
 
@@ -140,10 +140,10 @@ public class UserManagement {
                     user.setPasswordSalt(passwordSalt);
                     userList.add(user);
                 } catch (Exception excAdd) {
-                    UMLogger.log(Level.INFO, "Unable to add user", excAdd);
+                    UM_LOGGER.log(Level.INFO, "Unable to add user", excAdd);
                 }
             } catch (Exception excSalt) {
-                UMLogger.log(Level.INFO, "Unable to hash password", excSalt);
+                UM_LOGGER.log(Level.INFO, "Unable to hash password", excSalt);
             }
         }
 
@@ -162,11 +162,13 @@ public class UserManagement {
         if (userList.size() != 0) {
             try {
                 if (BCrypt.checkpw(password, user.getPassword()) && user.IsEnabled()) {
-                    UMLogger.info("Login of User successful@" + user.getNickname());
+                    UM_LOGGER.info("Login of User successful@" + user.getNickname());
                     return true;
+                } else {
+                    throw new InvalidPasswordException("Login not successful!");
                 }
-            } catch (Exception e) {
-                UMLogger.log(Level.SEVERE, "SEVERE failure/ password or user", e);
+            } catch (InvalidPasswordException e) {
+                UM_LOGGER.warning("Incorrect User or Password; "+e.getMessage());
             }
         }
         return false;
@@ -183,11 +185,11 @@ public class UserManagement {
         if (BCrypt.checkpw(oldPassword, user.getPassword())) {
             try {
                 user.setPassword(BCrypt.hashpw(newPassword, user.getPasswordSalt()));
-                /*            System.out.println("password successfully saved!");*/
-            } catch (Exception e) {
-                UMLogger.log(Level.SEVERE, "Error: ", e);
+                throw new InvalidPasswordException("Incorrect password");
+            } catch (InvalidPasswordException e) {
+                UM_LOGGER.warning("Error: "+e.getMessage());
             }
-            UMLogger.info("Password successfully saved@" + user.getNickname());
+            UM_LOGGER.info("Password successfully saved@" + user.getNickname());
         }
     }
 
@@ -207,7 +209,7 @@ public class UserManagement {
                 return personalDataString;
             }
         }
-        UMLogger.warning("Can´t generate string of user data");
+        UM_LOGGER.warning("Can´t generate string of user data");
         return null;
     }
 
@@ -230,10 +232,10 @@ public class UserManagement {
                 user.setLastName(lastName);
                 user.setNickname(nickname);
                 changeEmail(user, email);
-                UMLogger.info("user data successfully changed@" + user.getNickname());
+                UM_LOGGER.info("user data successfully changed@" + user.getNickname());
                 return user;
             } else {
-                UMLogger.warning("Unable to change user data@" + user.getNickname());
+                UM_LOGGER.warning("Unable to change user data@" + user.getNickname());
                 return null;
             }
         }
@@ -253,7 +255,7 @@ public class UserManagement {
                 if (user.getNickname().equals(nickname))
                     return user;
             }
-            UMLogger.warning("Nickname not taken or listed@" + nickname);
+            UM_LOGGER.warning("Nickname not taken or listed@" + nickname);
         }
         return null;
     }
@@ -266,7 +268,7 @@ public class UserManagement {
     public void disableUser(User user) {
         if (user.IsEnabled()) {
             user.IsEnabled(false);
-            UMLogger.info("User disabled@" + user);
+            UM_LOGGER.info("User disabled@" + user.getNickname());
         }
     }
 
@@ -278,7 +280,7 @@ public class UserManagement {
     public void enableUser(User user) {
         if (!user.IsEnabled()) {
             user.IsEnabled(true);
-            UMLogger.info("User enabled@" + user);
+            UM_LOGGER.info("User enabled@" + user);
         }
     }
 
@@ -298,7 +300,7 @@ public class UserManagement {
      */
     public void resetPassword(User user) {
         user.setPassword(BCrypt.hashpw("P@sSwOrD", user.getPasswordSalt()));
-        UMLogger.info("Password reseted@" + user);
+        UM_LOGGER.info("Password reseted@" + user);
     }
     //endregion
 }

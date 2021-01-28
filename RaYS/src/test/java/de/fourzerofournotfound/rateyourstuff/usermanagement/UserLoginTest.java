@@ -28,22 +28,37 @@ class UserLoginTest {
 
     @BeforeEach
     //Given
-    void initializeUsers() {
+    void initialize_Users() {
         userManagement.userRegistration("Harry", "Potter", "Potter@grifindor.magic",
                 "Harry123", "Hedwig");
     }
 
     @Test
-    void loginUserTest() {
+    void should_login_user() {
         //When
         User Harry_Rays = userManagement.findUserByNickname("Harry123");
 
         //Then
         assertTrue(userManagement.loginUser(Harry_Rays, "Hedwig"));
+
+    }
+
+    @Test
+    void should_not_login_user() {
+        //When
+        User Harry_Rays = userManagement.findUserByNickname("Harry123");
+
+        //Then
         assertFalse(userManagement.loginUser(Harry_Rays, "Kroete"));
+    }
+
+    @Test
+    void should_not_login_user_because_of_user_is_disabled() {
+        //When
+        User Harry_Rays = userManagement.findUserByNickname("Harry123");
+        userManagement.disableUser(Harry_Rays);
 
         //When
-        userManagement.disableUser(Harry_Rays);
         assertFalse(userManagement.loginUser(Harry_Rays, "Hedwig"));
     }
 }
