@@ -39,7 +39,7 @@ class MediumTest {
 
 
     @BeforeAll
-    static void initializeGame() {
+    static void initialize_game() {
         List<String> languages = new ArrayList<>();
         languages.add("Englisch");
 
@@ -81,7 +81,7 @@ class MediumTest {
     }
 
     @BeforeAll
-    static void initializeBooks() {
+    static void initialize_books() {
         ArrayList<String> publishers = new ArrayList<>();
         publishers.add("Rheinwerk Computing");
 
@@ -126,7 +126,7 @@ class MediumTest {
     }
 
     @BeforeAll
-    static void initializeMovies() {
+    static void initialize_movies() {
         List<Person> directors = new ArrayList<>();
         directors.add(new Person("Sergio", "Corbucci"));
 
@@ -166,7 +166,7 @@ class MediumTest {
     }
 
     @BeforeAll
-    static void initializeSeries() {
+    static void initialize_series() {
         ArrayList<Person> directors = new ArrayList<>();
         directors.add(new Person("Bernard", "Fein"));
 
@@ -199,30 +199,28 @@ class MediumTest {
     }
 
     @Test
-    void checkMediaListSize() {
+    void should_check_media_list_size() {
         assertEquals(7, allMedia.size());
     }
 
 
 
     @Test
-    void checkMediumToString() {
-        //Hatte es in BeforeEach geplant, führt jedoch nicht zu gewuenschtem Erfolg!
+    void should_check_if_medium_is_string() {
         testMedium.mediumToString(allMedia, allMediaAsString);
-        for (String Medium : allMediaAsString) {
-            System.out.println(Medium);
-        }
+        assertEquals(   "Zwei Asse Trumpfen auf" +
+                                "COMEDY" +
+                                "[SergioCorbucci]" +
+                                "[Itanlienisch, Deutsch]" +
+                                "[BudSpencer, TerenceHill]" +
+                                "12", allMediaAsString.get(2));
     }
 
     @Test
-    void should_find_keyword_in_Medium() {
+    void should_find_keyword_in_medium() {
         //Hatte es in BeforeEach geplant, führt jedoch nicht zu gewuenschtem Erfolg!
         testMedium.mediumToString(allMedia, allMediaAsString);
         testMedium.searchHitInAllMediaStringList("itanlienisch", allMediaAsString, searchResults);
         assertEquals(2, searchResults.size());
-        for(String string : searchResults)
-        {
-            System.out.println(string);
-        }
     }
 }
