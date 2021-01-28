@@ -12,6 +12,8 @@ import java.util.List;
 
 /**
  *
+ * Medium
+ * <p>Is an abstract class that contains the overlapping attributes and functions of all media types</p>
  * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  * */

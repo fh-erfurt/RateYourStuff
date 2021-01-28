@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * Game
- * <p>Represents an game and contains different information about the game including playtime, publisher, developer
+ * <p>Represents a game and contains different information about the game including playtime, publisher, developer
  * Games can be added to collections</p>
  * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *

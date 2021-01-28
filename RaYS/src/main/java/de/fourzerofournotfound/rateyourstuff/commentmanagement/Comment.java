@@ -1,10 +1,6 @@
 package de.fourzerofournotfound.rateyourstuff.commentmanagement;
 
-/**
- *
- * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
- *
- * */
+
 
 import de.fourzerofournotfound.rateyourstuff.mediamanagement.mediatypes.Medium;
 import de.fourzerofournotfound.rateyourstuff.usermanagement.User;
@@ -13,6 +9,13 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ * Comment
+ * <p>This class is used to store information about comments and responses to comments.</p>
+ * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
+ *
+ * */
 public class Comment {
     //region Attributes
     ////////////////////////////////////////////////////////////////////////////////////

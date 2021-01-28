@@ -12,6 +12,8 @@ import java.util.List;
 /**
  *
  * Book
+ * <p>Represents a book and contains different information about the book including isbn, publishers, authors
+ * books can be added to collections</p>
  * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  * */
