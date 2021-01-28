@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="RaYS (1)" />
-        <module name="RaYS (1) (org.example)" />
         <module name="RaYS" />
       </profile>
     </annotationProcessing>
