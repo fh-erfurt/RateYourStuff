@@ -280,7 +280,7 @@ Das Board wurde unterteilt in <br>
 <br>
 "In progress 'Vorname des Teammitgliedes'" --> Jedes Teammitglied konnte sich dann selbst Issues aus dem Bereich ToDo nehmen und in seinen Bereich verschieben. So konnte jeder aus dem Team sehen wer sich gerade um welchen Part kümmert. Issues wurden meistens mit Checklisten versehen, so konnte auch gleichzeitig mit eingesehen werden, wie weit der Issue abgearbeitet ist <br>
 <br>
-"currently Done" --> in diesem BEreich des Boards wandern alle Issues, die fertigestellt wurden. dort verweilen sie bis zum nächsten Meeting. Bei diesem Meeting wird über die fertiggestellten Issues gesprochen und wenn diese in Ordnung sind, werden sie geschlossen und wandern in den BEreich "Done". <br>
+"currently Done" --> in diesem Bereich des Boards wandern alle Issues, die fertigestellt wurden. dort verweilen sie bis zum nächsten Meeting. Bei diesem Meeting wird über die fertiggestellten Issues gesprochen und wenn diese in Ordnung sind, werden sie geschlossen und wandern in den BEreich "Done". <br>
 <br>
 "Done" --> in diesem BEreich befinden sich alle geschlossenen Issues, also alles was bisher abgearbeitet und für "fertig" erklärt wurde.<br>
 <br>
