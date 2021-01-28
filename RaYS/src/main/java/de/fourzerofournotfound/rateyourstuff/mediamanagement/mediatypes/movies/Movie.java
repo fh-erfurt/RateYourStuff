@@ -11,6 +11,8 @@ import java.util.List;
 
 /**
  * Movie
+ * <p>Represents a movie and contains different information about the game including total duration, studio, directors
+ * movies can be added to collections</p>
  * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  * */

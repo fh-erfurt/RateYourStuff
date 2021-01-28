@@ -13,7 +13,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * User
+ * <p>This class stores information for users such as full name, email and nickname.
+ * Users are managed within the UserManagement class.</p>
  * @author Robin Beck, Christoph Frischmuth, Mickey Knop, John Klippstein
  *
  * */
@@ -186,7 +188,7 @@ public class User
      * @param medium medium that is used to get the rate for the user
      * @param rating is a number between 0 and 10
      * @param description this is the description which is set in the rate
-     * @return
+     * @return true, if adding was successful, otherwise false
      */
     public boolean addNewRate(Medium medium, Integer rating, String description) {
         Integer newRating = rating;
