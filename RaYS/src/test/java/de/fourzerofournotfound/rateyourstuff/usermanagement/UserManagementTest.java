@@ -57,9 +57,6 @@ class UserManagementTest {
 
     @Test
     void should_view_Personal_Data() {
-        //Given
-
-
         //When
         User Holgi_Rays = userManagement.findUserByNickname("Holgi19");
         //Then
