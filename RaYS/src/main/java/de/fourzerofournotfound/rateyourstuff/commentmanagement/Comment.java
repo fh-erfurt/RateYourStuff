@@ -78,7 +78,6 @@ public class Comment {
         return date;
     }
 
-    //TODO: below function interferes with data encapsulation //used in deleteResponse which has to be provided with a list
     public List<Comment> getResponses() {
         return responses;
     }
@@ -93,7 +92,7 @@ public class Comment {
         }
         return null;
     }
-    //TODO: below function interferes with data encapsulation
+
     public void AddResponses(List<Comment> responses) {
         this.responses.addAll(responses);
     }

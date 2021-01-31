@@ -18,8 +18,6 @@ public class Person {
     private String firstName;
     private String lastName;
     private PersonType personType;
-
-    //TODO: clear if medium should be deleted
     private List<Medium> media;
     //endregion
 
