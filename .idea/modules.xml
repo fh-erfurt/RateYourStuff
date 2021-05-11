@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/RaYS/RaYS.iml" filepath="$PROJECT_DIR$/RaYS/RaYS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RaYS.iml" filepath="$PROJECT_DIR$/RaYS.iml" />
       <module fileurl="file://$PROJECT_DIR$/RaYS (1).iml" filepath="$PROJECT_DIR$/RaYS (1).iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/RateYourStuff.iml" filepath="$PROJECT_DIR$/.idea/RateYourStuff.iml" />
     </modules>
